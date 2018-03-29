@@ -1,0 +1,30 @@
+<?php
+
+// vars
+$ctasection = get_field('cta_section');
+
+if( $ctasection ): ?>
+
+<?php
+// vars
+$heading = $ctasection['heading'];
+$paragraph = $ctasection['paragraph'];
+$btnlabel = $ctasection['btn_label'];
+$bgimg = $ctasection['bg_img'];
+$href = $ctasection['href'];
+$overlay = $ctasection['overlay'];?>
+
+<div class="ctasection bg-img--acf" <?php if ($bgimg):?>style="background-size: cover; background-repeat: no-repeat; background-image: url('<?= $bgimg; ?>');"<?php endif;?>>
+
+  <div class="ctasection-container">
+    <div class="ctasection-text revealer-0">
+      <h4 class="bx--type-gamma"><?= $heading; ?></h4>
+      <p><?= $paragraph; ?></p>
+    </div>
+
+    <a href="<?= $href?>"><button class="bx--btn bx--btn--secondary-white revealer-0" type="button"><?= $btnlabel; ?></button></a>
+
+  </div>
+  <div class="overlay" style="opacity:<?= $overlay; ?>;"></div>
+</div>
+<?php endif; ?>

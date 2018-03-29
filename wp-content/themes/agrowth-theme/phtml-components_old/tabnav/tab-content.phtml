@@ -1,0 +1,43 @@
+<?php
+
+
+if (is_page(86) ):
+$services = new WP_Query( array( 'post_type' => 'service', 'posts_per_page' => 3, 'order' => 'ASC' ) );
+elseif (is_page(517)) :
+  $services = new WP_Query( array( 'post_type' => 'service', 'posts_per_page' => 7, 'offset' => '3', 'order' => 'ASC' ) );
+endif;
+  // var_dump($services);
+// foreach ($services->posts as $k => $post) :
+
+$i = 0;
+
+foreach ($services->posts as $post) :
+  $postname = $post->post_name;
+
+  $nr = ++$i;
+
+  // var_dump($post);
+  // var_dump($k);
+?>
+
+<div id="tab-panel-<?=$nr?>" class="tab-<?=$nr?>" role="tabpanel" aria-labelledby="tab-link-<?=$nr?>" aria-hidden="false">
+
+  <div class="section-0rem tab-content">
+
+    <?php if ( $services->have_posts() ) : while ( $services->have_posts() ) :
+      $services->the_post();
+      //   var_dump($services);
+      // var_dump($posts->post_name);
+      $selectservice = get_field('select_service');
+      if ($selectservice == $postname ):
+
+      includeFlexibleServices($postname);
+
+      endif;
+      endwhile;
+      endif;
+      ?>
+
+    </div>
+  </div>
+<?php endforeach;?>

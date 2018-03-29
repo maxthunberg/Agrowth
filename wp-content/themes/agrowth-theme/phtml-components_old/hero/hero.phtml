@@ -1,0 +1,35 @@
+<?php
+
+// vars
+$hero = get_field('hero');
+
+if( $hero ): ?>
+<div class="hero home hero-lg" style="background-image: url('<?= $hero['image'];?>')">
+    <div class="bx--col-xs-12 bx--col-md-12 hero-content">
+
+        <h6 class="bx--type-delta type-white"><?php echo $hero['subheading']; ?></h6>
+        <h2 class="bx--type-giga type-white"><?php echo $hero['heading']; ?></h2>
+
+        <button class="bx--btn bx--btn--secondary-white modal" type="button"><?php echo $hero['label']; ?></button>
+
+        <div class="scrolldown">
+            <a class="scrolldown-link" id="services" href="#"><?php echo $hero['scroll_link']; ?></a>
+            <svg class="scrolldown-arrow" width="10" height="5" viewBox="0 0 10 5" fill-rule="evenodd">
+              <path d="M10 0L5 5 0 0z"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="overlay" style="opacity: <?= $hero['opacity'];?>;"></div>
+
+    <?php if ($hero['hero_video']):?>
+    <div class="hero-video">
+      <video autoplay muted loop class="hero-video--video">
+        <source src="<?= $hero['hero_video'];?>" type="video/mp4">
+      </video>
+    </div>
+  <?php endif;?>
+</div>
+
+<a name="services"/>
+
+<?php endif; ?>

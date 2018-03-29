@@ -1,0 +1,21 @@
+<?php
+
+// vars
+$sendify = get_field('sendify_section', 'option');
+
+if( $sendify ): ?>
+
+<div class="sendify">
+  <div class="sendify-container">
+    <div class="sendify-text revealer-0">
+      <img class="sendify-logo" src="<?= $sendify['logo']; ?>" alt="<?= $sendify['alt']; ?>" />
+      <h4 class="bx--type-gamma"><?= $sendify['heading']; ?></h4>
+      <p><?= $sendify['paragraph']; ?></p>
+    </div>
+
+    <a href="https://www.sendify.se" target="_blank"><button class="bx--btn bx--btn--secondary-white revealer-0" type="button"><?php echo $sendify['btn_label']; ?></button></a>
+
+  </div>
+
+</div>
+<?php endif; ?>

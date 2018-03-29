@@ -1,0 +1,80 @@
+<div class="bx--grid bg-02 section-4rem post-container">
+  <div class="bx--row post-content">
+
+<?php
+// check if the flexible content field has rows of data
+if( have_rows('flexible_content') ):
+
+     // loop through the rows of data
+    while ( have_rows('flexible_content') ) : the_row();
+
+        if( get_row_layout() == 'ingress' ):?>
+          <div class="bx--col-xs-12 bx--col-md-12 bx--col-lg-12 ingress">
+            <p><?= the_sub_field('paragraph', false, false);?><p>
+          </div>
+
+        <?php elseif( get_row_layout() == 'h2_section' ):?>
+
+          <div class="bx--col-xs-12 bx--col-md-12 bx--col-lg-12 h2-section">
+            <h2 class="bx--type-gamma"><?= the_sub_field('heading');?></h2>
+            <?= the_sub_field('paragraph');?>
+          </div>
+
+        <?php elseif( get_row_layout() == 'h3_section' ):?>
+
+          <div class="bx--col-xs-12 bx--col-md-12 bx--col-lg-12 h3-section">
+            <h3 class="bx--type-gamma"><?= the_sub_field('heading');?></h3>
+            <?= the_sub_field('paragraph');?>
+          </div>
+
+        <?php elseif( get_row_layout() == 'image' ):?>
+
+          <div class="bx--col-xs-12 bx--col-md-12 bx--col-lg-12 image">
+            <img alt="<?= the_sub_field('alt_text');?>" src="<?= the_sub_field('image');?>"/>
+            <p class="bx--type-caption"><?= the_sub_field('caption');?></p>
+          </div>
+
+        <?php elseif( get_row_layout() == 'special_section' ):?>
+
+          <div class="bx--col-xs-12 bx--col-md-12 bx--col-lg-12 special-section">
+            <?= the_sub_field('text_editor');?>
+          </div>
+
+        <?php elseif( get_row_layout() == 'soft_cta' ):?>
+
+          <div class="bx--col-xs-12">
+
+                <div class="card-lg softcta">
+
+                    <div class="card-img image card-half">
+                      <div class="img-container">
+                        <img class="featured-image" alt="<?= the_sub_field('alt') ?>" src="<?= the_sub_field('image');?>"/>
+                      </div>
+                    </div>
+
+                    <div class="card-content card-half">
+                      <div class="text-container">
+                        <?= the_sub_field('paragraph');?>
+                      </div>
+                      <div class="btn-container">
+                        <a href="<?= the_sub_field('link');?>"><button class="bx--btn bx--btn--primary" type="button"><?= the_sub_field('label');?></button></a>
+                      </div>
+
+                    </div>
+                </div>
+
+          </div>
+
+        <?php endif;
+
+    endwhile;
+
+else :
+
+    // no layouts found
+
+endif;
+
+?>
+</div>
+</div>
