@@ -1,8 +1,6 @@
 <?php
 /* Template Name: About us Template */
-
 get_header();
-
 ?>
 
 <!-- HERO -->

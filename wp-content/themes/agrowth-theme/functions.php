@@ -5,32 +5,7 @@ $page_for_posts = get_option('page_for_posts');
 
 // Register Services custom post type.
 require get_template_directory().'/post-types/service.php';
-// require get_template_directory().'/post-types/faq.php';
 
-// Remove standard textbox when editing new post or page
-function remove_pages_editor(){
-    remove_post_type_support( 'page', 'editor' );
-}
-
-add_action( 'init', 'remove_pages_editor' );
-
-function remove_posts_editor(){
-    remove_post_type_support( 'post', 'editor' );
-}
-
-add_action( 'init', 'remove_posts_editor' );
-
-function services_remove_post_type_support() {
-    remove_post_type_support( 'services', 'editor' );
-}
-
-add_action( 'init', 'services_remove_post_type_support', 10 );
-
-function pages_add_post_type_support() {
-    add_post_type_support( 'page', 'excerpt' );
-}
-
-add_action( 'init', 'pages_add_post_type_support', 10 );
 
 // Add scripts and styles
 add_action('wp_enqueue_scripts', function () {
@@ -41,6 +16,7 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', '', '', true);
+    // wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-3.2.1.js', '','', true);
     wp_enqueue_script('jquery');
 
     wp_register_script('scrollreveal', get_template_directory_uri() . '/js/scrollreveal.min.js', '','', true);

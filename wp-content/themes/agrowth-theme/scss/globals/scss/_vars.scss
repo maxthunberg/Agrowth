@@ -19,11 +19,7 @@ $bx--standard-easing: $carbon--standard-easing;
 
 $transition--base: 250ms;
 $transition--expansion: 300ms;
-
-$transition-default: all $transition--base $carbon--standard-easing;
-
-
-
+$transition--default: all $transition--base $bx--standard-easing;
 
 // Color Theme Variables
 $brand-01: $color__blue-51 !default;
@@ -39,7 +35,7 @@ $text-01: $color__blue-90 !default;
 $text-02: $color__navy-gray-6 !default;
 $text-03: $color__navy-gray-6 !default;
 $field-01: rgba($color__blue-51, 0.1) !default;
-$support-01: $color__red-50 !default;
+$support-01: #E0182D !default;
 $support-02: $color__green-40 !default;
 $support-03: $color__yellow-30 !default;
 $support-04: $color__blue-30 !default;
@@ -51,6 +47,45 @@ $nav-05: $color__teal-40 !default;
 $nav-06: $color__teal-50 !default;
 $nav-07: $color__blue-30 !default;
 $nav-08: $color__blue-51 !default;
+
+// Brand Colors
+$color-primary: #ff6665;
+  $color-primary-darker: #CE312C;
+  $color-primary-dark: #E84C47;
+  $color-primary-light: #FF7F7C;
+  $color-primary-lighter: #FF9896 ;
+
+$color-secondary: #58ED9F;
+  $color-secondary-darker: #14BB69;
+  $color-secondary-dark: #34D583;
+  $color-secondary-light: #6BFFB7;
+  $color-secondary-lighter: #86FFD1;
+
+$color-white: #fff;
+  $color-white-03: #f9f9f9;
+  $color-white-05: #f2f2f2;
+  $color-white-10: #e6e6e6;
+  $color-white-20: #ccc;
+
+$color-grey: #757575;
+$color-dark: #292929;
+$color-black: #1a1a1a;
+
+$brand-01: $color-primary;
+$brand-02: $color-secondary;
+
+$ui-01: $color-white;
+$ui-02: $color-white-03;
+$ui-03: $color-white-05;
+$ui-04: $color-white-10;
+$ui-05: $color-white-20;
+
+$field-01: $ui-02;
+
+$brand-03: $color-grey;
+// $color-dark: #292929;
+// $color-black: #1a1a1a;
+
 
 // Global
 $input-border: 1px solid transparent !default;
@@ -106,88 +141,3 @@ $radio-border-width: 2px !default;
 // Structured Theme Variables
 $structured-list-padding: 2rem !default;
 $structured-list-text-transform: none !default;
-
-
-
-
-
-
-
-
-
-
-$edited: true;
-$brand-01: #35647E; //OLD COLORS
-$brand-02: #022A3A;
-$brand-03: #A4DAE7;
-$text-01: #022A3A;
-$text-02: #35647E;
-$text-03: #35647E;
-
-
-// $brand-01: #367191; // Option 2
-// $brand-02: #043E55;
-// $brand-03: #83F4C8;
-// $text-01: #043E55;
-// $text-02: #367191;
-// $text-03: #367191;
-//
-// $brand-01: #478FB8; // Option 3
-// $brand-02: #005070;
-// $brand-03: #86DBEF;
-// $text-01: #005070;
-// $text-02: #478FB8;
-// $text-03: #005070;
-
-
-
-$ui-01: #ffffff;
-$ui-02: #F3F8F9;
-$ui-03: #E5F1F4;
-$ui-04: #DBD9D6;
-$ui-05: #55565A;
-
-
-// $text-03: rgba(53,100,126,0.5);
-$inverse-01: #ffffff;
-$field-01: #F3F8F9;
-$support-01: #FB2F39;
-$support-02: #6EDA38;
-$support-03: #EFDF2E;
-$support-04: #4E78FD;
-$use-layer: true;
-$input-border: 1px solid transparent;
-$input-label-weight: 400;
-$button-font-weight: 400;
-$button-font-size: .875rem;
-$button-border-radius: 0;
-$button-height: 40px;
-$button-padding: 0 1rem;
-$button-padding-sm: 0 .5rem;
-$button-border-width: 1px;
-$accordion-flex-direction: row;
-$accordion-justify-content: flex-start;
-$accordion-arrow-margin: 0 0 0 .25rem;
-$accordion-title-margin: 0 1rem 0 1rem;
-$accordion-content-padding: 0 1rem 0 1.75rem;
-$card-text-align: center;
-$card-flex-align: center;
-$checkbox-border-width: 2px;
-$snippet-background-color: $field-01;
-$content-switcher-border-radius: 8px;
-$content-switcher-option-border: 1px solid $brand-01;
-$data-table-heading-transform: uppercase;
-$data-table-heading-border-bottom: 1px solid $brand-01;
-$data-table-row-height: 2rem;
-$modal-border-top: $brand-01 4px solid;
-$modal-footer-background-color: $ui-03;
-$progress-indicator-bar-width: 1px inset transparent;
-$progress-indicator-stroke-width: 5;
-$progress-indicator-line-offset: .625rem;
-$radio-border-width: 2px;
-$structured-list-padding: 2rem;
-$structured-list-text-transform: uppercase;
-$nav-01: #022A3A;
-$nav-02: #35647E;
-
-$color-black: #000000;
