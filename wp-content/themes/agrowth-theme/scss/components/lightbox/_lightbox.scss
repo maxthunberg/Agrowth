@@ -36,7 +36,7 @@
 
     svg {
       height: rem(24px);
-      fill: $ui-05;
+      fill: $color-white-20;
     }
   }
   .#{$prefix}--lightbox__item {
@@ -48,7 +48,7 @@
   }
 
   .#{$prefix}--lightbox__footer {
-    background: $ui-01;
+    background: $color-white;
     overflow: hidden;
   }
 }

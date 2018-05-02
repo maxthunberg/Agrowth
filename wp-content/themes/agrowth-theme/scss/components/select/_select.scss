@@ -19,14 +19,14 @@
   }
 
   .#{$prefix}--select-input {
-    @include font-family;
+    @include pt-serif;
     @include typescale('zeta');
     appearance: none;
     display: block;
     width: 100%;
     padding: $spacing-sm $spacing-2xl $spacing-sm $spacing-md;
     color: $text-01;
-    background-color: $field-01;
+    background-color: $field-primary;
     border: $input-border;
     border-radius: 0;
     cursor: pointer;
@@ -47,7 +47,7 @@
   }
 
   .#{$prefix}--select__arrow {
-    fill: $brand-01;
+    fill: $color-primary;
     position: absolute;
     right: 1rem;
     top: 1.175rem;
@@ -64,7 +64,7 @@
   // Override some Firefox user-agent styles
   @-moz-document url-prefix() {
     .#{$prefix}--select-option {
-      background-color: $ui-01;
+      background-color: $color-white;
       color: $text-01;
     }
 
@@ -86,7 +86,7 @@
 
   .#{$prefix}--select-input {
     background-color: transparent;
-    color: $brand-01;
+    color: $color-primary;
     font-weight: 600;
 
     &:disabled ~ * {

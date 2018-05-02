@@ -36,64 +36,69 @@
 
   .#{$prefix}--btn--primary {
     @include button-theme(
-      $brand-01,
+      $color-primary,
       transparent,
-      $inverse-01,
-      $brand-02,
-      $ui-01
+      $color-white,
+      $color-primary-light,
+      $color-white
     );
+    &:active {
+      background-color: $color-primary-light;
+      color: $color-white;
+    }
+
   }
 
   .#{$prefix}--btn--secondary {
     @include button-theme(
       transparent,
-      $brand-01,
-      $brand-01,
-      $brand-01,
-      $brand-01
+      $color-secondary-dark,
+      $color-secondary-dark,
+      $color-secondary-dark,
+      $color-secondary-dark
     );
 
     &:hover,
     &:focus {
-      color: $inverse-01;
+      color: $color-white;
     }
 
     &:active {
-      color: $brand-01;
+      color: $color-secondary-dark;
     }
 
     &:hover > .#{$prefix}--btn__icon,
     &:focus > .#{$prefix}--btn__icon {
-      fill: $inverse-01;
+      fill: $color-white;
     }
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $brand-01;
+      color: $color-secondary-dark;
     }
   }
 
   .#{$prefix}--btn--tertiary {
     @include button-theme(
       transparent,
-      $ui-05,
-      $ui-05,
-      $ui-05,
-      $ui-05
+      $color-white-20,
+      $color-white-20,
+      $color-white-20,
+      $color-white-20
     );
 
     &:hover,
     &:focus {
-      color: $inverse-01;
+      color: $color-white;
     }
 
     &:active {
-      color: $ui-05;
+      color: $color-white-20;
     }
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $ui-05;
+      color: $color-white-20;
     }
   }
 
@@ -101,17 +106,17 @@
     @include button-theme(
       transparent,
       transparent,
-      $brand-01,
-      $brand-01,
-      $brand-01
+      $color-primary,
+      $color-primary,
+      $color-primary
     );
 
     &:hover,
     &:focus {
-      color: $inverse-01;
+      color: $color-white;
 
       .#{$prefix}--btn__icon {
-        fill: $inverse-01;
+        fill: $color-white;
       }
     }
 
@@ -121,10 +126,10 @@
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $brand-01;
+      color: $color-primary;
 
       .#{$prefix}--btn__icon {
-        fill: $brand-01;
+        fill: $color-primary;
       }
     }
   }
@@ -132,47 +137,53 @@
   .#{$prefix}--btn--danger {
     @include button-theme(
       transparent,
-      $support-01,
-      $support-01,
-      $support-01,
-      $support-01
+      $support-error,
+      $support-error,
+      $support-error,
+      $support-error
     );
 
     &:hover {
-      color: $inverse-01;
+      color: $color-white;
       border: $button-border-width solid transparent;
     }
 
     &:focus {
-      color: $inverse-01;
+      color: $color-white;
     }
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $support-01;
-      border: $button-border-width solid $support-01;
+      color: $support-error;
+      border: $button-border-width solid $support-error;
     }
   }
 
   .#{$prefix}--btn--danger--primary {
     @include button-theme(
-      $support-01,
+      $support-error,
       transparent,
-      $inverse-01,
-      darken($support-01, 10%),
-      $ui-01
+      $color-white,
+      darken($support-error, 10%),
+      $color-white
     );
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $ui-01;
-      border: $button-border-width solid $support-01;
+      color: $color-white;
+      border: $button-border-width solid $support-error;
     }
   }
 
   .#{$prefix}--btn--sm {
     height: 2rem;
     padding: $button-padding-sm;
+    letter-spacing: 0;
+  }
+
+  .#{$prefix}--btn--lg {
+    height: rem(44px);
+    padding: $button-padding-lg;
     letter-spacing: 0;
   }
 

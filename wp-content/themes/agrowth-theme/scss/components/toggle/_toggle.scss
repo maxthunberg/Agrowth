@@ -1,177 +1,86 @@
-//-----------------------------
-// Toggle
-//-----------------------------
+.toggle {
+	display: none;
 
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/vars';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/import-once';
-@import '../form/form';
-
-@include exports('toggle') {
-  .#{$prefix}--toggle {
-    @include hidden;
-  }
-
-  .#{$prefix}--toggle__label {
-    @include font-family;
-    position: relative;
-    display: flex;
+	+ .toggle-btn {
+		outline: 0;
+		display: flex;
     align-items: center;
-    transition: $transition--base $carbon--standard-easing;
-    cursor: pointer;
-    margin: $spacing-md 0;
-  }
-
-  .#{$prefix}--toggle__appearance {
-    position: relative;
-    width: rem(48px);
-
+		width: 4rem;
+		height: 2rem;
+		position: relative;
+		cursor: pointer;
+    user-select: none;
+		&:after,
     &:before {
-      position: absolute;
-      display: block;
-      content: '';
-      width: 100%;
-      height: rem(4px);
-      top: -2px;
-      background-color: $ui-05;
-      transition: $transition--base $carbon--standard-easing;
-      cursor: pointer;
+			position: relative;
+			display: flex;
+			content: "";
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		&:after {
+			left: .125rem;
+		}
+
+		&:before {
+			display: none;
+		}
+	}
+
+	&:checked + .toggle-btn:after {
+		left: 2rem;
+    background: $color-primary;
+	}
+}
+
+.toggle-ios {
+	+ .toggle-btn {
+		background: transparent;
+		border-radius: 2rem;
+		padding: 2px;
+		transition: all $transition--base $bx--standard-easing;
+    border: 1px solid $color-grey;
+
+		&:after {
+      border-radius: 2em;
+			background: $color-grey;
+      // transition: all $transition--base $bx--standard-easing;
+      transition:
+        left .25s cubic-bezier(
+          .42,1.35,.45,1
+        ),
+        padding .25s ease, margin .25s ease;
+			box-shadow: $box-shadow--raised;
+		}
+
+    &:hover:after {
+      will-change: padding;
     }
 
-    &:after {
-      box-sizing: border-box;
-      position: absolute;
-      display: block;
-      border: 2px solid $ui-05;
-      cursor: pointer;
-      top: -12px;
-      width: rem(24px);
-      height: rem(24px);
-      background-color: $ui-01;
-      border-radius: 50%;
-      content: '';
-      transition: $transition--base $carbon--standard-easing;
-    }
-  }
+		&:active {
+			box-shadow: none;
+			&:after {
+				padding-right: .75rem;
+			}
+		}
+	}
 
-  .#{$prefix}--toggle--small + .#{$prefix}--toggle__label {
-    width: rem(32px);
-  }
-
-  .#{$prefix}--toggle--small + .#{$prefix}--toggle__label .#{$prefix}--toggle__appearance {
-    width: rem(32px);
-    height: rem(16px);
-
-    &:before {
-      box-sizing: border-box;
-      height: rem(16px);
-      width: rem(32px);
-      border-radius: 0.9375rem;
-      background-color: transparent;
-      border: 2px solid $ui-05;
-      top: 0;
-    }
-
-    &:after {
-      width: rem(10px);
-      height: rem(10px);
-      background-color: $ui-05;
-      border: none;
-      top: 3px;
-      left: 3px;
-    }
-  }
-
-  .#{$prefix}--toggle__check {
-    fill: $ui-05;
-    position: absolute;
-    left: 6px;
-    top: 6px;
-    z-index: 1;
-    transition: $transition--base $carbon--standard-easing;
-    transform: scale(0.2);
-  }
-
-  .#{$prefix}--toggle--small:checked + .#{$prefix}--toggle__label .#{$prefix}--toggle__check {
-    fill: $brand-01;
-    transform: scale(1) translateX(16px);
-  }
-
-  .#{$prefix}--toggle__text--left,
-  .#{$prefix}--toggle__text--right {
-    @include typescale('zeta');
-    position: relative;
-  }
-
-  .#{$prefix}--toggle__text--left {
-    margin-right: $spacing-xs;
-  }
-
-  .#{$prefix}--toggle__text--right {
-    margin-left: $spacing-xs;
-  }
-
-  .#{$prefix}--toggle:checked + .#{$prefix}--toggle__label .#{$prefix}--toggle__appearance {
-    &:before {
-      background-color: $brand-01;
-    }
-
-    &:after {
-      transform: translateX(24px);
-      background-color: $brand-01;
+	&:checked + .toggle-btn {
+    background: transparent;
+    border: 1px solid $color-primary;
+    &:active {
       box-shadow: none;
-      border-color: $brand-01;
+      &:after {
+  			background: $color-primary;
+        transition:
+          left .25s cubic-bezier(
+            .42,1.35,.45,1
+          ),
+          padding .25s ease, margin .25s ease;
+  			box-shadow: $box-shadow--raised;
+        margin-left: -.75rem;
+  		}
     }
-  }
-
-  .#{$prefix}--toggle--small:checked + .#{$prefix}--toggle__label .#{$prefix}--toggle__appearance {
-    &:before {
-      background-color: $brand-01;
-      border-color: $brand-01;
-    }
-
-    &:after {
-      background-color: $ui-01;
-      border-color: $ui-01;
-      margin-left: 0px;
-      transform: translateX(17px);
-    }
-  }
-
-  .#{$prefix}--toggle:focus + .#{$prefix}--toggle__label {
-    .#{$prefix}--toggle__appearance:before {
-      outline: 1px solid transparent;
-    }
-
-    .#{$prefix}--toggle__appearance:after {
-      @include focus-outline('blurred');
-    }
-  }
-
-  .#{$prefix}--toggle--small:focus + .#{$prefix}--toggle__label {
-    .#{$prefix}--toggle__appearance:before {
-      @include focus-outline('blurred');
-    }
-
-    .#{$prefix}--toggle__appearance:after {
-      outline: none;
-      box-shadow: none;
-    }
-  }
-
-  .#{$prefix}--toggle:disabled + .#{$prefix}--toggle__label {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-
-  .#{$prefix}--toggle:disabled + .#{$prefix}--toggle__label .#{$prefix}--toggle__appearance {
-    &:before,
-    &:after {
-      cursor: not-allowed;
-      transition: $transition--base $carbon--standard-easing;
-    }
-  }
+	}
 }

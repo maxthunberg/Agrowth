@@ -14,7 +14,7 @@
   ) {
     .#{$prefix}--order-summary {
       @include typescale('zeta');
-      background-color: $ui-01;
+      background-color: $color-white;
       padding-bottom: 1.25rem;
       width: 18rem;
       height: auto;
@@ -26,11 +26,11 @@
       display: flex;
       align-items: center;
       padding: 0 0 0 1.25rem;
-      border-bottom: 1px solid $ui-05;
+      border-bottom: 1px solid $color-white-20;
 
       .#{$prefix}--dropdown {
         flex: 1;
-        background-color: $ui-01;
+        background-color: $color-white;
         margin-right: rem(1px);
       }
 
@@ -46,7 +46,7 @@
 
       .#{$prefix}--dropdown[data-value=''] .#{$prefix}--dropdown-text,
       .#{$prefix}--dropdown-text {
-        color: $brand-01;
+        color: $color-primary;
       }
     }
 
@@ -59,7 +59,7 @@
     .#{$prefix}--order-list {
       padding: 1.25rem 0;
       margin: 0 1.25rem;
-      border-bottom: 1px solid $ui-05;
+      border-bottom: 1px solid $color-white-20;
     }
 
     .#{$prefix}--order-item {

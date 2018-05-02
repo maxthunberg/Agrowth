@@ -3,7 +3,7 @@
 @include exports('topnav') {
   .#{$prefix}--top-nav {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     display: flex;
     justify-content: space-between;
     background-color: $nav-01;
@@ -31,14 +31,14 @@
       @include typescale('omega');
       list-style: none;
       background-color: $nav-01;
-      color: $inverse-01;
+      color: $color-white;
       height: 100%;
       display: flex;
       align-items: center;
     }
 
     .#{$prefix}--dropdown__arrow {
-      fill: $inverse-01;
+      fill: $color-white;
       right: 0.75rem;
       width: rem(12px);
       height: rem(24px);
@@ -59,7 +59,7 @@
       top: 100%;
       left: 0;
       background-color: $color__navy-gray-3; // anna
-      transition: $transition--base all $carbon--standard-easing;
+      transition: $transition--base all $bx--standard-easing;
       display: flex;
       flex-direction: column;
       opacity: 0;
@@ -81,7 +81,7 @@
     }
 
     .#{$prefix}--dropdown-link {
-      color: $inverse-01;
+      color: $color-white;
     }
   }
 
@@ -115,7 +115,7 @@
     background-color: $nav-01;
     align-items: flex-start;
     text-decoration: none;
-    color: $inverse-01;
+    color: $color-white;
     font-weight: 600;
     margin-right: 1rem;
 
@@ -132,7 +132,7 @@
   .#{$prefix}--top-nav__left-container__link--icon {
     width: 0.675rem;
     height: 0.7rem;
-    fill: $inverse-01;
+    fill: $color-white;
     margin-right: 0.3rem;
   }
 
@@ -197,7 +197,7 @@
   .#{$prefix}--top-nav__right-container__item[data-credit] {
     .#{$prefix}--dropdown-text {
       padding: 0.75rem 2rem 0.75rem 1rem;
-      color: $inverse-01;
+      color: $color-white;
     }
 
     .#{$prefix}--dropdown-list {
@@ -245,7 +245,7 @@
       &:hover {
         outline: 0;
         background-color: initial;
-        color: $inverse-01;
+        color: $color-white;
       }
     }
 
@@ -321,7 +321,7 @@
 
       svg,
       img {
-        fill: $inverse-01;
+        fill: $color-white;
         max-height: 1.5rem;
         max-width: 1.5rem;
       }
@@ -360,7 +360,7 @@
     max-height: 3rem;
     border-radius: 50%;
     width: 100%;
-    fill: $inverse-01;
+    fill: $color-white;
   }
 
   .#{$prefix}--dropdown__profile-dropdown--information {

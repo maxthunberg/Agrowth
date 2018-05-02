@@ -25,11 +25,11 @@
 
   .#{$prefix}--time-picker__input-field {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     @include typescale('zeta');
     display: flex;
     align-items: center;
-    background-color: $field-01;
+    background-color: $field-primary;
     border: 1px solid transparent;
     width: 4.875rem;
     color: $text-01;

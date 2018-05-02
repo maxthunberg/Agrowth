@@ -12,23 +12,29 @@
 
 @include exports('link') {
   .#{$prefix}--link {
+    position: relative;
     @include reset;
-    @include font-family;
+    @include pt-serif;
     @include typescale('zeta');
     @include font-smoothing;
-    font-weight: 600;
-    color: $brand-01;
-    text-decoration: underline;
+    font-weight: 400;
+    color: $color-primary;
+    text-decoration: none;
+    border-bottom: 1px solid $color-white-20;
+    padding: 1px 0;
     transition: $transition--base;
 
     &:visited {
-      color: $brand-01;
+      color: $color-primary;
     }
 
     &:active,
     &:hover,
     &:focus {
-      color: $brand-02;
+      position: relative;
+      color: $color-primary;
+      border-bottom: 1px solid $color-primary;
+      transition: $transition--base;
     }
 
     &:focus {

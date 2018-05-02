@@ -18,7 +18,7 @@
   ) {
     .#{$prefix}--interior-left-nav {
       @include reset;
-      @include font-family;
+      @include pt-serif;
       width: rem(250px);
       position: fixed;
       top: rem(90px);
@@ -96,7 +96,7 @@
           &--expanded {
             .left-nav-list--nested {
               max-height: 20rem;
-              transition: $transition--expansion $carbon--ease-in;
+              transition: $transition--expansion $bx--ease-out;
               overflow: inherit;
               opacity: 1;
 
@@ -138,7 +138,7 @@
       .left-nav-list--nested {
         max-height: 0;
         overflow: hidden;
-        transition: $transition--expansion $carbon--ease-out;
+        transition: $transition--expansion $bx--ease-in;
         padding: 0;
         opacity: 0;
 
@@ -189,7 +189,7 @@
       flex-direction: column;
       width: rem(200px);
       padding-top: rem(20px);
-      transition: background-color 300ms $carbon--standard-easing, width 300ms $carbon--standard-easing;
+      transition: background-color 300ms $bx--standard-easing, width 300ms $bx--standard-easing;
 
       ul,
       li,
@@ -302,7 +302,7 @@
     .#{$prefix}--interior-left-nav--collapsing,
     .#{$prefix}--interior-left-nav--collapsed {
       width: rem(48px);
-      transition: background-color 300ms $carbon--standard-easing, width 300ms $carbon--standard-easing;
+      transition: background-color 300ms $bx--standard-easing, width 300ms $bx--standard-easing;
       cursor: pointer;
       background-color: rgba($color__blue-51, 0.1);
 
@@ -316,7 +316,7 @@
       hr,
       .#{$prefix}--interior-left-nav-collapse__target {
         opacity: 0;
-        transition: opacity 300ms $carbon--standard-easing;
+        transition: opacity 300ms $bx--standard-easing;
         overflow: hidden;
         white-space: nowrap;
       }
@@ -331,7 +331,7 @@
 
       .#{$prefix}--interior-left-nav-collapse__arrow {
         transform: rotate(180deg);
-        transition: transform 300ms $carbon--standard-easing;
+        transition: transform 300ms $bx--standard-easing;
       }
     }
 
@@ -352,7 +352,7 @@
 
     .#{$prefix}--interior-left-nav--expanding {
       width: rem(200px);
-      transition: width 300ms $carbon--standard-easing;
+      transition: width 300ms $bx--standard-easing;
       background-color: #fff;
 
       ul,
@@ -360,14 +360,14 @@
       hr,
       .#{$prefix}--interior-left-nav-collapse__target {
         opacity: 1;
-        transition: opacity 300ms $carbon--standard-easing;
+        transition: opacity 300ms $bx--standard-easing;
         overflow: hidden;
         white-space: nowrap;
       }
 
       .#{$prefix}--interior-left-nav-collapse__arrow {
         transform: rotate(0deg);
-        transition: transform 300ms $carbon--standard-easing;
+        transition: transform 300ms $bx--standard-easing;
       }
     }
   }

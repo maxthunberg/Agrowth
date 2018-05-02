@@ -19,9 +19,9 @@
 
   .#{$prefix}--body {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     color: $text-01;
-    background-color: $ui-02;
+    background-color: $color-white-03;
     line-height: 1;
   }
 }

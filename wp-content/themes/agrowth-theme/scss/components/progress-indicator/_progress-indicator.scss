@@ -9,7 +9,7 @@
 @include exports('progress-indicator') {
   .#{$prefix}--progress {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     display: flex;
     list-style: none;
   }
@@ -20,7 +20,7 @@
     flex-direction: column;
     flex: 1;
     min-width: 7rem;
-    transition: $transition--base all $carbon--standard-easing;
+    transition: $transition--base all $bx--standard-easing;
     overflow: visible;
   }
 
@@ -53,28 +53,28 @@
 
   .#{$prefix}--progress-step--current {
     circle:first-child {
-      stroke: $brand-01;
+      stroke: $color-primary;
       stroke-width: $progress-indicator-stroke-width;
       fill: transparent;
     }
 
     circle:last-child {
-      fill: $brand-01;
+      fill: $color-primary;
     }
 
     .#{$prefix}--progress-label {
       @include font-smoothing;
-      color: $brand-01;
+      color: $color-primary;
       font-weight: 600;
     }
     .#{$prefix}--progress-line {
-      background-color: $brand-01;
+      background-color: $color-primary;
     }
   }
 
   .#{$prefix}--progress-step--incomplete {
     circle {
-      stroke: $ui-05;
+      stroke: $color-white-20;
       stroke-width: $progress-indicator-stroke-width;
       fill: transparent;
     }
@@ -84,28 +84,28 @@
     }
 
     .#{$prefix}--progress-line {
-      background-color: $ui-05;
+      background-color: $color-white-20;
     }
   }
 
   .#{$prefix}--progress-step--complete {
     circle {
-      stroke: $brand-01;
+      stroke: $color-primary;
       stroke-width: $progress-indicator-stroke-width;
       fill: transparent;
     }
 
     polygon {
-      fill: $brand-01;
+      fill: $color-primary;
     }
 
     .#{$prefix}--progress-label {
       @include font-smoothing;
-      color: $brand-01;
+      color: $color-primary;
       font-weight: 600;
     }
     .#{$prefix}--progress-line {
-      background-color: $brand-01;
+      background-color: $color-primary;
     }
   }
 }

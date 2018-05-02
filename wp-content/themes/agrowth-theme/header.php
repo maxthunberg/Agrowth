@@ -9,6 +9,7 @@
   <?php wp_head(); ?>
 
 </head>
+<?php global $page_for_posts; ?>
 
 <body>
 

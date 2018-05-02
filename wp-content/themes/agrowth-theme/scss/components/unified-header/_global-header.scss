@@ -3,7 +3,7 @@
 @include exports('global-header') {
   .#{$prefix}--global-header {
     @include layer('sticky-nav');
-    @include font-family;
+    @include pt-serif;
     width: 100%;
     position: fixed;
     top: rem(36px);
@@ -178,7 +178,7 @@
   }
 
   .#{$prefix}--global-header__menu .#{$prefix}--dropdown-list {
-    transition: $transition--base all $carbon--standard-easing;
+    transition: $transition--base all $bx--standard-easing;
     transform: translateY(-150%);
     opacity: 0;
     visibility: hidden;

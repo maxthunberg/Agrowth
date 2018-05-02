@@ -1,0 +1,23 @@
+
+		<div class="section-2col">
+
+			<a class="card-link" href="<?= the_permalink(); ?>">
+		    <div class="card card-service--sm">
+
+		      <div class="service-img-container">
+
+		        <?php if( get_the_post_thumbnail_url() ): ?>
+		          <img src="<?= get_the_post_thumbnail_url(); ?>" class="service-img" alt="" />
+		        <?php endif; ?>
+
+		      </div>
+
+		      <div class="service-text-container">
+		        <h3 class="bx--type-delta_subheading service-heading"><?= get_the_title(); ?></h3>
+		        <p class="service-paragraph"><?= the_excerpt(); ?></p>
+		      </div>
+
+		    </div>
+			</a>
+
+		</div>

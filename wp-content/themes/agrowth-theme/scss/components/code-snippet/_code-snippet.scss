@@ -10,12 +10,15 @@
 @include exports('snippet') {
   .#{$prefix}--snippet--code {
     @include bx--snippet;
-    background-color: $snippet-background-color;
+    background-color: $color-dark;
     padding: $spacing-md $spacing-2xl $spacing-md $spacing-md;
   }
 
   .#{$prefix}--snippet code {
     @include typescale('epsilon');
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: $color-white;
   }
 
   .#{$prefix}--snippet--code .#{$prefix}--snippet-container {
@@ -32,7 +35,7 @@
   .#{$prefix}--snippet--terminal {
     @include bx--snippet;
     background-color: $text-01;
-    color: $inverse-01;
+    color: $color-white;
     height: 3.5rem;
     padding: 0 $spacing-2xl 0 $spacing-md;
   }
@@ -47,21 +50,21 @@
   }
 
   .#{$prefix}--snippet__icon {
-    fill: $brand-01;
+    fill: $color-secondary-dark;
     height: rem(24px);
     width: rem(18px);
     transition: $transition--base;
 
     &:hover {
-      fill: $brand-02;
+      fill: $color-secondary;
     }
   }
 
   .#{$prefix}--snippet--terminal .#{$prefix}--snippet__icon {
-    fill: $inverse-01;
+    fill: $color-white;
 
     &:hover {
-      fill: $brand-02;
+      fill: $color-secondary;
     }
   }
 
@@ -84,9 +87,9 @@
   }
 
   .#{$prefix}--snippet .#{$prefix}--btn--copy__feedback {
-    @include font-family;
+    @include pt-serif;
     z-index: z('overlay');
-    font-weight: 600;
+    font-weight: 400;
     left: inherit;
     top: 1rem;
     right: 1.25rem;

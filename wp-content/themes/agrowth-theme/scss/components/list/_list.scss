@@ -14,7 +14,7 @@
   .#{$prefix}--list--unordered,
   .#{$prefix}--list--ordered {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     @include typescale('zeta');
     @include font-smoothing;
     margin-left: $spacing-xl;

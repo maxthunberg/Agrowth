@@ -1,7 +1,7 @@
 
 <?php wp_footer(); ?>
 
-<?php // include( get_template_directory() . '/phtml-components/footer/footer.phtml');?>
+<?php include( get_template_directory() . '/phtml/components/footer/footer.phtml');?>
 
 <script>
 </script>

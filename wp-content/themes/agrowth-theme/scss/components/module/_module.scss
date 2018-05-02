@@ -18,7 +18,7 @@
   ) {
     .#{$prefix}--module {
       @include reset;
-      @include font-family;
+      @include pt-serif;
       display: flex;
       flex-direction: column;
       padding: rem(10px);
@@ -27,7 +27,7 @@
 
       .#{$prefix}--module__inner {
         @include layer('raised');
-        background-color: $ui-01;
+        background-color: $color-white;
         border: 1px solid transparent;
       }
 
@@ -35,7 +35,7 @@
         display: flex;
         align-items: center;
         padding: 1rem 1.5rem;
-        border-bottom: 1px solid $ui-04;
+        border-bottom: 1px solid $color-white-10;
       }
 
       .#{$prefix}--module__title {

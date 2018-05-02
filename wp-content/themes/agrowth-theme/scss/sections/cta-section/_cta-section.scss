@@ -1,0 +1,39 @@
+.cta-section.primary {
+  @include linear-gradient($color-primary, $color-primary-light)
+}
+
+.cta-section.secondary {
+  @include linear-gradient($color-secondary-dark, $color-secondary)
+}
+
+
+.cta-section {
+  @include linear-gradient($color-primary, $color-primary-light)
+  padding: 2rem 0;
+  border-bottom: 1px solid $color-white-10;
+
+  .bx--row {
+    .cta-section-container {
+      @include customflex( 0, center, center, 0);
+
+      .text-container {
+        @include customflex( column, flex-start, center, 0);
+        margin-right: 3rem;
+
+        .text-container_heading, .text-container_paragraph {
+          color: $color-white;
+        }
+        .text-container_heading {
+          margin-bottom: .25rem;
+        }
+
+      }
+      button {
+        box-shadow: $box-shadow--temporary-nav;
+      }
+
+    }
+
+  }
+
+}

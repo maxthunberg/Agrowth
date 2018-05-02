@@ -8,10 +8,16 @@
 @mixin css-body {
   body {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     color: $text-01;
-    background-color: $ui-01;
+    background-color: $color-white-03;
     line-height: 1;
+    ::selection {
+      background: $color-white-10;
+    }
+    ::-moz-selection {
+      background: $color-white-10;
+    }
   }
 }
 

@@ -45,11 +45,11 @@
 
 @mixin focus-outline($type: 'border') {
   @if ($type == 'border') {
-    outline: 1px solid $brand-01;
+    outline: 1px solid $color-primary;
   }
 
   @if ($type == 'blurred') {
-    box-shadow: 0 0 0 3px $color__blue-20;
+    box-shadow: 0 0 0 3px $color-white-10;
     outline: 1px solid transparent;
   }
 }
@@ -75,7 +75,7 @@
 
 @mixin button-reset($width: true) {
   @include reset;
-  @include font-family;
+  @include pt-serif;
   @include font-smoothing;
   @include letter-spacing;
   display: inline-block;

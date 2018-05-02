@@ -7,7 +7,7 @@
 
 @include exports('tags') {
   .#{$prefix}--tag {
-    @include font-family;
+    @include pt-serif;
     @include typescale('omega');
     display: inline-flex;
     align-items: center;

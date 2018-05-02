@@ -10,14 +10,14 @@
 @include exports('accordion') {
   .#{$prefix}--accordion {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     list-style: none;
     width: 100%;
   }
 
   .#{$prefix}--accordion__item {
-    transition: all $transition--base $carbon--standard-easing;
-    border-top: 1px solid $ui-04;
+    transition: all $transition--base $bx--standard-easing;
+    border-top: 1px solid $color-white-10;
     overflow: hidden;
 
     &:focus {
@@ -31,7 +31,7 @@
     }
 
     &:last-child {
-      border-bottom: 1px solid $ui-04;
+      border-bottom: 1px solid $color-white-10;
     }
   }
 
@@ -59,27 +59,30 @@
   }
 
   .#{$prefix}--accordion__arrow {
-    transition: all $transition--base $carbon--standard-easing;
+    transition: all $transition--base $bx--standard-easing;
     height: 1.25rem;
     width: 1.25rem;
     padding: $spacing-2xs $spacing-3xs $spacing-2xs $spacing-2xs;
     margin: $accordion-arrow-margin;
-    fill: $ui-05;
+    fill: $color-white-20;
   }
 
   .#{$prefix}--accordion__title {
     margin: $accordion-title-margin;
+    @include letter-spacing;
+    text-transform: uppercase;
+    @include typescale('epsilon');
   }
 
   .#{$prefix}--accordion__content {
-    transition: all $transition--expansion $carbon--ease-out;
+    transition: all $transition--expansion $bx--ease-in;
     padding: $accordion-content-padding;
     height: 0;
     visibility: hidden;
     opacity: 0;
 
     p {
-      @include typescale('zeta');
+      @include typescale('epsilon');
     }
   }
 }
@@ -93,11 +96,11 @@
     height: auto;
     visibility: visible;
     opacity: 1;
-    transition: all $transition--expansion $carbon--ease-in;
+    transition: all $transition--expansion $bx--ease-out;
   }
 
   .#{$prefix}--accordion__arrow {
     transform: rotate(90deg);
-    fill: $brand-01;
+    fill: $color-primary;
   }
 }

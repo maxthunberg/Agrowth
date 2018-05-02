@@ -11,7 +11,7 @@
   }
 
   .#{$prefix}--form-item {
-    @include font-family;
+    @include pt-serif;
     flex: 1;
     margin-right: $spacing-md;
     margin-bottom: $spacing-lg;
@@ -24,7 +24,7 @@
 
   .#{$prefix}--label {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     @include typescale('zeta');
     font-weight: $input-label-weight;
     display: inline-block;
@@ -43,7 +43,7 @@
   input[data-invalid],
   textarea[data-invalid],
   select[data-invalid] {
-    box-shadow: 0 2px 0px 0px $support-01;
+    box-shadow: 0 2px 0px 0px $support-error;
 
     ~ .#{$prefix}--form-requirement {
       max-height: rem(200px);
@@ -62,7 +62,7 @@
     &::before {
       content: '*';
       display: inline-block;
-      color: $support-01;
+      color: $support-error;
     }
   }
 }

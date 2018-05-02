@@ -8,7 +8,7 @@
 
 @include exports('content-switcher') {
   .#{$prefix}--content-switcher {
-    @include font-family;
+    @include pt-serif;
     display: flex;
     height: rem(40px);
   }
@@ -17,24 +17,24 @@
     @include reset;
     @include font-smoothing;
     @include typescale('zeta');
-    @include font-family;
+    @include pt-serif;
     background-color: transparent;
     display: flex;
     align-items: center;
     padding: 0 $spacing-xl;
     margin: 0;
     text-decoration: none;
-    border: 1px solid $brand-01;
-    color: $brand-01;
+    border: 1px solid $color-primary;
+    color: $color-primary;
 
     &:focus {
       outline: 1px solid transparent;
       box-shadow: 0 2px 0 0 $color__blue-20, 0 -2px 0 0 $color__blue-20;
-      background-color: $brand-02;
+      background-color: $color-secondary;
       z-index: 2;
-      border-color: $brand-02;
+      border-color: $color-secondary;
       text-decoration: underline;
-      color: $inverse-01;
+      color: $color-white;
     }
 
     &:hover {
@@ -43,9 +43,9 @@
 
     &:hover,
     &:active {
-      background-color: $brand-02;
-      border-color: $brand-02;
-      color: $inverse-01;
+      background-color: $color-secondary;
+      border-color: $color-secondary;
+      color: $color-white;
     }
   }
 
@@ -71,7 +71,7 @@
     border-top-left-radius: $content-switcher-border-radius;
 
     &:hover {
-      border-color: $brand-02;
+      border-color: $color-secondary;
     }
 
     &:focus {
@@ -85,7 +85,7 @@
     border-bottom-right-radius: $content-switcher-border-radius;
 
     &:hover {
-      border-color: $brand-02;
+      border-color: $color-secondary;
     }
 
     &:focus {
@@ -95,13 +95,13 @@
   }
 
   .#{$prefix}--content-switcher-btn.#{$prefix}--content-switcher--selected {
-    background-color: $brand-01;
-    color: $inverse-01;
+    background-color: $color-primary;
+    color: $color-white;
     font-weight: 400;
     outline: 1px solid transparent;
 
     &:hover {
-      border-color: $brand-01;
+      border-color: $color-primary;
     }
   }
 }

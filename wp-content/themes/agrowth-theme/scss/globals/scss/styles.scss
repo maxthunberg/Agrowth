@@ -2,7 +2,7 @@
 // 🌍 Global
 //-------------------------
 
-$css--font-face: false !default;
+$css--font-face: true !default;
 $css--helpers: true !default;
 $css--body: true !default;
 $css--use-experimental-grid: false !default;
@@ -10,7 +10,7 @@ $css--use-experimental-grid-fallback: false !default;
 $css--use-layer: true !default;
 $css--reset: true !default;
 $css--typography: true !default;
-$css--plex: true !default;
+$css--plex: false !default;
 
 @import 'colors';
 @import 'vars';
@@ -26,6 +26,8 @@ $css--plex: true !default;
 @import 'css--body';
 @import 'css--typography';
 @import 'grid';
+@import 'sections';
+@import 'flexbox';
 
 // Media queries
 
@@ -120,6 +122,14 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 
 @import '../../sections/navbar/navbar';
 @import '../../sections/hero/hero';
+@import '../../sections/cta-section/cta-section';
+@import '../../sections/widgets/widgets';
+@import '../../sections/services/services-sm';
+@import '../../sections/consultants/consultants-sm';
+@import '../../sections/resources/resources-slider';
+@import '../../sections/client-logos/client-logos';
+@import '../../sections/interactive-tool/interactive-tool--frontpage';
+@import '../../sections/interactive-tool/interactive-tool--about-us';
 
 
 //-------------------------------------

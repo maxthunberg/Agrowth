@@ -1,3 +1,64 @@
-<nav class="bx--navbar">
-<h3>Hejsan</h3>
+<nav class="bx--grid bx--navbar start">
+  <!--left section -->
+  <div class="navbar-left">
+    <a class="logo--link" href="/"><img class="logo" src="<?= get_stylesheet_directory_uri(); ?>/icons/agrowth-logo--icn.svg" /></a>
+    <?php //wp_nav_menu( array( 'theme_location' => 'main','fallback_cb'=> 'fallbackmenu1' ) ); ?>
+
+        <!-- Navbar menu -->
+        <?php if( have_rows('navbar_menu', 'option') ): ?>
+
+          	<ul class="navbar-ul">
+
+          	<?php while( have_rows('navbar_menu', 'option') ): the_row(); ?>
+
+          		<li class="navbar-li">
+
+                <?php
+                // vars
+                $link = get_sub_field('menu_link', 'option');
+                $label = get_sub_field('link_animation', 'option');
+
+                if( $link ):?>
+
+                	<a class="navbar-link" href="<?= $link['url']; ?>" target="<?= $link['target']; ?>">
+                    <?= $link['title']; ?>
+                    <?php if ( $label):?><span class="link-label"></span><?php endif;?>
+                  </a>
+
+                <?php endif; ?>
+
+          		</li>
+
+          	<?php endwhile; ?>
+
+          	</ul>
+
+        <?php endif; ?>
+  </div>
+
+  <!--right section-->
+  <div class="navbar-right">
+
+    <!-- CTA button -->
+    <button class="bx--btn bx--btn--primary bx--btn--lg" type="button">
+      <?php the_field('cta_btn_label', 'option');?> Kontakta oss
+      <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+        <polygon fill="#FFFFFF" fill-rule="evenodd" points="134 14 137.682 21.365 144.667 22.001 137.682 22.635 134 30 150 22.001" transform="translate(-134 -14)"/>
+      </svg>
+    </button>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger">
+    <div class="hamburger-line line-1"></div>
+    <div class="hamburger-line line-2"></div>
+    <div class="hamburger-line line-3"></div>
+  </div>
+
+
+  </div>
+
 </nav>
+
+
+<!-- Reading indicator for blog single pages -->
+<?php  include( get_template_directory() . '/phtml/components/reading-indicator/reading-indicator.phtml');?>

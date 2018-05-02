@@ -15,28 +15,28 @@
   }
 
   .#{$prefix}--tooltip__trigger {
-    @include font-family;
+    @include pt-serif;
     @include typescale('epsilon');
     display: inline-flex;
     align-items: center;
     color: $text-01;
-    font-weight: 600;
+    font-weight: 400;
 
     svg {
-      fill: $brand-01;
+      fill: $color-primary;
       margin-left: $spacing-xs;
       cursor: pointer;
 
       &:focus {
         @include focus-outline('border');
-        fill: $brand-02;
+        fill: $color-primary-light;
       }
     }
 
     &:hover,
     &:focus {
       svg {
-        fill: $brand-02;
+        fill: $color-primary-light;
       }
     }
   }
@@ -47,32 +47,36 @@
     position: absolute;
     display: none;
     max-width: rem(240px);
-    background: $ui-01;
+    background: $color-white;
     padding: $spacing-lg;
-    border: 1px solid $ui-04;
+    border: 1px solid $color-white-10;
     z-index: z('floating');
+    border-radius: rem(4px);
 
     p {
-      @include font-family;
+      @include pt-serif;
       @include typescale('zeta');
     }
 
     .#{$prefix}--tooltip__label {
-      font-weight: 600;
+      font-weight: 400;
+      text-transform: uppercase;
+      @include letter-spacing;
+      color: $color-grey;
       margin-bottom: $spacing-xs;
     }
 
     &:before {
       position: absolute;
-      background: $ui-01;
+      background: $color-white;
       left: 0;
       top: rem(-6px);
       right: 0;
       transform: rotate(-135deg);
       width: 0.6rem;
       height: 0.6rem;
-      border-right: 1px solid $ui-04;
-      border-bottom: 1px solid $ui-04;
+      border-right: 1px solid $color-white-10;
+      border-bottom: 1px solid $color-white-10;
       margin: 0 auto;
       content: '';
     }
@@ -115,7 +119,7 @@
   // Simple CSS only tooltip
   .#{$prefix}--tooltip--simple__top,
   .#{$prefix}--tooltip--simple__bottom {
-    @include font-family;
+    @include pt-serif;
     @include reset;
     @include typescale('delta');
     position: relative;
@@ -124,17 +128,17 @@
     cursor: pointer;
 
     svg {
-      fill: $brand-01;
+      fill: $color-primary;
       margin-left: $spacing-xs;
     }
 
     // Tooltip - renders as a combo of :before and :after elements
     &:before,
     &:after {
-      @include font-family;
+      @include pt-serif;
       position: absolute;
       display: none;
-      background: $ui-01;
+      background: $color-white;
     }
 
     &:before {
@@ -142,7 +146,7 @@
       @include layer('overlay');
       max-width: rem(240px);
       padding: $spacing-lg;
-      border: 1px solid $ui-04;
+      border: 1px solid $color-white-10;
       margin-left: 50%;
       color: $text-01;
       content: attr(data-tooltip-text);
@@ -156,8 +160,8 @@
       left: 0;
       width: 0.6rem;
       height: 0.6rem;
-      border-right: 1px solid $ui-04;
-      border-bottom: 1px solid $ui-04;
+      border-right: 1px solid $color-white-10;
+      border-bottom: 1px solid $color-white-10;
       margin: 0 auto;
       content: '';
     }
@@ -165,7 +169,7 @@
     &:hover,
     &:focus {
       svg {
-        fill: $brand-02;
+        fill: $color-secondary;
       }
 
       &:before,

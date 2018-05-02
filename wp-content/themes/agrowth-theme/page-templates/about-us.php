@@ -4,15 +4,10 @@ get_header();
 ?>
 
 <!-- HERO -->
-<?php include( get_template_directory() . '/phtml-components/hero/hero--sm.phtml');?>
+<?php  include( get_template_directory() . '/phtml/sections/hero/hero.phtml');?>
 
-<!-- CONTACT FORM -->
-<?php include( get_template_directory() . '/phtml-components/contact-form/contact-form.phtml');?>
+<!-- Breadcrumb -->
+<?php  include( get_template_directory() . '/phtml/sections/breadcrumb/breadcrumb.phtml');?>
 
-<!-- MAP -->
-<?php include( get_template_directory() . '/phtml-components/map/map.phtml');?>
-
-<!-- Sendify -->
-<?php include( get_template_directory() . '/phtml-components/tosendify/tosendify.phtml');?> <!--HERO IMAGE WITH ACF-->
 
 <?php get_footer(); ?>

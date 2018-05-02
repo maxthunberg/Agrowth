@@ -23,7 +23,7 @@
       max-height: rem(66px);
       height: rem(66px);
       left: rem(200px);
-      background-color: $ui-02;
+      background-color: $color-white-03;
       width: calc(100% - 200px);
       padding: 0.875rem 3%;
 
@@ -37,7 +37,7 @@
     .#{$prefix}--detail-page-header--with-tabs {
       @include detail-page-header;
       min-height: rem(66px);
-      background-color: $ui-01;
+      background-color: $color-white;
       padding: 0.75rem 3% 0;
       left: 0;
       width: 100%;
@@ -50,8 +50,8 @@
 
     .#{$prefix}--detail-page-header .#{$prefix}--breadcrumb {
       display: none;
-      transition: opacity $transition--base $carbon--standard-easing $transition-time / 2,
-        visibility $transition--base $carbon--standard-easing $transition-time / 2, transform $transition--base $carbon--standard-easing 0s;
+      transition: opacity $transition--base $bx--standard-easing $transition-time / 2,
+        visibility $transition--base $bx--standard-easing $transition-time / 2, transform $transition--base $bx--standard-easing 0s;
       will-change: opacity, visibility, transform;
 
       @include breakpoint(bp--sm--major) {
@@ -70,7 +70,7 @@
       align-items: center;
       min-height: rem(36px);
       height: rem(36px);
-      transition: transform $transition-time $carbon--standard-easing 0s;
+      transition: transform $transition-time $bx--standard-easing 0s;
 
       @include breakpoint(bp--sm--major) {
         padding-bottom: 0;
@@ -105,7 +105,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      border: 1px solid $ui-05;
+      border: 1px solid $color-white-20;
       height: rem(36px);
       width: rem(36px);
       margin-right: 0.625rem;
@@ -135,7 +135,7 @@
       border-radius: 50%;
       height: rem(12px);
       width: rem(12px);
-      background-color: $support-02;
+      background-color: $support-success;
       margin-left: 0.625rem;
     }
 
@@ -144,7 +144,7 @@
       right: 0.75rem;
       display: flex;
       align-items: flex-start;
-      transition: top $transition--base $carbon--standard-easing 0s, transform $transition--base $carbon--standard-easing 0s;
+      transition: top $transition--base $bx--standard-easing 0s, transform $transition--base $bx--standard-easing 0s;
       will-change: transform, top;
 
       @include breakpoint(bp--sm--major) {
@@ -155,8 +155,8 @@
     }
 
     .#{$prefix}--detail-page-header .#{$prefix}--tabs {
-      transition: opacity $transition--base $carbon--standard-easing $transition-time / 2,
-        visibility $transition--base $carbon--standard-easing $transition-time / 2;
+      transition: opacity $transition--base $bx--standard-easing $transition-time / 2,
+        visibility $transition--base $bx--standard-easing $transition-time / 2;
       will-change: opacity, visibility, transform;
     }
 

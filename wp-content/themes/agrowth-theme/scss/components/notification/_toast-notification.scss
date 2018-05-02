@@ -15,14 +15,14 @@
 @include exports('toast-notifications') {
   .#{$prefix}--toast-notification {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     @include font-smoothing;
     @include layer('overlay');
     display: flex;
     justify-content: space-between;
     width: 16.875rem;
     padding: $spacing-md $spacing-md $spacing-xs $spacing-md;
-    background-color: $inverse-01;
+    background-color: $color-white;
     color: $text-01;
     margin-top: $spacing-xs;
     margin-bottom: $spacing-xs;
@@ -34,23 +34,23 @@
   }
 
   .#{$prefix}--toast-notification--error {
-    @include notification--color($support-01);
+    @include notification--color($support-error);
   }
 
   .#{$prefix}--toast-notification--success {
-    @include notification--color($support-02);
+    @include notification--color($support-success);
   }
 
   .#{$prefix}--toast-notification--info {
-    @include notification--color($support-04);
+    @include notification--color($support-info);
   }
 
   .#{$prefix}--toast-notification--warning {
-    @include notification--color($support-03);
+    @include notification--color($support-warning);
   }
 
   .#{$prefix}--toast-notification__close-button {
-    background-color: $inverse-01;
+    background-color: $color-white;
     border: none;
     cursor: pointer;
     margin: 0;

@@ -1,6 +1,6 @@
 @mixin button-base {
   @include reset;
-  @include font-family;
+  @include archivo-black;
   @include font-smoothing;
   @include letter-spacing;
   cursor: pointer;
@@ -17,6 +17,7 @@
   text-decoration: none;
   transition-duration: $transition--base;
   transition-timing-function: ease-in;
+  transition-timing-function: cubic-bezier(.12,.845,.305,1);
   white-space: nowrap;
   line-height: 16px;
 
@@ -47,7 +48,7 @@
   }
 
   &:focus {
-    border: $button-border-width solid $ui-02;
+    border: $button-border-width solid $color-white-03;
     outline: $button-border-width solid $hover-bg-color;
   }
 

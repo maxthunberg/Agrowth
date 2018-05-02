@@ -10,7 +10,7 @@
 @include exports('accordion') {
   .#{$prefix}--accordion {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     list-style: none;
     width: 100%;
   }

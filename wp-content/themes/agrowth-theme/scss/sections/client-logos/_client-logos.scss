@@ -1,0 +1,4 @@
+.client-logos {
+  @include linear-gradient($color-primary, $color-primary-light);
+  border-bottom: 1px solid $color-white-10;
+}

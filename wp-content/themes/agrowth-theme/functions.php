@@ -4,15 +4,21 @@
 $page_for_posts = get_option('page_for_posts');
 
 // Register Services custom post type.
-require get_template_directory().'/post-types/service.php';
+require get_template_directory().'/post-types/services.php';
 
+// Register consultants custom post type.
+require get_template_directory().'/post-types/consultants.php';
 
+// Remove wordpress default text editor
+add_action( 'init', 'init_remove_text_editor' );
+function init_remove_text_editor() {
+	remove_post_type_support( 'page', 'editor' );
+}
 // Add scripts and styles
 add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_style( 'swiper', get_template_directory_uri() . '/scss/swiper.min.css',false,'1.1','all');
-
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/scss/globals/style.css',false,'1.1','all');
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/scss/globals/styles.css',false,'1.1','all');
 
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', '', '', true);
@@ -28,8 +34,8 @@ add_action('wp_enqueue_scripts', function () {
     wp_register_script('carbon-js', get_template_directory_uri() . '/js/carbon-components.min.js', '','', true);
     wp_enqueue_script('carbon-js');
 
-    wp_register_script('script', get_template_directory_uri() . '/js/script.js', '','', true);
-    wp_enqueue_script('script');
+    wp_register_script('main', get_template_directory_uri() . '/js/main.js', '','', true);
+    wp_enqueue_script('main');
 
 });
 
@@ -41,6 +47,29 @@ register_nav_menus( array(
 		'footer' => __( 'Footer Menu', '' )
 	) );
 }
+
+// custom menu example @ https://digwp.com/2011/11/html-formatting-custom-menus/
+function clean_custom_menus() {
+	$menu_name = 'nav-primary'; // specify custom menu slug
+	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+		$menu = wp_get_nav_menu_object($locations[$menu_name]);
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+
+		$menu_list = '<nav>' ."\n";
+		$menu_list .= "\t\t\t\t". '<ul>' ."\n";
+		foreach ((array) $menu_items as $key => $menu_item) {
+			$title = $menu_item->title;
+			$url = $menu_item->url;
+			$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'">'. $title .'</a></li>' ."\n";
+		}
+		$menu_list .= "\t\t\t\t". '</ul>' ."\n";
+		$menu_list .= "\t\t\t". '</nav>' ."\n";
+	} else {
+		// $menu_list = '<!-- no list defined -->';
+	}
+	echo $menu_list;
+}
+
 
 function fallbackmenu1(){ ?>
 			<div id="menu">
@@ -55,73 +84,50 @@ function fallbackmenu2(){ ?>
 <?php }
 
 
-//Sidenav menu
-function clean_sidebar_menu() {
-	$menu_name = 'sidenav'; // specify custom menu slug
-	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
-		$menu = wp_get_nav_menu_object($locations[$menu_name]);
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
-
-		$menu_list = '<nav role="navigation" aria-label="Interior Left Navigation" data-interior-left-nav class="bx--interior-left-nav">' ."\n";
-		$menu_list .= "\t\t\t\t". '<ul role="menubar" class="left-nav-list" data-interior-left-nav-list aria-hidden="false">' ."\n";
-		foreach ((array) $menu_items as $key => $menu_item) {
-			$title = $menu_item->title;
-			$url = $menu_item->url;
-			$menu_list .= "\t\t\t\t\t". '<li role="menuitem" tabindex="0" class="left-nav-list__item" data-interior-left-nav-item><a class="left-nav-list__item-link" href="'. $url .'">'. $title .'</a></li>' ."\n";
-		}
-		$menu_list .= "\t\t\t\t". '</ul>' ."\n";
-
-		$menu_list .= "\t\t\t". '</nav>' ."\n";
-	} else {
-		// $menu_list = '<!-- no list defined -->';
-	}
-	echo $menu_list;
-
-}
-
 //widgets
-
-function register_widget_2() {
-
-	register_sidebar( array(
-		'name'          => 'widget-2',
-		'id'            => 'widget_2',
- 		// 'before_widget' => '<div class="widget-2 widget">',
-		// 'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-2--title">',
-		'after_title'   => '</h3>',
-	) );
-
-}
-add_action( 'widgets_init', 'register_widget_2' );
-
-function register_widget_3() {
-
-	register_sidebar( array(
-		'name'          => 'widget-3',
-		'id'            => 'widget_3',
- 		// 'before_widget' => '<div class="widget-3 widget">',
-		// 'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-3--title">',
-		'after_title'   => '</h3>',
-	) );
-
-}
-add_action( 'widgets_init', 'register_widget_3' );
-
-function register_widget_4() {
-
-	register_sidebar( array(
-		'name'          => 'widget-4',
-		'id'            => 'widget_4',
- 		// 'before_widget' => '<div class="widget-4 widget">',
-		// 'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-4--title">',
-		'after_title'   => '</h3>',
-	) );
-
-}
-add_action( 'widgets_init', 'register_widget_4' );
+// 
+// function register_widget_2() {
+//
+// 	register_sidebar( array(
+// 		'name'          => 'widget-2',
+// 		'id'            => 'widget_2',
+//  		// 'before_widget' => '<div class="widget-2 widget">',
+// 		// 'after_widget'  => '</div>',
+// 		'before_title'  => '<h3 class="widget-2--title">',
+// 		'after_title'   => '</h3>',
+// 	) );
+//
+// }
+//
+// add_action( 'widgets_init', 'register_widget_2' );
+//
+// function register_widget_3() {
+//
+// 	register_sidebar( array(
+// 		'name'          => 'widget-3',
+// 		'id'            => 'widget_3',
+//  		// 'before_widget' => '<div class="widget-3 widget">',
+// 		// 'after_widget'  => '</div>',
+// 		'before_title'  => '<h3 class="widget-3--title">',
+// 		'after_title'   => '</h3>',
+// 	) );
+//
+// }
+// add_action( 'widgets_init', 'register_widget_3' );
+//
+// function register_widget_4() {
+//
+// 	register_sidebar( array(
+// 		'name'          => 'widget-4',
+// 		'id'            => 'widget_4',
+//  		// 'before_widget' => '<div class="widget-4 widget">',
+// 		// 'after_widget'  => '</div>',
+// 		'before_title'  => '<h3 class="widget-4--title">',
+// 		'after_title'   => '</h3>',
+// 	) );
+//
+// }
+// add_action( 'widgets_init', 'register_widget_4' );
 
 
 function wpdocs_after_setup_theme() {
@@ -215,6 +221,56 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
+// Allow SVG uploads
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+
+// Breadcrumbs // Breadcrumbs // Breadcrumbs // Breadcrumbs // Breadcrumbs // Breadcrumbs
+
+function the_breadcrumb() {
+global $post;
+echo '<ul id="breadcrumbs">';
+if (!is_home()) {
+		echo '<li><a href="';
+		echo get_option('home');
+		echo '">';
+		echo 'Home';
+		echo '</a></li><li class="separator"> / </li>';
+		if (is_category() || is_single()) {
+				echo '<li>';
+				the_category(' </li><li class="separator"> / </li><li> ');
+				if (is_single()) {
+						echo '</li><li class="separator"> / </li><li>';
+						the_title();
+						echo '</li>';
+				}
+		} elseif (is_page()) {
+				if($post->post_parent){
+						$anc = get_post_ancestors( $post->ID );
+						$title = get_the_title();
+						foreach ( $anc as $ancestor ) {
+								$output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> <li class="separator">/</li>';
+						}
+						echo $output;
+						echo '<strong title="'.$title.'"> '.$title.'</strong>';
+				} else {
+						echo '<li><strong> '.get_the_title().'</strong></li>';
+				}
+		}
+}
+elseif (is_tag()) {single_tag_title();}
+elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
+elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
+elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
+elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
+elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
+elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+echo '</ul>';
+}
 
 
 // REMOVES COMMENTS // REMOVES COMMENTS // REMOVES COMMENTS // REMOVES COMMENTS // REMOVES COMMENTS // REMOVES COMMENTS
@@ -296,40 +352,11 @@ function setPostViews($postID) {
     }
 }
 
-// Use posts post type as LEARN
-
-function revcon_change_post_label() {
-    global $menu;
-    global $submenu;
-    $menu[5][0] = 'Learn';
-    $submenu['edit.php'][5][0] = 'All Posts';
-    $submenu['edit.php'][10][0] = 'New Post';
-    $submenu['edit.php'][16][0] = 'Manage Tags';
-}
-function revcon_change_post_object() {
-    global $wp_post_types;
-    $labels = &$wp_post_types['post']->labels;
-    $labels->name = 'All Posts';
-    $labels->singular_name = 'Learn';
-    $labels->add_new = 'New post';
-    $labels->add_new_item = 'New post';
-    $labels->edit_item = 'Edit post';
-    $labels->new_item = 'Learn';
-    $labels->view_item = 'View Learn';
-    $labels->search_items = 'Search Learn';
-    $labels->not_found = 'No Learn found';
-    $labels->not_found_in_trash = 'No Learn found in Trash';
-    $labels->all_items = 'All Learn';
-    $labels->menu_name = 'Learn';
-    $labels->name_admin_bar = 'Learn';
-}
 
 function includeFlexibleServices($servicename) {
   include( get_template_directory() . '/phtml-components/flexible-content/flexible-services.phtml');
 }
 
-add_action( 'admin_menu', 'revcon_change_post_label' );
-add_action( 'init', 'revcon_change_post_object' );
 
 //contact form 7 remove auto p tags
 add_filter( 'wpcf7_autop_or_not', '__return_false' );

@@ -6,7 +6,7 @@
     width: rem(60px);
     height: rem(50px);
     position: relative;
-    transition: $transition--base $carbon--standard-easing;
+    transition: $transition--base $bx--standard-easing;
     cursor: pointer;
     z-index: 9999;
 
@@ -32,7 +32,7 @@
     top: 1.5rem;
     left: rem(20px);
     width: 100%;
-    transition: $transition--base $carbon--standard-easing;
+    transition: $transition--base $bx--standard-easing;
     display: flex;
 
     span,

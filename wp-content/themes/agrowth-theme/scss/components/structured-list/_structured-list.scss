@@ -25,7 +25,7 @@
 
   .#{$prefix}--structured-list {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     display: table;
     overflow-x: auto;
     overflow-y: hidden;
@@ -37,8 +37,8 @@
     background-color: transparent;
 
     &.#{$prefix}--structured-list--border {
-      border: 1px solid $ui-04;
-      background-color: $ui-01;
+      border: 1px solid $color-white-10;
+      background-color: $color-white;
     }
 
     &.#{$prefix}--structured-list--condensed .#{$prefix}--structured-list-td {
@@ -48,26 +48,26 @@
 
   .#{$prefix}--structured-list-row {
     display: table-row;
-    border-bottom: 1px solid $ui-04;
-    transition: $transition--base $carbon--standard-easing;
+    border-bottom: 1px solid $color-white-10;
+    transition: $transition--base $bx--standard-easing;
 
     .#{$prefix}--structured-list--selection &:hover:not(.#{$prefix}--structured-list-row--header-row) {
-      background-color: rgba($brand-02, 0.1);
+      background-color: rgba($color-secondary, 0.1);
       cursor: pointer;
     }
 
     // Deprecated
     [data-structured-list] &:hover:not(.#{$prefix}--structured-list-row--header-row) {
-      background-color: rgba($brand-02, 0.1);
+      background-color: rgba($color-secondary, 0.1);
       cursor: pointer;
     }
 
     &.#{$prefix}--structured-list-row--selected {
-      background-color: rgba($brand-02, 0.1);
+      background-color: rgba($color-secondary, 0.1);
     }
 
     &.#{$prefix}--structured-list-row--header-row {
-      border-bottom: 2px solid $brand-01;
+      border-bottom: 2px solid $color-primary;
       cursor: inherit;
     }
 
@@ -115,15 +115,15 @@
     display: inline-block;
     fill: transparent;
     vertical-align: middle;
-    transition: $transition--base $carbon--standard-easing;
+    transition: $transition--base $bx--standard-easing;
 
     .#{$prefix}--structured-list-row:hover & {
-      fill: rgba($brand-02, 0.1);
+      fill: rgba($color-secondary, 0.1);
     }
 
     .#{$prefix}--structured-list-input:checked + .#{$prefix}--structured-list-row &,
     .#{$prefix}--structured-list-input:checked + .#{$prefix}--structured-list-td & {
-      fill: $brand-02;
+      fill: $color-secondary;
     }
   }
 

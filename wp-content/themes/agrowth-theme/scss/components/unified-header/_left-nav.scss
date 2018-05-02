@@ -11,7 +11,7 @@
     left: 0;
     height: 100%;
     transform: translate3d(-100%, 0, 0);
-    transition: 300ms $carbon--standard-easing;
+    transition: 300ms $bx--standard-easing;
     box-shadow: none;
     visibility: hidden;
   }
@@ -27,7 +27,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-color: $ui-01;
+    background-color: $color-white;
     padding: 0 0 4rem 0;
     overflow-y: auto;
     overflow-x: hidden;
@@ -37,7 +37,7 @@
     @include reset;
     height: rem(50px);
     width: 100%;
-    background-color: $ui-01;
+    background-color: $color-white;
   }
 
   .#{$prefix}--left-nav__header {
@@ -70,7 +70,7 @@
   .#{$prefix}--left-nav__header--title {
     @include typescale('epsilon');
     @include font-smoothing;
-    color: $inverse-01;
+    color: $color-white;
     font-weight: 600;
     margin-right: auto;
   }
@@ -78,7 +78,7 @@
   .#{$prefix}--left-nav__header--taxonomy-icon {
     width: rem(24px);
     height: rem(24px);
-    fill: $inverse-01;
+    fill: $color-white;
     margin-right: 1rem;
   }
 
@@ -86,7 +86,7 @@
     width: rem(14px);
     height: rem(14px);
     display: block;
-    fill: $inverse-01;
+    fill: $color-white;
   }
 
   .#{$prefix}--left-nav__sections {
@@ -96,7 +96,7 @@
     width: 100%;
     z-index: 8000;
     position: relative;
-    border-bottom: 1px solid $ui-04;
+    border-bottom: 1px solid $color-white-10;
     background-color: $color__white;
   }
 
@@ -105,8 +105,8 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    transition: $transition--base $carbon--standard-easing;
-    background-color: $ui-01;
+    transition: $transition--base $bx--standard-easing;
+    background-color: $color-white;
 
     &:hover {
       &[data-left-nav-section='apps'] {
@@ -124,11 +124,11 @@
       .#{$prefix}--left-nav__section--link {
         @include font-smoothing;
         font-weight: 600;
-        color: $inverse-01;
+        color: $color-white;
       }
 
       .#{$prefix}--left-nav__section--taxonomy-icon {
-        fill: $inverse-01;
+        fill: $color-white;
       }
     }
   }
@@ -139,7 +139,7 @@
     cursor: pointer;
     position: relative;
     display: flex;
-    background-color: $ui-01;
+    background-color: $color-white;
     top: 0;
     left: 0;
     width: 100%;
@@ -162,7 +162,7 @@
     @extend .#{$prefix}--left-nav__section--active;
     position: absolute;
     z-index: 9999;
-    transition: all 0.3s $carbon--ease-out;
+    transition: all 0.3s $bx--ease-in;
 
     &--50 {
       transform: translateY(100px);
@@ -177,7 +177,7 @@
     }
 
     .#{$prefix}--left-nav__section--taxonomy-icon {
-      fill: $inverse-01;
+      fill: $color-white;
     }
   }
 
@@ -214,9 +214,9 @@
     flex-direction: column;
     margin-bottom: 5rem;
     margin-top: 0;
-    transition: all 250ms $carbon--ease-out;
+    transition: all 250ms $bx--ease-in;
     padding-top: 1rem;
-    background-color: $inverse-01;
+    background-color: $color-white;
   }
 
   .#{$prefix}--left-nav__main-nav--hidden {
@@ -230,12 +230,12 @@
   .#{$prefix}--main-nav__parent-item {
     @include reset;
     opacity: 1;
-    transition: opacity 200ms $carbon--standard-easing;
+    transition: opacity 200ms $bx--standard-easing;
     cursor: pointer;
     width: 100%;
     padding: 0;
     margin-bottom: 0.25rem;
-    background-color: $ui-01;
+    background-color: $color-white;
   }
 
   .#{$prefix}--main-nav__parent-item--fade {
@@ -261,13 +261,13 @@
     justify-content: flex-start;
     text-decoration: none;
     padding: 0.5rem rem(20px);
-    transition: background-color $transition--base $carbon--standard-easing;
+    transition: background-color $transition--base $bx--standard-easing;
     color: $text-01;
 
     .#{$prefix}--parent-item__link--taxonomy-icon {
       width: rem(24px);
       height: rem(24px);
-      transition: $transition--base $carbon--standard-easing;
+      transition: $transition--base $bx--standard-easing;
       margin-right: 1rem;
       fill: $text-01;
     }
@@ -279,7 +279,7 @@
       svg {
         width: rem(10px);
         height: rem(10px);
-        transition: $transition--base $carbon--standard-easing;
+        transition: $transition--base $bx--standard-easing;
         fill: $text-01;
       }
     }
@@ -316,17 +316,17 @@
 
   .#{$prefix}--main-nav__parent-item.#{$prefix}--active-list-item {
     .#{$prefix}--parent-item__link {
-      color: $inverse-01;
+      color: $color-white;
 
       .#{$prefix}--left-nav__main-nav[data-left-nav-list='apps'] & {
         background-color: $nav-06;
 
         &:hover {
-          color: $inverse-01;
+          color: $color-white;
 
           .#{$prefix}--parent-item__link--taxonomy-icon,
           .#{$prefix}--parent-item__link--down-icon svg {
-            fill: $inverse-01;
+            fill: $color-white;
           }
         }
       }
@@ -335,11 +335,11 @@
         background-color: $nav-04;
 
         &:hover {
-          color: $inverse-01;
+          color: $color-white;
 
           .#{$prefix}--parent-item__link--taxonomy-icon,
           .#{$prefix}--parent-item__link--down-icon svg {
-            fill: $inverse-01;
+            fill: $color-white;
           }
         }
       }
@@ -348,26 +348,26 @@
         background-color: $nav-08;
 
         &:hover {
-          color: $inverse-01;
+          color: $color-white;
 
           .#{$prefix}--parent-item__link--taxonomy-icon,
           .#{$prefix}--parent-item__link--down-icon svg {
-            fill: $inverse-01;
+            fill: $color-white;
           }
         }
       }
     }
 
     .#{$prefix}--parent-item__link--taxonomy-icon {
-      fill: $inverse-01;
+      fill: $color-white;
     }
 
     .#{$prefix}--parent-item__link--down-icon svg {
-      fill: $inverse-01;
+      fill: $color-white;
     }
 
     &:hover {
-      color: $inverse-01;
+      color: $color-white;
     }
   }
 
@@ -376,7 +376,7 @@
     @include list;
     list-style: none;
     max-height: 0;
-    transition: 300ms $carbon--standard-easing;
+    transition: 300ms $bx--standard-easing;
     padding: 0;
     opacity: 0;
     overflow: hidden;
@@ -385,7 +385,7 @@
 
   .#{$prefix}--main-nav__parent-item--expanded .#{$prefix}--main-nav__nested-list {
     max-height: 20rem;
-    transition: 300ms $carbon--standard-easing;
+    transition: 300ms $bx--standard-easing;
     opacity: 1;
     margin-top: 0.5rem;
     overflow: visible;
@@ -455,10 +455,10 @@
         background-color: $nav-06;
 
         &:hover {
-          color: $inverse-01;
+          color: $color-white;
 
           .#{$prefix}--parent-item__link--taxonomy-icon {
-            fill: $inverse-01;
+            fill: $color-white;
           }
         }
       }
@@ -467,10 +467,10 @@
         background-color: $nav-04;
 
         &:hover {
-          color: $inverse-01;
+          color: $color-white;
 
           .#{$prefix}--parent-item__link--taxonomy-icon {
-            fill: $inverse-01;
+            fill: $color-white;
           }
         }
       }
@@ -479,10 +479,10 @@
         background-color: $nav-08;
 
         &:hover {
-          color: $inverse-01;
+          color: $color-white;
 
           .#{$prefix}--parent-item__link--taxonomy-icon {
-            fill: $inverse-01;
+            fill: $color-white;
           }
         }
       }
@@ -501,7 +501,7 @@
     outline: none;
     position: absolute;
     z-index: 9999;
-    color: $inverse-01;
+    color: $color-white;
 
     &:before {
       content: '';
@@ -519,7 +519,7 @@
   .#{$prefix}--nested-list__flyout-menu--displayed {
     @include reset;
     display: block;
-    border-left: 1px solid $ui-04;
+    border-left: 1px solid $color-white-10;
   }
 
   .#{$prefix}--flyout-menu__item--link {
@@ -531,7 +531,7 @@
 
   .#{$prefix}--flyout-menu__item {
     @include reset;
-    background-color: $ui-01;
+    background-color: $color-white;
     margin: 0;
     height: rem(37px);
     display: flex;
@@ -557,10 +557,10 @@
       background-color: $nav-06;
 
       & .#{$prefix}--flyout-menu__item--link {
-        color: $inverse-01;
+        color: $color-white;
 
         &:hover {
-          color: $inverse-01;
+          color: $color-white;
         }
       }
     }
@@ -569,10 +569,10 @@
       background-color: $nav-04;
 
       & .#{$prefix}--flyout-menu__item--link {
-        color: $inverse-01;
+        color: $color-white;
 
         &:hover {
-          color: $inverse-01;
+          color: $color-white;
         }
       }
     }
@@ -581,10 +581,10 @@
       background-color: $nav-08;
 
       & .#{$prefix}--flyout-menu__item--link {
-        color: $inverse-01;
+        color: $color-white;
 
         &:hover {
-          color: $inverse-01;
+          color: $color-white;
         }
       }
     }

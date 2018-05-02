@@ -1,0 +1,67 @@
+<?php
+
+global $post;
+?>
+
+<nav class="bx--grid bx--breadcrumb bx--breadcrumb--no-trailing-slash" aria-label="breadcrumb">
+
+<?php if (!is_home()) :?>
+    <div class="bx--breadcrumb-item">
+      <a href="/" class="bx--link">
+        <?php
+          $frontpage_id = get_option( 'page_on_front' );
+          echo get_the_title($frontpage_id);
+        ?>
+      </a>
+    </div>
+
+    <?php if ( is_category() || is_single() ):?>
+
+    <div class="bx--breadcrumb-item">
+      <a href="#" class="bx--link">
+        <?php
+         the_category(' </li><li class="separator"> / </li><li> ');
+
+             if ( is_single() ):
+                 echo '</li><li class="separator"> / </li><li>';
+                 the_title();
+                 echo '</li>';
+             endif;
+
+         elseif ( is_page() ):
+
+           if($post->post_parent):
+               $anc = get_post_ancestors( $post->ID );
+               $title = get_the_title();
+
+               foreach ( $anc as $ancestor ) {
+                   $output = ' <div class="bx--breadcrumb-item"><a class="bx--link" href="'.get_permalink($ancestor).'">'.get_the_title($ancestor).'</a></div>';
+               }
+
+               echo $output;
+
+                 if ( !is_page($frontpage_id) ):?>
+
+                 <div class="bx--breadcrumb-item">
+                   <a class="bx--link_current"><?= $title?></a>
+                 </div>
+
+             <?php endif;
+
+          else:
+
+                if ( !is_page($frontpage_id) ):?>
+
+                <div class="bx--breadcrumb-item">
+                  <a class="bx--link_current"><?= get_the_title();?></a>
+                </div>
+            <?php endif;
+
+        endif;
+
+     endif;
+
+  endif;
+?>
+
+</nav>

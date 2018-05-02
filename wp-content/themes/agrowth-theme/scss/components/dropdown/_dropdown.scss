@@ -16,33 +16,38 @@
 @include exports('dropdown') {
   .#{$prefix}--dropdown {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     @include typescale('zeta');
     position: relative;
     list-style: none;
     display: block;
-    background-color: $field-01;
+    background-color: $color-white-03;
+    border: 1px solid $color-white-10;
     width: 100%;
     height: rem(40px);
     cursor: pointer;
     color: $text-01;
+
+    &:hover {
+      border: 1px solid $color-white-20;
+    }
 
     &:focus {
       @include focus-outline('border');
     }
 
     &.#{$prefix}--dropdown--open:focus {
-      outline: 1px solid transparent;
-      box-shadow: 0 -1px 0 0 $brand-01, 1px 0 0 0 $brand-01, -1px 0 0 0 $brand-01;
+      outline: none;
+      box-shadow: 0 -1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
     }
   }
 
   .#{$prefix}--dropdown--up {
     &.#{$prefix}--dropdown--open:focus {
-      box-shadow: 0 1px 0 0 $brand-01, 1px 0 0 0 $brand-01, -1px 0 0 0 $brand-01;
+      box-shadow: 0 1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
 
       .#{$prefix}--dropdown-list {
-        box-shadow: 0 -1px 0 0 $brand-01, 1px 0 0 0 $brand-01, -1px 0 0 0 $brand-01;
+        box-shadow: 0 -1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
       }
     }
 
@@ -52,14 +57,14 @@
   }
 
   .#{$prefix}--dropdown__arrow {
-    fill: $brand-01;
+    fill: $color-primary;
     position: absolute;
     right: 1rem;
     top: 1.175rem;
     width: rem(10px);
     height: rem(5px);
     pointer-events: none;
-    transition: transform $transition--expansion $carbon--standard-easing;
+    transition: transform $transition--expansion $bx--standard-easing;
     transform-origin: 50% 45%;
   }
 
@@ -73,7 +78,7 @@
     padding-bottom: rem(13px);
     padding-left: $spacing-md;
     padding-right: $spacing-2xl;
-    font-weight: 600;
+    font-weight: 400;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -84,7 +89,7 @@
     @include reset;
     @include layer('overlay');
     @include typescale('zeta');
-    background-color: $ui-01;
+    background-color: $color-white;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -92,12 +97,12 @@
     position: absolute;
     z-index: z('dropdown');
     max-height: 0;
-    transition: max-height $transition--expansion $carbon--ease-out;
+    transition: max-height $transition--expansion $bx--ease-in;
     overflow: hidden;
   }
 
   .#{$prefix}--dropdown-item {
-    transition: opacity $transition--expansion $carbon--ease-out;
+    transition: opacity $transition--expansion $bx--ease-in;
     opacity: 0;
   }
 
@@ -111,10 +116,9 @@
 
     &:hover,
     &:focus {
-      background-color: $brand-01;
-      color: $inverse-01;
+      background-color: $field-primary;
+      color: $color-primary;
       outline: 1px solid transparent;
-      text-decoration: underline;
     }
   }
 
@@ -134,7 +138,7 @@
 
     &:focus {
       .#{$prefix}--dropdown-list {
-        box-shadow: 0 1px 0 0 $brand-01, 1px 0 0 0 $brand-01, -1px 0 0 0 $brand-01;
+        box-shadow: 0 1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
       }
     }
 

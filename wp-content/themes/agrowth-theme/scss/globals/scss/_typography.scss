@@ -1,9 +1,9 @@
 @import 'vars';
 
-$font-family-mono: 'ibm-plex-mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace !default;
-$font-family-sans-serif: 'ibm-plex-sans', Helvetica Neue, Arial, sans-serif !default;
-$font-family-serif: 'ibm-plex-serif', 'Georgia', Times, serif !default;
-$font-family-helvetica: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif !default;
+$font-family-archivo-black: 'Archivo Black', "Arial Black", Gadget, sans-serif !default;
+$font-family-pt-serif: 'PT Serif', "Times New Roman", Times, serif !default;
+$font-family-mono: 'PT Serif', "Times New Roman", Times, serif !default;
+$font-family-pt-serif: 'PT Serif', Times, serif !default;
 
 $base-font-size: 16px !default; // Default, Use with em() and rem() functions
 
@@ -22,13 +22,15 @@ $typescale-map: (
   'p' : 1rem
 );
 
+
 @mixin typescale($size) {
   @if map-has-key($typescale-map, $size) {
     font-size: map-get($typescale-map, $size);
   } @else {
-    @warn 'This is not a step of the Carbon Type Scale!';
+    @warn 'This is not a step of the Agrowth type scale!';
   }
 }
+
 
 @function rem($px) {
   @return ($px / $base-font-size) * 1rem;
@@ -38,16 +40,11 @@ $typescale-map: (
   @return ($px / $base-font-size) * 1em;
 }
 
-@mixin helvetica {
-  font-family: $font-family-helvetica;
+@mixin archivo-black {
+  font-family: $font-family-archivo-black;
 }
-
-@mixin font-family {
-  @if global-variable-exists('css--plex') and $css--plex == true {
-    font-family: $font-family-sans-serif;
-  } @else {
-    font-family: $font-family-helvetica;
-  }
+@mixin pt-serif {
+  font-family: $font-family-pt-serif;
 }
 
 // There are two line heights to choose from. One for headings and one for body text

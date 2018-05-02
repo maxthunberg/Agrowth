@@ -25,10 +25,10 @@
 
   .#{$prefix}--search-input {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     appearance: none;
     border: none;
-    background-color: $field-01;
+    background-color: $field-primary;
     color: $text-01;
     font-weight: 600;
     padding: 0 $spacing-2xl;
@@ -69,12 +69,12 @@
 
   .#{$prefix}--search-magnifier {
     left: 0.75rem;
-    fill: $ui-05;
+    fill: $color-white-20;
   }
 
   .#{$prefix}--search-close {
     transition: $transition--base;
-    fill: $ui-05;
+    fill: $color-white-20;
     cursor: pointer;
     visibility: visible;
     opacity: 1;
@@ -100,7 +100,7 @@
     width: rem(40px);
     min-width: rem(40px);
     margin-left: $spacing-2xs;;
-    background-color: $ui-01;
+    background-color: $color-white;
     position: relative;
     padding: 0;
   }
@@ -111,7 +111,7 @@
     box-sizing: border-box;
     vertical-align: middle;
     transition: $transition--base;
-    fill: $brand-01;
+    fill: $color-primary;
     height: 1rem;
     width: 1rem;
   }
@@ -119,13 +119,13 @@
   .#{$prefix}--search-button:hover,
   .#{$prefix}--search-button:focus {
     cursor: pointer;
-    background-color: $brand-01;
+    background-color: $color-primary;
     outline: 1px solid transparent;
   }
 
   .#{$prefix}--search-button:hover svg,
   .#{$prefix}--search-button:focus svg {
-    fill: $ui-01;
+    fill: $color-white;
   }
 
   .#{$prefix}--search-close--hidden {

@@ -13,7 +13,7 @@
   }
 
   .#{$prefix}--account-switcher__linked-icon {
-    fill: $inverse-01;
+    fill: $color-white;
     height: 1rem;
     width: 1rem;
     margin: 0 0.5rem;
@@ -27,7 +27,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: $inverse-01;
+    color: $color-white;
     padding: 0 1rem;
     background-color: $nav-01;
     cursor: pointer;
@@ -93,7 +93,7 @@
 
   .#{$prefix}--account-switcher__menu__container {
     @include box-shadow('large');
-    transition: $transition--base all $carbon--standard-easing;
+    transition: $transition--base all $bx--standard-easing;
     position: absolute;
     width: auto;
     min-width: rem(350px);
@@ -104,7 +104,7 @@
     top: 100%;
     right: 0;
     transform: translateY(-10%);
-    color: $inverse-01;
+    color: $color-white;
     z-index: 8000;
   }
 

@@ -39,14 +39,14 @@
 
   .#{$prefix}--date-picker__input {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     @include typescale('zeta');
     display: block;
     position: relative;
     height: rem(40px);
     max-width: 9rem;
     padding: 0 $spacing-md;
-    background-color: $field-01;
+    background-color: $field-primary;
     color: $text-01;
     border: 1px solid transparent;
 
@@ -73,7 +73,7 @@
     position: absolute;
     top: 2.25rem;
     left: 1rem;
-    fill: $brand-01;
+    fill: $color-primary;
     cursor: pointer;
     z-index: 1;
   }
@@ -103,7 +103,7 @@
   .#{$prefix}--date-picker__calendar,
   .flatpickr-calendar.open {
     @include layer('pop-out');
-    background-color: $ui-01;
+    background-color: $color-white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,7 +122,7 @@
     }
 
     &:focus {
-      outline: 1px solid $brand-01;
+      outline: 1px solid $color-primary;
     }
   }
 
@@ -141,7 +141,7 @@
     fill: $text-01;
 
     &:hover svg {
-      fill: $brand-01;
+      fill: $color-primary;
     }
   }
 
@@ -173,7 +173,7 @@
   .flatpickr-month .numInputWrapper .numInput {
     font-weight: 600;
     color: $text-01;
-    background-color: $field-01;
+    background-color: $field-primary;
     border: none;
     border-radius: 0;
     min-width: rem(38px);
@@ -181,7 +181,7 @@
     padding: $spacing-2xs;
 
     &:focus {
-      outline: 1px solid $brand-01;
+      outline: 1px solid $color-primary;
     }
   }
 
@@ -197,14 +197,14 @@
       background: none;
 
       &:after {
-        border-bottom-color: $brand-02;
-        border-top-color: $brand-02;
+        border-bottom-color: $color-secondary;
+        border-top-color: $color-secondary;
       }
     }
 
     &:after {
-      border-bottom-color: $brand-01;
-      border-top-color: $brand-01;
+      border-bottom-color: $color-primary;
+      border-top-color: $color-primary;
     }
   }
 
@@ -240,18 +240,18 @@
     border-radius: 0;
 
     &:hover {
-      background: $ui-04;
+      background: $color-white-10;
     }
 
     &:focus {
       outline: none;
-      background: $ui-04;
+      background: $color-white-10;
     }
   }
 
   .#{$prefix}--date-picker__day.today,
   .flatpickr-day.today {
-    border: 2px solid $brand-01;
+    border: 2px solid $color-primary;
   }
 
   .#{$prefix}--date-picker__day.today.no-border,
@@ -262,7 +262,7 @@
   .#{$prefix}--date-picker__day.disabled,
   .flatpickr-day.disabled {
     cursor: not-allowed;
-    color: $ui-05;
+    color: $color-white-20;
 
     &:hover {
       background: transparent;
@@ -271,15 +271,15 @@
 
   .#{$prefix}--date-picker__day.inRange,
   .flatpickr-day.inRange {
-    background: $brand-02;
-    box-shadow: -6px 0 0 $brand-02, 6px 0 0 $brand-02;
+    background: $color-secondary;
+    box-shadow: -6px 0 0 $color-secondary, 6px 0 0 $color-secondary;
     border: 2px solid transparent;
   }
 
   .#{$prefix}--date-picker__day.selected,
   .flatpickr-day.selected {
-    background: $brand-01;
-    color: $inverse-01;
+    background: $color-primary;
+    color: $color-white;
     border: 2px solid transparent;
   }
 
@@ -291,26 +291,26 @@
 
   .#{$prefix}--date-picker__day.endRange.inRange,
   .flatpickr-day.endRange.inRange {
-    background: $ui-01;
+    background: $color-white;
     color: $text-01;
-    border: 2px solid $brand-01;
+    border: 2px solid $color-primary;
     z-index: 3;
     box-shadow: none;
   }
 
   .#{$prefix}--date-picker__day.endRange.inRange.selected,
   .flatpickr-day.endRange.inRange.selected {
-    background: $brand-01;
+    background: $color-primary;
     border: none;
-    color: $inverse-01;
+    color: $color-white;
     box-shadow: none;
   }
 
   .#{$prefix}--date-picker__day.startRange.inRange:not(.selected),
   .flatpickr-day.startRange.inRange:not(.selected) {
     box-shadow: none;
-    background: $ui-01;
-    border: 2px solid $brand-01;
+    background: $color-white;
+    border: 2px solid $color-primary;
     z-index: 3;
   }
 

@@ -10,8 +10,10 @@
 @include exports('breadcrumb') {
   .#{$prefix}--breadcrumb {
     @include typescale('zeta');
-    @include font-family;
+    @include pt-serif;
     display: none;
+    padding: $spacing-md;
+    border-bottom: 1px solid $color-white-10;
 
     @include breakpoint(bp--xs--major) {
       display: flex;
@@ -42,18 +44,30 @@
       margin-right: 0;
     }
   }
+  .#{$prefix}--link_current {
+    white-space: nowrap;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 1px 0;
+    color: $color-dark;
+  }
 
   .#{$prefix}--breadcrumb .#{$prefix}--link {
     white-space: nowrap;
     font-weight: 400;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
+    padding: 1px 0;
+    border-bottom: 1px solid $color-white-20;
+    transition: $transition--base;
+
 
     &:hover,
     &:focus {
       outline: none;
-      color: $brand-01;
-      border-bottom: 1px solid $brand-01;
+      color: $color-primary;
+      border-bottom: 1px solid $color-primary;
+      transition: $transition--base;
+
     }
 
     // Applies to Firefox only

@@ -14,11 +14,11 @@
 
   @if ($status == 'running') {
     &::before {
-      background-color: $support-02;
+      background-color: $support-success;
     }
   } @else if ($status == 'not-running') {
     &::before {
-      background-color: $support-01;
+      background-color: $support-error;
     }
   }
 }

@@ -21,7 +21,7 @@ $list-box-menu-width: rem(300px);
     width: $list-box-width;
     height: $list-box-height;
     max-height: $list-box-height;
-    background-color: rgba($field-01, 0.1);
+    background-color: rgba($field-primary, 0.1);
   }
 
   // Disabled state for a `list-box`
@@ -43,7 +43,7 @@ $list-box-menu-width: rem(300px);
   }
 
   .#{$prefix}--list-box--inline .#{$prefix}--list-box__label {
-    color: $brand-01;
+    color: $color-primary;
   }
 
   .#{$prefix}--list-box--inline .#{$prefix}--list-box__field {
@@ -61,7 +61,7 @@ $list-box-menu-width: rem(300px);
   }
 
   .#{$prefix}--list-box--inline > .#{$prefix}--list-box__field[aria-expanded='true'] ~ .#{$prefix}--list-box__menu {
-    outline: 1px solid $brand-01;
+    outline: 1px solid $color-primary;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   }
 
@@ -82,12 +82,12 @@ $list-box-menu-width: rem(300px);
   }
 
   .#{$prefix}--list-box__field:hover {
-    background: $field-01;
+    background: $field-primary;
   }
 
   .#{$prefix}--list-box__field:focus,
   .#{$prefix}--list-box__field[aria-expanded='true'] {
-    outline: 1px solid $brand-01;
+    outline: 1px solid $color-primary;
   }
 
   .#{$prefix}--list-box__field[disabled] {
@@ -95,7 +95,7 @@ $list-box-menu-width: rem(300px);
   }
 
   .#{$prefix}--list-box__field[aria-expanded='true'] ~ .#{$prefix}--list-box__menu {
-    box-shadow: 0 1px 0 0 $brand-01, 1px 0 0 0 $brand-01, -1px 0 0 0 $brand-01, 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary, 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   }
 
   // Label for a `list-box__field`
@@ -116,12 +116,12 @@ $list-box-menu-width: rem(300px);
     bottom: 0;
     height: 100%;
     padding: 0 1rem;
-    transition: transform 200ms $carbon--standard-easing;
+    transition: transform 200ms $bx--standard-easing;
     cursor: pointer;
   }
 
   .#{$prefix}--list-box__menu-icon > svg {
-    fill: $brand-01;
+    fill: $color-primary;
     height: 100%;
   }
 
@@ -140,16 +140,16 @@ $list-box-menu-width: rem(300px);
     padding: 0 1rem;
     cursor: pointer;
     user-select: none;
-    transition: background-color 200ms $carbon--standard-easing;
+    transition: background-color 200ms $bx--standard-easing;
   }
 
   .#{$prefix}--list-box__selection > svg {
-    fill: $ui-05;
+    fill: $color-white-20;
     height: 100%;
   }
 
   .#{$prefix}--list-box__selection:focus {
-    outline: 1px solid $brand-01;
+    outline: 1px solid $color-primary;
   }
 
   // Modifier for a selection to show that multiple selections have been made
@@ -161,7 +161,7 @@ $list-box-menu-width: rem(300px);
     align-items: center;
     justify-content: center;
     padding: 0;
-    background-color: $brand-01;
+    background-color: $color-primary;
     height: rem(18px);
     color: white;
     line-height: 0;
@@ -179,7 +179,7 @@ $list-box-menu-width: rem(300px);
 
   .#{$prefix}--list-box__selection--multi:focus,
   .#{$prefix}--list-box__selection--multi:hover {
-    background-color: $brand-02;
+    background-color: $color-secondary;
     outline: none;
   }
 
@@ -192,7 +192,7 @@ $list-box-menu-width: rem(300px);
     right: 0;
     top: $list-box-height;
     width: $list-box-width;
-    background-color: $ui-01;
+    background-color: $color-white;
     max-height: rem(120px);
     overflow-y: auto;
     z-index: z('dropdown');
@@ -212,7 +212,7 @@ $list-box-menu-width: rem(300px);
 
   .#{$prefix}--list-box__menu-item:hover,
   .#{$prefix}--list-box__menu-item--highlighted {
-    background-color: rgba($field-01, 0.1);
+    background-color: rgba($field-primary, 0.1);
     color: $text-01;
   }
 

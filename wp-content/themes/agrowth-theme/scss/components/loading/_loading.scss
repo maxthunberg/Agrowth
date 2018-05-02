@@ -35,7 +35,7 @@ $loading__size: 10.5rem;
     height: 2rem;
 
     .#{$prefix}--loading__svg {
-      stroke: $ui-05;
+      stroke: $color-white-20;
     }
   }
 
@@ -45,11 +45,11 @@ $loading__size: 10.5rem;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba($ui-01, 0.6);
+    background-color: rgba($color-white, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 2000ms $carbon--standard-easing;
+    transition: background-color 2000ms $bx--standard-easing;
     z-index: z('overlay');
   }
 

@@ -15,7 +15,7 @@
 @include exports('inline-notifications') {
   .#{$prefix}--inline-notification {
     @include reset;
-    @include font-family;
+    @include pt-serif;
     @include font-smoothing;
     @include typescale('zeta');
     display: flex;
@@ -29,19 +29,19 @@
   }
 
   .#{$prefix}--inline-notification--error {
-    @include inline-notification--color($support-01);
+    @include inline-notification--color($support-error);
   }
 
   .#{$prefix}--inline-notification--success {
-    @include inline-notification--color($support-02);
+    @include inline-notification--color($support-success);
   }
 
   .#{$prefix}--inline-notification--info {
-    @include inline-notification--color($support-04);
+    @include inline-notification--color($support-info);
   }
 
   .#{$prefix}--inline-notification--warning {
-    @include inline-notification--color($support-03);
+    @include inline-notification--color($support-warning);
   }
 
   .#{$prefix}--inline-notification__details {

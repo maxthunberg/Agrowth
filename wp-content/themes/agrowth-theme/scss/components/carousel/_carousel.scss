@@ -19,7 +19,7 @@
   .#{$prefix}--filmstrip {
     display: flex;
     justify-content: space-between;
-    transition: transform 100ms $carbon--ease-in;
+    transition: transform 100ms $bx--ease-out;
     padding: rem(24px) 0;
     width: auto;
   }
@@ -64,7 +64,7 @@
     svg {
       height: rem(24px);
       width: rem(16px);
-      fill: $brand-01;
+      fill: $color-primary;
     }
   }
   .#{$prefix}--carousel__item {

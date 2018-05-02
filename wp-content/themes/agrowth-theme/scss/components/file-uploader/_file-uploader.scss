@@ -44,7 +44,7 @@
     align-items: center;
     justify-content: space-between;
     min-height: rem(30px);
-    background-color: $field-01;
+    background-color: $field-primary;
     padding: 0 $spacing-md;
     margin-bottom: $spacing-md;
 
@@ -74,7 +74,7 @@
     }
 
     .#{$prefix}--loading__svg {
-      stroke: $ui-05;
+      stroke: $color-white-20;
     }
   }
 
@@ -91,10 +91,10 @@
   }
 
   .#{$prefix}--file__state-container .#{$prefix}--file-close {
-    fill: $ui-05;
+    fill: $color-white-20;
   }
 
   .#{$prefix}--file__state-container .#{$prefix}--file-complete {
-    fill: $support-02;
+    fill: $support-success;
   }
 }
