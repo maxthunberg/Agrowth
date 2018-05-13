@@ -3,27 +3,27 @@
     {
       "name": "IBM Blue 20",
       "hex": "#7cc7ff",
-      "scss": "$color__blue-20"
+      "scss": "$color-aqua"
     },
     {
       "name": "IBM Blue 30",
       "hex": "#5aaafa",
-      "scss": "$color__blue-30"
+      "scss": "$color-aqua-darker"
     },
     {
       "name": "IBM Blue 40",
       "hex": "#5596e6",
-      "scss": "$color__blue-40"
+      "scss": "$color-blue"
     },
     {
       "name": "IBM Blue 50",
       "hex": "#4178be",
-      "scss": "$color__blue-50"
+      "scss": "$color-blue"
     },
     {
       "name": "Navy-Gray 3",
       "hex": "#2d3f49",
-      "scss": "$color__navy-gray-3"
+      "scss": "$color-blue"
     },
     {
       "name": "Navy-Gray 2",
@@ -33,7 +33,7 @@
     {
       "name": "IBM Blue 90",
       "hex": "#152935",
-      "scss": "$color__blue-90"
+      "scss": "$color-blue"
     },
     {
       "name": "Navy-Gray 1",
@@ -43,7 +43,7 @@
     {
       "name": "Navy-Gray 7",
       "hex": "#8c9ba5",
-      "scss": "$color__navy-gray-7"
+      "scss": "$color-blue"
     },
     {
       "name": "Navy-Gray 6",
@@ -53,23 +53,23 @@
     {
       "name": "Navy-Gray 5",
       "hex": "#42535c",
-      "scss": "$color__navy-gray-5"
+      "scss": "$color-blue"
     },
     {
       "name": "Navy-Gray 4",
       "hex": "#394b54",
-      "scss": "$color__navy-gray-4"
+      "scss": "$color-blue"
     },
     {
       "white": true,
       "name": "White",
       "hex": "#fff",
-      "scss": "$color__white"
+      "scss": "$color-white"
     },
     {
       "name": "Navy-Gray 8",
       "hex": "#dfe6eb",
-      "scss": "$color__navy-gray-8"
+      "scss": "$color-blue"
     },
     {
       "name": "Navy-Gray 9",
@@ -129,7 +129,7 @@
       "white": true,
       "name": "White",
       "hex": "#ffffff",
-      "scss": "$color__white"
+      "scss": "$color-white"
     },
     {
       "name": "Gray 3",
@@ -154,17 +154,17 @@
     {
       "name": "IBM Blue 40",
       "hex": "#5596e6",
-      "scss": "$color__blue-40"
+      "scss": "$color-blue"
     },
     {
       "name": "IBM Blue 30",
       "hex": "#5aaafa",
-      "scss": "$color__blue-30"
+      "scss": "$color-aqua-darker"
     },
     {
       "name": "IBM Blue 20",
       "hex": "#7cc7ff",
-      "scss": "$color__blue-20"
+      "scss": "$color-aqua"
     },
     {
       "name": "Navy-Gray 1",
@@ -174,12 +174,12 @@
     {
       "name": "IBM Blue 90",
       "hex": "#152935",
-      "scss": "$color__blue-90"
+      "scss": "$color-blue"
     },
     {
       "name": "Navy-Gray 3",
       "hex": "#2d3f49",
-      "scss": "$color__navy-gray-3"
+      "scss": "$color-blue"
     },
     {
       "name": "Navy-Gray 6",
@@ -189,7 +189,7 @@
     {
       "name": "Navy-Gray 7",
       "hex": "#8c9ba5",
-      "scss": "$color__navy-gray-7"
+      "scss": "$color-blue"
     }
   ],
   "light-ui-accent-colors": [

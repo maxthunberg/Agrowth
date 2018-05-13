@@ -9,38 +9,62 @@
     $btnlink = get_sub_field('btn_link');
 
 		?>
-    <div class="bx--grid services-sm section-6rem">
+    <div class="bx--grid services-sm section-4rem">
       <div class="bx--row">
-        <div class="bx--col-lg-12 section-heading">
-          <h5 class="bx--type-delta_subheading"><?= $subheading ?></h5>
-          <h2 class="bx--type-alpha"><?= $heading ?></h2>
-        </div>
+
+	        <div class="bx--col-lg-12 section-heading">
+	          <h5 class="bx--type-delta_subheading"><?= $subheading ?></h5>
+	          <h2 class="bx--type-alpha"><?= $heading ?></h2>
+	        </div>
+
         <div class="bx--col-lg-12 section-wrap">
 
           <?php
-                $args = array(
+                $front = array(
                     'post_type' => 'services',
                     'orderby' => 'title',
                     'order'   => 'DESC',
-                    'posts_per_page' => -1,
+                    'posts_per_page' => 6,
                 );
 
-                $query = new WP_Query( $args );
+								$services = array(
+										'post_type' => 'services',
+										'orderby' => 'title',
+										'order'   => 'ASC',
+										'posts_per_page' => -1,
+								);
+
+								if ( is_front_page() ) {
+									$query = new WP_Query( $front );
+								} else {
+									$query = new WP_Query( $services );
+								}
+
                 ?>
 
-                <?php while ( $query->have_posts() ) : $query->the_post();
+                <?php while ( $query->have_posts() ) : $query->the_post();?>
+									<div class="bx--card section-2col">
 
-                  include( get_template_directory() . '/phtml/sections/cards/card-service-sm.phtml');
+                  	<?php include( get_template_directory() . '/phtml/sections/cards/card-service-sm.phtml');?>
 
-                endwhile; ?>
+									</div>
+              <?php  endwhile; ?>
 
                 <?php
                 wp_reset_postdata();?>
 
         </div>
-        <div class="bx--col-lg-12 padding-top">
-          <a href="<?= $btnlink ?>"><button class="bx--btn bx--btn--primary" type="button"><?= $btnlabel ?></button></a>
-        </div>
+
+				<?php if ( is_front_page() ): ?>
+
+	        <div class="bx--col-lg-12 section-button">
+	          <a href="<?= $btnlink ?>"><button class="bx--btn bx--btn__primary" type="button"><?= $btnlabel ?></button></a>
+	        </div>
+
+				<?php else: ?>
+
+				<?php endif;?>
+
 
       </div>
     </div>

@@ -120,3 +120,34 @@ REASON: #{$reason}';
     @content;
   }
 }
+
+@import 'flexbox';
+
+@mixin customflex($direction, $align, $justify, $wrap) {
+
+  @include flexbox;
+
+  // $direction = row | row-reverse | column | column-reverse
+  @if ( $direction != 0 ) {
+    @include flex-direction($direction);
+  }
+
+  // $align =  flex-start | flex-end | center | baseline | stretch
+  @if ( $align != 0 ) {
+      @include align-items($align);
+  }
+
+  // $justify = flex-start | flex-end | center | space-between | space-around
+  @if ( $justify != 0 ) {
+      @include justify-content($justify);
+  }
+
+  // $wrap = nowrap | wrap | wrap-reverse
+  @if ( $wrap != 0 ) {
+      @include flex-wrap($wrap);
+  }
+}
+
+@mixin row-center-center {
+  @include flexbox();
+}

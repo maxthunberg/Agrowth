@@ -71,6 +71,129 @@
   }
 }
 
+// Card Post
+
+.card-sm {
+  display: flex;
+  flex-direction: column;
+  box-shadow: $box-shadow--raised;
+  background-color: $color-white;
+  padding: 0;
+  height: auto;
+  border-radius: .5rem;
+  border: 1px solid $color-white-10;
+  max-width: rem(352px);
+  overflow: hidden;
+
+  .card-half {
+    display: flex;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 192px;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1.5rem;
+    min-height: rem(106px);
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      .title {
+        color: $color-dark;
+        margin-bottom: .5rem;
+      }
+
+    }
+    .info-container {
+      @include customflex(0, center, flex-start, 0);
+      height: 2rem;
+      margin-bottom: 1rem;
+      .icon {
+        margin-right: .5rem;
+      }
+      p {
+        margin-right: 1.5rem;
+      }
+    }
+
+  }
+
+}
+
+// .tag-container {
+//
+//   .tag {
+//     display: inline-block;
+//     background-color: rgba($color-primary,.1);
+//     border-radius: .25rem;
+//     padding: 5px 8px;
+//     .tag-text {
+//       color: $color-primary-dark;
+//     }
+//   }
+//
+// }
+
+.swiper-slider-outer {
+  flex-basis: 100%;
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      width: 352px!important;
+      padding: 2rem 0;
+    }
+  }
+
+}
+
+
+.img-container {
+  width: 100%;
+  height: 100%;
+  .featured-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-post {
+  position: relative;
+  @include customflex(0, center, flex-start, 0);
+  padding: 2.5rem 2rem;
+  border-radius: .25rem;
+  width: rem(320px);
+  height: auto;
+  .card-img-container {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: auto;
+
+  }
+
+  .service-text-container {
+    @include customflex(column, 0, 0, 0);
+
+  }
+  &:hover {
+    &:before {
+      background: $color-primary;
+    }
+  }
+}
+
 @media (max-width: breakpoint('lg') ) { // 992px
   .card-service--sm {
     .service-img-container {

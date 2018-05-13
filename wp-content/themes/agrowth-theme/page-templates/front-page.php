@@ -26,7 +26,7 @@ get_header();
 <?php  include( get_template_directory() . '/phtml/sections/consultants/consultants-section.phtml');?>
 
 <!-- About us Section -->
-<?php  include( get_template_directory() . '/phtml/sections/interactive-tool/interactive-tool--about-us.phtml');?>
+<?php  include( get_template_directory() . '/phtml/sections/interactive-tool/interactive-circle.phtml');?>
 
 <!-- CTA-section -->
 <?php  include( get_template_directory() . '/phtml/sections/cta-section/cta-section.phtml');?>

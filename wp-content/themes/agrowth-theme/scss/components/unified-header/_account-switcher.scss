@@ -35,14 +35,14 @@
     &:focus,
     &:hover {
       outline: 0;
-      background-color: $color__navy-gray-3; // anna
+      background-color: $color-blue; // anna
 
       .#{$prefix}--account-switcher__toggle--text {
-        color: $color__blue-30; // anna
+        color: $color-aqua-darker; // anna
       }
 
       svg {
-        fill: $color__blue-30; // anna
+        fill: $color-aqua-darker; // anna
       }
     }
   }
@@ -98,7 +98,7 @@
     width: auto;
     min-width: rem(350px);
     height: auto;
-    background-color: $color__navy-gray-3; // anna
+    background-color: $color-blue; // anna
     visibility: hidden;
     opacity: 0;
     top: 100%;
@@ -109,15 +109,15 @@
   }
 
   .#{$prefix}--account-switcher--open {
-    color: $color__blue-30; // anna
+    color: $color-aqua-darker; // anna
 
     .#{$prefix}--account-switcher__toggle {
-      color: $color__blue-30; // anna
-      background-color: $color__navy-gray-3; // anna
+      color: $color-aqua-darker; // anna
+      background-color: $color-blue; // anna
     }
 
     .#{$prefix}--account-switcher__linked-icon {
-      fill: $color__blue-30; // anna
+      fill: $color-aqua-darker; // anna
     }
 
     .#{$prefix}--account-switcher__menu__container {
@@ -136,7 +136,7 @@
     padding: 1rem;
 
     &:first-child {
-      border-bottom: 1px solid $color__navy-gray-5; // anna
+      border-bottom: 1px solid $color-blue; // anna
     }
 
     &:nth-child(n + 2) {
@@ -153,14 +153,14 @@
       a {
         @include typescale('legal');
         padding-right: 1rem;
-        color: $color__blue-30; // anna
+        color: $color-aqua-darker; // anna
 
         &:visited {
-          color: $color__blue-30; // anna
+          color: $color-aqua-darker; // anna
         }
 
         &:hover {
-          color: $color__blue-40; // anna
+          color: $color-blue; // anna
         }
       }
     }
@@ -180,14 +180,14 @@
   .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown {
     @include typescale('zeta');
     flex: 3;
-    background-color: $color__navy-gray-5; // anna
+    background-color: $color-blue; // anna
     display: block;
     flex-direction: column;
     min-width: 200px;
   }
 
   .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown[data-value=''] .#{$prefix}--dropdown-text {
-    color: $color__white; // anna
+    color: $color-white; // anna
   }
 
   .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown--scroll {
@@ -195,18 +195,18 @@
     overflow-y: auto;
 
     &::-webkit-scrollbar {
-      background: $color__navy-gray-4; // anna
+      background: $color-blue; // anna
       width: 0.5rem;
       height: 0.5rem;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: $color__navy-gray-7; // anna
+      background-color: $color-blue; // anna
       border-radius: 10px;
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background-color: $color__navy-gray-8; // anna
+      background-color: $color-blue; // anna
     }
   }
 
@@ -217,16 +217,16 @@
   }
 
   .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown__arrow {
-    fill: $color__blue-30; // anna
+    fill: $color-aqua-darker; // anna
   }
 
   .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown-text {
     padding-right: 2rem;
     align-self: flex-start;
-    background-color: $color__navy-gray-5; // anna
+    background-color: $color-blue; // anna
 
     .#{$prefix}--account-switcher__linked-icon {
-      fill: $color__white; // anna
+      fill: $color-white; // anna
       vertical-align: middle;
     }
   }
@@ -241,15 +241,15 @@
   }
 
   .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown-item {
-    background-color: $color__navy-gray-3; // anna
+    background-color: $color-blue; // anna
 
     > .#{$prefix}--dropdown-link:hover,
     .#{$prefix}--dropdown-link:focus {
-      background-color: $color__blue-30; // anna
-      color: $color__blue-90; // anna
+      background-color: $color-aqua-darker; // anna
+      color: $color-blue; // anna
 
       svg {
-        fill: $color__blue-90; // anna
+        fill: $color-blue; // anna
       }
     }
   }
@@ -264,7 +264,7 @@
     }
 
     svg {
-      fill: $color__white; // anna
+      fill: $color-white; // anna
       pointer-events: none;
       vertical-align: middle;
     }
@@ -272,7 +272,7 @@
 
   .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown--open {
     .#{$prefix}--dropdown-text {
-      color: $color__white; // anna
+      color: $color-white; // anna
     }
 
     .#{$prefix}--dropdown-list {
@@ -283,7 +283,7 @@
     }
 
     .#{$prefix}--dropdown-item {
-      background-color: $color__navy-gray-4; // anna
+      background-color: $color-blue; // anna
     }
   }
 }

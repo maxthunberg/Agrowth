@@ -57,7 +57,7 @@ Below HTML is an example using a Carbon button is used along with a button with 
   </head>
   <body>
     <div class="bx--body carbon--body carbon--html">
-      <button class="carbon bx--btn bx--btn--primary">Carbon</button>
+      <button class="carbon bx--btn bx--btn__primary">Carbon</button>
     </div>
     <div class="another-design-system--body another-design-system--html">
       <button class="another-design-system btn btn-primary">Another design system</button>

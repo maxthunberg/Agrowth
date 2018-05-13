@@ -74,7 +74,7 @@ For example, here's a simple form for a login page that uses a mix of HTML and B
   </section>
   <fieldset>
     <legend>Click Register when you're ready!</legend>
-    <button class="bx--btn bx--btn--primary" type="submit">Register</button>
+    <button class="bx--btn bx--btn__primary" type="submit">Register</button>
   </fieldset>
 </form>
 ```

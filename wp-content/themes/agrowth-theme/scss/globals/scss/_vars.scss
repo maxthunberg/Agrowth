@@ -17,14 +17,14 @@ $transition--expansion: 300ms;
 $transition--default: all $transition--base $bx--standard-easing;
 
 // Color Theme Variables
-$nav-01: $color__navy-gray-1 !default;
-$nav-02: $color__blue-90 !default;
-$nav-03: $color__purple-30 !default;
-$nav-04: $color__purple-60 !default;
-$nav-05: $color__teal-40 !default;
-$nav-06: $color__teal-50 !default;
-$nav-07: $color__blue-30 !default;
-$nav-08: $color__blue-51 !default;
+$nav-01: $color-blue !default;
+$nav-02: $color-blue !default;
+$nav-03: $color-purple !default;
+$nav-04: $color-purple !default;
+$nav-05: $color-teal !default;
+$nav-06: $color-teal !default;
+$nav-07: $color-teal !default;
+$nav-08: $color-teal !default;
 
 // Brand Colors
 $color-primary: #ff6665;
@@ -62,10 +62,10 @@ $field-secondary: rgba($color-secondary, 0.05);
 $field-black: rgba($color-black, 0.05);
 
 
-$support-error: red;
-$support-success: green;
-$support-warning: yellow;
-$support-info: blue;
+$support-error: #e0182d;
+$support-success: #5aa700;
+$support-warning: #efc100;
+$support-info: #5aaafa;
 
 // Global
 $input-border: 1px solid transparent !default;
@@ -79,7 +79,7 @@ $button-height: 40px !default;
 $button-padding-lg: 0 $spacing-lg !default;
 $button-padding: 0 $spacing-md !default;
 $button-padding-sm: 0 $spacing-xs !default;
-$button-border-width: 2px !default;
+$button-border-width: 1px !default;
 
 // Accordion (Reverse)
 $accordion-flex-direction: row !default;

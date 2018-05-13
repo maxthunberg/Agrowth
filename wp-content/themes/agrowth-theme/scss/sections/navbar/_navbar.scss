@@ -12,76 +12,88 @@
   .#{$prefix}--navbar {
     @include customflex(0, center, space-between, 0);
     position: fixed;
+    display: flex;
+    flex-direction: column;
     top:0;
     left:0;
     width: 100%;
-    height: rem(44px);
+    min-height: rem(44px);
     background: $color-white-03;
     border-bottom: 1px solid $color-white-10;
     opacity: 1;
     z-index: z('header');
+    transition: top $transition--base $bx--standard-easing;
+    .navbar-inner {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+        .navbar-left {
+          @include customflex(0, center, flex-start, 0);
+          height: 100%;
+          margin-left: 3rem;
 
-    .navbar-left {
-      @include customflex(0, center, flex-start, 0);
-      height: 100%;
-
-      .logo {
-        max-height: 2rem;
-        margin-right: 2rem
-      }
-
-      .navbar-ul {
-        @include customflex(0, center, flex-start, 0);
-
-        .navbar-li {
-          @include customflex(0, center, center, 0);
-          padding: rem(14px) rem(16px);
-          border-bottom: 1px solid $color-white-10;
-          cursor: pointer;
-          transition: $transition--base;
-
-          &:hover, &:focus {
-            border-bottom: 1px solid $color-primary;
-            transition: $transition--base;
-            .navbar-link{
-              color: $color-primary;
-            }
+          .logo {
+            max-height: 2rem;
+            margin-right: 2rem
           }
 
-          .navbar-link {
-            position: relative;
-            font-size: 1rem;
-            line-height: 1;
-            letter-spacing: 1px;
-            text-decoration: none;
-            color: $color-dark;
-            &:focus {
-              color: $color-primary;
-            }
+          .navbar-ul {
+            @include customflex(0, center, flex-start, 0);
 
-            .link-label {
-                display: block;
+            .navbar-li {
+              position: relative;
+              @include customflex(0, center, center, 0);
+              padding: rem(14px) rem(16px);
+              cursor: pointer;
+              transition: $transition--base;
+              &:before {
                 position: absolute;
-                top: -.125rem;
-                right: -.5rem;
-                background: $color-secondary-dark;
-                height: .5rem;
-                width: .5rem;
-                border-radius: 50%;
-                animation: pulse 2s infinite;
+                content: '';
+                height: 100%;
+                width: 100%;
+                border-bottom: 1px solid $color-white-10;
+                transition: $transition--base;
+              }
+              &:hover:before, &:focus:after {
+                border-bottom: 1px solid $color-primary;
+                transition: $transition--base;
+              }
+
+              &:hover, &:focus {
+                .navbar-link{
+                  color: $color-primary;
+                }
+              }
+
+              .navbar-link {
+                position: relative;
+                font-size: 1rem;
+                line-height: 1;
+                letter-spacing: 1px;
+                text-decoration: none;
+                color: $color-dark;
+                &:focus {
+                  color: $color-primary;
+                }
+
+                .link-label {
+                    display: block;
+                    position: absolute;
+                    top: -.125rem;
+                    right: -.5rem;
+                    background: $color-secondary-dark;
+                    height: .5rem;
+                    width: .5rem;
+                    border-radius: 50%;
+                    animation: pulse 2s infinite;
+                }
+              }
             }
           }
         }
-      }
-    }
-
-
-
-    .navbar-right {
-
-      .bx--btn {
-
-      }
+        .navbar-right {
+          margin-right: 3rem;
+        }
     }
   }
 

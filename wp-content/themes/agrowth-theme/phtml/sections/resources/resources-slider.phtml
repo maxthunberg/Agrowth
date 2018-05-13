@@ -1,11 +1,62 @@
-<div class="bx--grid resources-slider section-8rem">
+<?php if( have_rows('section_resources') ):
+
+	while( have_rows('section_resources') ): the_row();
+
+		// vars
+    $subheading = get_sub_field('subheading');
+    $heading = get_sub_field('heading');
+    $btnlabel = get_sub_field('btn_label');
+    $btnlink = get_sub_field('btn_link');
+
+		?>
+<div class="bx--grid resources-slider ">
   <div class="bx--row">
-    <div class="bx--col-md-6 bx--col-xs-12">
+    <div class="bx--col-lg-12 section-heading_center">
+      <h5 class="bx--type-delta_subheading"><?= $subheading ?></h5>
+      <h2 class="bx--type-alpha"><?= $heading ?></h2>
+    </div>
+    <div class="bx--col-md-6 bx--col-xs-12 swiper-slider-outer">
+      <!-- Slider main container -->
+      <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+              <!-- Slides -->
+              <?php
+                    $args = array(
+                        'post_type' => 'post',
+                        'orderby' => 'date',
+                        'order'   => 'DESC',
+                        'posts_per_page' => 5,
+                    );
 
+                    $query = new WP_Query( $args );
+                    ?>
+
+                    <?php while ( $query->have_posts() ) : $query->the_post();?>
+                      <div class="swiper-slide">
+                            <?php include( get_template_directory() . '/phtml/sections/cards/card-post.phtml');?>
+                      </div>
+                  <?php  endwhile; ?>
+
+                    <?php
+                    wp_reset_postdata();?>
+
+          </div>
+          <!-- If we need pagination -->
+          <!-- <div class="swiper-pagination"></div> -->
+
+          <!-- If we need navigation buttons -->
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+
+      </div>
+    </div>
+    <div class="bx--col-lg-12 section-button_center">
+      <a href="<?= $btnlink ?>"><button class="bx--btn bx--btn__primary" type="button"><?= $btnlabel ?></button></a>
     </div>
 
-    <div class="bx--col-md-6 bx--col-xs-12">
-
-    </div>
   </div>
 </div>
+<?php endwhile; ?>
+
+<?php endif; ?>

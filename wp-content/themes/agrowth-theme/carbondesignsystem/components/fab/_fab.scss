@@ -17,7 +17,7 @@
 
     &__hidden {
       @include hidden;
-      color: $color__white;
+      color: $color-white;
     }
 
     // Styles for "Open" state
@@ -26,12 +26,12 @@
 
       .#{$prefix}--fab__hexagon {
         transition: fill $transition--base;
-        fill: $color__blue-40;
+        fill: $color-blue;
       }
 
       .#{$prefix}--fab__plus-icon {
         @include rotate(0, $transition--base);
-        fill: $color__white;
+        fill: $color-white;
       }
     }
 
@@ -41,7 +41,7 @@
 
       .#{$prefix}--fab__hexagon {
         transition: fill $transition--base;
-        fill: $color__navy-gray-5;
+        fill: $color-blue;
       }
 
       .#{$prefix}--fab__plus-icon {

@@ -9,5 +9,8 @@ get_header();
 <!-- Breadcrumb -->
 <?php  include( get_template_directory() . '/phtml/sections/breadcrumb/breadcrumb.phtml');?>
 
+<!-- Products Section small-->
+<?php  include( get_template_directory() . '/phtml/sections/services/services-section.phtml');?>
+
 
 <?php get_footer(); ?>

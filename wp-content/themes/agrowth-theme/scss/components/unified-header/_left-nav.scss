@@ -97,7 +97,7 @@
     z-index: 8000;
     position: relative;
     border-bottom: 1px solid $color-white-10;
-    background-color: $color__white;
+    background-color: $color-white;
   }
 
   .#{$prefix}--left-nav__section {
@@ -118,7 +118,7 @@
       }
 
       &[data-left-nav-section='infrastructure'] {
-        background-color: $color__blue-50;
+        background-color: $color-blue;
       }
 
       .#{$prefix}--left-nav__section--link {

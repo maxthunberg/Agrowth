@@ -1,62 +1,83 @@
-<nav class="bx--grid bx--navbar start">
-  <!--left section -->
-  <div class="navbar-left">
-    <a class="logo--link" href="/"><img class="logo" src="<?= get_stylesheet_directory_uri(); ?>/icons/agrowth-logo--icn.svg" /></a>
-    <?php //wp_nav_menu( array( 'theme_location' => 'main','fallback_cb'=> 'fallbackmenu1' ) ); ?>
+<nav class="bx--navbar start">
 
-        <!-- Navbar menu -->
-        <?php if( have_rows('navbar_menu', 'option') ): ?>
-
-          	<ul class="navbar-ul">
-
-          	<?php while( have_rows('navbar_menu', 'option') ): the_row(); ?>
-
-          		<li class="navbar-li">
-
-                <?php
-                // vars
-                $link = get_sub_field('menu_link', 'option');
-                $label = get_sub_field('link_animation', 'option');
-
-                if( $link ):?>
-
-                	<a class="navbar-link" href="<?= $link['url']; ?>" target="<?= $link['target']; ?>">
-                    <?= $link['title']; ?>
-                    <?php if ( $label):?><span class="link-label"></span><?php endif;?>
-                  </a>
-
-                <?php endif; ?>
-
-          		</li>
-
-          	<?php endwhile; ?>
-
-          	</ul>
-
-        <?php endif; ?>
-  </div>
-
-  <!--right section-->
-  <div class="navbar-right">
-
-    <!-- CTA button -->
-    <button class="bx--btn bx--btn--primary bx--btn--lg" type="button">
-      <?php the_field('cta_btn_label', 'option');?> Kontakta oss
-      <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
-        <polygon fill="#FFFFFF" fill-rule="evenodd" points="134 14 137.682 21.365 144.667 22.001 137.682 22.635 134 30 150 22.001" transform="translate(-134 -14)"/>
+  <div data-notification class="primary bx--navbar-notification bx--navbar-notification--primary" role="alert">
+    <div class="bx--navbar-notification__details">
+      <svg class="bx--navbar-notification__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+        <path d="M8 1L0 15h16L8 1zm-.8 5h1.5v1.4L8.3 11h-.8l-.4-3.6V6h.1zm.8 8c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"></path>
       </svg>
-    </button>
-
-  <!-- Hamburger Icon -->
-  <div class="hamburger">
-    <div class="hamburger-line line-1"></div>
-    <div class="hamburger-line line-2"></div>
-    <div class="hamburger-line line-3"></div>
+      <div class="bx--navbar-notification__text-wrapper">
+        <p class="bx--navbar-notification__title">Tillväxtanalys</p>
+        <p class="bx--navbar-notification__subtitle">Starten på er digitala tillväxtresa.</p>
+        <button class="bx--btn bx--btn--outline__white bx--btn--sm" type="button">Tillväxtanalys</button>
+      </div>
+    </div>
+      <button data-notification-btn class="bx--navbar-notification__close-button" type="button">
+        <svg class="bx--navbar-notification__close-icon" aria-label="close" width="10" height="10" viewBox="0 0 10 10" fill-rule="evenodd">
+          <path d="M9.8 8.6L8.4 10 5 6.4 1.4 10 0 8.6 3.6 5 .1 1.4 1.5 0 5 3.6 8.6 0 10 1.4 6.4 5z"></path>
+        </svg>
+      </button>
   </div>
 
+  <div class="navbar-inner">
 
+    <!--left section -->
+    <div class="navbar-left">
+      <a class="logo--link" href="/"><img class="logo" src="<?= get_stylesheet_directory_uri(); ?>/icons/agrowth-logo--icn.svg" /></a>
+      <?php //wp_nav_menu( array( 'theme_location' => 'main','fallback_cb'=> 'fallbackmenu1' ) ); ?>
+
+          <!-- Navbar menu -->
+          <?php if( have_rows('navbar_menu', 'option') ): ?>
+
+            	<ul class="navbar-ul">
+
+            	<?php while( have_rows('navbar_menu', 'option') ): the_row(); ?>
+
+            		<li class="navbar-li">
+
+                  <?php
+                  // vars
+                  $link = get_sub_field('menu_link', 'option');
+                  $label = get_sub_field('link_animation', 'option');
+
+                  if( $link ):?>
+
+                  	<a class="navbar-link" href="<?= $link['url']; ?>" target="<?= $link['target']; ?>">
+                      <?= $link['title']; ?>
+                      <?php if ( $label):?><span class="link-label"></span><?php endif;?>
+                    </a>
+
+                  <?php endif; ?>
+
+            		</li>
+
+            	<?php endwhile; ?>
+
+            	</ul>
+
+          <?php endif; ?>
+    </div>
+
+    <!--right section-->
+    <div class="navbar-right">
+
+      <!-- CTA button -->
+      <button class="bx--btn bx--btn__primary bx--btn--lg" type="button">
+        <?php the_field('cta_btn_label', 'option');?> Kontakta oss
+        <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+          <polygon fill="#FFFFFF" fill-rule="evenodd" points="134 14 137.682 21.365 144.667 22.001 137.682 22.635 134 30 150 22.001" transform="translate(-134 -14)"/>
+        </svg>
+      </button>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger">
+      <div class="hamburger-line line-1"></div>
+      <div class="hamburger-line line-2"></div>
+      <div class="hamburger-line line-3"></div>
+    </div>
+
+
+    </div>
   </div>
-
 </nav>
 
 

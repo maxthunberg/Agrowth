@@ -97,12 +97,13 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/module/module';
 @import '../../components/multi-select/multi-select';
 @import '../../components/notification/inline-notification';
+@import '../../components/notification/navbar-notification';
 @import '../../components/notification/toast-notification';
 @import '../../components/tooltip/tooltip';
 @import '../../components/tabs/tabs';
 @import '../../components/tag/tag';
 @import '../../components/unified-header/unified-header';
-@import '../../components/interior-left-nav/interior-left-nav';
+// @import '../../components/interior-left-nav/interior-left-nav';
 @import '../../components/pagination/pagination';
 @import '../../components/accordion/accordion';
 @import '../../components/progress-indicator/progress-indicator';
@@ -129,7 +130,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../sections/resources/resources-slider';
 @import '../../sections/client-logos/client-logos';
 @import '../../sections/interactive-tool/interactive-tool--frontpage';
-@import '../../sections/interactive-tool/interactive-tool--about-us';
+@import '../../sections/interactive-tool/interactive-circle';
 
 
 //-------------------------------------

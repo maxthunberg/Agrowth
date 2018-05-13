@@ -26,13 +26,13 @@
     align-items: center;
     padding: 0 rem(8px);
     text-decoration: none;
-    color: $color__white; // anna
+    color: $color-white; // anna
     position: relative;
 
     &:hover,
     &:focus {
       .#{$prefix}--logo__text {
-        color: $color__blue-20; // anna
+        color: $color-aqua; // anna
       }
     }
   }
@@ -44,7 +44,7 @@
     font-weight: 400;
     font-size: 1.125rem;
     line-height: inherit;
-    color: $color__blue-30; // anna
+    color: $color-aqua-darker; // anna
 
     .#{$prefix}--unified-header--apps & {
       color: $nav-05;
@@ -71,7 +71,7 @@
     font-weight: 400;
     cursor: pointer;
     text-decoration: none;
-    color: $color__white; // anna
+    color: $color-white; // anna
 
     &--bold {
       font-weight: 600;
@@ -105,8 +105,8 @@
 
     &:focus {
       outline: 0;
-      background-color: $color__navy-gray-3; // anna
-      color: $color__blue-30; // anna
+      background-color: $color-blue; // anna
+      color: $color-aqua-darker; // anna
     }
 
     &:last-child {
@@ -127,17 +127,17 @@
     height: rem(50px);
     text-decoration: none;
     background-color: $nav-02;
-    color: $color__white; // anna
+    color: $color-white; // anna
     padding: 0 1rem;
 
     &:hover {
-      color: $color__blue-30; // anna
+      color: $color-aqua-darker; // anna
     }
 
     &:focus {
       outline: 0;
-      background-color: $color__navy-gray-3; // anna
-      color: $color__blue-30; // anna
+      background-color: $color-blue; // anna
+      color: $color-aqua-darker; // anna
     }
   }
 
@@ -147,10 +147,10 @@
 
     &:focus {
       outline: 0;
-      background-color: $color__navy-gray-3; // anna
+      background-color: $color-blue; // anna
 
       .#{$prefix}--dropdown__menu-text {
-        color: $color__blue-30; // anna
+        color: $color-aqua-darker; // anna
       }
 
       .#{$prefix}--dropdown__menu-text,
@@ -170,10 +170,10 @@
     align-items: center;
     height: 100%;
     z-index: 1000;
-    color: $color__white; // anna
+    color: $color-white; // anna
 
     &:hover {
-      color: $color__blue-30; // anna
+      color: $color-aqua-darker; // anna
     }
   }
 
@@ -198,25 +198,25 @@
 
   .#{$prefix}--global-header__menu .#{$prefix}--dropdown-link {
     padding: 0.5rem 0.75rem;
-    color: $color__white; // anna
+    color: $color-white; // anna
 
     &:hover {
-      color: $color__blue-90; // anna
-      background-color: $color__blue-30; // anna
+      color: $color-blue; // anna
+      background-color: $color-aqua-darker; // anna
     }
   }
 
   .#{$prefix}--global-header__menu .#{$prefix}--dropdown--open {
     .#{$prefix}--dropdown-text {
-      background-color: $color__navy-gray-3; // anna
-      color: $color__blue-30; // anna
+      background-color: $color-blue; // anna
+      color: $color-aqua-darker; // anna
     }
 
     .#{$prefix}--dropdown-list {
       transform: translateY(0);
       opacity: 1;
       visibility: visible;
-      background-color: $color__navy-gray-3; // anna
+      background-color: $color-blue; // anna
     }
   }
 }

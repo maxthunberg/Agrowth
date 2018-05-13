@@ -8,20 +8,299 @@ get_header();
 <?php  //include( get_template_directory() . '/phtml/components/button/button.phtml');?>
 <?php  //include( get_template_directory() . '/phtml/components/copy-button/copy-button.phtml');?>
 <?php  //include( get_template_directory() . '/phtml/components/file-uploader/file-uploader.phtml');?>
-<?php  //include( get_template_directory() . '/phtml/components/checkbox/checkbox.phtml');?>
-<?php  //include( get_template_directory() . '/phtml/components/combo-box/combo-box.phtml');?>
-<?php  //include( get_template_directory() . '/phtml/components/radio-button/radio-button.phtml');?>
-<?php  //include( get_template_directory() . '/phtml/components/toggle/toggle.phtml');?>
-<?php  include( get_template_directory() . '/phtml/components/search/search.phtml');?>
-<?php  include( get_template_directory() . '/phtml/components/select/select.phtml');?>
-<?php  include( get_template_directory() . '/phtml/components/text-input/text-input.phtml');?>
-<?php  include( get_template_directory() . '/phtml/components/text-area/text-area.phtml');?>
-<?php  include( get_template_directory() . '/phtml/components/number-input/number-input.phtml');?>
-<?php  include( get_template_directory() . '/phtml/components/form/form.phtml');?>
-<?php  include( get_template_directory() . '/phtml/components/link/link.phtml');?>
-<?php  include( get_template_directory() . '/phtml/sections/breadcrumb/breadcrumb.phtml');?>
-<?php  include( get_template_directory() . '/phtml/sections/breadcrumb/breadcrumb.phtml');?>
-<?php  include( get_template_directory() . '/phtml/sections/breadcrumb/breadcrumb.phtml');?>
+<?php include( get_template_directory() . '/phtml/components/checkbox/checkbox.phtml');?>
+<?php  include( get_template_directory() . '/phtml/components/combo-box/combo-box.phtml');?>
+<?php  include( get_template_directory() . '/phtml/components/radio-button/radio-button.phtml');?>
+<?php  include( get_template_directory() . '/phtml/components/toggle/toggle.phtml');?>
+<button class="bx--btn bx--btn__primary" type="button">Primary button</button>
+<button class="bx--btn bx--btn__primary" type="button" disabled>Primary button</button>
+<button class="bx--btn bx--btn__primary" type="button">
+  Primary with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+<button class="bx--btn bx--btn__primary bx--btn--sm" type="button">Small Primary button</button>
+<button class="bx--btn bx--btn__primary bx--btn--sm" type="button">
+  Small Primary button
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+
+
+<button class="bx--btn bx--btn__secondary" type="button">Primary button</button>
+<button class="bx--btn bx--btn__secondary" type="button" disabled>Primary button</button>
+<button class="bx--btn bx--btn__secondary" type="button">
+  Primary with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+<button class="bx--btn bx--btn__secondary bx--btn--sm" type="button">Small Primary button</button>
+<button class="bx--btn bx--btn__secondary bx--btn--sm" type="button">
+  Small Primary button
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+
+
+
+<button class="bx--btn bx--btn__white" type="button">Primary button</button>
+<button class="bx--btn bx--btn__white" type="button" disabled>Primary button</button>
+<button class="bx--btn bx--btn__white" type="button">
+  Primary with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+<button class="bx--btn bx--btn__white bx--btn--sm" type="button">Small Primary button</button>
+<button class="bx--btn bx--btn__white bx--btn--sm" type="button">
+  Small Primary button
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+
+
+
+<div class="secondary">
+
+  <button class="bx--btn bx--btn__white" type="button">Primary button</button>
+  <button class="bx--btn bx--btn__white" type="button" disabled>Primary button</button>
+  <button class="bx--btn bx--btn__white" type="button">
+    Primary with icon
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+  <button class="bx--btn bx--btn__white bx--btn--sm" type="button">Small Primary button</button>
+  <button class="bx--btn bx--btn__white bx--btn--sm" type="button">
+    Small Primary button
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+
+</div>
+
+<div class="primary">
+
+  <button class="bx--btn bx--btn__white" type="button">Primary button</button>
+  <button class="bx--btn bx--btn__white" type="button" disabled>Primary button</button>
+  <button class="bx--btn bx--btn__white" type="button">
+    Primary with icon
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+  <button class="bx--btn bx--btn__white bx--btn--sm" type="button">Small Primary button</button>
+  <button class="bx--btn bx--btn__white bx--btn--sm" type="button">
+    Small Primary button
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+
+</div>
+
+
+
+<button class="bx--btn bx--btn__dark" type="button">Primary button</button>
+<button class="bx--btn bx--btn__dark" type="button" disabled>Primary button</button>
+<button class="bx--btn bx--btn__dark" type="button">
+  Primary with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+<button class="bx--btn bx--btn__dark bx--btn--sm" type="button">Small Primary button</button>
+<button class="bx--btn bx--btn__dark bx--btn--sm" type="button">
+  Small Primary button
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+
+<div class="primary">
+  <button class="bx--btn bx--btn__dark" type="button">Primary button</button>
+  <button class="bx--btn bx--btn__dark" type="button" disabled>Primary button</button>
+  <button class="bx--btn bx--btn__dark" type="button">
+    Primary with icon
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+  <button class="bx--btn bx--btn__dark bx--btn--sm" type="button">Small Primary button</button>
+  <button class="bx--btn bx--btn__dark bx--btn--sm" type="button">
+    Small Primary button
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+</div>
+
+<div class="secondary">
+  <button class="bx--btn bx--btn__dark" type="button">Primary button</button>
+  <button class="bx--btn bx--btn__dark" type="button" disabled>Primary button</button>
+  <button class="bx--btn bx--btn__dark" type="button">
+    Primary with icon
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+  <button class="bx--btn bx--btn__dark bx--btn--sm" type="button">Small Primary button</button>
+  <button class="bx--btn bx--btn__dark bx--btn--sm" type="button">
+    Small Primary button
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+</div>
+
+
+
+<button class="bx--btn bx--btn--outline" type="button">outline button</button>
+<button class="bx--btn bx--btn--outline" type="button" disabled>outline button</button>
+<button class="bx--btn bx--btn--outline" type="button">
+  outline with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+<button class="bx--btn bx--btn--outline bx--btn--sm" type="button">Small outline button</button>
+<button class="bx--btn bx--btn--outline bx--btn--sm" type="button">
+  Small outline with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+
+<button class="bx--btn bx--btn--outline__secondary" type="button">outline button</button>
+<button class="bx--btn bx--btn--outline__secondary" type="button" disabled>outline button</button>
+<button class="bx--btn bx--btn--outline__secondary" type="button">
+  outline with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+<button class="bx--btn bx--btn--outline__secondary bx--btn--sm" type="button">Small outline button</button>
+<button class="bx--btn bx--btn--outline__secondary bx--btn--sm" type="button">
+  Small outline with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+
+<button class="bx--btn bx--btn--outline__white" type="button">outline button</button>
+<button class="bx--btn bx--btn--outline__white" type="button" disabled>outline button</button>
+<button class="bx--btn bx--btn--outline__white" type="button">
+  outline with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+<button class="bx--btn bx--btn--outline__white bx--btn--sm" type="button">Small outline button</button>
+<button class="bx--btn bx--btn--outline__white bx--btn--sm" type="button">
+  Small outline with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+
+<div class="primary">
+
+    <button class="bx--btn bx--btn--outline__white" type="button">outline button</button>
+    <button class="bx--btn bx--btn--outline__white" type="button" disabled>outline button</button>
+    <button class="bx--btn bx--btn--outline__white" type="button">
+      outline with icon
+      <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+        <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+      </svg>
+    </button>
+    <button class="bx--btn bx--btn--outline__white bx--btn--sm" type="button">Small outline button</button>
+    <button class="bx--btn bx--btn--outline__white bx--btn--sm" type="button">
+      Small outline with icon
+      <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+        <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+      </svg>
+    </button>
+
+</div>
+
+<div class="secondary">
+
+    <button class="bx--btn bx--btn--outline__white" type="button">outline button</button>
+    <button class="bx--btn bx--btn--outline__white" type="button" disabled>outline button</button>
+    <button class="bx--btn bx--btn--outline__white" type="button">
+      outline with icon
+      <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+        <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+      </svg>
+    </button>
+    <button class="bx--btn bx--btn--outline__white bx--btn--sm" type="button">Small outline button</button>
+    <button class="bx--btn bx--btn--outline__white bx--btn--sm" type="button">
+      Small outline with icon
+      <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+        <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+      </svg>
+    </button>
+
+</div>
+
+<button class="bx--btn bx--btn--outline__dark" type="button">outline button</button>
+<button class="bx--btn bx--btn--outline__dark" type="button" disabled>outline button</button>
+<button class="bx--btn bx--btn--outline__dark" type="button">
+  outline with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+<button class="bx--btn bx--btn--outline__dark bx--btn--sm" type="button">Small outline button</button>
+<button class="bx--btn bx--btn--outline__dark bx--btn--sm" type="button">
+  Small outline with icon
+  <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+    <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+  </svg>
+</button>
+
+
+<div class="primary">
+  <button class="bx--btn bx--btn--outline__dark" type="button">outline button</button>
+  <button class="bx--btn bx--btn--outline__dark" type="button" disabled>outline button</button>
+  <button class="bx--btn bx--btn--outline__dark" type="button">
+    outline with icon
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+  <button class="bx--btn bx--btn--outline__dark bx--btn--sm" type="button">Small outline button</button>
+  <button class="bx--btn bx--btn--outline__dark bx--btn--sm" type="button">
+    Small outline with icon
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+</div>
+
+<div class="secondary">
+  <button class="bx--btn bx--btn--outline__dark" type="button">outline button</button>
+  <button class="bx--btn bx--btn--outline__dark" type="button" disabled>outline button</button>
+  <button class="bx--btn bx--btn--outline__dark" type="button">
+    outline with icon
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+  <button class="bx--btn bx--btn--outline__dark bx--btn--sm" type="button">Small outline button</button>
+  <button class="bx--btn bx--btn--outline__dark bx--btn--sm" type="button">
+    Small outline with icon
+    <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+      <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
+    </svg>
+  </button>
+</div>
 
 <?php  //include( get_template_directory() . '/phtml/components/list-box/list-box.phtml');?>
 <?php  include( get_template_directory() . '/phtml/components/list/list.phtml');?>

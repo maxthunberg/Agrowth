@@ -34,7 +34,7 @@
     @include button-base;
   }
 
-  .#{$prefix}--btn--primary {
+  .#{$prefix}--btn__primary {
     @include button-theme(
       $color-primary,
       transparent,
@@ -49,7 +49,143 @@
 
   }
 
-  .#{$prefix}--btn--secondary {
+  .#{$prefix}--btn__secondary {
+    @include button-theme(
+      $color-secondary-dark,
+      transparent,
+      $color-white,
+      $color-secondary,
+      $color-white
+    );
+    &:active {
+      background-color: $color-secondary;
+      color: $color-white;
+    }
+
+  }
+
+  .#{$prefix}--btn__white {
+    @include button-theme(
+      $color-white,
+      transparent,
+      $color-dark,
+      $color-white-03,
+      $color-dark
+    );
+    &:active {
+      background-color: $color-white-03;
+      color: $color-dark;
+    }
+
+  }
+
+  .secondary > .#{$prefix}--btn__white {
+    @include button-theme(
+      $color-white,
+      transparent,
+      $color-secondary-dark,
+      $color-white-03,
+      $color-secondary-dark
+    );
+    &:active {
+      border-color: $color-secondary-dark;
+      background-color: $color-white-03;
+      color: $color-secondary-dark;
+    }
+
+  }
+
+  .primary > .#{$prefix}--btn__white {
+    @include button-theme(
+      $color-white,
+      transparent,
+      $color-primary,
+      $color-white-03,
+      $color-primary
+    );
+    &:active {
+      border-color: $color-primary;
+      background-color: $color-white-03;
+      color: $color-primary;
+    }
+
+  }
+
+  .#{$prefix}--btn__dark {
+    @include button-theme(
+      $color-dark,
+      transparent,
+      $color-white,
+      $color-black,
+      $color-white
+    );
+    &:active {
+      background-color: $color-black;
+      color: $color-white;
+    }
+
+  }
+
+  .primary > .#{$prefix}--btn__dark {
+    @include button-theme(
+      $color-dark,
+      transparent,
+      $color-primary,
+      $color-black,
+      $color-primary
+    );
+    &:active {
+      background-color: $color-black;
+      color: $color-primary;
+    }
+
+  }
+
+  .secondary > .#{$prefix}--btn__dark {
+    @include button-theme(
+      $color-dark,
+      transparent,
+      $color-secondary-dark,
+      $color-black,
+      $color-secondary-dark
+    );
+    &:active {
+      background-color: $color-black;
+      color: $color-secondary-dark;
+    }
+
+  }
+
+  .#{$prefix}--btn--outline {
+    @include button-theme(
+      transparent,
+      $color-primary,
+      $color-primary,
+      $color-primary,
+      $color-primary
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+    }
+
+    &:active {
+      color: $color-primary;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-white;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-primary;
+    }
+  }
+
+  .#{$prefix}--btn--outline__secondary {
     @include button-theme(
       transparent,
       $color-secondary-dark,
@@ -78,13 +214,101 @@
     }
   }
 
-  .#{$prefix}--btn--tertiary {
+  .#{$prefix}--btn--outline__white {
     @include button-theme(
       transparent,
-      $color-white-20,
-      $color-white-20,
-      $color-white-20,
-      $color-white-20
+      $color-white,
+      $color-white,
+      $color-white,
+      $color-white
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-dark;
+    }
+
+    &:active {
+      color: $color-white;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-dark;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-white;
+    }
+  }
+
+  .primary .#{$prefix}--btn--outline__white {
+    @include button-theme(
+      transparent,
+      $color-white,
+      $color-white,
+      $color-white,
+      $color-white
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+    }
+
+    &:active {
+      color: $color-white;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-primary;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-white;
+    }
+  }
+
+  .secondary .#{$prefix}--btn--outline__white {
+    @include button-theme(
+      transparent,
+      $color-white,
+      $color-white,
+      $color-white,
+      $color-white
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-secondary-dark;
+    }
+
+    &:active {
+      color: $color-white;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-secondary-dark;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-white;
+    }
+  }
+
+
+  .#{$prefix}--btn--outline__dark {
+    @include button-theme(
+      transparent,
+      $color-dark,
+      $color-dark,
+      $color-dark,
+      $color-dark
     );
 
     &:hover,
@@ -93,14 +317,78 @@
     }
 
     &:active {
-      color: $color-white-20;
+      color: $color-dark;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-white;
     }
 
     &:hover:disabled,
     &:focus:disabled {
-      color: $color-white-20;
+      color: $color-dark;
     }
   }
+
+  .primary .#{$prefix}--btn--outline__dark {
+    @include button-theme(
+      transparent,
+      $color-dark,
+      $color-dark,
+      $color-dark,
+      $color-dark
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+    }
+
+    &:active {
+      color: $color-dark;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-primary;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-dark;
+    }
+  }
+
+  .secondary .#{$prefix}--btn--outline__dark {
+    @include button-theme(
+      transparent,
+      $color-dark,
+      $color-dark,
+      $color-dark,
+      $color-dark
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-secondary-dark;
+    }
+
+    &:active {
+      color: $color-dark;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-secondary-dark;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-dark;
+    }
+  }
+
 
   .#{$prefix}--btn--ghost {
     @include button-theme(
@@ -134,46 +422,6 @@
     }
   }
 
-  .#{$prefix}--btn--danger {
-    @include button-theme(
-      transparent,
-      $support-error,
-      $support-error,
-      $support-error,
-      $support-error
-    );
-
-    &:hover {
-      color: $color-white;
-      border: $button-border-width solid transparent;
-    }
-
-    &:focus {
-      color: $color-white;
-    }
-
-    &:hover:disabled,
-    &:focus:disabled {
-      color: $support-error;
-      border: $button-border-width solid $support-error;
-    }
-  }
-
-  .#{$prefix}--btn--danger--primary {
-    @include button-theme(
-      $support-error,
-      transparent,
-      $color-white,
-      darken($support-error, 10%),
-      $color-white
-    );
-
-    &:hover:disabled,
-    &:focus:disabled {
-      color: $color-white;
-      border: $button-border-width solid $support-error;
-    }
-  }
 
   .#{$prefix}--btn--sm {
     height: 2rem;

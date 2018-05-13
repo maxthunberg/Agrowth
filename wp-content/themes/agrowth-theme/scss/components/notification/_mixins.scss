@@ -12,6 +12,19 @@
 }
 
 //----------------------------------------------
+// Navbar Notification
+// ---------------------------------------------
+
+@mixin navbar-notification--color($border, $fill) {
+  border: 1px solid $border;
+  border-left: 6px solid $border;
+
+  .#{$prefix}--navbar-notification__icon {
+    fill: $fill;
+  }
+}
+
+//----------------------------------------------
 // Toast Notification
 // ---------------------------------------------
 

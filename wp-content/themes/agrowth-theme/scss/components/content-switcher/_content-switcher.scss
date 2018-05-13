@@ -29,7 +29,7 @@
 
     &:focus {
       outline: 1px solid transparent;
-      box-shadow: 0 2px 0 0 $color__blue-20, 0 -2px 0 0 $color__blue-20;
+      box-shadow: 0 2px 0 0 $color-blue, 0 -2px 0 0 $color-blue;
       background-color: $color-secondary;
       z-index: 2;
       border-color: $color-secondary;
@@ -75,7 +75,7 @@
     }
 
     &:focus {
-      box-shadow: -2px 0 0 0 $color__blue-20, 0 2px 0 0 $color__blue-20, 0 -2px 0 0 $color__blue-20;
+      box-shadow: -2px 0 0 0 $color-blue, 0 2px 0 0 $color-blue, 0 -2px 0 0 $color-blue;
       z-index: 0;
     }
   }
@@ -89,7 +89,7 @@
     }
 
     &:focus {
-      box-shadow: 2px 0 0 0 $color__blue-20, 0 2px 0 0 $color__blue-20, 0 -2px 0 0 $color__blue-20;
+      box-shadow: 2px 0 0 0 $color-blue, 0 2px 0 0 $color-blue, 0 -2px 0 0 $color-blue;
       z-index: 0;
     }
   }

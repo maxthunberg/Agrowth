@@ -59,4 +59,13 @@ $(document).ready(function() {
           return false;
         }
   });
+
+  // if ($('.bx--navbar-notification').length) {
+  //   $('.bx--navbar').css('top','44px');
+  //   $('.bx--navbar-notification').css('top','0px');
+  // }
+  // $('.bx--navbar-notification__close-button').click(function(){
+  //   $('.bx--navbar').css('top','0px');
+  //   $('.bx--navbar-notification').css('top','-44px');
+  // });
 }); // Document ready
