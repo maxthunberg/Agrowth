@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin\Links
  */
 
@@ -17,7 +19,7 @@ class WPSEO_Link_Filter {
 	 * @param string $current_page The current page.
 	 */
 	public function __construct( $current_page = '' ) {
-		$this->current_page_path = untrailingslashit( wp_parse_url( $current_page, PHP_URL_PATH ) );
+		$this->current_page_path = untrailingslashit( WPSEO_Link_Utils::get_url_part( $current_page, 'path' ) );
 	}
 
 	/**

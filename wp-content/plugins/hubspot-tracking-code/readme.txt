@@ -2,8 +2,8 @@
 Contributors: HubSpotDev, gcorne
 Tags: analytics, marketing analytics, hubspot, tracking code, inbound marketing, marketing
 Requires at least: 3.7
-Tested up to: 4.7
-Stable tag: 1.1.2
+Tested up to: 4.8
+Stable tag: 1.2.0
 
 HubSpot's WordPress plugin allows existing HubSpot customers and trial users to install the HubSpot tracking code on their existing WordPress blogs and websites.
 
@@ -39,6 +39,12 @@ http://help.hubspot.com/articles/How_To_Doc/how-to-install-hubspot-javascript-tr
 
 
 == Changelog ==
+= 1.2.1 =
+* Fix bug with loading the analytics script against the wrong hub
+
+= 1.2.0 =
+* Upgrade to the latest version of the HubSpot analytics tracking script
+* Remove multisite workaround that is no longer needed
 
 = 1.1.2 =
 * Fix PHP 7 deprecation notice

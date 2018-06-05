@@ -9,5 +9,8 @@ get_header();
 <!-- Breadcrumb -->
 <?php  include( get_template_directory() . '/phtml/sections/breadcrumb/breadcrumb.phtml');?>
 
+<!-- Widgets -->
+<?php  include( get_template_directory() . '/phtml/sections/widgets/widgets.phtml');?>
 
+<!-- Footer -->
 <?php get_footer(); ?>

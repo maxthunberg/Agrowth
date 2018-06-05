@@ -1,20 +1,42 @@
-<div class="bx--grid cta-section secondary">
-  <div class="bx--row">
-    <div class="bx--col cta-section-container">
+<?php if ( have_rows('section_cta') ):
 
-      <div class="text-container">
-        <h3 class="text-container_heading">En heading om något spännande</h3>
-        <p class="text-container_paragraph">En paragraf om något spännande som ingen riktigt förstår </p>
+        while( have_rows('section_cta') ): the_row();
+        // vars
+        $heading = get_sub_field('heading');
+        $paragraph = get_sub_field('paragraph');
+        $btnlink = get_sub_field('btn_link');
+        $url = $btnlink["url"];
+        $label = $btnlink["title"];
+
+?>
+
+    <div class="bx--grid cta-section secondary">
+      <div class="bx--row">
+        <div class="bx--col cta-section-container">
+
+          <div class="text-container">
+
+            <h3 class="text-container_heading"><?= @$heading ?></h3>
+
+            <?php if ($paragraph):?>
+              <p class="text-container_paragraph"><?= @$paragraph ?></p>
+            <?php endif;?>
+
+          </div>
+
+          <a href="<?= $url ?>">
+            <button class="bx--btn bx--btn__secondary" type="button">
+            <?= $label ?>
+            <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+              <polygon fill="#FFFFFF" points="8 12.4 12.947 16 11.053 10.187 16 6.667 9.933 6.667 8 .667 6.067 6.667 0 6.667 4.947 10.187 3.053 16"/>
+            </svg>
+          </button>
+          </a>
+
+        </div>
+
       </div>
-
-      <button class="bx--btn bx--btn__secondary" type="button">
-        Primary with icon
-        <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
-          <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm4 9H9v3H7V9H4V7h3V4h2v3h3v2z"></path>
-        </svg>
-      </button>
-
     </div>
 
-  </div>
-</div>
+<?php endwhile;?>
+<?php endif; ?>

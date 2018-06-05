@@ -1,0 +1,281 @@
+<?php
+
+// check if the flexible content field has rows of data
+if( have_rows('flexible_content') ):?>
+
+  <div class="bx--grid section-content__outer">
+      <div class="bx--row">
+
+          <div class="section-content">
+
+    <?php
+ 	// loop through the rows of data
+    while ( have_rows('flexible_content') ) : the_row();
+
+							// H2 - Section
+			        if ( get_row_layout() == 'ingress' ):
+
+								// vars
+								$text = get_sub_field('text');
+
+							?>
+              <div class="ingress">
+                <p class="bx--type-beta_paragraph"><?= $text ?></p>
+              </div>
+
+        <?php
+              // H2 - Section
+              elseif ( get_row_layout() == 'h2_section' ):
+
+                // vars
+                $heading = get_sub_field('heading');
+                $paragraph = get_sub_field('paragraph', false, false);
+
+              ?>
+
+              <div class="h2-section">
+                <h2><?= $heading ?></h2>
+                <p class="bx--type-delta_paragraph"><?= $paragraph ?></p>
+              </div>
+
+	      <?php
+							// H3 - Section
+			        elseif ( get_row_layout() == 'h3_section' ):
+
+								// vars
+								$heading = get_sub_field('heading');
+								$paragraph = get_sub_field('paragraph', false, false);
+
+							?>
+
+              <div class="h3-section">
+                <h3><?= $heading ?></h3>
+                <p class="bx--type-delta_paragraph"><?= $paragraph ?></p>
+              </div>
+
+				<?php
+							// H4 - Section
+			        elseif ( get_row_layout() == 'h4_section' ):
+
+								// vars
+								$heading = get_sub_field('heading');
+								$paragraph = get_sub_field('paragraph', false, false);
+
+							?>
+
+              <div class="h4-section">
+                <h4 class="bx--type-gamma_subheading heading"><?= $heading ?></h4>
+                <p class="bx--type-delta_paragraph"><?= $paragraph ?></p>
+              </div>
+
+				<?php
+							// H5 - Section
+							elseif ( get_row_layout() == 'h5_section' ):
+
+								// vars
+								$heading = get_sub_field('heading');
+								$paragraph = get_sub_field('paragraph', false, false);
+
+							?>
+
+              <div class="h5-section">
+                <h5 class="bx--type-delta_subheading heading"><?= $heading ?></h5>
+                <p class="bx--type-delta_paragraph"><?= $paragraph ?></p>
+              </div>
+
+        <?php
+              // Image
+              elseif ( get_row_layout() == 'image' ):
+
+                // vars
+								$src = get_sub_field('image_src');
+                $caption = get_sub_field('caption');
+              ?>
+              <div class="component--image">
+                <img src="<?= $src ?>" class="image" />
+                <p class="image--caption bx--type-epsilon"> <?= $caption ?></p>
+              </div>
+
+				<?php
+              // Soft CTA
+              elseif ( get_row_layout() == 'soft-cta' ):
+
+                // vars
+                $src = get_sub_field('image_src');
+                $caption = get_sub_field('caption');
+              ?>
+
+
+        <?php
+              // Unordered List
+              elseif ( get_row_layout() == 'list' ):
+                    $heading = get_sub_field('heading');
+              ?>
+
+              <?php if ( have_rows('list_item') ):?>
+                  <h4 class="bx--type-delta_subheading bullet-list__heading"><?= $heading ?></h4>
+                  <ul class="component--bullet-list">
+                <?php
+                      while ( have_rows('list_item') ): the_row();
+
+                      // vars
+                      $listheading = get_sub_field('list_heading');
+                      $text = get_sub_field('text');
+                      $choose = get_sub_field('choose_list_type');
+                ?>
+                <?php if ( $choose == '1' ): ?>
+                        <li class="component--bullet-list__item">
+
+                          <?php if ( $listheading ): ?>
+                            <h4 class="bx--type-epsilon_subheading component--bullet-list__subheading"><?= $listheading ?></h4>
+                          <?php endif; ?>
+
+                          <?php if ( $text ): ?>
+                            <p><?= $text ?></p>
+                          <?php endif; ?>
+
+                        </li>
+                <?php elseif ( $choose == '2' ): ?>
+                        <li class="component--bullet-list__item minus">
+
+                          <?php if ( $listheading ): ?>
+                            <h4 class="bx--type-epsilon_subheading component--bullet-list__subheading"><?= $listheading ?></h4>
+                          <?php endif; ?>
+
+                          <?php if ( $text ): ?>
+                            <p><?= $text ?></p>
+                          <?php endif; ?>
+
+                        </li>
+                <?php elseif ( $choose == '3' ): ?>
+                        <li class="component--bullet-list__item plus">
+
+                          <?php if ( $listheading ): ?>
+                            <h4 class="bx--type-epsilon_subheading component--bullet-list__subheading"><?= $listheading ?></h4>
+                          <?php endif; ?>
+
+                          <?php if ( $text ): ?>
+                            <p><?= $text ?></p>
+                          <?php endif; ?>
+
+                        </li>
+                <?php endif; ?>
+
+                <?php endwhile;?>
+                </ul>
+
+              <?php endif;
+
+              // Quote
+              elseif ( get_row_layout() == 'quote' ):
+
+                // vars
+                $qoute = get_sub_field('quote');
+                $qoutee = get_sub_field('qoutee');
+              ?>
+
+        <?php
+              // Ordered List
+              elseif ( get_row_layout() == 'ordered_list' ):
+                    $heading = get_sub_field('heading');
+                    $i = 1;
+              ?>
+
+              <?php if ( have_rows('list_item') ):?>
+                  <h4 class="bx--type-delta_subheading ordered-list__heading"><?= $heading ?></h4>
+                  <ul class="component--ordered-list">
+                <?php
+                      while ( have_rows('list_item') ): the_row();
+
+                      // vars
+                      $listheading = get_sub_field('list_heading');
+                      $text = get_sub_field('text');
+                      $bordercolor = get_sub_field('border_color');
+
+                      // Choice of border color
+                      if ( $bordercolor == '1' ) {
+                        $color = '#757575';
+                      } elseif ( $bordercolor == '2' ) {
+                        $color = '#FF6665';
+                      } elseif ( $bordercolor == '3' ) {
+                        $color = '#34D583';
+                      } elseif ( $bordercolor == '4' ) {
+                        $color = '#292929';
+                      }
+
+                ?>
+                        <li class="component--ordered-list__item" style="border-left: .25rem solid <?= $color ?>">
+
+                          <span class="component--ordered-list__number" style="color: <?= $color ?>;"><?= $i++ ?></span>
+
+                          <?php if ( $listheading ): ?>
+                            <h4 class="bx--type-epsilon_subheading component--ordered-list__subheading"><?= $listheading ?></h4>
+                          <?php endif; ?>
+
+                          <?php if ( $text ): ?>
+                            <p><?= $text ?></p>
+                          <?php endif; ?>
+
+                        </li>
+
+                <?php endwhile;?>
+                </ul>
+
+              <?php endif;
+
+              // Quote
+              elseif ( get_row_layout() == 'quote' ):
+
+                // vars
+                $qoute = get_sub_field('quote');
+                $qoutee = get_sub_field('qoutee');
+              ?>
+
+        <?php
+              // Accordion
+              elseif ( get_row_layout() == 'accordion' ):
+
+              ?>
+
+              <?php if ( have_rows('accordion_field') ):?>
+                  <ul data-accordion class="bx--accordion">
+                <?php
+                      while ( have_rows('accordion_field') ): the_row();
+
+                      // vars
+                      $title = get_sub_field('title');
+                      $content = get_sub_field('content');
+                      $i = 0;
+                ?>
+                      <li data-accordion-item class="bx--accordion__item">
+                        <button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane<?= $i++?>">
+                          <svg class="bx--accordion__arrow" width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
+                            <path d="M0 10.6L4.7 6 0 1.4 1.4 0l6.1 6-6.1 6z"></path>
+                          </svg>
+                          <p class="bx--accordion__title"><?= $title ?></p>
+                        </button>
+                        <div id="pane<?= $i++?>" class="bx--accordion__content">
+                          <p><?= $content ?></p>
+                        </div>
+                      </li>
+
+                <?php endwhile;?>
+                </ul>
+
+              <?php endif;
+
+								endif;
+
+          endwhile;?>
+            </div>
+      </div>
+</div>
+<?php
+
+else :
+
+    // no layouts found
+
+endif;
+
+?>

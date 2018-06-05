@@ -12,5 +12,8 @@ get_header();
 <!-- Products Section small-->
 <?php  include( get_template_directory() . '/phtml/sections/services/services-section.phtml');?>
 
+<!-- Widgets -->
+<?php  include( get_template_directory() . '/phtml/sections/widgets/widgets.phtml');?>
 
+<!-- Footer -->
 <?php get_footer(); ?>

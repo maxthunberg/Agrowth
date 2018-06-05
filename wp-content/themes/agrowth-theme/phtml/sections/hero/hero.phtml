@@ -9,15 +9,70 @@
     $paragraph = get_field('paragraph');
   endif;
 ?>
-<div class="bx--grid hero">
-  <div class="bx--row">
-    <div class="bx--col-xs-12 bx--col-md-6 hero-container">
-        <h5 class="bx--type-gamma_subheading hero-subheading"><?= $subheading ?></h5>
-        <h2 class="bx--type-mega hero-heading"><?= $heading ?></h2>
-        <p class="bx--type-delta_paragraph hero-paragraph"><?= $paragraph ?></p>
+<?php if ( $post->post_type == 'post' && !is_home() ): ?>
+
+            <div class="bx--grid section-content__outer">
+                <div class="bx--row">
+
+                    <div class="section-content">
+
+                      <!-- Author information card -->
+                      <?php include( get_template_directory() . '/phtml/sections/author-info/author-info__sm.phtml'); ?>
+
+                      <div class="h2-section">
+                        <h2><?= the_title() ?></h2>
+                      </div>
+
+                      <div class="ingress">
+                        <p class="bx--type-beta_paragraph"><?= get_field('ingress'); ?></p>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="section-post-image img-container">
+
+                          <?php  $img = get_field('fullwidth_image');
+
+                                  if( !empty($img) ):
+
+                                    echo add_image(
+                                      $img,  // ACF-field
+                                      'q_70', // Parameters
+                                      'post-image featured-image' // Classes
+                                    );
+
+                                  endif; ?>
+
+            </div>
+
+<?php elseif (is_single() && !is_home() ): ?>
+
+  <div class="bx--grid hero">
+    <div class="bx--row">
+      <div class="bx--col-xs-12 bx--col-md-6 hero-container">
+          <h5 class="bx--type-gamma_subheading hero-subheading"><?= $subheading ?></h5>
+          <h2 class="bx--type-mega hero-heading"><?= the_title(); ?></h2>
+          <p class="bx--type-delta_paragraph hero-paragraph"><?= $paragraph ?></p>
+      </div>
+      <?php if( get_field('image') ): ?>
+        <img src="<?php the_field('image'); ?>" class="hero-image" alt="" />
+      <?php endif; ?>
     </div>
-    <?php if( get_field('image') ): ?>
-      <img src="<?php the_field('image'); ?>" class="hero-image" alt="" />
-    <?php endif; ?>
   </div>
-</div>
+
+<?php else: ?>
+  <div class="bx--grid hero">
+    <div class="bx--row">
+      <div class="bx--col-xs-12 bx--col-md-6 hero-container">
+          <h5 class="bx--type-gamma_subheading hero-subheading"><?= $subheading ?></h5>
+          <h2 class="bx--type-mega hero-heading"><?= $heading ?></h2>
+          <p class="bx--type-delta_paragraph hero-paragraph"><?= $paragraph ?></p>
+      </div>
+      <?php if( get_field('image') ): ?>
+        <img src="<?php the_field('image'); ?>" class="hero-image" alt="" />
+      <?php endif; ?>
+    </div>
+  </div>
+
+<?php endif; ?>

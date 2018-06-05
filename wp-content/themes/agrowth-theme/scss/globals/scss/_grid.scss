@@ -42,8 +42,8 @@ $grid-gutter-breakpoints: (xs: 2rem, sm: 3rem);
   // padding-right: gutter('xs');
 
   @media (min-width: breakpoint('md')) {
-    padding-left: 3rem!important;
-    padding-right: 3rem!important;
+    padding-left: 6rem!important;
+    padding-right: 6rem!important;
     // margin-left: grid-gutter('sm');
     // margin-right: grid-gutter('sm');
     // padding-left: gutter('sm');

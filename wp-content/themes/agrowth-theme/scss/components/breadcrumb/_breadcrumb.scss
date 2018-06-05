@@ -14,7 +14,19 @@
     display: none;
     padding: $spacing-md;
     border-bottom: 1px solid $color-white-10;
+    @include breakpoint(bp--xs--major) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 
+  .#{$prefix}--breadcrumb.post {
+    @include typescale('zeta');
+    @include pt-serif;
+    display: none;
+    padding: $spacing-md;
+    border-bottom: 1px solid $color-white-10;
+    margin-top:3rem;
     @include breakpoint(bp--xs--major) {
       display: flex;
       flex-wrap: wrap;
@@ -54,20 +66,13 @@
 
   .#{$prefix}--breadcrumb .#{$prefix}--link {
     white-space: nowrap;
-    font-weight: 400;
-    text-decoration: none;
-    padding: 1px 0;
-    border-bottom: 1px solid $color-white-20;
     transition: $transition--base;
-
 
     &:hover,
     &:focus {
       outline: none;
       color: $color-primary;
-      border-bottom: 1px solid $color-primary;
       transition: $transition--base;
-
     }
 
     // Applies to Firefox only

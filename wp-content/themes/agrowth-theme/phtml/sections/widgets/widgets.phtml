@@ -8,17 +8,137 @@
 
     <!--Widget 1-->
     <div class="widget widget-2 section-4col">
-      <h1>widget 2</h1>
+      <?php if( have_rows('widget_two','option') ):
+
+          while( have_rows('widget_two','option') ): the_row();
+
+            	// vars
+            	$heading = get_sub_field('heading');
+
+            	?>
+
+              <p class="widget__heading bx--type-epsilon_subheading"><?= $heading ?></p>
+
+              <!-- Start repeater_links-->
+              <?php if( have_rows('link_repeater','option') ): ?>
+
+                	<?php while( have_rows('link_repeater','option') ): the_row();
+
+                		// vars
+                    $btnlink = get_sub_field('link');
+                    $url = $btnlink["url"];
+                    $label = $btnlink["title"];
+                    $icon = get_sub_field('icon');
+                		?>
+
+                    <?php if( $btnlink ): ?>
+                      <div class="widget--link-container">
+                        <?php if ($icon): ?>
+                        <img src="<?= $icon ?>" class="widget__icon">
+                        <?php endif;?>
+                        <a class="widget__link bx--link" href="<?= $url ?>"><?= $label ?></a>
+                      </div>
+                    <?php endif; ?>
+
+                	<?php endwhile; ?>
+
+              <?php endif; ?> <!-- End Repeater -->
+
+
+          <?php endwhile; ?>
+
+      <?php endif; ?> <!-- End Group -->
+
     </div>
 
     <!--Widget 1-->
     <div class="widget widget-3 section-4col">
-      <h1>widget 3</h1>
+
+      <?php if( have_rows('widget_three','option') ):
+
+          while( have_rows('widget_three','option') ): the_row();
+
+            	// vars
+            	$heading = get_sub_field('heading');
+
+            	?>
+
+              <p class="widget__heading bx--type-epsilon_subheading"><?= $heading ?></p>
+
+              <!-- Start repeater_links-->
+              <?php if( have_rows('link_repeater','option') ): ?>
+
+                	<?php while( have_rows('link_repeater','option') ): the_row();
+
+                		// vars
+                    $btnlink = get_sub_field('link');
+                    $url = $btnlink["url"];
+                    $label = $btnlink["title"];
+                    $icon = get_sub_field('icon');
+
+                		?>
+
+                			<?php if( $btnlink ): ?>
+                        <div class="widget--link-container">
+                          <?php if ($icon): ?>
+                          <img src="<?= $icon ?>" class="widget__icon">
+                          <?php endif;?>
+                          <a class="widget__link bx--link" href="<?= $url ?>"><?= $label ?></a>
+                        </div>
+                			<?php endif; ?>
+
+                	<?php endwhile; ?>
+
+              <?php endif; ?> <!-- End Repeater -->
+
+
+          <?php endwhile; ?>
+
+      <?php endif; ?> <!-- End Group -->
     </div>
 
     <!--Widget 4-->
-    <div class="widget widget-4 ">
-      <h1>widget 4</h1>
+    <div class="widget widget-4 section-4col">
+      <?php if( have_rows('widget_four','option') ):
+
+          while( have_rows('widget_four','option') ): the_row();
+
+            	// vars
+            	$heading = get_sub_field('heading');
+
+            	?>
+
+              <p class="widget__heading bx--type-epsilon_subheading"><?= $heading ?></p>
+
+              <!-- Start repeater_links-->
+              <?php if( have_rows('link_repeater','option') ): ?>
+
+                	<?php while( have_rows('link_repeater','option') ): the_row();
+
+                		// vars
+                    $btnlink = get_sub_field('link');
+                    $url = $btnlink["url"];
+                    $label = $btnlink["title"];
+                    $icon = get_sub_field('icon');
+                		?>
+
+                    <?php if( $btnlink ): ?>
+                      <div class="widget--link-container">
+                        <?php if ($icon): ?>
+                        <img src="<?= $icon ?>" class="widget__icon">
+                        <?php endif;?>
+                        <a class="widget__link bx--link" href="<?= $url ?>"><?= $label ?></a>
+                      </div>
+                    <?php endif; ?>
+
+                	<?php endwhile; ?>
+
+              <?php endif; ?> <!-- End Repeater -->
+
+
+          <?php endwhile; ?>
+
+      <?php endif; ?> <!-- End Group -->
     </div>
 
   </div>

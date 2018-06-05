@@ -14,6 +14,7 @@ add_action( 'init', 'init_remove_text_editor' );
 function init_remove_text_editor() {
 	remove_post_type_support( 'page', 'editor' );
 }
+
 // Add scripts and styles
 add_action('wp_enqueue_scripts', function () {
 
@@ -39,95 +40,15 @@ add_action('wp_enqueue_scripts', function () {
 
 });
 
-//Generates menu items and allows for custum menus in wp-panel
-if (function_exists('register_nav_menus')) {
-register_nav_menus( array(
-		'main' => __( 'Main Menu', '' ),
-    'sidenav' => __( 'Sidenav', '' ),
-		'footer' => __( 'Footer Menu', '' )
-	) );
+// Cloudinary Images
+function add_image($image, $params, $class) {
+	$base = 'https://res.cloudinary.com/agrowth/image/upload/';
+	$filename = $image['filename'];
+
+	$output = $base.$params.'/'.$filename;
+
+	echo '<img src="' . @$output . '" class="' . @$class . '" />';
 }
-
-// custom menu example @ https://digwp.com/2011/11/html-formatting-custom-menus/
-function clean_custom_menus() {
-	$menu_name = 'nav-primary'; // specify custom menu slug
-	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
-		$menu = wp_get_nav_menu_object($locations[$menu_name]);
-		$menu_items = wp_get_nav_menu_items($menu->term_id);
-
-		$menu_list = '<nav>' ."\n";
-		$menu_list .= "\t\t\t\t". '<ul>' ."\n";
-		foreach ((array) $menu_items as $key => $menu_item) {
-			$title = $menu_item->title;
-			$url = $menu_item->url;
-			$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'">'. $title .'</a></li>' ."\n";
-		}
-		$menu_list .= "\t\t\t\t". '</ul>' ."\n";
-		$menu_list .= "\t\t\t". '</nav>' ."\n";
-	} else {
-		// $menu_list = '<!-- no list defined -->';
-	}
-	echo $menu_list;
-}
-
-
-function fallbackmenu1(){ ?>
-			<div id="menu">
-				<ul><li> Go to Adminpanel > Appearance > Menus to create your menu. You should have WP 3.0+ version for custom menus to work.</li></ul>
-			</div>
-<?php }
-
-function fallbackmenu2(){ ?>
-			<div id="menu">
-				<ul><li> Go to Adminpanel > Appearance > Menus to create your menu. You should have WP 3.0+ version for custom menus to work.</li></ul>
-			</div>
-<?php }
-
-
-//widgets
-// 
-// function register_widget_2() {
-//
-// 	register_sidebar( array(
-// 		'name'          => 'widget-2',
-// 		'id'            => 'widget_2',
-//  		// 'before_widget' => '<div class="widget-2 widget">',
-// 		// 'after_widget'  => '</div>',
-// 		'before_title'  => '<h3 class="widget-2--title">',
-// 		'after_title'   => '</h3>',
-// 	) );
-//
-// }
-//
-// add_action( 'widgets_init', 'register_widget_2' );
-//
-// function register_widget_3() {
-//
-// 	register_sidebar( array(
-// 		'name'          => 'widget-3',
-// 		'id'            => 'widget_3',
-//  		// 'before_widget' => '<div class="widget-3 widget">',
-// 		// 'after_widget'  => '</div>',
-// 		'before_title'  => '<h3 class="widget-3--title">',
-// 		'after_title'   => '</h3>',
-// 	) );
-//
-// }
-// add_action( 'widgets_init', 'register_widget_3' );
-//
-// function register_widget_4() {
-//
-// 	register_sidebar( array(
-// 		'name'          => 'widget-4',
-// 		'id'            => 'widget_4',
-//  		// 'before_widget' => '<div class="widget-4 widget">',
-// 		// 'after_widget'  => '</div>',
-// 		'before_title'  => '<h3 class="widget-4--title">',
-// 		'after_title'   => '</h3>',
-// 	) );
-//
-// }
-// add_action( 'widgets_init', 'register_widget_4' );
 
 
 function wpdocs_after_setup_theme() {
@@ -229,50 +150,6 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 
-// Breadcrumbs // Breadcrumbs // Breadcrumbs // Breadcrumbs // Breadcrumbs // Breadcrumbs
-
-function the_breadcrumb() {
-global $post;
-echo '<ul id="breadcrumbs">';
-if (!is_home()) {
-		echo '<li><a href="';
-		echo get_option('home');
-		echo '">';
-		echo 'Home';
-		echo '</a></li><li class="separator"> / </li>';
-		if (is_category() || is_single()) {
-				echo '<li>';
-				the_category(' </li><li class="separator"> / </li><li> ');
-				if (is_single()) {
-						echo '</li><li class="separator"> / </li><li>';
-						the_title();
-						echo '</li>';
-				}
-		} elseif (is_page()) {
-				if($post->post_parent){
-						$anc = get_post_ancestors( $post->ID );
-						$title = get_the_title();
-						foreach ( $anc as $ancestor ) {
-								$output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> <li class="separator">/</li>';
-						}
-						echo $output;
-						echo '<strong title="'.$title.'"> '.$title.'</strong>';
-				} else {
-						echo '<li><strong> '.get_the_title().'</strong></li>';
-				}
-		}
-}
-elseif (is_tag()) {single_tag_title();}
-elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
-elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
-elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
-elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
-elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
-elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
-echo '</ul>';
-}
-
-
 // REMOVES COMMENTS // REMOVES COMMENTS // REMOVES COMMENTS // REMOVES COMMENTS // REMOVES COMMENTS // REMOVES COMMENTS
 
 
@@ -352,11 +229,31 @@ function setPostViews($postID) {
     }
 }
 
-
-function includeFlexibleServices($servicename) {
-  include( get_template_directory() . '/phtml-components/flexible-content/flexible-services.phtml');
-}
-
+// // AJAX AJAX AJAX
+// add_action( 'wp_ajax_fetch_popular', 'fetch_popular' );
+// add_action( 'wp_ajax_fetch_recent', 'fetch_recent' );
+// add_action( 'wp_ajax_fetch_growth', 'fetch_growth' );
+//
+// add_action( 'wp_ajax_nopriv_fetch_popular', 'fetch_popular' );
+// add_action( 'wp_ajax_nopriv_fetch_recent', 'fetch_recent' );
+// add_action( 'wp_ajax_nopriv_fetch_growth', 'fetch_growth' );
+//
+// function fetch_popular(){
+//     include(_THEME_.'/ajax-popular.php');
+//     die();
+// }
+//
+// function fetch_recent(){
+//     include(_THEME_.'/ajax-recent.php');
+//     die();
+// }
+//
+// function fetch_growth(){
+//     include(_THEME_.'/ajax-growth.php');
+//     die();
+// }
+//
+// // END AJAX FUNCTIONS
 
 //contact form 7 remove auto p tags
 add_filter( 'wpcf7_autop_or_not', '__return_false' );

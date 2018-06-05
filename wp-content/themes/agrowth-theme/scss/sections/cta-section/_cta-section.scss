@@ -28,12 +28,48 @@
         }
 
       }
-      button {
-        box-shadow: $box-shadow--temporary-nav;
+
+    }
+
+  }
+
+}
+
+@media (min-width: breakpoint('xl')) { // 1600px
+
+}
+
+@media (max-width: breakpoint('xl')) { // 1200px
+
+}
+
+@media (max-width: breakpoint('lg')) { // 992px
+
+
+}
+
+@media (max-width: breakpoint('md')) { // 768px
+  .cta-section {
+    .bx--row {
+      .cta-section-container {
+        @include customflex( column, center, center, 0);
+
       }
 
     }
 
   }
 
+}
+
+@media (max-width: breakpoint('sm')) { // 576px
+  .widgets {
+    .bx--row {
+      .widget-1, .widget-2, .widget-3, .widget-4 {
+        width: 100%;
+
+      }
+
+    }
+  }
 }

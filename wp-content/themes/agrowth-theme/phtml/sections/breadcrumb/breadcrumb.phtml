@@ -3,11 +3,15 @@
 global $post;
 ?>
 
+<?php if ( is_single() && $post->post_type == 'post' ):?>
+<nav class="bx--grid bx--breadcrumb bx--breadcrumb--no-trailing-slash post" aria-label="breadcrumb">
+<?php else: ?>
 <nav class="bx--grid bx--breadcrumb bx--breadcrumb--no-trailing-slash" aria-label="breadcrumb">
+<?php endif; ?>
 
 <?php if (!is_home()) :?>
     <div class="bx--breadcrumb-item">
-      <a href="/" class="bx--link">
+      <a href="<?php echo get_home_url(); ?>" class="bx--link">
         <?php
           $frontpage_id = get_option( 'page_on_front' );
           echo get_the_title($frontpage_id);
@@ -15,51 +19,116 @@ global $post;
       </a>
     </div>
 
-    <?php if ( is_category() || is_single() ):?>
+          <?php if ( is_single() ):
 
-    <div class="bx--breadcrumb-item">
-      <a href="#" class="bx--link">
-        <?php
-         the_category(' </li><li class="separator"> / </li><li> ');
+                  $title = get_the_title();
 
-             if ( is_single() ):
-                 echo '</li><li class="separator"> / </li><li>';
-                 the_title();
-                 echo '</li>';
-             endif;
+                      if ( $post->post_type == 'consultants' ): ?>
 
-         elseif ( is_page() ):
+                          <div class="bx--breadcrumb-item">
+                            <a href="<?php echo get_home_url() . '/konsulter' ?>" class="bx--link">
+                              Konsulter
+                            </a>
+                          </div>
 
-           if($post->post_parent):
-               $anc = get_post_ancestors( $post->ID );
-               $title = get_the_title();
+                          <div class="bx--breadcrumb-item">
+                            <a class="bx--link_current">
+                              <?php if ( strlen($title) > 40 ):
 
-               foreach ( $anc as $ancestor ) {
-                   $output = ' <div class="bx--breadcrumb-item"><a class="bx--link" href="'.get_permalink($ancestor).'">'.get_the_title($ancestor).'</a></div>';
-               }
+                                      echo substr($title, 0, 40).'...';
 
-               echo $output;
+                                    else:
 
-                 if ( !is_page($frontpage_id) ):?>
+                                      echo $title;
 
-                 <div class="bx--breadcrumb-item">
-                   <a class="bx--link_current"><?= $title?></a>
-                 </div>
+                                    endif;
+                              ?>
+                            </a>
+                          </div>
+                          <?php
+                      elseif ( $post->post_type == 'services' ): ?>
 
-             <?php endif;
+                          <div class="bx--breadcrumb-item">
+                            <a href="<?php echo get_home_url() . '/tjanster' ?>" class="bx--link">
+                              Tjänster
+                            </a>
+                          </div>
 
-          else:
+                          <div class="bx--breadcrumb-item">
+                            <a class="bx--link_current">
+                              <?php if ( strlen($title) > 40 ):
 
-                if ( !is_page($frontpage_id) ):?>
+                                      echo substr($title, 0, 40).'...';
 
-                <div class="bx--breadcrumb-item">
-                  <a class="bx--link_current"><?= get_the_title();?></a>
-                </div>
-            <?php endif;
+                                    else:
+
+                                      echo $title;
+
+                                    endif;
+                              ?>
+                            </a>
+                          </div>
+
+                          <?php
+                      elseif ( $post->post_type == 'post' ): ?>
+
+                              <div class="bx--breadcrumb-item">
+                                <a href="<?php echo get_home_url() . '/resurser' ?>" class="bx--link">
+                                  Resurser
+                                </a>
+                              </div>
+
+                              <div class="bx--breadcrumb-item">
+                                <a class="bx--link_current">
+                                  <?php if ( strlen($title) > 40 ):
+
+                                          echo substr($title, 0, 40).'...';
+
+                                        else:
+
+                                          echo $title;
+
+                                        endif;
+                                  ?>
+                                </a>
+                              </div>
+                              <?php
+                      endif;
+
+
+
+                 elseif ( is_page() ):
+
+                   if($post->post_parent):
+                       $anc = get_post_ancestors( $post->ID );
+                       $title = get_the_title();
+
+                       foreach ( $anc as $ancestor ) {
+                           $output = ' <div class="bx--breadcrumb-item"><a class="bx--link" href="'.get_permalink($ancestor).'">'.get_the_title($ancestor).'</a></div>';
+                       }
+
+                       echo $output;
+
+                         if ( !is_page($frontpage_id) ):?>
+
+                         <div class="bx--breadcrumb-item">
+                           <a class="bx--link_current"><?= $title?></a>
+                         </div>
+
+                     <?php endif;
+
+                else:
+
+                        if ( !is_page($frontpage_id) ):?>
+
+                        <div class="bx--breadcrumb-item">
+                          <a class="bx--link_current"><?= get_the_title();?></a>
+                        </div>
+                    <?php endif;
+
+                endif;
 
         endif;
-
-     endif;
 
   endif;
 ?>

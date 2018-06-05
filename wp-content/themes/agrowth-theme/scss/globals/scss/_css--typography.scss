@@ -135,6 +135,13 @@ $letterspacing-map: (
     color: $color-grey;
   }
 
+  .#{$prefix}--type-beta_paragraph {
+    @include reset;
+    @include typescale('beta');
+    @include line-height('body');
+    @include pt-serif;
+  }
+
   h3,
   .#{$prefix}--type-gamma {
     @include reset;
@@ -155,13 +162,20 @@ $letterspacing-map: (
     color: $color-grey;
   }
 
+  .#{$prefix}--type-gamma_paragraph {
+    @include reset;
+    @include typescale('gamma');
+    @include line-height('body');
+    @include pt-serif;
+  }
+
   h4,
   .#{$prefix}--type-delta {
     @include reset;
     @include archivo-black;
     @include typescale('delta');
     @include line-height('heading');
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .#{$prefix}--type-delta_subheading {
@@ -170,9 +184,10 @@ $letterspacing-map: (
     @include line-height('heading');
     @include pt-serif;
     @include letter-spacing('delta');
+    font-weight: 400;
     text-transform: uppercase;
     color: $color-grey;
-    margin-bottom: .25rem;
+    margin-bottom: .5rem;
   }
 
   .#{$prefix}--type-delta_paragraph {
@@ -191,6 +206,17 @@ $letterspacing-map: (
     font-weight: 400;
   }
 
+  .#{$prefix}--type-epsilon_subheading {
+    @include reset;
+    @include typescale('epsilon');
+    @include line-height('body');
+    @include letter-spacing('epsilon');
+    @include pt-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: $color-grey;
+  }
+
 
   h6,
   .#{$prefix}--type-zeta {
@@ -201,7 +227,7 @@ $letterspacing-map: (
     font-weight: 400;
   }
 
-  .#{$prefix}--type-epsilon_subheading, .#{$prefix}--type-zeta_subheading {
+  .#{$prefix}--type-zeta_subheading {
     @include reset;
     @include pt-serif;
     @include typescale('zeta');

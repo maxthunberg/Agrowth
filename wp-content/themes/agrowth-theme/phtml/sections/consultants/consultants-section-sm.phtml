@@ -30,18 +30,19 @@
                 $query = new WP_Query( $args );
                 ?>
 
-                <?php while ( $query->have_posts() ) : $query->the_post();
+                <?php while ( $query->have_posts() ) : $query->the_post();?>
 
-                  include( get_template_directory() . '/phtml/sections/cards/card-consultants-sm.phtml');
+								<div class="section-2col">
 
-                endwhile; ?>
+									<?php include( get_template_directory() . '/phtml/sections/cards/card-consultant.phtml');?>
+
+								</div>
+
+                <?php endwhile; ?>
 
                 <?php
                 wp_reset_postdata();?>
-								<div class="bx--col-sm-12 padding-top">
-									<input class="toggle toggle-ios" id="cb2" type="checkbox"/>
-									<label class="toggle-btn" for="cb2"></label>
-								</div>
+
         </div>
 
       </div>

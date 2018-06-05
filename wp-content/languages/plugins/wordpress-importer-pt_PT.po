@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WordPress Importer - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-12-07 10:13:19+0000\n"
+"PO-Revision-Date: 2018-03-06 08:51:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,15 +15,11 @@ msgstr ""
 msgid "wordpressdotorg"
 msgstr "wordpressdotorg"
 
-#. Author URI of the plugin/theme
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
-
 #: wordpress-importer.php:284
 msgid "Submit"
 msgstr "Submeter"
 
-#: wordpress-importer.php:1002
+#: wordpress-importer.php:1011
 msgid "Remote server returned error response %1$d %2$s"
 msgstr "O servidor remoto devolveu a resposta de erro %1$d %2$s"
 
@@ -35,7 +31,7 @@ msgstr "Para facilitar a edição e gravação do conteúdo importado, poderá q
 msgid "%s &#8220;%s&#8221; already exists."
 msgstr "%s &#8220;%s&#8221; já existe."
 
-#: wordpress-importer.php:869
+#: wordpress-importer.php:870
 msgid "Menu item skipped due to missing menu slug"
 msgstr "Item do menu ignorado pois não contém URL"
 
@@ -51,15 +47,15 @@ msgstr "como um novo utilizador:"
 msgid "This WXR file (version %s) may not be supported by this version of the importer. Please consider updating."
 msgstr "Este ficheiro WXR (versão %s) pode não ser suportado por esta versão do importador. Considere instalar uma actualização mais recente."
 
-#: wordpress-importer.php:876
+#: wordpress-importer.php:877
 msgid "Menu item skipped due to invalid menu slug: %s"
 msgstr "Item do menu ignorado pois seu URL é inválido: %s"
 
-#: wordpress-importer.php:939
+#: wordpress-importer.php:940
 msgid "Fetching attachments is not enabled"
 msgstr "O carregamento de anexos não está activado"
 
-#: parsers.php:84 parsers.php:89 parsers.php:306 parsers.php:495
+#: parsers.php:84 parsers.php:89 parsers.php:306 parsers.php:502
 msgid "This does not appear to be a WXR file, missing/invalid WXR version number"
 msgstr "Isto não parece ser um ficheiro WXR válido. O número de versão WXR é inválido ou não está presente."
 
@@ -71,7 +67,7 @@ msgstr "Os detalhes são mostrados acima. O importador irá agora tentar de novo
 msgid "Import posts, pages, comments, custom fields, categories, tags and more from a WordPress export file."
 msgstr "Importar artigos, páginas, comentários, campos personalizados, categorias, etiquetas e mais a partir de um ficheiro de exportação WordPress."
 
-#: wordpress-importer.php:1126
+#: wordpress-importer.php:1136
 msgid "A new version of this importer is available. Please update to version %s to ensure compatibility with newer export files."
 msgstr "Está disponível uma nova versão do importador. Actualize para a versão %s para garantir a compatibilidade com os ficheiros de exportação mais recentes."
 
@@ -87,11 +83,11 @@ msgstr "ou criar um novo nome de utilizador:"
 msgid "or assign posts to an existing user:"
 msgstr "ou atribuir artigos a um utilizador existente:"
 
-#: wordpress-importer.php:1014
+#: wordpress-importer.php:1023
 msgid "Zero size file downloaded"
 msgstr "O ficheiro descarregado está vazio"
 
-#: wordpress-importer.php:1119
+#: wordpress-importer.php:1129
 msgid "Import WordPress"
 msgstr "Importar de WordPress"
 
@@ -107,15 +103,15 @@ msgstr "Concluído."
 msgid "Have fun!"
 msgstr "Divirta-se!"
 
-#: wordpress-importer.php:952
+#: wordpress-importer.php:953
 msgid "Invalid file type"
 msgstr "Tipo de ficheiro inválido"
 
-#: wordpress-importer.php:996
+#: wordpress-importer.php:1003
 msgid "Remote server did not respond"
 msgstr "O servidor remoto não respondeu"
 
-#: wordpress-importer.php:1009
+#: wordpress-importer.php:1018
 msgid "Remote file is incorrect size"
 msgstr "Tamanho incorrecto do ficheiro remoto"
 
@@ -129,10 +125,6 @@ msgstr "Ocorreu um erro."
 msgid "WordPress Importer"
 msgstr "Importador do WordPress"
 
-#. Plugin URI of the plugin/theme
-msgid "http://wordpress.org/extend/plugins/wordpress-importer/"
-msgstr "http://wordpress.org/extend/plugins/wordpress-importer/"
-
 #: wordpress-importer.php:264
 msgid "Assign Authors"
 msgstr "Atribuir autores"
@@ -141,7 +133,7 @@ msgstr "Atribuir autores"
 msgid "Import Attachments"
 msgstr "Importar anexos"
 
-#: wordpress-importer.php:1020
+#: wordpress-importer.php:1029
 msgid "Remote file is too large, limit is %s"
 msgstr "O ficheiro remoto é demasiado grande, o limite é %s"
 
@@ -157,7 +149,7 @@ msgstr "- Seleccione -"
 msgid "The export file could not be found at <code>%s</code>. It is likely that this was caused by a permissions problem."
 msgstr "O ficheiro de exportação não foi encontrado em <code>%s</code>. Isto é provavelmente um problema de permissões."
 
-#: wordpress-importer.php:1142
+#: wordpress-importer.php:1152
 msgid "Choose a WXR (.xml) file to upload, then click Upload file and import."
 msgstr "Escolha um ficheiro WXR (.xml) para carregar, depois clique em \"Carregar ficheiro e importar\"."
 
@@ -168,10 +160,6 @@ msgstr "Falhou ao criar o novo utilizador para %s. Os seus artigos serão atribu
 #: wordpress-importer.php:133
 msgid "The file does not exist, please try again."
 msgstr "O ficheiro não existe, por favor tente de novo."
-
-#: wordpress-importer.php:177
-msgid "Remember to update the passwords and roles of imported users."
-msgstr "Lembre-se the actualizar as senhas e papéis do utilizadores importados."
 
 #: wordpress-importer.php:267
 msgid "If a new user is created by WordPress, a new password will be randomly generated and the new user&#8217;s role will be set as %s. Manually changing the new user&#8217;s details will be necessary."
@@ -201,10 +189,22 @@ msgstr "Falhou ao importar &#8220;%s&#8221;: %s é um tipo de conteúdo inválid
 msgid "Failed to import author %s. Their posts will be attributed to the current user."
 msgstr "Falhou ao importar o autor %s. Os seus artigos serão atribuídos ao utilizador actual."
 
-#: wordpress-importer.php:1141
+#: wordpress-importer.php:1151
 msgid "Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import the posts, pages, comments, custom fields, categories, and tags into this site."
 msgstr "Olá! Carregue o seu ficheiro WordPress eXtended RSS (WXR) para importar os artigos, páginas, comentários, campos personalizados, categorias e etiquetas para este site."
 
-#: wordpress-importer.php:1216
+#: wordpress-importer.php:1226
 msgid "Import <strong>posts, pages, comments, custom fields, categories, and tags</strong> from a WordPress export file."
 msgstr "Importar <strong>artigos, páginas, comentários, campos personalizados, categorias e etiquetas</strong> de um ficheiro de exportação WordPress."
+
+#: wordpress-importer.php:177
+msgid "Remember to update the passwords and roles of imported users."
+msgstr "Lembre-se de actualizar as senhas e papéis do utilizadores importados."
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/wordpress-importer/"
+msgstr "https://pt.wordpress.org/plugins/wordpress-importer/"
+
+#. Author URI of the plugin/theme
+msgid "https://wordpress.org/"
+msgstr "https://pt.wordpress.org/"

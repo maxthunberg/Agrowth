@@ -3,7 +3,7 @@
 Plugin Name: HubSpot Tracking Code for WordPress
 Plugin URI: http://hubspot.com
 Description: HubSpot's WordPress plugin allows existing HubSpot customers and trial users to install the HubSpot tracking code on their existing WordPress blogs and websites.
-Version: 1.1.2
+Version: 1.2.1
 Author: HubSpot
 Author URI: http://www.hubspot.com/integrations/wordpress
 License: GPL2
@@ -25,7 +25,7 @@ if ( !defined('HUBSPOT_TRACKING_CODE_PLUGIN_SLUG') )
 	define('HUBSPOT_TRACKING_CODE_PLUGIN_SLUG', basename(dirname(__FILE__)));
 
 if ( !defined('HUBSPOT_TRACKING_CODE_PLUGIN_VERSION') )
-	define('HUBSPOT_TRACKING_CODE_PLUGIN_VERSION', '1.1.2');
+	define('HUBSPOT_TRACKING_CODE_PLUGIN_VERSION', '1.2.1');
 
 //=============================================
 // Include Needed Files
@@ -85,20 +85,7 @@ function hubspot_tracking_code_setup_plugin ( )
 			'hs_version'	=> HUBSPOT_TRACKING_CODE_PLUGIN_VERSION
 		);
 
-		// this is a hack because multisite doesn't recognize local options using either update_option or update_site_option...
-		if ( is_multisite() )
-		{
-			global $wpdb;
-
-			$multisite_prefix = ( is_multisite() ? $wpdb->prefix : '' );
-			$q = $wpdb->prepare("
-				INSERT INTO " . $multisite_prefix . "options
-			        ( option_name, option_value )
-			    VALUES ('hs_settings', %s)", serialize($opt));
-			$wpdb->query($q);
-		}
-		else
-			update_option('hs_settings', $opt);
+		update_option('hs_settings', $opt);
 	}
 }
 

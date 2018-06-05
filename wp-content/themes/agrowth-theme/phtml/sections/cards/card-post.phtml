@@ -1,7 +1,6 @@
-
 <a class="card-link" href="<?php echo get_permalink( $post->ID ); ?>">
 
-  <div class="card card-sm">
+  <div class="card card-post">
 
     <div class="card-img image card-half">
       <div class="img-container">
@@ -16,15 +15,18 @@
 
       </div>
       <div class="info-container">
-
-        <img class="icon icn-clock" src="<?php bloginfo('template_url'); ?>/icons/icn-clock.svg" />
-        <p class="bx--type-zeta">6 min läsning</p>
-        <img class="icon icn-clock" src="<?php bloginfo('template_url'); ?>/icons/icn-calendar.svg" />
-        <p class="bx--type-zeta"><?= get_the_date("j F, Y");?></p>
+        <div class="info-container--part">
+          <img class="icon icn-clock" src="<?php bloginfo('template_url'); ?>/icons/icn-clock.svg" />
+          <p class="bx--type-zeta">6 min läsning</p>
+        </div>
+        <div class="info-container--part">
+          <img class="icon icn-clock" src="<?php bloginfo('template_url'); ?>/icons/icn-calendar.svg" />
+          <p class="bx--type-zeta"><?= get_the_date("j F, Y");?></p>
+        </div>
       </div>
             <div class="tag-container">
 
-            <?php foreach((get_the_category()) as $category):
+            <?php foreach ( ( get_the_category() ) as $category ):
                 $catname = $category->name;
                 $catslug = $category->slug;
               ?>

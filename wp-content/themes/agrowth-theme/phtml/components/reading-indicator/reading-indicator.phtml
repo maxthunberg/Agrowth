@@ -1,7 +1,6 @@
-<?php if (is_single() ):?>
-<progress value="0" id="progressBar" class="flat start">
-  <div class="progress-container">
-    <span class="progress-bar"></span>
+<?php if (is_single() && ($post->post_type == 'post') ):?>
+  <div class="reading-indicator">
+    <div class="reading-indicator__bar" id="readingIndicator"></div>
   </div>
-</progress>
+
 <?php endif;?>

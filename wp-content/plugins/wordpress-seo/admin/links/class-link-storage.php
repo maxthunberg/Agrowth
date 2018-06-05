@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin\Links
  */
 
@@ -13,21 +15,20 @@ class WPSEO_Link_Storage implements WPSEO_Installable {
 	/** @var WPSEO_Database_Proxy */
 	protected $database_proxy;
 
-	/** @var null|string */
+	/** @var null|string Deprecated. */
 	protected $table_prefix;
 
 	/**
-	 * Sets the table prefix.
+	 * Initializes the database table.
 	 *
-	 * @param string $table_prefix Optional. The prefix to use for the table.
+	 * @param string $table_prefix Optional. Deprecated argument.
 	 */
 	public function __construct( $table_prefix = null ) {
-		if ( null === $table_prefix ) {
-			$table_prefix = $GLOBALS['wpdb']->get_blog_prefix();
+		if ( $table_prefix !== null ) {
+			_deprecated_argument( __METHOD__, 'WPSEO 7.4' );
 		}
 
-		$this->table_prefix = $table_prefix;
-		$this->database_proxy = new WPSEO_Database_Proxy( $GLOBALS['wpdb'], $this->get_table_name(), true );
+		$this->database_proxy = new WPSEO_Database_Proxy( $GLOBALS['wpdb'], self::TABLE_NAME, true );
 	}
 
 	/**
@@ -36,7 +37,7 @@ class WPSEO_Link_Storage implements WPSEO_Installable {
 	 * @return string The table name.
 	 */
 	public function get_table_name() {
-		return $this->table_prefix . self::TABLE_NAME;
+		return $this->database_proxy->get_table_name();
 	}
 
 	/**
@@ -63,9 +64,9 @@ class WPSEO_Link_Storage implements WPSEO_Installable {
 	/**
 	 * Returns an array of links from the database.
 	 *
-	 * @param int $post_id The id to get the links for.
+	 * @param int $post_id The post to get the links for.
 	 *
-	 * @return array|null|object The resultset.
+	 * @return WPSEO_Link[] The links connected to the post.
 	 */
 	public function get_links( $post_id ) {
 		global $wpdb;
@@ -83,7 +84,12 @@ class WPSEO_Link_Storage implements WPSEO_Installable {
 			WPSEO_Link_Table_Accessible::set_inaccessible();
 		}
 
-		return $results;
+		$links = array();
+		foreach ( $results as $link ) {
+			$links[] = WPSEO_Link_Factory::get_link( $link->url, $link->target_post_id, $link->type );
+		}
+
+		return $links;
 	}
 
 	/**
@@ -130,10 +136,10 @@ class WPSEO_Link_Storage implements WPSEO_Installable {
 	protected function save_link( WPSEO_Link $link, $link_key, $post_id ) {
 		$inserted = $this->database_proxy->insert(
 			array(
-				'url' => $link->get_url(),
-				'post_id' => $post_id,
+				'url'            => $link->get_url(),
+				'post_id'        => $post_id,
 				'target_post_id' => $link->get_target_post_id(),
-				'type' => $link->get_type(),
+				'type'           => $link->get_type(),
 			),
 			array( '%s', '%d', '%d', '%s' )
 		);

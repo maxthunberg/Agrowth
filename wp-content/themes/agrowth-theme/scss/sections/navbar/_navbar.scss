@@ -23,24 +23,23 @@
     opacity: 1;
     z-index: z('header');
     transition: top $transition--base $bx--standard-easing;
-    .navbar-inner {
+    .navbar--inner {
       display: flex;
       justify-content: space-between;
       width: 100%;
-        .navbar-left {
+        .navbar--left {
           @include customflex(0, center, flex-start, 0);
           height: 100%;
-          margin-left: 3rem;
 
           .logo {
             max-height: 2rem;
             margin-right: 2rem
           }
 
-          .navbar-ul {
+          .navbar--ul {
             @include customflex(0, center, flex-start, 0);
 
-            .navbar-li {
+            .navbar--li {
               position: relative;
               @include customflex(0, center, center, 0);
               padding: rem(14px) rem(16px);
@@ -60,12 +59,12 @@
               }
 
               &:hover, &:focus {
-                .navbar-link{
+                .navbar--link{
                   color: $color-primary;
                 }
               }
 
-              .navbar-link {
+              .navbar--link {
                 position: relative;
                 font-size: 1rem;
                 line-height: 1;
@@ -76,7 +75,7 @@
                   color: $color-primary;
                 }
 
-                .link-label {
+                .link--label {
                     display: block;
                     position: absolute;
                     top: -.125rem;
@@ -91,11 +90,103 @@
             }
           }
         }
-        .navbar-right {
-          margin-right: 3rem;
+        .navbar--right {
         }
     }
   }
+
+  .#{$prefix}--navbar__mobile {
+    @include customflex(0, center, space-between, 0);
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    top:0;
+    left:0;
+    width: 100%;
+    min-height: rem(44px);
+    background: $color-white-03;
+    border-bottom: 1px solid $color-white-10;
+    opacity: 1;
+    z-index: z('header');
+    transition: top $transition--base $bx--standard-easing;
+    .navbar--inner {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 44px;
+        .navbar--left {
+          @include customflex(0, center, flex-start, 0);
+          height: 100%;
+          margin-left: 3rem;
+
+          .logo {
+            max-height: 2rem;
+            margin-right: 2rem
+          }
+
+        }
+        .navbar--right {
+          display: flex;
+          margin-right: 3rem;
+          .bx--btn {
+            max-height: 44px;
+            svg {
+              margin:0;
+            }
+          }
+          .btn--menu {
+            padding: 14px 10px;
+          }
+          .btn--contact {
+            padding: 14px;
+          }
+        }
+    }
+  }
+
+
+    .#{$prefix}--navbar--submenu__mobile {
+      @include customflex(0, center, center, 0);
+      position: fixed;
+      flex-direction: column;
+      top:0;
+      left:0;
+      width: 100vw;
+      height: 100vh;
+      background: transparent;
+      opacity: 0;
+      z-index: z('hidden');
+      transition: background-color $transition--base $bx--standard-easing;
+      .bx--navbar--submenu__close-button {
+        position: absolute;
+        top: 4rem;
+        right: 4rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        svg {
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+
+      .navbar--ul {
+        .navbar--li {
+          @include customflex(0, 0, center, 0);
+          a {
+            margin-bottom: 1rem;
+          }
+
+        }
+      }
+    }
+
+    .#{$prefix}--navbar--submenu__mobile.visible {
+      @include customflex(0,0,0,0);
+      opacity: 1;
+      z-index: 7000;
+      background-color: rgba($color-white-03,.9);
+      transition: $transition--default;
+    }
 
   @keyframes pulse {
     0% {
@@ -134,5 +225,33 @@
       box-shadow: 0 0 0 0 rgba($color-secondary-dark,0);
   }
 }
+
+}
+
+
+@media (min-width: breakpoint('xl')) { // 1600px
+
+}
+
+@media (max-width: breakpoint('xl')) { // 1200px
+
+}
+
+@media (max-width: breakpoint('lg')) { // 992px
+  .bx--navbar {
+    display: none;
+  }
+  .bx--navbar__mobile {
+    display: flex;
+  }
+}
+
+@media (max-width: breakpoint('md')) { // 768px
+
+
+
+}
+
+@media (max-width: breakpoint('sm')) { // 576px
 
 }

@@ -1,6 +1,7 @@
 .card-link {
   text-decoration: none;
   color: inherit;
+  cursor: default;
   &:focus > .card {
     @include layer('sticky-nav');
     transform: translateY(-1px);
@@ -28,8 +29,20 @@
   }
 }
 
+.card.interactive {
+  height: auto;
+
+  &:hover {
+    @include layer('raised');
+    cursor: default;
+    z-index: 2;
+    transform: translateY(0px);
+    transition: none;
+  }
+}
+
 // Card service small
-.card-service--sm {
+.card-service {
   padding: 2rem 2rem 2rem 1.5rem;
 
   .service-img-container {
@@ -45,7 +58,7 @@
 }
 
 // Card consultants small
-.card-consultants--sm {
+.card-consultant {
   position: relative;
   @include customflex(0, center, flex-start, 0);
   padding: 2.5rem 2rem;
@@ -73,7 +86,7 @@
 
 // Card Post
 
-.card-sm {
+.card-post {
   display: flex;
   flex-direction: column;
   box-shadow: $box-shadow--raised;
@@ -87,6 +100,10 @@
 
   .card-half {
     display: flex;
+  }
+
+  .img-container {
+    border-bottom: 1px solid $color-white-10;
   }
 
   .card-img {
@@ -109,93 +126,42 @@
 
       .title {
         color: $color-dark;
-        margin-bottom: .5rem;
+        margin-bottom: 1rem;
       }
 
     }
     .info-container {
-      @include customflex(0, center, flex-start, 0);
-      height: 2rem;
-      margin-bottom: 1rem;
-      .icon {
-        margin-right: .5rem;
+      @include customflex(0, center, flex-start, wrap);
+      min-height: 2rem;
+      .info-container--part {
+        @include customflex(0,0,0,0);
+        margin-bottom: 1rem;
+        .icon {
+          margin-right: .5rem;
+        }
+        p {
+          margin-right: 1.5rem;
+        }
       }
-      p {
-        margin-right: 1.5rem;
-      }
     }
 
   }
 
 }
 
-// .tag-container {
-//
-//   .tag {
-//     display: inline-block;
-//     background-color: rgba($color-primary,.1);
-//     border-radius: .25rem;
-//     padding: 5px 8px;
-//     .tag-text {
-//       color: $color-primary-dark;
-//     }
-//   }
-//
-// }
-
-.swiper-slider-outer {
-  flex-basis: 100%;
-  .swiper-container {
-    width: 100%;
-    height: 100%;
-    .swiper-slide {
-      width: 352px!important;
-      padding: 2rem 0;
-    }
-  }
-
+.card-aboutus {
+  display:none;
+}
+.card-aboutus.active {
+  display: flex;
 }
 
-
-.img-container {
-  width: 100%;
-  height: 100%;
-  .featured-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.card-post {
-  position: relative;
-  @include customflex(0, center, flex-start, 0);
-  padding: 2.5rem 2rem;
-  border-radius: .25rem;
-  width: rem(320px);
-  height: auto;
-  .card-img-container {
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: auto;
-
-  }
-
-  .service-text-container {
-    @include customflex(column, 0, 0, 0);
-
-  }
-  &:hover {
-    &:before {
-      background: $color-primary;
-    }
-  }
+.post-feed .card-post {
+  max-width: none;
 }
 
 @media (max-width: breakpoint('lg') ) { // 992px
-  .card-service--sm {
+  .card-service {
     .service-img-container {
       margin-right: 1rem;
       .service-img {
@@ -208,7 +174,7 @@
 }
 
 @media (max-width: breakpoint('md') ) { // 768px
-  .card-service--sm {
+  .card-service {
     @include customflex(0, 0, 0, 0);
     .service-img-container {
       margin-right: 1.5rem;
@@ -225,7 +191,7 @@
 
 }
 @media (max-width: breakpoint('sm') ) { // 992px
-  .card-service--sm {
+  .card-service {
     @include customflex(column, 0, 0, 0);
     .service-img-container {
       margin-right: 0rem;
@@ -240,7 +206,7 @@
 }
 
 @media (max-width: breakpoint('xs') ) { // 992px
-  .card-service--sm {
+  .card-service {
     @include customflex(column, 0, 0, 0);
     .service-img-container {
       margin-right: 0rem;

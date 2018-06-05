@@ -41,15 +41,14 @@
   border-color: $border-color;
   color: $font-color;
 
-  &:focus,
   &:hover {
     background-color: $hover-bg-color;
   }
 
-  &:focus {
-    border: $button-border-width solid $color-white-03;
-    outline: $button-border-width solid $hover-bg-color;
-  }
+  // &:focus {
+  //   border: $button-border-width solid $color-white-03;
+  //   outline: $button-border-width solid $hover-bg-color;
+  // }
 
   &:disabled:hover,
   &:disabled:focus {
