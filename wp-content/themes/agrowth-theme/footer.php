@@ -5,12 +5,12 @@
 
 <script>
 var resourceSwiper = new Swiper('.swiper-container', {
-  slidesOffsetBefore: 64,
+  slidesOffsetBefore: 0,
   loop: true,
   loopedSlides: 5,
   slidesPerView:'auto',
   spaceBetween: 32,
-  centeredSlides: false,
+  centeredSlides: true,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,

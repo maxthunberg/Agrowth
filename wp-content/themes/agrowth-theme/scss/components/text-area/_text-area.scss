@@ -4,6 +4,7 @@
 
 @import '../../globals/scss/vars';
 @import '../../globals/scss/colors';
+@import '../../globals/scss/layer';
 @import '../../globals/scss/typography';
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/css--reset';
@@ -20,16 +21,24 @@
     min-width: 10rem;
     padding: $spacing-md;
     color: $text-01;
-    background-color: $field-primary;
-    border: $input-border;
     resize: vertical;
+    background-color: $color-white;
+    border: 1px solid $color-white-10;
+    transition: $transition--default;
+
+    &:hover {
+      border: 1px solid $color-white-20;
+      transition: $transition--default;
+    }
 
     &:focus {
-      @include focus-outline('border');
+      border: 1px solid $color-grey;
+      transition: $transition--default;
     }
 
     &::-webkit-input-placeholder {
-      @include placeholder-colors;
+      // @include placeholder-colors;
+      color: $color-grey;
     }
 
     &:disabled {
@@ -41,4 +50,40 @@
       border: $input-border;
     }
   }
+
+  .about-us-form .#{$prefix}--text-area {
+    @include reset;
+    @include pt-serif;
+    @include typescale('zeta');
+    width: 100%;
+    min-width: 10rem;
+    padding: $spacing-md;
+    color: $text-01;
+    resize: vertical;
+    background-color: $color-white;
+    border: 1px solid $color-white;
+    @include layer(overlay);
+    transition: $transition--default;
+
+    &:focus {
+      border: 1px solid $color-white-20;
+      @include layer(temporary-nav);
+      transition: $transition--default;
+    }
+
+    &::-webkit-input-placeholder {
+      // @include placeholder-colors;
+      color: $color-grey;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:disabled:hover {
+      border: $input-border;
+    }
+  }
+
 }

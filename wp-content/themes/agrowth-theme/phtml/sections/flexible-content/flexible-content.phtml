@@ -3,19 +3,45 @@
 // check if the flexible content field has rows of data
 if( have_rows('flexible_content') ):?>
 
-  <div class="bx--grid section-content__outer">
-      <div class="bx--row">
+    <?php if ( is_singular('services') ) :?>
 
-          <div class="section-content">
+      <div class="bx--grid section-content__outer sticky-container">
+        <div class="bx--row">
 
+            <div class="section-content">
+
+              <!-- Sticky Bar-->
+              <?php  include( get_template_directory() . '/phtml/sections/flexible-content/sticky-bar.phtml');?>
+
+    <?php elseif (is_singular('consultants') ) :?>
+
+      <div class="bx--grid section-content__outer sticky-container">
+        <div class="bx--row">
+
+            <div class="section-content">
+
+              <!-- Sticky Bar-->
+              <?php  include( get_template_directory() . '/phtml/sections/flexible-content/sticky-bar.phtml');?>
+
+    <?php elseif (is_singular('post') ) :?>
+
+      <div class="bx--grid section-content__outer sticky-container">
+        <div class="bx--row">
+
+            <div class="section-content">
+
+              <!-- Sticky Bar-->
+              <?php  include( get_template_directory() . '/phtml/sections/flexible-content/sticky-bar.phtml');?>
+
+    <?php endif; ?>
     <?php
  	// loop through the rows of data
     while ( have_rows('flexible_content') ) : the_row();
 
-							// H2 - Section
-			        if ( get_row_layout() == 'ingress' ):
+              // Ingress
+              if ( get_row_layout() == 'ingress' ):
 
-								// vars
+                // vars
 								$text = get_sub_field('text');
 
 							?>
@@ -80,6 +106,19 @@ if( have_rows('flexible_content') ):?>
 
               <div class="h5-section">
                 <h5 class="bx--type-delta_subheading heading"><?= $heading ?></h5>
+                <p class="bx--type-delta_paragraph"><?= $paragraph ?></p>
+              </div>
+
+        <?php
+							// H5 - Section
+							elseif ( get_row_layout() == 'paragraph' ):
+
+								// vars
+								$paragraph = get_sub_field('paragraph', false, false);
+
+							?>
+
+              <div class="paragraph">
                 <p class="bx--type-delta_paragraph"><?= $paragraph ?></p>
               </div>
 
@@ -267,6 +306,11 @@ if( have_rows('flexible_content') ):?>
 								endif;
 
           endwhile;?>
+
+              <div class="bx--col-lg-6 bx--col-md-3 bx--col-xs-12 contact-form--col">
+                <?php echo do_shortcode('[contact-form-7 id="518" title="Contact form - Default" html_class="bx--form-item"]'); ?>
+              </div>
+
             </div>
       </div>
 </div>

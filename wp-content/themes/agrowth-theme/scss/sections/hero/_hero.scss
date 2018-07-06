@@ -27,10 +27,84 @@
       right: 0px;
       max-height: 50%;
     }
+    .hero--image-container {
+      @include customflex(0,center,center,0);
+      background-color: $color-white;
+      border: 1px solid $color-white-10;
+      border-radius: .25rem;
+      height: rem(192px);
+      width: rem(192px);
+      margin-right: 2rem;
+      @include layer(raised);
+      img {
+        height: rem(128px);
+        width: rem(128px);
+      }
+    }
+
   }
 }
 
-.hero--sm {
+.hero.services {
+
+  .bx--row {
+    @include customflex( 0, center, center, 0)
+
+    .hero-container {
+      @include customflex( 0, center, flex-start, 0)
+
+      .hero--text-container {
+        .hero-subheading{
+          color: $color-primary;
+        }
+        .hero-heading {
+          margin: $spacing-2xs 0 $spacing-md 0;
+        }
+        .hero-paragraph {
+
+        }
+      }
+
+    .hero--image-container {
+      @include customflex(0,center,center,0);
+      background-color: $color-white;
+      border: 1px solid $color-white-10;
+      border-radius: .25rem;
+      height: rem(192px);
+      width: rem(192px);
+      margin-right: 2rem;
+      margin-bottom: 0;
+      @include layer(raised);
+      img {
+        height: rem(128px);
+        width: rem(128px);
+      }
+    }
+    }
+  }
+}
+
+.hero.hero__bg-image {
+  @include customflex( 0, flex-end, flex-start, 0)
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 5.5rem);
+  .bx--row {
+    @include customflex( 0, flex-end, flex-start, 0)
+    .hero-container {
+      .hero-subheading{
+        color: $color-white-10;
+      }
+      .hero-heading {
+        color: $color-white;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}
+
+.hero__sm {
   @include customflex( 0, center, flex-start, 0)
   background: $color-white-03;
   background-repeat: no-repeat;
@@ -75,4 +149,48 @@
       max-height: 50%;
     }
   }
+}
+
+@media (max-width: breakpoint('lg') ) {
+
+  .hero.services {
+
+    .bx--row {
+      @include customflex( 0, center, center, 0)
+
+      .hero-container {
+        @include customflex( column, flex-start, center, 0)
+
+        .hero--text-container {
+          .hero-subheading{
+            color: $color-primary;
+          }
+          .hero-heading {
+            margin: $spacing-2xs 0 $spacing-md 0;
+          }
+          .hero-paragraph {
+
+          }
+        }
+
+      .hero--image-container {
+        @include customflex(0,center,center,0);
+        background-color: $color-white;
+        border: 1px solid $color-white-10;
+        border-radius: .25rem;
+        height: 4rem;
+        width: 4rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        @include layer(raised);
+        img {
+          height: 2.5rem;
+          width: 2.5rem;
+        }
+      }
+      }
+    }
+  }
+
+
 }

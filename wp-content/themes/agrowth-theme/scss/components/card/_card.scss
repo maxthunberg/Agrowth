@@ -2,6 +2,9 @@
   text-decoration: none;
   color: inherit;
   cursor: default;
+  &:focus {
+    outline: 0px solid transparent!important;
+  }
   &:focus > .card {
     @include layer('sticky-nav');
     transform: translateY(-1px);
@@ -153,7 +156,27 @@
   display:none;
 }
 .card-aboutus.active {
-  display: flex;
+  @include customflex(column,0,0,0);
+  .card-aboutus--title-container {
+      @include customflex(0,center,0,0);
+      margin-bottom: .5rem;
+    .card--icon {
+      @include customflex(0,center,center,0);
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      min-width: 2.5rem;
+      border: 1px solid $color-white-20;
+      margin-right: 1rem;
+      .card--icon__icon {
+        height: 1rem;
+        width: 1rem;
+      }
+    }
+    h5 {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .post-feed .card-post {

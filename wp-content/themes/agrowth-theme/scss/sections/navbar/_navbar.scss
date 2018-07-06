@@ -91,6 +91,7 @@
           }
         }
         .navbar--right {
+
         }
     }
   }
@@ -128,14 +129,83 @@
         .navbar--right {
           display: flex;
           margin-right: 3rem;
+          .hamburger-icon {
+            @include customflex(0, center, center, 0);
+            position: relative;
+            height: 44px;
+            width: 44px;
+            background-color: transparent;
+            transition: $transition--default;
+
+            .hamburger-line {
+              position: absolute;
+              width: 20px;
+              height: 1px;
+              background-color: rgba($color-dark,1);
+            }
+            .line-1 {
+              transform: translateY(-4px);
+              transition: $transition--default;
+            }
+            .line-2 {
+              transform: translateY(4px);
+              transition: $transition--default;
+            }
+
+            &:hover {
+              cursor: pointer;
+              transition: $transition--default;
+              .hamburger-line {
+                background-color: rgba($color-dark,.5);
+              }
+              .line-1 {
+                transform: translateY(-4px);
+                transition: $transition--default;
+              }
+              .line-2 {
+                transform: translateY(4px);
+                transition: $transition--default;
+              }
+
+            }
+          }
+          .hamburger-icon.active {
+
+            .hamburger-line {
+              background-color: rgba($color-dark,1);
+            }
+            .line-1 {
+              transform: rotate(45deg);
+              transition: $transition--default;
+            }
+            .line-2 {
+              transform: rotate(-45deg);
+              transition: $transition--default;
+            }
+
+            &:hover {
+              cursor: pointer;
+              transition: $transition--default;
+              .hamburger-line {
+                background-color: rgba($color-dark,.5);
+              }
+              .line-1 {
+                transform: rotate(45deg);
+                transition: $transition--default;
+              }
+              .line-2 {
+                transform: rotate(-45deg);
+                transition: $transition--default;
+              }
+
+            }
+          }
+
           .bx--btn {
             max-height: 44px;
             svg {
               margin:0;
             }
-          }
-          .btn--menu {
-            padding: 14px 10px;
           }
           .btn--contact {
             padding: 14px;
@@ -157,17 +227,6 @@
       opacity: 0;
       z-index: z('hidden');
       transition: background-color $transition--base $bx--standard-easing;
-      .bx--navbar--submenu__close-button {
-        position: absolute;
-        top: 4rem;
-        right: 4rem;
-        height: 1.5rem;
-        width: 1.5rem;
-        svg {
-          height: 1.5rem;
-          width: 1.5rem;
-        }
-      }
 
       .navbar--ul {
         .navbar--li {
@@ -181,10 +240,11 @@
     }
 
     .#{$prefix}--navbar--submenu__mobile.visible {
+      display: none;
       @include customflex(0,0,0,0);
       opacity: 1;
-      z-index: 7000;
-      background-color: rgba($color-white-03,.9);
+      z-index: 5000;
+      background-color: $color-white-03;
       transition: $transition--default;
     }
 
@@ -230,11 +290,15 @@
 
 
 @media (min-width: breakpoint('xl')) { // 1600px
-
+  .#{$prefix}--navbar--submenu__mobile.visible {
+    display: none;
+  }
 }
 
 @media (max-width: breakpoint('xl')) { // 1200px
-
+  .#{$prefix}--navbar--submenu__mobile.visible {
+    display: none;
+  }
 }
 
 @media (max-width: breakpoint('lg')) { // 992px
@@ -244,9 +308,15 @@
   .bx--navbar__mobile {
     display: flex;
   }
+  .#{$prefix}--navbar--submenu__mobile.visible {
+    display: flex;
+  }
 }
 
 @media (max-width: breakpoint('md')) { // 768px
+  .#{$prefix}--navbar--submenu__mobile.visible {
+    display: flex;
+  }
 
 
 

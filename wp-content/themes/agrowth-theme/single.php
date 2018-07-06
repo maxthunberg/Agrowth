@@ -19,6 +19,7 @@ $ingress = get_field('ingress');
 <!-- Flexible Content -->
 <?php  include( get_template_directory() . '/phtml/sections/flexible-content/flexible-content.phtml');?>
 
+
 <!-- Other services -->
 <div class="bx--grid resources-footer__outer">
   <div class="bx--row">
@@ -36,17 +37,17 @@ $ingress = get_field('ingress');
         <?php include( get_template_directory() . '/phtml/sections/author-info/author-info.phtml'); ?>
 
       </div>
-      <div class="bx--col-md-12 resources-footer more-articles">
+      <div class="bx--col-md-12 more-articles">
         <h3>Fler artiklar</h3>
       </div>
-      <div class="bx--col-md-12 section-2rem resources-footer resources-footer__cards">
+      <div class="bx--col-md-12 section-2rem resources-footer__cards">
 
 <?php
                     $args = array(
                         'post_type' => 'post',
                         'orderby' => 'date',
                         'order'   => 'DESC',
-                        'posts_per_page' => 2,
+                        'posts_per_page' => 3,
                     );
 
                     $query = new WP_Query( $args );
@@ -54,8 +55,8 @@ $ingress = get_field('ingress');
 
                     <?php while ( $query->have_posts() ) : $query->the_post();?>
 
-                        <div class="section-2col">
-                          <?php include( get_template_directory() . '/phtml/sections/cards/card-post.phtml');?>
+                        <div class="section-3col">
+                          <?php include( get_template_directory() . '/phtml/sections/cards/card-post-sm.phtml');?>
                         </div>
 
                     <?php endwhile; ?>

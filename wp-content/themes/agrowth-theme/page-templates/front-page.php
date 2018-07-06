@@ -12,14 +12,15 @@ get_header();
 <!-- Products Section small-->
 <?php  include( get_template_directory() . '/phtml/sections/services/services-section.phtml');?>
 
+<!-- Consultants Section -->
+<?php  include( get_template_directory() . '/phtml/sections/consultants/consultants-section.phtml');?>
+
 <!-- Client logos -->
 <?php include( get_template_directory() . '/phtml/sections/clients/clients.phtml');?>
 
 <!-- Resources Slider -->
 <?php  include( get_template_directory() . '/phtml/sections/resources/resources-slider.phtml');?>
 
-<!-- Consultants Section -->
-<?php  include( get_template_directory() . '/phtml/sections/consultants/consultants-section.phtml');?>
 
 <!-- About us Section -->
 <?php  include( get_template_directory() . '/phtml/sections/interactive-tool/interactive-circle.phtml');?>

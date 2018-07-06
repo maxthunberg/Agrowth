@@ -58,6 +58,15 @@
   }
 }
 
+.resources-footer__outer.services {
+  .bx--row {
+    .resources-footer {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+
 .author {
   @include customflex(0, center, 0, 0);
   align-self: flex-start;

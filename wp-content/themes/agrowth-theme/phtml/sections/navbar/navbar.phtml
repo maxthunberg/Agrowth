@@ -68,14 +68,6 @@
         </svg>
       </button>
 
-    <!-- Hamburger Icon -->
-    <div class="hamburger">
-      <div class="hamburger-line line-1"></div>
-      <div class="hamburger-line line-2"></div>
-      <div class="hamburger-line line-3"></div>
-    </div>
-
-
     </div>
   </div>
 
@@ -112,16 +104,6 @@
     <!--right section-->
     <div class="navbar--right">
 
-      <!-- CTA button -->
-      <button class="bx--btn bx--btn__white   bx--btn--lg btn--menu" type="button">
-        <svg width="24" height="16" viewBox="0 0 24 16">
-          <g fill="#292929" fill-rule="evenodd">
-            <polygon points="0 14 24 14 24 16 0 16"/>
-            <polygon points="0 7 24 7 24 9 0 9"/>
-            <polygon points="0 0 24 0 24 2 0 2"/>
-          </g>
-        </svg>
-      </button>
 
       <!-- CTA button -->
       <button class="bx--btn bx--btn__primary bx--btn--lg btn--contact" type="button">
@@ -131,13 +113,11 @@
         </svg>
       </button>
 
-    <!-- Hamburger Icon -->
-    <div class="hamburger">
-      <div class="hamburger-line line-1"></div>
-      <div class="hamburger-line line-2"></div>
-      <div class="hamburger-line line-3"></div>
-    </div>
-
+      <!-- Hamburger Icon -->
+        <div class="hamburger-icon btn--menu">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+        </div>
 
     </div>
   </div>
@@ -146,15 +126,7 @@
 <!-- Reading indicator for blog single pages -->
 <?php  include( get_template_directory() . '/phtml/components/reading-indicator/reading-indicator.phtml');?>
 <div class="bx--navbar--submenu__mobile">
-  <button class="bx--btn bx--btn__white bx--navbar--submenu__close-button" type="button">
 
-    <svg width="9" height="15" viewBox="0 0 9 15">
-      <g fill="none" fill-rule="evenodd" transform="translate(-1 -1)">
-        <rect width="12" height="16"/>
-        <polygon fill="#292929" points="1 8.071 8.071 1 9.485 2.414 3.828 8.071 9.485 13.728 8.071 15.142"/>
-      </g>
-    </svg>
-  </button>
   <!-- Navbar menu -->
   <?php if( have_rows('navbar_menu', 'option') ): ?>
 

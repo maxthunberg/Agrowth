@@ -26,15 +26,15 @@ if( empty($fname)){
   <div class="author--info">
 
     <?php if ( $full_name !== ''):?>
-      <h4 class="author--info__name">Max Thunberg <?=$full_name;?> </h4>
+      <h4 class="author--info__name"><?=$full_name;?> </h4>
     <?php else :?>
-      <h4 class="author--info__name">Agrowth <?=$full_name;?> </h4>
+      <h4 class="author--info__name">Agrowth </h4>
     <?php endif;?>
 
     <?php if ( $worktitle !== null ): ?>
-    <p class="author--info__role">Digital Designer<?= $worktitle . ' @ worktitle';?></p>
+    <p class="author--info__role"><?= $worktitle . ' @ worktitle';?></p>
     <?php else :?>
-    <p class="author--info__role">Digital Designer<?= $worktitle . ' @ Agrowth';?></p>
+    <p class="author--info__role">@ Agrowth</p>
     <?php endif;?>
   </div>
 

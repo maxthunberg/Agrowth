@@ -1,5 +1,42 @@
 $(document).ready(function() {
 
+
+	// Disable/enable scroll
+	var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+	function preventDefault(e) {
+	  e = e || window.event;
+	  if (e.preventDefault)
+	      e.preventDefault();
+	  e.returnValue = false;
+	}
+
+	function preventDefaultForScrollKeys(e) {
+	    if (keys[e.keyCode]) {
+	        preventDefault(e);
+	        return false;
+	    }
+	}
+
+	function disableScroll() {
+	  if (window.addEventListener) // older FF
+	      window.addEventListener('DOMMouseScroll', preventDefault, false);
+			  window.onwheel = preventDefault; // modern standard
+			  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+			  window.ontouchmove  = preventDefault; // mobile
+			  document.onkeydown  = preventDefaultForScrollKeys;
+	}
+
+	function enableScroll() {
+    if (window.removeEventListener)
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+		    window.onmousewheel = document.onmousewheel = null;
+		    window.onwheel = null;
+		    window.ontouchmove = null;
+		    document.onkeydown = null;
+	}
+
+
   //navbar, click on li = click on ahref
   $(".navbar-li").click(function(){
     window.location = $(this).find("a").attr("href");
@@ -9,7 +46,18 @@ $(document).ready(function() {
   // Navbar mobile fullscreen submenu
   $('.btn--menu').click(function(){
     $('.bx--navbar--submenu__mobile').toggleClass('visible');
+    $('.btn--menu').toggleClass('active');
+
+    if ( $('.btn--menu').hasClass('active') ) {
+      disableScroll();
+    } else if ( !$('.btn--menu').hasClass('active') ) {
+      enableScroll();
+    } else {
+
+    }
+
   });
+
   $('.bx--navbar--submenu__close-button').click(function(){
     $('.bx--navbar--submenu__mobile').removeClass('visible');
   });
@@ -45,6 +93,22 @@ $(document).ready(function() {
 
     });
 
+
+  // About us page - Hover effect on icons
+  function ourOfferAnimation() {
+    var icon = $('.our-offer--icon-container');
+
+    $(icon).mouseover(function(){
+      $(this).siblings().addClass('active');
+    });
+
+    $(icon).mouseout(function(){
+      $(this).siblings().removeClass('active');
+    });
+
+  }
+
+  ourOfferAnimation();
 
   // scroll animation navbar - Box shadow animated on scroll
   var navbar = $('.bx--navbar');
@@ -114,6 +178,16 @@ $(document).ready(function() {
 
   // Turning circle
 
+  if ($('.card-aboutus-1').length) {
+    $('.card-aboutus-1').addClass('active');
+    $('.circle-sm-1').addClass('active');
+
+    $('.circle-sm').click(function(){
+      $('.circle-sm').removeClass('active');
+      $(this).addClass('active');
+    });
+  }
+
   var i = 1;
 
   var interval = setInterval( increment, 30);
@@ -167,7 +241,7 @@ $(document).ready(function() {
 
 
   // Reading indicator
-  if ($('.ingress').length) {
+  if ($('.reading-indicator').length) {
     window.onscroll = function() {readingIndicator()};
   }
 
@@ -178,7 +252,86 @@ $(document).ready(function() {
     document.getElementById("readingIndicator").style.width = scrolled + "%";
   }
 
+  // Sticky-bar functionality
 
+  function stickyBar() {
+
+    $(window).scroll(function() {
+
+      var windowCenter =  $(window).height() / 2 - 150;
+      var eTop = $('.sticky-bar').offset().top;
+      var eBottom = $('.sticky-bar').offset().top + $(window).height();
+      var releaseTop = $('.sticky-container').offset().top;
+      var releaseBottom = $('.resources-footer__outer').offset().top + $(window).height();
+
+      if ( eTop - $(window).scrollTop() <= windowCenter ) {
+        $('.sticky-bar').addClass('fixed');
+      }
+
+      if ( eBottom - $(window).scrollTop() < releaseBottom - $(window).scrollTop() ) {
+        $('.sticky-bar').removeClass('fade');
+      }
+
+      if ( eTop - $(window).scrollTop() < releaseTop - $(window).scrollTop() + 264 )  {
+        $('.sticky-bar').removeClass('fixed');
+      }
+
+      if ( eBottom - $(window).scrollTop() > releaseBottom - $(window).scrollTop() - 160 ) {
+         $('.sticky-bar').addClass('fade');
+      }
+
+    });
+  }
+
+  function stickyCard() {
+
+    $(window).scroll(function() {
+
+      var windowCenter =  $(window).height() / 2 - 150;
+      var eTop = $('.sticky-cards').offset().top;
+      var eBottom = $('.sticky-cards').offset().top + $(window).height();
+
+      var releaseTop = $('.sticky-container').offset().top;
+      var releaseBottom = $('.resources-footer__outer').offset().top + $(window).height();
+      console.log(eTop - $(window).scrollTop());
+      console.log(windowCenter)
+      if ( eTop - $(window).scrollTop() <= windowCenter ) {
+        console.log('add fixed');
+        $('.sticky-cards').addClass('fixed');
+      }
+
+      if ( eBottom - $(window).scrollTop() < releaseBottom - $(window).scrollTop() ) {
+        $('.sticky-cards').removeClass('fade');
+      }
+
+      if ( eTop - $(window).scrollTop() < releaseTop - $(window).scrollTop() + 264 )  {
+        $('.sticky-cards').removeClass('fixed');
+      }
+
+      if ( eBottom - $(window).scrollTop() > releaseBottom - $(window).scrollTop() - 384 ) {
+         $('.sticky-cards').addClass('fade');
+      }
+
+    });
+  }
+
+  function showStickyBar(){
+    $('.sticky-bar').removeClass('hidden');
+  }
+
+  function showStickyCard(){
+    $('.sticky-cards').removeClass('hidden');
+  }
+
+  if ( $('.sticky-bar').length ) {
+    stickyBar();
+    setTimeout(showStickyBar, 500);
+  }
+
+  if ( $('.sticky-cards').length ) {
+    stickyCard();
+    setTimeout(showStickyCard, 500);
+  }
 
 
 }); // Document ready

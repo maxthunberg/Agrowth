@@ -3,6 +3,32 @@
   outline:none;
 }
 
+form {
+  @include customflex(column, 0,0,0);
+}
+
+//FORM RESET
+
+textarea, select, input[type="date"],
+input[type="datetime"], input[type="datetime-local"],
+input[type="email"], input[type="month"], input[type="number"],
+input[type="password"], input[type="search"], input[type="tel"],
+input[type="text"], input[type="time"], input[type="url"], input[type="week"]{
+
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-background-clip: padding;
+-moz-background-clip: padding;
+background-clip:padding-box;
+-webkit-border-radius:0;
+-moz-border-radius:0;
+-ms-border-radius:0;
+-o-border-radius:0;
+border-radius:0;
+-webkit-appearance:none;
+}
+
 .swiper-slider-outer {
   // flex-basis: 100%;
   .swiper-container {
@@ -56,6 +82,17 @@
 .section-wrap {
   @include customflex(0,0,0,wrap);
 }
+
+.flex-cc {
+  @include customflex(0,center,center,0);
+}
+.flex-fs0 {
+  @include customflex(0,flex-start,0,0);
+}
+.flex-fsfs {
+  @include customflex(0,flex-start,flex-start,0);
+}
+
 
 .section-heading {
   padding: 0 0 2rem 0;

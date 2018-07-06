@@ -48,7 +48,7 @@
     display: none;
     max-width: rem(240px);
     background: $color-white;
-    padding: $spacing-lg;
+    padding: .5rem 1rem;
     border: 1px solid $color-white-10;
     z-index: z('floating');
     border-radius: rem(4px);
@@ -203,7 +203,7 @@
   // Tooltip caret - bottom position
   .#{$prefix}--tooltip--simple__bottom {
     &:before {
-      top: 1.8rem;
+      top: 1rem;
     }
 
     &:after {

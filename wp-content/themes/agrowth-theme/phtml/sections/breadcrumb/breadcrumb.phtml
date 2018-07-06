@@ -5,6 +5,8 @@ global $post;
 
 <?php if ( is_single() && $post->post_type == 'post' ):?>
 <nav class="bx--grid bx--breadcrumb bx--breadcrumb--no-trailing-slash post" aria-label="breadcrumb">
+<?php elseif ( is_page_template('page-templates/about-us.php') ):?>
+<nav class="bx--grid bx--breadcrumb bx--breadcrumb--no-trailing-slash page--about-us" aria-label="breadcrumb">
 <?php else: ?>
 <nav class="bx--grid bx--breadcrumb bx--breadcrumb--no-trailing-slash" aria-label="breadcrumb">
 <?php endif; ?>

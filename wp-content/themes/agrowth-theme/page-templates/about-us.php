@@ -3,11 +3,20 @@
 get_header();
 ?>
 
+<!-- Breadcrumb -->
+<?php  include( get_template_directory() . '/phtml/sections/breadcrumb/breadcrumb.phtml');?>
+
 <!-- HERO -->
 <?php  include( get_template_directory() . '/phtml/sections/hero/hero.phtml');?>
 
-<!-- Breadcrumb -->
-<?php  include( get_template_directory() . '/phtml/sections/breadcrumb/breadcrumb.phtml');?>
+<!-- Our offer section -->
+<?php  include( get_template_directory() . '/phtml/sections/about-us/our-offer.phtml');?>
+
+<!-- Our vision Section -->
+<?php  include( get_template_directory() . '/phtml/sections/about-us/our-vision.phtml');?>
+
+<!-- Contact form -->
+<?php  include( get_template_directory() . '/phtml/sections/contact-form/contact-form--about-us.phtml');?>
 
 <!-- Widgets -->
 <?php  include( get_template_directory() . '/phtml/sections/widgets/widgets.phtml');?>

@@ -1,0 +1,30 @@
+<a class="card-link" href="<?php echo get_permalink( $post->ID ); ?>">
+
+  <div class="card card-post">
+
+    <div class="card-img image card-half">
+      <div class="img-container">
+        <img class="featured-image" src="<?php the_post_thumbnail_url(); ?>"/>
+      </div>
+    </div>
+
+    <div class="card-content card-half">
+      <div class="text-container">
+
+            <h4 class="title bx--type-epsilon_subheading"><?php echo the_title();?></h4>
+
+      </div>
+            <div class="tag-container">
+
+            <?php foreach ( ( get_the_category() ) as $category ):
+                $catname = $category->name;
+                $catslug = $category->slug;
+              ?>
+              <span class="bx--tag bx--tag--<?= $catslug ?>"><?= $catname ?></span>
+              <?php endforeach;?>
+            </div>
+
+    </div>
+
+  </div>
+</a>

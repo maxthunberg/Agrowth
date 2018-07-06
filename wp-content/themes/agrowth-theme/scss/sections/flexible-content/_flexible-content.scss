@@ -1,12 +1,27 @@
+.bx--grid.section-content__outer.services {
+  background-color: $color-white-03;
+  .bx--row {
+    @include customflex(0,0,flex-start,0);
+
+    .section-content.services {
+      margin: 4rem 0 0 0;
+      max-width: 640px;
+      width: 100%;
+      position: relative;
+
+    }
+  }
+}
+
 .bx--grid.section-content__outer {
   background-color: $color-white-03;
   .bx--row {
     @include customflex(0,0,center,0);
-
     .section-content {
       margin: 4rem 0 0 0;
       width: 100%;
       max-width: 724px;
+      position: relative;
       .component {
 
       }
@@ -64,6 +79,8 @@
         .image {
           width: 100%;
           height: auto;
+          border: 1px solid $color-white-10;
+          @include layer(raised);
         }
         .image--caption {
           margin-top: 1rem;
@@ -87,6 +104,7 @@
           border-left: .25rem solid $color-grey;
           padding: 1rem;
           background-color: $color-white;
+          @include layer(raised);
           .component--bullet-list__subheading {
             margin-bottom:.25rem;
           }
@@ -128,6 +146,7 @@
           border-left: .25rem solid $color-grey;
           padding: 1rem;
           background-color: $color-white;
+          @include layer(raised);
           .component--ordered-list__number {
             position: absolute;
             left:-1.5rem;
@@ -141,6 +160,13 @@
 
       .bx--accordion {
         margin-bottom: 2rem;
+      }
+      ul {
+
+        li {
+          font-size: 18px;
+          line-height: 1.5;
+        }
       }
 
     }

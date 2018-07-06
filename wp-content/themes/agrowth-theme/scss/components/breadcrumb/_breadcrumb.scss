@@ -33,6 +33,20 @@
     }
   }
 
+  .#{$prefix}--breadcrumb.page--about-us {
+    @include typescale('zeta');
+    @include pt-serif;
+    display: none;
+    padding: $spacing-sm;
+    border-bottom: 1px solid $color-white-10;
+    margin-top:2.75rem;
+    background-color: transparent;
+    @include breakpoint(bp--xs--major) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
   .#{$prefix}--breadcrumb-item {
     margin-right: $spacing-md;
     display: flex;

@@ -1,0 +1,28 @@
+<?php if( have_rows('our_vision') ):
+
+	while( have_rows('our_vision') ): the_row();
+
+		// vars
+		$vheading = get_sub_field('our_vision_heading');
+		$vparagraph = get_sub_field('our_vision_paragraph');
+    $pheading = get_sub_field('our_promise_heading');
+		$pparagraph = get_sub_field('our_promise_paragraph');
+		?>
+
+    <div class="bx--grid our-vision section-8rem">
+      <div class="bx--row">
+        <div class="bx--col-xs-12 bx--col-md-6 our-vision--col section-2col">
+          <h3 class="bx--type-beta"><?= $vheading ?></h3>
+          <p class="bx--type-delta_paragraph"><?= $vparagraph ?></p>
+        </div>
+        <div class="bx--col-xs-12 bx--col-md-6 our-vision--col section-2col">
+          <h3 class="bx--type-beta"><?= $pheading ?></h3>
+          <p class="bx--type-delta_paragraph"><?= $pparagraph ?></p>
+        </div>
+      </div>
+    </div>
+
+
+	<?php endwhile; ?>
+
+<?php endif; ?>
