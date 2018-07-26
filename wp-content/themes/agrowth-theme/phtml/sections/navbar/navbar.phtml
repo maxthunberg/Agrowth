@@ -61,13 +61,14 @@
     <div class="navbar--right">
 
       <!-- CTA button -->
-      <button class="bx--btn bx--btn__primary bx--btn--lg" type="button">
-        <?php the_field('cta_btn_label', 'option');?> Kontakta oss
-        <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
-          <polygon fill="#FFFFFF" fill-rule="evenodd" points="134 14 137.682 21.365 144.667 22.001 137.682 22.635 134 30 150 22.001" transform="translate(-134 -14)"/>
-        </svg>
-      </button>
-
+      <a href="/om-oss#kontakta-oss">
+        <button class="bx--btn bx--btn__secondary bx--btn--lg" type="button">
+          <?php the_field('cta_btn_label', 'option');?> Kontakta oss
+          <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+            <polygon fill="#FFFFFF" fill-rule="evenodd" points="134 14 137.682 21.365 144.667 22.001 137.682 22.635 134 30 150 22.001" transform="translate(-134 -14)"/>
+          </svg>
+        </button>
+      </a>
     </div>
   </div>
 
@@ -106,12 +107,13 @@
 
 
       <!-- CTA button -->
-      <button class="bx--btn bx--btn__primary bx--btn--lg btn--contact" type="button">
-        <?php the_field('cta_btn_label', 'option');?>
-        <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
-          <polygon fill="#FFFFFF" fill-rule="evenodd" points="134 14 137.682 21.365 144.667 22.001 137.682 22.635 134 30 150 22.001" transform="translate(-134 -14)"/>
-        </svg>
-      </button>
+      <a href="/om-oss#kontakta-oss">
+        <button class="bx--btn bx--btn__secondary bx--btn--lg btn--contact" type="button">
+          <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+            <polygon fill="#FFFFFF" fill-rule="evenodd" points="134 14 137.682 21.365 144.667 22.001 137.682 22.635 134 30 150 22.001" transform="translate(-134 -14)"/>
+          </svg>
+        </button>
+      </a>
 
       <!-- Hamburger Icon -->
         <div class="hamburger-icon btn--menu">
@@ -128,11 +130,11 @@
 <div class="bx--navbar--submenu__mobile">
 
   <!-- Navbar menu -->
-  <?php if( have_rows('navbar_menu', 'option') ): ?>
+  <?php if( have_rows('navbar_menu_mobile', 'option') ): ?>
 
       <ul class="navbar--ul">
 
-      <?php while( have_rows('navbar_menu', 'option') ): the_row(); ?>
+      <?php while( have_rows('navbar_menu_mobile', 'option') ): the_row(); ?>
 
         <li class="navbar--li">
 

@@ -22,11 +22,11 @@
                       <?php include( get_template_directory() . '/phtml/sections/author-info/author-info__sm.phtml'); ?>
 
                       <div class="h2-section">
-                        <h2><?= the_title() ?></h2>
+                        <h1 class="bx--type-beta"><?= the_title() ?></h1>
                       </div>
 
                       <div class="ingress">
-                        <p class="bx--type-beta_paragraph"><?= get_field('ingress'); ?></p>
+                        <p class="bx--type-beta__paragraph"><?= get_field('ingress'); ?></p>
                       </div>
 
                     </div>
@@ -51,14 +51,14 @@
 <?php elseif ( is_page_template('page-templates/about-us.php') ):?>
 
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
+    <div class="bx--grid hero about-us hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
   <?php else:?>
     <div class="bx--grid hero">
   <?php endif;?>
       <div class="bx--row">
         <div class="bx--col-xs-12 bx--col-md-8 hero-container">
-            <h5 class="bx--type-gamma_subheading hero-subheading"><?= $subheading ?></h5>
-            <h2 class="bx--type-mega hero-heading"><?= $heading ?></h2>
+            <h5 class="bx--type-gamma__subheading hero-subheading"><?= $subheading ?></h5>
+            <h1 class="bx--type-mega hero-heading"><?= $heading ?></h1>
         </div>
       </div>
     </div>
@@ -78,8 +78,8 @@
           </div>
 
           <div class="hero--text-container">
-            <h5 class="bx--type-gamma_subheading hero-subheading">TJÄNSTER</h5>
-            <h2 class="bx--type-mega hero-heading"><?= the_title() ?></h2>
+            <h5 class="bx--type-gamma__subheading hero-subheading">TJÄNSTER</h5>
+            <h1 class="bx--type-mega hero-heading"><?= the_title() ?></h1>
           </div>
 
         </div>
@@ -98,20 +98,24 @@
       <div class="bx--row">
 
         <div class="bx--col-lg-12 hero-container">
-            <h5 class="bx--type-gamma_subheading hero-subheading">Konsultroll</h5>
-            <h2 class="bx--type-mega hero-heading"><?= the_title() ?></h2>
+            <h5 class="bx--type-gamma__subheading hero-subheading">Konsultroll</h5>
+            <h1 class="bx--type-mega hero-heading"><?= the_title() ?></h1>
         </div>
-        
+
       </div>
     </div>
 
 <?php else: ?>
-  <div class="bx--grid hero">
+  <?php if ($herobgimg):?>
+    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
+  <?php else:?>
+    <div class="bx--grid hero">
+  <?php endif;?>
     <div class="bx--row">
-      <div class="bx--col-xs-12 bx--col-md-6 hero-container">
-          <h5 class="bx--type-gamma_subheading hero-subheading"><?= $subheading ?></h5>
-          <h2 class="bx--type-mega hero-heading"><?= $heading ?></h2>
-          <p class="bx--type-delta_paragraph hero-paragraph"><?= $paragraph ?></p>
+      <div class="bx--col-xs-12 bx--col-md-10 bx--col-lg-6 hero-container">
+          <h5 class="bx--type-gamma__subheading hero-subheading"><?= $subheading ?></h5>
+          <h1 class="bx--type-mega hero-heading"><?= $heading ?></h1>
+          <p class="bx--type-delta__paragraph hero-paragraph"><?= $paragraph ?></p>
       </div>
       <?php if( get_field('image') ): ?>
         <img src="<?php the_field('image'); ?>" class="hero-image" alt="" />

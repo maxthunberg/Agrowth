@@ -1,0 +1,126 @@
+<?php
+  if (is_home()):
+    $subheading = get_field('sub-heading', $page_for_posts);
+    $heading = get_field('heading', $page_for_posts);
+    $paragraph = get_field('paragraph', $page_for_posts);
+    $herobgimg = get_field('background-image', $page_for_posts);
+  else:
+    $subheading = get_field('sub-heading');
+    $heading = get_field('heading');
+    $paragraph = get_field('paragraph');
+    $herobgimg = get_field('background_image');
+  endif;
+?>
+<?php if ( $post->post_type == 'post' && !is_home() ): ?>
+
+            <div class="bx--grid section-content__outer">
+                <div class="bx--row">
+
+                    <div class="section-content">
+
+                      <!-- Author information card -->
+                      <?php include( get_template_directory() . '/phtml/sections/author-info/author-info__sm.phtml'); ?>
+
+                      <div class="h2-section">
+                        <h2><?= the_title() ?></h2>
+                      </div>
+
+                      <div class="ingress">
+                        <p class="bx--type-beta__paragraph"><?= get_field('ingress'); ?></p>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="section-post-image img-container">
+
+                          <?php  $img = get_field('fullwidth_image');
+
+                                  if( !empty($img) ):
+
+                                    echo add_image(
+                                      $img,  // ACF-field
+                                      'q_70', // Parameters
+                                      'post-image featured-image' // Classes
+                                    );
+
+                                  endif; ?>
+
+            </div>
+
+<?php elseif ( is_page_template('page-templates/about-us.php') ):?>
+
+  <?php if ($herobgimg):?>
+    <div class="bx--grid hero about-us hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
+  <?php else:?>
+    <div class="bx--grid hero">
+  <?php endif;?>
+      <div class="bx--row">
+        <div class="bx--col-xs-12 bx--col-md-8 hero-container">
+            <h5 class="bx--type-gamma__subheading hero-subheading"><?= $subheading ?></h5>
+            <h2 class="bx--type-mega hero-heading"><?= $heading ?></h2>
+        </div>
+      </div>
+    </div>
+
+<?php elseif ( is_singular('services') ):?>
+
+  <?php if ($herobgimg):?>
+    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
+  <?php else:?>
+    <div class="bx--grid hero services">
+  <?php endif;?>
+      <div class="bx--row">
+
+        <div class="bx--col-lg-12 hero-container">
+          <div class="hero--image-container">
+            <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+          </div>
+
+          <div class="hero--text-container">
+            <h5 class="bx--type-gamma__subheading hero-subheading">TJÄNSTER</h5>
+            <h2 class="bx--type-mega hero-heading"><?= the_title() ?></h2>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+<?php elseif ( is_singular('consultants') ):?>
+
+  <?php if ($herobgimg):?>
+    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
+  <?php else:?>
+    <div class="bx--grid hero consultants">
+  <?php endif;?>
+      <div class="bx--row">
+
+        <div class="bx--col-lg-12 hero-container">
+            <h5 class="bx--type-gamma__subheading hero-subheading">Konsultroll</h5>
+            <h2 class="bx--type-mega hero-heading"><?= the_title() ?></h2>
+        </div>
+
+      </div>
+    </div>
+
+<?php else: ?>
+  <?php if ($herobgimg):?>
+    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
+  <?php else:?>
+    <div class="bx--grid hero">
+  <?php endif;?>
+    <div class="bx--row">
+      <div class="bx--col-xs-12 bx--col-md-10 bx--col-lg-6 hero-container">
+          <h5 class="bx--type-gamma__subheading hero-subheading"><?= $subheading ?></h5>
+          <h2 class="bx--type-mega hero-heading"><?= $heading ?></h2>
+          <p class="bx--type-delta__paragraph hero-paragraph"><?= $paragraph ?></p>
+      </div>
+      <?php if( get_field('image') ): ?>
+        <img src="<?php the_field('image'); ?>" class="hero-image" alt="" />
+      <?php endif; ?>
+    </div>
+  </div>
+
+<?php endif; ?>

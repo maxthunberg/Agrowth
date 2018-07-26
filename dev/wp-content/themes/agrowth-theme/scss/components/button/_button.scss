@@ -1,0 +1,442 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/import-once';
+@import 'mixins';
+@import '../../globals/scss/css--reset';
+
+@include exports('button') {
+  // <button> elements cannot be used as flex containers
+  button.#{$prefix}--btn {
+    display: inline-block;
+  }
+
+  // Reset intrisic padding in Firefox (see #731)
+  button.#{$prefix}--btn::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  // Vertically center icon inside <button>
+  button.#{$prefix}--btn .#{$prefix}--btn__icon {
+    position: relative;
+    vertical-align: middle;
+    top: -1px;
+
+    // Targets IE10+ browsers: Reset <svg> position for vertical centering
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      top: 0;
+    }
+  }
+
+  .#{$prefix}--btn {
+    @include button-base;
+  }
+
+  .#{$prefix}--btn__primary {
+    @include button-theme(
+      $color-primary,
+      transparent,
+      $color-white,
+      $color-primary-light,
+      $color-white
+    );
+    &:active {
+      background-color: $color-primary-light;
+      color: $color-white;
+    }
+
+  }
+
+  .#{$prefix}--btn__secondary {
+    @include button-theme(
+      $color-secondary-dark,
+      transparent,
+      $color-white,
+      $color-secondary,
+      $color-white
+    );
+    &:active {
+      background-color: $color-secondary;
+      color: $color-white;
+    }
+
+  }
+
+  .#{$prefix}--btn__white {
+    @include button-theme(
+      $color-white,
+      transparent,
+      $color-dark,
+      $color-white-03,
+      $color-dark
+    );
+    &:active {
+      background-color: $color-white-03;
+      color: $color-dark;
+    }
+
+  }
+
+  .secondary > .#{$prefix}--btn__white {
+    @include button-theme(
+      $color-white,
+      transparent,
+      $color-secondary-dark,
+      $color-white-03,
+      $color-secondary-dark
+    );
+    &:active {
+      border-color: $color-secondary-dark;
+      background-color: $color-white-03;
+      color: $color-secondary-dark;
+    }
+
+  }
+
+  .primary > .#{$prefix}--btn__white {
+    @include button-theme(
+      $color-white,
+      transparent,
+      $color-primary,
+      $color-white-03,
+      $color-primary
+    );
+    &:active {
+      border-color: $color-primary;
+      background-color: $color-white-03;
+      color: $color-primary;
+    }
+
+  }
+
+  .#{$prefix}--btn__dark {
+    @include button-theme(
+      $color-dark,
+      transparent,
+      $color-white,
+      $color-black,
+      $color-white
+    );
+    &:active {
+      background-color: $color-black;
+      color: $color-white;
+    }
+
+  }
+
+  .primary > .#{$prefix}--btn__dark {
+    @include button-theme(
+      $color-dark,
+      transparent,
+      $color-primary,
+      $color-black,
+      $color-primary
+    );
+    &:active {
+      background-color: $color-black;
+      color: $color-primary;
+    }
+
+  }
+
+  .secondary > .#{$prefix}--btn__dark {
+    @include button-theme(
+      $color-dark,
+      transparent,
+      $color-secondary-dark,
+      $color-black,
+      $color-secondary-dark
+    );
+    &:active {
+      background-color: $color-black;
+      color: $color-secondary-dark;
+    }
+
+  }
+
+  .#{$prefix}--btn--outline {
+    @include button-theme(
+      transparent,
+      $color-primary,
+      $color-primary,
+      $color-primary,
+      $color-primary
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+    }
+
+    &:active {
+      color: $color-primary;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-white;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-primary;
+    }
+  }
+
+  .#{$prefix}--btn--outline__secondary {
+    @include button-theme(
+      transparent,
+      $color-secondary-dark,
+      $color-secondary-dark,
+      $color-secondary-dark,
+      $color-secondary-dark
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+    }
+
+    &:active {
+      color: $color-secondary-dark;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-white;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-secondary-dark;
+    }
+  }
+
+  .#{$prefix}--btn--outline__white {
+    @include button-theme(
+      transparent,
+      $color-white,
+      $color-white,
+      $color-white,
+      $color-white
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-dark;
+    }
+
+    &:active {
+      color: $color-white;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-dark;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-white;
+    }
+  }
+
+  .primary .#{$prefix}--btn--outline__white {
+    @include button-theme(
+      transparent,
+      $color-white,
+      $color-white,
+      $color-white,
+      $color-white
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+    }
+
+    &:active {
+      color: $color-white;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-primary;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-white;
+    }
+  }
+
+  .secondary .#{$prefix}--btn--outline__white {
+    @include button-theme(
+      transparent,
+      $color-white,
+      $color-white,
+      $color-white,
+      $color-white
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-secondary-dark;
+    }
+
+    &:active {
+      color: $color-white;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-secondary-dark;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-white;
+    }
+  }
+
+
+  .#{$prefix}--btn--outline__dark {
+    @include button-theme(
+      transparent,
+      $color-dark,
+      $color-dark,
+      $color-dark,
+      $color-dark
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+    }
+
+    &:active {
+      color: $color-dark;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-white;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-dark;
+    }
+  }
+
+  .primary .#{$prefix}--btn--outline__dark {
+    @include button-theme(
+      transparent,
+      $color-dark,
+      $color-dark,
+      $color-dark,
+      $color-dark
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+    }
+
+    &:active {
+      color: $color-dark;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-primary;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-dark;
+    }
+  }
+
+  .secondary .#{$prefix}--btn--outline__dark {
+    @include button-theme(
+      transparent,
+      $color-dark,
+      $color-dark,
+      $color-dark,
+      $color-dark
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-secondary-dark;
+    }
+
+    &:active {
+      color: $color-dark;
+    }
+
+    &:hover > .#{$prefix}--btn__icon,
+    &:focus > .#{$prefix}--btn__icon {
+      fill: $color-secondary-dark;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-dark;
+    }
+  }
+
+
+  .#{$prefix}--btn--ghost {
+    @include button-theme(
+      transparent,
+      transparent,
+      $color-primary,
+      $color-primary,
+      $color-primary
+    );
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+
+      .#{$prefix}--btn__icon {
+        fill: $color-white;
+      }
+    }
+
+    .#{$prefix}--btn__icon {
+      margin-left: $spacing-xs;
+    }
+
+    &:hover:disabled,
+    &:focus:disabled {
+      color: $color-primary;
+
+      .#{$prefix}--btn__icon {
+        fill: $color-primary;
+      }
+    }
+  }
+
+
+  .#{$prefix}--btn--sm {
+    height: 2rem;
+    padding: $button-padding-sm;
+    letter-spacing: 0;
+  }
+
+  .#{$prefix}--btn--lg {
+    height: rem(44px);
+    padding: $button-padding-lg;
+    letter-spacing: 0;
+  }
+
+  .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,
+  .#{$prefix}--btn--tertiary + .#{$prefix}--btn--danger--primary {
+    margin-left: $spacing-md;
+  }
+}

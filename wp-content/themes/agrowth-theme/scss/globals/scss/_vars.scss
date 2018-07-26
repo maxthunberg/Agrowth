@@ -62,8 +62,8 @@ $field-secondary: rgba($color-secondary, 0.05);
 $field-black: rgba($color-black, 0.05);
 
 
-$support-error: #e0182d;
-$support-success: #5aa700;
+$support-error: $color-primary-dark;
+$support-success: $color-secondary-dark;
 $support-warning: #efc100;
 $support-info: #5aaafa;
 

@@ -14,13 +14,14 @@
       <div class="bx--row">
 
 	        <div class="bx--col-lg-12 section-heading">
-	          <h5 class="bx--type-delta_subheading"><?= $subheading ?></h5>
+	          <h5 class="bx--type-delta__subheading"><?= $subheading ?></h5>
 	          <h2 class="bx--type-alpha"><?= $heading ?></h2>
 	        </div>
 
         <div class="bx--col-lg-12 section-wrap">
 
           <?php
+
                 $front = array(
                     'post_type' => 'services',
                     'orderby' => 'date',
@@ -44,7 +45,8 @@
                 ?>
 
                 <?php while ( $query->have_posts() ) : $query->the_post();?>
-									<div class="bx--card section-2col">
+
+									<div class="bx--card revealer-<?= $i++ * 100 ?> section-2col">
 
                   	<?php include( get_template_directory() . '/phtml/sections/cards/card-service.phtml');?>
 
@@ -58,8 +60,8 @@
 
 				<?php if ( is_front_page() ): ?>
 
-	        <div class="bx--col-lg-12 section-button">
-	          <a href="<?= $url ?>"><button class="bx--btn bx--btn__primary" type="button"><?= $label ?></button></a>
+	        <div class="bx--col-lg-12 section-button_center">
+	          <a href="<?= $url ?>"><button class="bx--btn bx--btn__secondary" type="button"><?= $label ?></button></a>
 	        </div>
 
 				<?php else: ?>

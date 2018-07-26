@@ -1,0 +1,68 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/import-once';
+@import 'mixins';
+
+@include exports('tags') {
+  .#{$prefix}--tag {
+    @include pt-serif;
+    @include typescale('omega');
+    display: inline-flex;
+    align-items: center;
+    padding: 0 $spacing-xs;
+    height: 1.25rem;
+    margin: $spacing-3xs;
+    border-radius: rem(4px);
+
+    &:not(:first-child) {
+      margin-left: 0;
+    }
+  }
+
+  .#{$prefix}--tag--seo {
+    @include tag-theme($color-blue, $color-blue-darker);
+  }
+
+  .#{$prefix}--tag--digital-design {
+    @include tag-theme($color-aqua, $color-aqua-darker);
+  }
+
+  .#{$prefix}--tag--digital-marknadsforing {
+    @include tag-theme($color-teal, $color-teal-darker);
+  }
+
+  .#{$prefix}--tag--karriar {
+    @include tag-theme($color-secondary, $color-secondary-darker);
+  }
+
+  .#{$prefix}--tag--ux {
+    @include tag-theme($color-yellow, $color-yellow-darker);
+  }
+
+  .#{$prefix}--tag--whitepaper {
+    @include tag-theme($color-orange, $color-orange-darker);
+  }
+
+  .#{$prefix}--tag--kundcase {
+    @include tag-theme($color-red, $color-red-darker);
+  }
+
+  .#{$prefix}--tag--digital-tillvaxt {
+    @include tag-theme($color-primary, $color-primary-darker);
+  }
+
+  .#{$prefix}--tag--ebook {
+    @include tag-theme($color-pink, $color-pink-darker);
+  }
+
+  .#{$prefix}--tag--big-data {
+    @include tag-theme($color-magenta, $color-magenta-darker);
+  }
+
+  .#{$prefix}--tag--research {
+    @include tag-theme($color-purple, $color-purple-darker);
+  }
+
+}

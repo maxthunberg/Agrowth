@@ -1,0 +1,99 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/mixins';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--typography';
+@import '../link/link';
+
+@include exports('breadcrumb') {
+  .#{$prefix}--breadcrumb {
+    @include typescale('zeta');
+    @include pt-serif;
+    display: none;
+    padding: $spacing-md;
+    border-bottom: 1px solid $color-white-10;
+    @include breakpoint(bp--xs--major) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .#{$prefix}--breadcrumb.post {
+    @include typescale('zeta');
+    @include pt-serif;
+    display: none;
+    padding: $spacing-md;
+    border-bottom: 1px solid $color-white-10;
+    margin-top:3rem;
+    @include breakpoint(bp--xs--major) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .#{$prefix}--breadcrumb.page--about-us {
+    @include typescale('zeta');
+    @include pt-serif;
+    display: none;
+    padding: $spacing-sm;
+    border-bottom: 1px solid $color-white-10;
+    margin-top:2.75rem;
+    background-color: transparent;
+    @include breakpoint(bp--xs--major) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .#{$prefix}--breadcrumb-item {
+    margin-right: $spacing-md;
+    display: flex;
+    align-items: center;
+  }
+
+  .#{$prefix}--breadcrumb-item::after {
+    content: '/';
+    margin-left: $spacing-md;
+    color: $text-03;
+  }
+
+  .#{$prefix}--breadcrumb--no-trailing-slash .#{$prefix}--breadcrumb-item:last-child::after {
+    content: '';
+  }
+
+  .#{$prefix}--breadcrumb-item:last-child {
+    margin-right: 0;
+
+    &::after {
+      margin-right: 0;
+    }
+  }
+  .#{$prefix}--link_current {
+    white-space: nowrap;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 1px 0;
+    color: $color-dark;
+  }
+
+  .#{$prefix}--breadcrumb .#{$prefix}--link {
+    white-space: nowrap;
+    transition: $transition--base;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      color: $color-primary;
+      transition: $transition--base;
+    }
+
+    // Applies to Firefox only
+    @-moz-document url-prefix() {
+      & {
+        border-bottom: none;
+      }
+    }
+  }
+}

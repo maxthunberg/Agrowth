@@ -9,35 +9,44 @@
   height: 300px;
   z-index: z(footer);
   transition: opacity $transition--base $bx--standard-easing;
-  a {
-    text-decoration: none;
-    &:after {
-    display: none;
-    }
-    .sticky-btn {
-      @include customflex(0,center,center,0);
-      background-color: transparent;
-      height: 3rem;
-      width: 3rem;
-      margin-bottom: 1rem;
-      border: 1px solid $color-primary;
-      border-radius: 50%;
-      transition: border $transition--base $bx--standard-easing;
-      svg {
-        height: 1.5rem;
-        width: 1.5rem;
-        fill: $color-primary;
-        transition: fill $transition--base $bx--standard-easing;
+  .sticky-bar--item {
+    margin-bottom: 1rem;
+
+    a {
+      text-decoration: none;
+      &:after {
+        display: none;
       }
-      &:hover {
-        border: 1px solid $color-primary-light;
+      .sticky-btn {
+        @include customflex(0,center,center,0);
+        background-color: transparent;
+        height: 3rem;
+        width: 3rem;
+        border: 1px solid $color-grey;
+        border-radius: 50%;
         transition: border $transition--base $bx--standard-easing;
         svg {
-          fill: $color-primary-light;
+          height: 1.5rem;
+          width: 1.5rem;
+          fill: $color-grey;
           transition: fill $transition--base $bx--standard-easing;
         }
+
       }
+
+      &:hover {
+        .sticky-btn {
+          border: 1px solid $color-white-20;
+          transition: border $transition--base $bx--standard-easing;
+          svg {
+            fill: $color-white-20;
+            transition: fill $transition--base $bx--standard-easing;
+          }
+        }
+      }
+
     }
+
   }
 }
 

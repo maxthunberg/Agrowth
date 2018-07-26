@@ -1,0 +1,95 @@
+tr.#{$prefix}--expandable-row-v2 {
+  // hide on init
+  &.#{$prefix}--expandable-row--hidden-v2 {
+    display: none;
+  }
+
+  td {
+    background-color: $color-white;
+  }
+
+  > td:first-of-type {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 2px;
+      background-color: $color-primary;
+    }
+  }
+
+  + tr[data-child-row] {
+    td {
+      border-top: 0;
+      padding-bottom: $spacing-xs;
+    }
+  }
+
+  &:hover {
+    > td {
+      background-color: rgba($color-secondary, 0.1);
+    }
+
+    > td:first-of-type {
+      border-left: 1px solid transparent;
+    }
+
+    > td:last-of-type {
+      border-right: 1px solid $color-primary;
+    }
+
+    &[data-parent-row] > td {
+      border-bottom: 0;
+    }
+
+    + tr[data-child-row] {
+      > td {
+        background-color: rgba($color-secondary, 0.1);
+        border-bottom: 1px solid $color-primary;
+        border-right: 1px solid $color-primary;
+      }
+    }
+  }
+}
+
+tr.#{$prefix}--expandable-row--hover-v2 {
+  > td {
+    background-color: rgba($color-secondary, 0.1);
+    border-top: 1px solid $color-primary;
+  }
+
+  > td:last-of-type {
+    border-right: 1px solid $color-primary;
+  }
+}
+
+.#{$prefix}--table-expand-v2[data-previous-value='collapsed'] .#{$prefix}--table-expand-v2__svg {
+  transform: rotate(90deg);
+  transition: transform 200ms $bx--standard-easing;
+}
+
+.#{$prefix}--table-expand-v2__button {
+  @include button-reset(false);
+
+  &:focus {
+    outline: 1px solid transparent;
+
+    svg {
+      box-shadow: inset 0px 0px 0px 1px $color-primary;
+    }
+  }
+}
+
+.#{$prefix}--table-expand-v2__svg {
+  fill: $color-white-20;
+  transform: rotate(0deg);
+  transition: transform 200ms $bx--standard-easing;
+  height: 16px;
+  width: auto;
+  max-width: 16px;
+  padding: $spacing-3xs;
+}

@@ -17,7 +17,7 @@
 <div class="bx--grid section-about-us section-4rem">
   <div class="bx--row">
     <div class="bx--col-lg-12 section-heading">
-      <h5 class="bx--type-delta_subheading"><?= $subheading ?></h5>
+      <h5 class="bx--type-delta__subheading"><?= $subheading ?></h5>
       <h2 class="bx--type-alpha"><?= $heading ?></h2>
 
     </div>
@@ -28,7 +28,7 @@
 
 					while ( have_rows('card_aboutus') ): the_row();
 						$subheading = get_sub_field('subheading');
-						$paragraph = get_sub_field('paragraph');
+						$description = get_sub_field('description');
 						$icon = get_sub_field('icon');
 
 				?>
@@ -38,11 +38,11 @@
 							<div class="card--icon">
 								<img class="card--icon__icon" src="<?= $icon ?>" />
 							</div>
-							<h5 class="bx--type-delta_subheading">
+							<h5 class="bx--type-delta__subheading">
 								<?= $subheading ?>
 							</h5>
 						</div>
-	            <p><?= $paragraph ?></p>
+	            <p class="bx--type-epsilon__paragraph"><?= $description ?></p>
 
 	        </div>
 			<?php endwhile;
@@ -52,8 +52,8 @@
 				<p><?= $paragraph ?></p>
 
 	      <div class="padding-top">
-	        <a href="<?= $urlprimary ?>"><button class="bx--btn bx--btn__primary" type="button"><?= $labelprimary ?></button></a>
-					<a href="<?= $urlsecondary ?>"><button class="bx--btn bx--btn--outline" type="button"><?= $labelsecondary ?></button></a>
+	        <a href="<?= $urlprimary ?>"><button class="bx--btn bx--btn__secondary" type="button"><?= $labelprimary ?></button></a>
+					<a href="<?= $urlsecondary ?>"><button class="bx--btn bx--btn--outline__secondary" type="button"><?= $labelsecondary ?></button></a>
 	      </div>
 
 

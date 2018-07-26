@@ -1,6 +1,6 @@
-<?php if( have_rows('our_vision') ):
+<?php if( have_rows('our_vision_hide') ):
 
-	while( have_rows('our_vision') ): the_row();
+	while( have_rows('our_vision_hide') ): the_row();
 
 		// vars
 		$vheading = get_sub_field('our_vision_heading');
@@ -11,13 +11,13 @@
 
     <div class="bx--grid our-vision section-8rem">
       <div class="bx--row">
-        <div class="bx--col-xs-12 bx--col-md-6 our-vision--col section-2col">
+        <div class="bx--col-xs-12 bx--col-md-6 our-vision--col section-2col revealer-0">
           <h3 class="bx--type-beta"><?= $vheading ?></h3>
-          <p class="bx--type-delta_paragraph"><?= $vparagraph ?></p>
+          <p class="bx--type-delta__paragraph"><?= $vparagraph ?></p>
         </div>
-        <div class="bx--col-xs-12 bx--col-md-6 our-vision--col section-2col">
+        <div class="bx--col-xs-12 bx--col-md-6 our-vision--col section-2col revealer-100">
           <h3 class="bx--type-beta"><?= $pheading ?></h3>
-          <p class="bx--type-delta_paragraph"><?= $pparagraph ?></p>
+          <p class="bx--type-delta__paragraph"><?= $pparagraph ?></p>
         </div>
       </div>
     </div>

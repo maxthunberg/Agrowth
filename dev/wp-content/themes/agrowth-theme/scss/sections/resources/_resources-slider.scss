@@ -1,0 +1,23 @@
+.resources-slider {
+  @include linear-gradient($color-white-05, $color-white);
+  border-bottom: 1px solid $color-white-10;
+  padding: 4rem 0!important;
+
+  .section-button_center{
+    flex-direction: row;
+    margin: 1rem;
+    .btn-prev {
+      margin-right: .5rem;
+    }
+    .btn-next {
+      margin-left: .5rem;
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .swiper-slide {
+    width: auto;
+  }
+}

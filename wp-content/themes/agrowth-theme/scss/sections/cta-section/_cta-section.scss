@@ -6,6 +6,10 @@
   @include linear-gradient($color-secondary-dark, $color-secondary)
 }
 
+.cta-section.dark {
+  @include linear-gradient($color-black, $color-dark)
+}
+
 
 .cta-section {
   @include linear-gradient($color-primary, $color-primary-light)

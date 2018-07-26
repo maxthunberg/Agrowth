@@ -1,0 +1,76 @@
+.sticky-bar {
+  @include customflex(column,center,0,0);
+  opacity: 1;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin-left: -464px;
+  width: 3rem;
+  height: 300px;
+  z-index: z(footer);
+  transition: opacity $transition--base $bx--standard-easing;
+  .sticky-bar--item {
+    margin-bottom: 1rem;
+
+    a {
+      text-decoration: none;
+      &:after {
+        display: none;
+      }
+      .sticky-btn {
+        @include customflex(0,center,center,0);
+        background-color: transparent;
+        height: 3rem;
+        width: 3rem;
+        border: 1px solid $color-primary;
+        border-radius: 50%;
+        transition: border $transition--base $bx--standard-easing;
+        svg {
+          height: 1.5rem;
+          width: 1.5rem;
+          fill: $color-primary;
+          transition: fill $transition--base $bx--standard-easing;
+        }
+
+      }
+
+      &:hover {
+        .sticky-btn {
+          border: 1px solid $color-primary-light;
+          transition: border $transition--base $bx--standard-easing;
+          svg {
+            fill: $color-primary-light;
+            transition: fill $transition--base $bx--standard-easing;
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+.sticky-bar.hidden {
+  display: none;
+}
+
+.sticky-bar.fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -464px;
+  margin-top: -150px;
+  opacity: 1;
+  transition: opacity $transition--base $bx--standard-easing;
+
+}
+
+.sticky-bar.fade {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -464px;
+  margin-top: -150px;
+  opacity: 0;
+  transition: opacity $transition--base $bx--standard-easing;
+}

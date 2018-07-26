@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <link id="favicon" rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
+  <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+  <?php wp_head(); ?>
+
+</head>
+<?php global $page_for_posts; ?>
+
+<body>
+
+
+  <?php include( get_template_directory() . '/phtml/sections/navbar/navbar.phtml');?>
