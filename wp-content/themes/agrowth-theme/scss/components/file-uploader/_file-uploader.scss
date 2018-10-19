@@ -12,7 +12,16 @@
 
 @include exports('file-uploader') {
   .#{$prefix}--file {
-    width: 100%;
+    // width: 100%;
+    width: 50%;
+  }
+  .#{$prefix}--file:nth-child(1) {
+    // width: 100%;
+    padding-right: 1rem;
+    width: 50%;
+  }
+  .#{$prefix}--file-split {
+    @include customflex(0,0,0,0);
   }
 
   .#{$prefix}--file-input {
@@ -20,8 +29,18 @@
   }
 
   .#{$prefix}--file-btn {
+    background-color: transparent;
+    border: 1px solid $color-secondary-dark;
+    color: $color-secondary-dark;
     display: inline-flex;
     margin: 0;
+    transition: $transition--default;
+    &:hover {
+      background-color: $color-secondary-dark;
+      border: 1px solid $color-secondary-dark;
+      color: $color-white;
+      transition: $transition--default;
+    }
   }
 
   .#{$prefix}--label-description {
@@ -37,28 +56,43 @@
     width: 100%;
     margin-top: $spacing-lg;
   }
-
   .#{$prefix}--file__selected-file {
-    @include text-overflow(300px);
+    // @include text-overflow(300px);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-height: rem(30px);
-    background-color: $field-primary;
+    background-color: rgba($color-primary, .2);
     padding: 0 $spacing-md;
     margin-bottom: $spacing-md;
-
+    opacity: 1;
     &:last-child {
       margin-bottom: 0;
     }
   }
+
+  .#{$prefix}--file__selected-file:nth-child(1) {
+    background-color: rgba($color-secondary-dark, .1);
+  }
+  .#{$prefix}--file__selected-file:nth-child(2) {
+      opacity: 1;
+  }
+  .#{$prefix}--file__selected-file:nth-child(3) {
+      opacity: .2;
+  }
+  .#{$prefix}--file__selected-file:nth-child(n+4){
+      display: none;
+  }
+
+
 
   .#{$prefix}--file-filename {
     @include typescale('omega');
     @include text-overflow(100%);
     display: inline-flex;
     align-items: center;
-    color: $text-01;
+    color: $color-dark;
     margin-right: $spacing-md;
     height: 1.875rem;
   }

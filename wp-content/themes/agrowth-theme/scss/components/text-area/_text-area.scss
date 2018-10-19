@@ -70,6 +70,11 @@
       @include layer(temporary-nav);
       transition: $transition--default;
     }
+    
+    &:hover {
+      @include layer(temporary-nav);
+      transition: $transition--default;
+    }
 
     &::-webkit-input-placeholder {
       // @include placeholder-colors;

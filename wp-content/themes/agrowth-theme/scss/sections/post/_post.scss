@@ -22,7 +22,7 @@
   z-index: 10000;
   .reading-indicator__bar {
     height: rem(4px);
-    @include linear-gradient($color-primary, $color-primary-light);
+    @include linear-gradient($color-secondary-dark, $color-secondary);
     width: 0%;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;

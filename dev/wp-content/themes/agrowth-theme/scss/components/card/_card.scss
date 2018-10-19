@@ -64,6 +64,34 @@
   }
 }
 
+.card-service__sm {
+  @include layer('base');
+  background: $color-white;
+  border: 1px solid transparent;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: .125rem .25rem .125rem 0;
+  z-index: 1;
+
+  .service-img-container {
+    margin-right: 1rem;
+    .service-img {
+      height: rem(32px);
+      width: rem(32px);
+    }
+  }
+  .service-text-container {
+    @include customflex(0, center, 0, 0);
+    .service-heading {
+      position: relative;
+    }
+  }
+  &:hover {
+    @include layer('raised');
+    border: 1px solid $color-white-10;
+    z-index: 2;
+  }
+}
+
 // Card consultants small
 .card-consultant {
   position: relative;
@@ -82,11 +110,40 @@
 
   .service-text-container {
     @include customflex(column, 0, 0, 0);
+  }
+
+  &:hover {
+    &:before {
+      background: $color-secondary-dark;
+    }
+  }
+}
+
+.card-consultant__sm {
+  position: relative;
+  @include customflex(0, center, flex-start, 0);
+  @include layer('base');
+  background: $color-white;
+  border: none;
+  padding: 1rem 3rem 1rem 1rem;
+  margin: .125rem .25rem .125rem 0;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: .25rem;
+    height: 100%;
+    background: transparent;
+  }
+
+  .service-text-container {
+    @include customflex(column, 0, 0, 0);
 
   }
   &:hover {
     &:before {
-      background: $color-primary;
+      background: $color-secondary-dark;
     }
   }
 }

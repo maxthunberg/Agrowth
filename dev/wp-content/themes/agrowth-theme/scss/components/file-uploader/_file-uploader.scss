@@ -20,8 +20,18 @@
   }
 
   .#{$prefix}--file-btn {
+    background-color: transparent;
+    border: 1px solid $color-secondary-dark;
+    color: $color-secondary-dark;
     display: inline-flex;
     margin: 0;
+    transition: $transition--default;
+    &:hover {
+      background-color: $color-secondary-dark;
+      border: 1px solid $color-secondary-dark;
+      color: $color-white;
+      transition: $transition--default;
+    }
   }
 
   .#{$prefix}--label-description {
@@ -44,7 +54,7 @@
     align-items: center;
     justify-content: space-between;
     min-height: rem(30px);
-    background-color: $field-primary;
+    background-color: rgba($color-secondary-dark, .1);
     padding: 0 $spacing-md;
     margin-bottom: $spacing-md;
 
@@ -58,7 +68,7 @@
     @include text-overflow(100%);
     display: inline-flex;
     align-items: center;
-    color: $text-01;
+    color: $color-dark;
     margin-right: $spacing-md;
     height: 1.875rem;
   }

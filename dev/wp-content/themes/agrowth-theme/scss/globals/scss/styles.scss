@@ -122,6 +122,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 //-------------------------
 
 @import '../../sections/navbar/navbar';
+@import '../../sections/navbar/navbar--mobile';
+@import '../../sections/navbar/navbar--submenu';
 @import '../../sections/hero/hero';
 @import '../../sections/cta-section/cta-section';
 @import '../../sections/widgets/widgets';
@@ -136,6 +138,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../sections/flexible-content/sticky-cards';
 @import '../../sections/post/post';
 @import '../../sections/about-us/about-us';
+@import '../../sections/career/career';
+@import '../../sections/contact-form/contact-form';
 
 
 //-------------------------------------

@@ -18,3 +18,61 @@
     <div data-file-container class="bx--file-container"></div>
   </div>
 </div>
+
+
+
+
+<label class="bx--label"> <p class="bx--type-caption">Namn*</p>
+    [text* your-name class:bx--text-input placeholder "ex. Namn Namnsson"]
+</label>
+
+<label class="bx--label"> <p class="bx--type-caption">E-mail*</p>
+    [text* your-email class:bx--text-input placeholder "ex. namn@mail.se"]
+</label>
+
+<label class="bx--label"> <p class="bx--type-caption">E-mail</p>
+    [textarea your-message class:bx--text-area placeholder "Skriv ditt meddelande här"]
+</label>
+
+
+<div class="bx--form-item">
+
+  <strong class="bx--label">Account photo</strong>
+  <p class="bx--label-description">only .jpg and .png files. 500kb max file size.</p>
+
+    <div class="bx--file-split">
+      <div class="bx--file" data-file>
+        <label
+          for="your-file-importer-id-here"
+          class="bx--file-btn bx--btn bx--btn--secondary"
+          id="btn-resume"
+          role="button"
+          tabindex="0">CV</label>
+
+          [file your-resume class:bx--file-input id:your-resume filetypes:pdf|png|jpeg|jpg
+          limit:2mb]
+
+        <div data-file-container class="bx--file-container"></div>
+      </div>
+
+     <div class="bx--file" data-file>
+        <label
+          for="your-file-importer-id-here"
+          class="bx--file-btn bx--btn bx--btn--secondary"
+          id="btn-bio"
+          role="button"
+          tabindex="0">Personligt brev</label>
+
+          [file your-bio class:bx--file-input id:your-bio filetypes:pdf|png|jpeg|jpg
+          limit:2mb]
+
+        <div data-file-container class="bx--file-container"></div>
+      </div>
+
+    </div>
+</div>
+
+
+<div class="bx--form-item">
+  [submit class:bx--btn class:bx--btn__secondary type:button "Skicka meddelande"]
+</div>

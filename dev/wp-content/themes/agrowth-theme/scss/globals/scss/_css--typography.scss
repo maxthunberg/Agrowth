@@ -145,6 +145,7 @@ $letterspacing-map: (
     @include typescale('beta');
     @include line-height('body');
     @include pt-serif;
+    font-weight: 400;
   }
 
   h3,
@@ -172,6 +173,7 @@ $letterspacing-map: (
     @include typescale('gamma');
     @include line-height('body');
     @include pt-serif;
+    font-weight: 400;
   }
 
   h4,
@@ -200,6 +202,7 @@ $letterspacing-map: (
     @include typescale('delta');
     @include line-height('body');
     @include pt-serif;
+    font-weight: 400;
   }
 
   h5,

@@ -1,0 +1,131 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/css--typography';
+
+@include exports('navbar--submenu') {
+
+  .#{$prefix}--navbar--submenu {
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    background-color: $color-white;
+    border-top: 1px solid $color-white-10;
+    border-bottom: 1px solid $color-white-10;
+    min-height: 320px;
+    left: 0;
+    position: fixed;
+    top: 64px;
+    width: 100%;
+    z-index: -100;
+    @include layer(base);
+    transition: top $transition--base $bx--standard-easing,
+                box-shadow $transition--base $bx--standard-easing,
+                opacity $transition--base $bx--standard-easing,
+                visibility 0s linear .3s,
+                z-index 0s linear .3s;
+    .snippet {
+      content: "";
+      height: .75rem;
+      width: .75rem;
+      background-color: $color-white;
+      border: 1px solid $color-white-10;
+      top: -.375rem;
+      margin-left: .125rem;
+      position: absolute;
+      transform: rotate(45deg);
+      left: 0;
+      transition: $transition--default;
+      pointer-events: none;
+
+    }
+    .submenu--container {
+      position: relative;
+      background-color: $color-white;
+      padding: 3rem 5rem 5rem;
+      max-height: 25rem;
+      z-index: 10002;
+      @include customflex(column,flex-start,0,0);
+      display: none;
+      .submenu--heading-container {
+        margin: 0 0 .5rem 1rem;
+      }
+      .submenu--card-container {
+        @include customflex(column, 0 , 0, wrap);
+        width: 100%;
+        .card-link {
+          width: 33.333%;
+        }
+      }
+      .submenu--footer {
+        @include customflex(0,center, center, 0);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4rem;
+        border-top: 1px solid $color-secondary-dark;
+        background-color: $color-white-03;
+        p {
+          margin-right: .5rem;
+        }
+        .bx--link__secondary {
+          align-self: auto;
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+
+  .#{$prefix}--navbar--submenu.is-visible {
+    visibility: visible;
+    opacity: 1;
+    top: 44px;
+    z-index: 10000;
+    @include layer(temporary-nav);
+    transition: top $transition--base $bx--standard-easing,
+                box-shadow $transition--base $bx--standard-easing,
+                opacity 0s linear,
+                visibility 0s linear,
+                z-index 0s linear;
+  }
+
+  .submenu--container.is-visible {
+    display: flex;
+  }
+
+}
+
+@media (min-width: breakpoint('xl')) { // 1600px
+
+}
+
+@media (max-width: breakpoint('xl')) { // 1200px
+
+}
+
+@media (max-width: breakpoint('lg')) { // 992px
+
+  .#{$prefix}--navbar--submenu {
+    .submenu--container {
+      max-height: 29rem;
+    }
+  }
+
+}
+
+@media (max-width: breakpoint('md')) { // 768px
+
+.#{$prefix}--navbar--submenu {
+  display: none;
+}
+
+}
+
+@media (max-width: breakpoint('sm')) { // 576px
+
+}

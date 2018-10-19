@@ -203,6 +203,16 @@
       form {
         margin-bottom: 2rem;
       }
+      .contact-form {
+        .contact-form--col {
+          padding: 0;
+          margin-bottom: 1rem;
+          .contact-form--col__heading, .contact-form--col__paragraph {
+            margin-bottom: .5rem;
+          }
+        }
+
+      }
 
     }
   }

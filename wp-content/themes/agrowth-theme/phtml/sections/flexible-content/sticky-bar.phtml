@@ -4,7 +4,7 @@ $url = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
 $url .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
 ?>
 
-<div class="sticky-bar hidden">
+<div class="sticky-bar">
   <div class="sticky-bar--item">
 
       <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>" target="_blank" data-tooltip-trigger data-tooltip-target="#linkedin-link">

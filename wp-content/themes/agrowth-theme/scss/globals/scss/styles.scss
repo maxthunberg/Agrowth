@@ -2,7 +2,7 @@
 // 🌍 Global
 //-------------------------
 
-$css--font-face: true !default;
+$css--font-face: false !default;
 $css--helpers: true !default;
 $css--body: true !default;
 $css--use-experimental-grid: false !default;
@@ -28,6 +28,7 @@ $css--plex: false !default;
 @import 'grid';
 @import 'sections';
 @import 'flexbox';
+@import 'swiper';
 
 // Media queries
 
@@ -115,6 +116,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/tile/tile';
 @import '../../components/lightbox/lightbox';
 @import '../../components/carousel/carousel';
+@import '../../components/interactive-icon/interactive-icon';
 
 
 //-------------------------
@@ -122,6 +124,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 //-------------------------
 
 @import '../../sections/navbar/navbar';
+@import '../../sections/navbar/navbar--mobile';
+@import '../../sections/navbar/navbar--submenu';
 @import '../../sections/hero/hero';
 @import '../../sections/cta-section/cta-section';
 @import '../../sections/widgets/widgets';
@@ -136,6 +140,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../sections/flexible-content/sticky-cards';
 @import '../../sections/post/post';
 @import '../../sections/about-us/about-us';
+@import '../../sections/career/career';
+@import '../../sections/contact-form/contact-form';
 
 
 //-------------------------------------

@@ -10,12 +10,19 @@ $bx--ease-out: cubic-bezier(
   0.25,
   1
 ); // Used for adding elements to the screen or changing on-screen states at a users's input.
-$bx--standard-easing: cubic-bezier(.12,.845,.305,1); // Used for the majority of animations.
 
-$transition--base: 200ms;
-$transition--expansion: 300ms;
+// $bx--standard-easing: cubic-bezier(.12,.85,.31,1); // Used for the majority of animations.
+// $bx--standard-easing: cubic-bezier(.58,.46,.36,.93); // Used for the majority of animations.
+// $bx--standard-easing: cubic-bezier(.46,0,.28,.97); // Used for the majority of animations.
+$bx--standard-easing: cubic-bezier(.62,.03,.67,.99); // Used for the majority of animations.
+
+$bx--reverse-easing: cubic-bezier(.54,.27,.51,.85); // Used for the majority of animations.
+
+$transition--base: 175ms;
+$transition--expansion: 350ms;
 $transition--default: all $transition--base $bx--standard-easing;
-
+$transition--long: all $transition--expansion $bx--standard-easing;
+$transition--long-reverse: all $transition--expansion $bx--reverse-easing;
 // Color Theme Variables
 $nav-01: $color-blue !default;
 $nav-02: $color-blue !default;
@@ -62,8 +69,8 @@ $field-secondary: rgba($color-secondary, 0.05);
 $field-black: rgba($color-black, 0.05);
 
 
-$support-error: #e0182d;
-$support-success: #5aa700;
+$support-error: $color-primary-dark;
+$support-success: $color-secondary-dark;
 $support-warning: #efc100;
 $support-info: #5aaafa;
 

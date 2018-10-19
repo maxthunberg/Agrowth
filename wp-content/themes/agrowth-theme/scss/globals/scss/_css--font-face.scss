@@ -10,29 +10,30 @@ $font-path: '../../../fonts' !default;
   @font-face {
     font-family: 'Archivo Black';
     font-style: normal;
-    font-weight: 700;
-    src: url('#{$font-path}/archivo-black/archivo-black--regular.ttf') format('ttf');
+    font-weight: 400;
+    src: url('#{$font-path}/archivo-black/archivo-black.ttf') format('ttf');
   }
 
   @font-face {
     font-family: 'PT Serif';
     font-style: italic;
     font-weight: 700;
-    src: url('#{$font-path}/pt-serif/pt-serif--bolditalic.ttf') format('ttf');
+    src: url('#{$font-path}/pt-serif/pt-serif-bolditalic.ttf') format('ttf');
   }
+
 
   @font-face {
     font-family: 'PT Serif';
     font-style: normal;
     font-weight: 700;
-    src: url('#{$font-path}/pt-serif/pt-serif--bold.ttf') format('ttf');
+    src: url('#{$font-path}/pt-serif/pt-serif-bold.ttf') format('ttf');
   }
 
   @font-face {
     font-family: 'PT Serif';
     font-style: italic;
     font-weight: 400;
-    src: url('#{$font-path}/pt-serif/pt-serif--italic.ttf') format('ttf');
+    src: url('#{$font-path}/pt-serif/pt-serif-italic.ttf') format('ttf');
 
   }
 
@@ -40,7 +41,7 @@ $font-path: '../../../fonts' !default;
     font-family: 'PT Serif';
     font-style: normal;
     font-weight: 400;
-    src: url('#{$font-path}/pt-serif/pt-serif--regular.ttf') format('ttf');
+    src: url('#{$font-path}/pt-serif/pt-serif-regular.ttf') format('ttf');
   }
 }
 

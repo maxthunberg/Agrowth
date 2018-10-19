@@ -4,14 +4,14 @@
 
     <div class="card-img image card-half">
       <div class="img-container">
-        <img class="featured-image" src="<?php the_post_thumbnail_url(); ?>"/>
+          <?php add_thumbnail_image('g_south,q_60,c_fill,w_700', 'featured-image');?>
       </div>
     </div>
 
     <div class="card-content card-half">
       <div class="text-container">
 
-            <h4 class="title bx--type-gamma__subheading"><?php echo the_title();?></h4>
+            <h4 class="title bx--type-gamma__paragraph"><?php the_title();?></h4>
 
       </div>
       <div class="info-container">

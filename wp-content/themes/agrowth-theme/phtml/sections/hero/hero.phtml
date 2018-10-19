@@ -51,7 +51,7 @@
 <?php elseif ( is_page_template('page-templates/about-us.php') ):?>
 
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero about-us hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
+    <div class="bx--grid hero about-us hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
   <?php else:?>
     <div class="bx--grid hero">
   <?php endif;?>
@@ -63,10 +63,11 @@
       </div>
     </div>
 
+
 <?php elseif ( is_singular('services') ):?>
 
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
+    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
   <?php else:?>
     <div class="bx--grid hero services">
   <?php endif;?>
@@ -74,7 +75,7 @@
 
         <div class="bx--col-lg-12 hero-container">
           <div class="hero--image-container">
-            <img src="<?= get_the_post_thumbnail_url(); ?>" alt="" />
+            <?php add_thumbnail_image('g_south,q_60,c_fill,w_1280', '');?>
           </div>
 
           <div class="hero--text-container">
@@ -91,7 +92,8 @@
 <?php elseif ( is_singular('consultants') ):?>
 
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
+    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
+
   <?php else:?>
     <div class="bx--grid hero consultants">
   <?php endif;?>
@@ -107,7 +109,7 @@
 
 <?php else: ?>
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?= $herobgimg; ?>');">
+    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
   <?php else:?>
     <div class="bx--grid hero">
   <?php endif;?>
@@ -118,7 +120,19 @@
           <p class="bx--type-delta__paragraph hero-paragraph"><?= $paragraph ?></p>
       </div>
       <?php if( get_field('image') ): ?>
-        <img src="<?php the_field('image'); ?>" class="hero-image" alt="" />
+
+        <?php  $img = get_field('image');
+
+                if( !empty($img) ):
+
+                  echo add_image(
+                    $img,  // ACF-field
+                    'g_south,q_60,c_fill,w_1280', // Parameters
+                    'hero-image' // Classes
+                  );
+
+                endif; ?>
+
       <?php endif; ?>
     </div>
   </div>

@@ -1,0 +1,45 @@
+<?php if( have_rows('why_us') ):
+
+			while( have_rows('why_us') ): the_row();
+			// vars
+			$heading = get_sub_field('heading');
+			$subheading = get_sub_field('subheading');
+	?>
+
+	<div class="bx--grid why-us section-8rem">
+		<div class="bx--row">
+
+			<div class="bx--col-lg-12 section-heading_center">
+				<h5 class="bx--type-epsilon__subheading"><?= $subheading ?></h5>
+				<h3 class="bx--type-alpha"><?= $heading ?></h3>
+			</div>
+
+			<?php if( have_rows('why_us_col') ):?>
+
+					<?php while( have_rows('why_us_col') ): the_row();
+
+								// vars
+								$heading = get_sub_field('heading');
+								$paragraph = get_sub_field('paragraph');
+								$icon = get_sub_field('icon');
+						?>
+
+						<div class="interactive-icon interactive-icon--sm">
+							<div class="interactive-icon__icon">
+								<img src="<?= $icon ?>" />
+							</div>
+							<h5 class="interactive-icon__heading bx--type-delta__paragraph"><?= $heading ?></h5>
+							<div class="interactive-icon--text-container">
+								<p class="interactive-icon__paragraph bx--type-zeta"><?= $paragraph ?></p>
+							</div>
+						</div>
+
+					<?php endwhile; ?>
+
+				<?php endif; ?>
+
+			</div>
+		</div>
+	<?php endwhile; ?>
+
+<?php endif; ?>

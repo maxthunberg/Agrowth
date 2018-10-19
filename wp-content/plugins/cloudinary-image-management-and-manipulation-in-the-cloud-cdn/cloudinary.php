@@ -153,7 +153,7 @@ class CloudinaryPlugin
     $response = wp_remote_get($url);
 
     if( is_wp_error( $response ) ) {
-      $error = $response->get_error_message();      
+      $error = $response->get_error_message();
       return $public_id . ' cannot be migrate away. ' . $error ;
     }
 

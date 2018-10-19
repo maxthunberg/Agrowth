@@ -16,7 +16,7 @@ add_action('init', function () {
         'menu_position' => 6,
         'public' => true,
         'show_in_nav_menus' => true,
-        'rewrite' => array( 'slug' => 'tjanster'),
+        'rewrite' => array( 'slug' => 'tjanster', 'with_front' => false ),
         'supports' => array('title', 'thumbnail', 'excerpt','page'),
         // 'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats' ),
 

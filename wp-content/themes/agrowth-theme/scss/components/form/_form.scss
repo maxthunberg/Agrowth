@@ -22,6 +22,18 @@
     }
   }
 
+  .#{$prefix}--form-item__uploader {
+    @include pt-serif;
+    flex: 1;
+    margin-right: 0;
+    margin-bottom: $spacing-lg;
+
+    &:last-of-type {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
   .#{$prefix}--label {
     @include reset;
     @include pt-serif;

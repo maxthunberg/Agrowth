@@ -15,28 +15,37 @@ function init_remove_text_editor() {
 	remove_post_type_support( 'page', 'editor' );
 }
 
+
+// Remove all unnecessary markup in head-tag
+
+remove_action ('wp_head', 'rsd_link');
+remove_action( 'wp_head', 'wlwmanifest_link');
+remove_action( 'wp_head', 'wp_shortlink_wp_head');
+remove_action('wp_head', 'wp_generator');
+remove_action( 'wp_head','rest_output_link_wp_head');
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
+remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+remove_action('rest_api_init', 'wp_oembed_register_route');
+remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
+remove_action( 'wp_head', 'wp_resource_hints', 2 );
+
+
 // Add scripts and styles
 add_action('wp_enqueue_scripts', function () {
 
-    wp_enqueue_style( 'swiper', get_template_directory_uri() . '/scss/swiper.min.css',false,'1.1','all');
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/scss/globals/styles.css',false,'1.1','all');
+    // wp_enqueue_style( 'swiper', get_template_directory_uri() . '/scss/swiper.min.css',false,'1.1','all');
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/scss/styles.css',false,'1.1.8','all');
 
     wp_deregister_script('jquery');
-    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', '', '', true);
+    // wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', '', '', true);
     // wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-3.2.1.js', '','', true);
-    wp_enqueue_script('jquery');
+    // wp_enqueue_script('jquery');
 
-    wp_register_script('scrollreveal', get_template_directory_uri() . '/js/scrollreveal.min.js', '','', true);
-    wp_enqueue_script('scrollreveal');
+		wp_register_script('script', get_template_directory_uri() . '/js/script.min.js', '','1.1.8', true);
+		wp_enqueue_script('script');
 
-    wp_register_script('swiper', get_template_directory_uri() . '/js/swiper.min.js', '','', true);
-    wp_enqueue_script('swiper');
-
-    wp_register_script('carbon-js', get_template_directory_uri() . '/js/carbon-components.min.js', '','', true);
-    wp_enqueue_script('carbon-js');
-
-    wp_register_script('main', get_template_directory_uri() . '/js/main.js', '','', true);
-    wp_enqueue_script('main');
+    // wp_register_script('main', get_template_directory_uri() . '/js/main.js', '','', true);
+    // wp_enqueue_script('main');
 
 });
 
@@ -50,6 +59,43 @@ function add_image($image, $params, $class) {
 	echo '<img src="' . @$output . '" class="' . @$class . '" />';
 }
 
+function add_bg_image($image, $params) {
+	if ( $image ) {
+		$imgname = $image;
+
+		$base = 'https://res.cloudinary.com/agrowth/image/upload/';
+
+		if (	$params === 0 ) {
+			$params = 'g_south,q_60,c_fill,w_1280';
+		}
+		if (strpos($imgname, $base) === 0) {
+			$imgname = substr($imgname, strlen($base));
+		}
+
+		$output = $base.$params.'/'.$imgname;
+
+		echo @$output;
+	}
+
+}
+
+
+function add_thumbnail_image($params, $class) {
+
+	$imgname = get_the_post_thumbnail_url();
+	$base = 'https://res.cloudinary.com/agrowth/image/upload/';
+	if (	$params === 0 ) {
+		$params = 'g_south,q_60,c_fill,w_1280';
+	}
+	if (strpos($imgname, $base) === 0) {
+		$imgname = substr($imgname, strlen($base));
+		}
+
+	$output = $base.$params.'/'.$imgname;
+
+	echo '<img src="' . @$output . '" class="' . @$class . '" />';
+
+}
 
 function wpdocs_after_setup_theme() {
     add_theme_support( 'html5', array( 'search-form' ) );
@@ -229,31 +275,122 @@ function setPostViews($postID) {
     }
 }
 
-// // AJAX AJAX AJAX
-// add_action( 'wp_ajax_fetch_popular', 'fetch_popular' );
-// add_action( 'wp_ajax_fetch_recent', 'fetch_recent' );
-// add_action( 'wp_ajax_fetch_growth', 'fetch_growth' );
-//
-// add_action( 'wp_ajax_nopriv_fetch_popular', 'fetch_popular' );
-// add_action( 'wp_ajax_nopriv_fetch_recent', 'fetch_recent' );
-// add_action( 'wp_ajax_nopriv_fetch_growth', 'fetch_growth' );
-//
-// function fetch_popular(){
-//     include(_THEME_.'/ajax-popular.php');
-//     die();
-// }
-//
-// function fetch_recent(){
-//     include(_THEME_.'/ajax-recent.php');
-//     die();
-// }
-//
-// function fetch_growth(){
-//     include(_THEME_.'/ajax-growth.php');
-//     die();
-// }
-//
-// // END AJAX FUNCTIONS
+
+
+
+/*
+ * Function for post duplication. Dups appear as drafts. User is redirected to the edit screen
+ */
+function rd_duplicate_post_as_draft(){
+	global $wpdb;
+	if (! ( isset( $_GET['post']) || isset( $_POST['post'])  || ( isset($_REQUEST['action']) && 'rd_duplicate_post_as_draft' == $_REQUEST['action'] ) ) ) {
+		wp_die('No post to duplicate has been supplied!');
+	}
+
+	/*
+	 * Nonce verification
+	 */
+	if ( !isset( $_GET['duplicate_nonce'] ) || !wp_verify_nonce( $_GET['duplicate_nonce'], basename( __FILE__ ) ) )
+		return;
+
+	/*
+	 * get the original post id
+	 */
+	$post_id = (isset($_GET['post']) ? absint( $_GET['post'] ) : absint( $_POST['post'] ) );
+	/*
+	 * and all the original post data then
+	 */
+	$post = get_post( $post_id );
+
+	/*
+	 * if you don't want current user to be the new post author,
+	 * then change next couple of lines to this: $new_post_author = $post->post_author;
+	 */
+	$current_user = wp_get_current_user();
+	$new_post_author = $current_user->ID;
+
+	/*
+	 * if post data exists, create the post duplicate
+	 */
+	if (isset( $post ) && $post != null) {
+
+		/*
+		 * new post data array
+		 */
+		$args = array(
+			'comment_status' => $post->comment_status,
+			'ping_status'    => $post->ping_status,
+			'post_author'    => $new_post_author,
+			'post_content'   => $post->post_content,
+			'post_excerpt'   => $post->post_excerpt,
+			'post_name'      => $post->post_name,
+			'post_parent'    => $post->post_parent,
+			'post_password'  => $post->post_password,
+			'post_status'    => 'draft',
+			'post_title'     => $post->post_title,
+			'post_type'      => $post->post_type,
+			'to_ping'        => $post->to_ping,
+			'menu_order'     => $post->menu_order
+		);
+
+		/*
+		 * insert the post by wp_insert_post() function
+		 */
+		$new_post_id = wp_insert_post( $args );
+
+		/*
+		 * get all current post terms ad set them to the new post draft
+		 */
+		$taxonomies = get_object_taxonomies($post->post_type); // returns array of taxonomy names for post type, ex array("category", "post_tag");
+		foreach ($taxonomies as $taxonomy) {
+			$post_terms = wp_get_object_terms($post_id, $taxonomy, array('fields' => 'slugs'));
+			wp_set_object_terms($new_post_id, $post_terms, $taxonomy, false);
+		}
+
+		/*
+		 * duplicate all post meta just in two SQL queries
+		 */
+		$post_meta_infos = $wpdb->get_results("SELECT meta_key, meta_value FROM $wpdb->postmeta WHERE post_id=$post_id");
+		if (count($post_meta_infos)!=0) {
+			$sql_query = "INSERT INTO $wpdb->postmeta (post_id, meta_key, meta_value) ";
+			foreach ($post_meta_infos as $meta_info) {
+				$meta_key = $meta_info->meta_key;
+				if( $meta_key == '_wp_old_slug' ) continue;
+				$meta_value = addslashes($meta_info->meta_value);
+				$sql_query_sel[]= "SELECT $new_post_id, '$meta_key', '$meta_value'";
+			}
+			$sql_query.= implode(" UNION ALL ", $sql_query_sel);
+			$wpdb->query($sql_query);
+		}
+
+
+		/*
+		 * finally, redirect to the edit post screen for the new draft
+		 */
+		wp_redirect( admin_url( 'post.php?action=edit&post=' . $new_post_id ) );
+		exit;
+	} else {
+		wp_die('Post creation failed, could not find original post: ' . $post_id);
+	}
+}
+add_action( 'admin_action_rd_duplicate_post_as_draft', 'rd_duplicate_post_as_draft' );
+
+/*
+ * Add the duplicate link to action list for post_row_actions
+ */
+function rd_duplicate_post_link( $actions, $post ) {
+	if (current_user_can('edit_posts')) {
+		$actions['duplicate'] = '<a href="' . wp_nonce_url('admin.php?action=rd_duplicate_post_as_draft&post=' . $post->ID, basename(__FILE__), 'duplicate_nonce' ) . '" title="Duplicate this item" rel="permalink">Duplicate</a>';
+	}
+	return $actions;
+}
+
+add_filter( 'post_row_actions', 'rd_duplicate_post_link', 10, 2 );
+
+
+
+
+
 
 //contact form 7 remove auto p tags
 add_filter( 'wpcf7_autop_or_not', '__return_false' );

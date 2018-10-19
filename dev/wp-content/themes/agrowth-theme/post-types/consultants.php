@@ -17,7 +17,7 @@ add_action('init', function () {
         'public' => true,
 
         'show_in_nav_menus' => true,
-        'rewrite' => array( 'slug' => 'konsulter'),
+        'rewrite' => array( 'slug' => 'konsulter', 'with_front' => false ),
         'supports' => array('title', 'thumbnail', 'excerpt'),
         // 'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats' ),
 

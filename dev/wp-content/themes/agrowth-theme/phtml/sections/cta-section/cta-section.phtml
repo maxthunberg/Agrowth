@@ -5,12 +5,13 @@
         $heading = get_sub_field('heading');
         $paragraph = get_sub_field('paragraph');
         $btnlink = get_sub_field('btn_link');
+        $theme = get_sub_field('theme');
         $url = $btnlink["url"];
         $label = $btnlink["title"];
 
 ?>
 
-    <div class="bx--grid cta-section secondary">
+    <div class="bx--grid cta-section <?php if ( $theme == 1 ) { echo 'primary'; } elseif ( $theme == 2 ) { echo 'secondary'; } else { echo 'dark'; } ?>">
       <div class="bx--row">
         <div class="bx--col cta-section-container">
 
@@ -25,7 +26,7 @@
           </div>
 
           <a href="<?= $url ?>">
-            <button class="bx--btn bx--btn__secondary" type="button">
+            <button class="bx--btn <?php if ( $theme == 1 ) { echo 'bx--btn--outline__white'; } elseif ( $theme == 2 ) { echo 'bx--btn--outline__white'; } else { echo 'bx--btn--outline__white'; } ?>" type="button">
               <?= $label ?>
             </button>
           </a>

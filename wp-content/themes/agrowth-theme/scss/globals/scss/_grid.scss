@@ -69,7 +69,7 @@ $grid-gutter-breakpoints: (xs: 2rem, sm: 3rem);
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding: 0 gutter('xs');
+  padding: 0;
 
   @media (min-width: breakpoint('sm')) {
     padding: 0;

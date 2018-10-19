@@ -35,17 +35,15 @@
 					$i = $n++ * 100;
       		?>
 
-          <div class="bx--col-lg-4 bx--col-md-6 bx--col-sm-12 our-offer--col revealer-<?= $i ?>">
-
-            <div class="our-offer--icon-container">
-              <img src="<?= $icon ?>" class="our-offer--icon-container__icon"/>
-            </div>
-						<h5 class="bx--type-delta__subheading"><?= $heading ?></h5>
-            <div class="our-offer--text-container">
-              <p><?= $paragraph ?></p>
-            </div>
-
-          </div>
+					<div class="interactive-icon">
+						<div class="interactive-icon__icon">
+							<img src="<?= $icon ?>" />
+						</div>
+						<h5 class="interactive-icon__heading bx--type-delta__subheading"><?= $heading ?></h5>
+						<div class="interactive-icon--text-container">
+							<p class="interactive-icon__paragraph bx--type-epsilon"><?= $paragraph ?></p>
+						</div>
+					</div>
 
       	<?php endwhile; ?>
 

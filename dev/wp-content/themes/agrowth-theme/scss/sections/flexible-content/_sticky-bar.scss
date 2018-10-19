@@ -22,13 +22,13 @@
         background-color: transparent;
         height: 3rem;
         width: 3rem;
-        border: 1px solid $color-primary;
+        border: 1px solid $color-grey;
         border-radius: 50%;
         transition: border $transition--base $bx--standard-easing;
         svg {
           height: 1.5rem;
           width: 1.5rem;
-          fill: $color-primary;
+          fill: $color-grey;
           transition: fill $transition--base $bx--standard-easing;
         }
 
@@ -36,10 +36,10 @@
 
       &:hover {
         .sticky-btn {
-          border: 1px solid $color-primary-light;
+          border: 1px solid $color-white-20;
           transition: border $transition--base $bx--standard-easing;
           svg {
-            fill: $color-primary-light;
+            fill: $color-white-20;
             transition: fill $transition--base $bx--standard-easing;
           }
         }
@@ -50,7 +50,7 @@
   }
 }
 
-.sticky-bar.hidden {
+.sticky-bar.hide {
   display: none;
 }
 

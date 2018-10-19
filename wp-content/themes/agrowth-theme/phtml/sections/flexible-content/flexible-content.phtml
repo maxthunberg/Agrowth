@@ -210,8 +210,15 @@ if( have_rows('flexible_content') ):?>
 
                 // vars
                 $qoute = get_sub_field('quote');
-                $qoutee = get_sub_field('qoutee');
+                $qoutee = get_sub_field('quotee');
               ?>
+
+              <div class="component component--quote">
+                <p class="quote__text"><?= $qoute ?></p>
+                <span class="quote__author"><?= $qoutee ?></span>
+              </div>
+
+
 
         <?php
               // Ordered List
@@ -307,13 +314,14 @@ if( have_rows('flexible_content') ):?>
 
           endwhile;?>
 
-              <div class="bx--col-lg-6 bx--col-md-3 bx--col-xs-12 contact-form--col">
-                <?php echo do_shortcode('[contact-form-7 id="518" title="Contact form - Default" html_class="bx--form-item"]'); ?>
-              </div>
+          <!-- Contact Form -->
+          <?php  include( get_template_directory() . '/phtml/sections/contact-form/contact-form.phtml');?>
+
 
             </div>
       </div>
 </div>
+
 <?php
 
 else :

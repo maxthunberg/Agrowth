@@ -35,7 +35,7 @@ $letterspacing-map: (
     @include typescale('giga');
     @include reset;
     @include line-height('heading');
-    font-weight: 700;
+    font-weight: 400;
   }
 
   .#{$prefix}--type-mega {
@@ -43,7 +43,7 @@ $letterspacing-map: (
     @include typescale('mega');
     @include reset;
     @include line-height('heading');
-    font-weight: 700;
+    font-weight: 400;
   }
 
   // really small
@@ -110,7 +110,7 @@ $letterspacing-map: (
     @include archivo-black;
     @include typescale('alpha');
     @include line-height('heading');
-    font-weight: 300;
+    font-weight: 400;
   }
   .#{$prefix}--type-alpha__subheading {
     @include reset;
@@ -128,7 +128,7 @@ $letterspacing-map: (
     @include archivo-black;
     @include typescale('beta');
     @include line-height('heading');
-    font-weight: 300;
+    font-weight: 400;
   }
   .#{$prefix}--type-beta__subheading {
     @include reset;
@@ -145,6 +145,7 @@ $letterspacing-map: (
     @include typescale('beta');
     @include line-height('body');
     @include pt-serif;
+    font-weight: 400;
   }
 
   h3,
@@ -153,7 +154,7 @@ $letterspacing-map: (
     @include archivo-black;
     @include typescale('gamma');
     @include line-height('heading');
-    font-weight: 300;
+    font-weight: 400;
   }
 
   .#{$prefix}--type-gamma__subheading {
@@ -172,6 +173,7 @@ $letterspacing-map: (
     @include typescale('gamma');
     @include line-height('body');
     @include pt-serif;
+    font-weight: 400;
   }
 
   h4,
@@ -180,7 +182,7 @@ $letterspacing-map: (
     @include archivo-black;
     @include typescale('delta');
     @include line-height('heading');
-    font-weight: 700;
+    font-weight: 400;
   }
 
   .#{$prefix}--type-delta__subheading {
@@ -200,6 +202,7 @@ $letterspacing-map: (
     @include typescale('delta');
     @include line-height('body');
     @include pt-serif;
+    font-weight: 400;
   }
 
   h5,

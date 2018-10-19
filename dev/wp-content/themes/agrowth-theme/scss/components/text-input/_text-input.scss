@@ -78,6 +78,11 @@
       transition: $transition--default;
     }
 
+    &:hover {
+      @include layer(temporary-nav);
+      transition: $transition--default;
+    }
+
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;

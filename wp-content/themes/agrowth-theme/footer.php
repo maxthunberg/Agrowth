@@ -3,6 +3,10 @@
 
 <?php include( get_template_directory() . '/phtml/components/footer/footer.phtml');?>
 
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3456279.js"></script>
+<!-- End of HubSpot Embed Code -->
+
 <script>
 var resourceSwiper = new Swiper('.swiper-container', {
   slidesOffsetBefore: 0,

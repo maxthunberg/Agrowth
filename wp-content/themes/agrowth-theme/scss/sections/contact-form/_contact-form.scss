@@ -1,0 +1,8 @@
+.contact-form {
+  .bx--row {
+     @include customflex(0, 0,center,0);
+    .contact-form--col {
+      // flex-basis: 50%;
+    }
+  }
+}
