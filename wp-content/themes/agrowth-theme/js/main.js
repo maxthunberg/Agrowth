@@ -376,5 +376,28 @@ $("#btn-bio").click(function() {
 });
 
 
+function calculateReadTime() {
+
+	if ( $('.section-content__outer').length ) {
+
+		var wordCount = $(".section-content__outer h1, .section-content__outer h2, .section-content__outer h3, .section-content__outer h4, .section-content__outer h5, .section-content__outer h6, .section-content__outer p, .section-content__outer li, .section-content__outer span, .section-content__outer a").text().trim().replace(/[\s]+/g, " ").split(" ").length;
+		console.log('Number of words = ' + wordCount + ' words');
+
+		var imgCount = $('.section-content__outer img').length;
+		console.log('Number of images = ' + imgCount + ' images');
+
+		var readTime = (wordCount/275*60 + imgCount*10)/60;
+		console.log('Exact readtime = ' + readTime + ' min');
+
+		var roundedUp = Math.round(readTime);
+		console.log('Final Readtime = ' + roundedUp + ' min');
+
+	}
+
+}
+
+calculateReadTime();
+
+
 
 }); // Document ready

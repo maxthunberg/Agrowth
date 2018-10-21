@@ -308,15 +308,30 @@ if( have_rows('flexible_content') ):?>
                 <?php endwhile;?>
                 </ul>
 
-              <?php endif;
+              <?php endif; ?>
 
-								endif;
+        <?php
+              // Contact form
+              elseif ( get_row_layout() == 'contact_form' ):
+                $heading = get_sub_field('heading');
+                $paragraph = get_sub_field('paragraph');
+                $contactform = get_sub_field('select_form');
+                ?>
 
-          endwhile;?>
+                <?php if ($contactform == '1'): ?>
 
-          <!-- Contact Form -->
-          <?php  include( get_template_directory() . '/phtml/sections/contact-form/contact-form.phtml');?>
+                  <?php include( get_template_directory() . '/phtml/sections/contact-form/contact-form.phtml'); ?>
 
+                <?php else: ?>
+
+                  <?php include( get_template_directory() . '/phtml/sections/contact-form/contact-form--whitepaper.phtml'); ?>
+
+                <?php endif; ?>
+
+
+			  <?php endif; ?>
+
+    <?php endwhile; ?>
 
             </div>
       </div>
