@@ -1,8 +1,122 @@
 footer {
-  @include customflex(0, center, flex-start, 0);
+  @include customflex(0, center, space-between, 0);
   background-color: $color-white-03;
   height: rem(44px);
-  p {
-    color: $color-grey;
+  padding: 0;
+  .footer-container__info {
+    @include customflex(0,center,center,0);
+    p {
+      color: $color-grey;
+    }
+    a {
+      margin: 0 .25rem;
+    }
   }
+  .footer-container__social {
+    @include customflex(0,center,center,0);
+    p {
+      color: $color-grey;
+      margin-right: 1rem;
+    }
+    .social-media--btn {
+      @include customflex(0,center,center,0);
+      height: rem(44px);
+      width: rem(44px);
+      transition: $transition--default;
+
+      svg {
+        height: 1rem;
+        width: auto;
+        fill: $color-white;
+        color: $color-white;
+        * {
+          fill: $color-white;
+          color: $color-white;
+        }
+      }
+    }
+    .social-media--btn.facebook {
+      background-color: $color-facebook;
+      &:hover {
+        background-color: $color-facebook-dark;
+        transition: $transition--default;
+      }
+    }
+    .social-media--btn.linkedin {
+      background-color: $color-linkedin;
+      &:hover {
+        background-color: $color-linkedin-dark;
+        transition: $transition--default;
+      }
+    }
+  }
+}
+
+@media (max-width: breakpoint('md')) {
+
+  footer {
+    .footer-container__info {
+      a {
+        display: none;
+      }
+    }
+  }
+
+}
+
+@media (max-width: breakpoint('sm')) { // 768px
+
+  footer {
+    @include customflex(column, center, space-between, 0);
+    height: auto;
+    padding: 1rem 0;
+    .footer-container__info {
+      width: 100%;
+      margin: 1rem;
+      a {
+        margin: 0 .25rem;
+      }
+    }
+    .footer-container__social {
+      @include customflex(0,center,center,0);
+      margin: 1rem;
+      p {
+        display: none;
+        margin-right: 1rem;
+      }
+      .social-media--btn {
+        @include customflex(0,center,center,0);
+        height: rem(44px);
+        width: rem(44px);
+        transition: $transition--default;
+        margin: 0 .5rem;
+
+        svg {
+          height: 1rem;
+          width: auto;
+          fill: $color-white;
+          color: $color-white;
+          * {
+            fill: $color-white;
+            color: $color-white;
+          }
+        }
+      }
+      .social-media--btn.facebook {
+        background-color: $color-facebook;
+        &:hover {
+          background-color: $color-facebook-dark;
+          transition: $transition--default;
+        }
+      }
+      .social-media--btn.linkedin {
+        background-color: $color-linkedin;
+        &:hover {
+          background-color: $color-linkedin-dark;
+          transition: $transition--default;
+        }
+      }
+    }
+  }
+
 }
