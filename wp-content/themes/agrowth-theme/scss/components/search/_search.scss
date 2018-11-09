@@ -13,19 +13,19 @@
 @import '../../globals/scss/import-once';
 
 @include exports('search') {
-  .#{$prefix}--search {
+  .ag--search {
     display: flex;
     position: relative;
     width: 100%;
   }
 
-  .#{$prefix}--search .#{$prefix}--label {
+  .ag--search .ag--label {
     @include hidden;
   }
 
-  .#{$prefix}--search-input {
+  .ag--search-input {
     @include reset;
-    @include pt-serif;
+    @include body-text;
     appearance: none;
     border: none;
     background-color: $field-primary;
@@ -49,30 +49,30 @@
     }
   }
 
-  .#{$prefix}--search--sm .#{$prefix}--search-input {
-    @include typescale('zeta');
+  .ag--search--sm .ag--search-input {
+    @include typescale('p-sm');
     height: rem(32px);
   }
 
-  .#{$prefix}--search--lg .#{$prefix}--search-input {
-    @include typescale('zeta');
+  .ag--search--lg .ag--search-input {
+    @include typescale('p-sm');
     height: rem(40px);
   }
 
-  .#{$prefix}--search-magnifier,
-  .#{$prefix}--search-close {
+  .ag--search-magnifier,
+  .ag--search-close {
     position: absolute;
     height: 1rem;
     width: 1rem;
     top: calc(50% - 0.5rem);
   }
 
-  .#{$prefix}--search-magnifier {
+  .ag--search-magnifier {
     left: 0.75rem;
     fill: $color-white-20;
   }
 
-  .#{$prefix}--search-close {
+  .ag--search-close {
     transition: $transition--base;
     fill: $color-white-20;
     cursor: pointer;
@@ -80,19 +80,19 @@
     opacity: 1;
   }
 
-  .#{$prefix}--search--sm .#{$prefix}--search-close {
+  .ag--search--sm .ag--search-close {
     right: 0.75rem;
   }
 
-  .#{$prefix}--search--lg .#{$prefix}--search-close {
+  .ag--search--lg .ag--search-close {
     right: rem(100px);
   }
 
-  .#{$prefix}--search--lg .#{$prefix}--search-close:last-child {
+  .ag--search--lg .ag--search-close:last-child {
     right: rem(12px);
   }
 
-  .#{$prefix}--search-button {
+  .ag--search-button {
     @include reset;
     border: 0;
     transition: $transition--base;
@@ -105,7 +105,7 @@
     padding: 0;
   }
 
-  .#{$prefix}--search-button svg {
+  .ag--search-button svg {
     position: relative;
     top: -1px;
     box-sizing: border-box;
@@ -116,24 +116,24 @@
     width: 1rem;
   }
 
-  .#{$prefix}--search-button:hover,
-  .#{$prefix}--search-button:focus {
+  .ag--search-button:hover,
+  .ag--search-button:focus {
     cursor: pointer;
     background-color: $color-primary;
     outline: 1px solid transparent;
   }
 
-  .#{$prefix}--search-button:hover svg,
-  .#{$prefix}--search-button:focus svg {
+  .ag--search-button:hover svg,
+  .ag--search-button:focus svg {
     fill: $color-white;
   }
 
-  .#{$prefix}--search-close--hidden {
+  .ag--search-close--hidden {
     visibility: hidden;
     opacity: 0;
   }
 
-  .#{$prefix}--search-view--hidden {
+  .ag--search-view--hidden {
     display: none;
   }
 }

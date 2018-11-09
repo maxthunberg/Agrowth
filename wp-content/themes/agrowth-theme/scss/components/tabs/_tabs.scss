@@ -10,13 +10,12 @@
 @import '../../globals/scss/typography';
 @import '../../globals/scss/layout';
 @import '../../globals/scss/import-once';
-@import '../../globals/scss/css--typography';
 
 @include exports('tabs') {
-  .#{$prefix}--tabs {
-    @include typescale('zeta');
+  .ag--tabs {
+    @include typescale('p-sm');
     @include font-smoothing;
-    @include pt-serif;
+    @include body-text;
     color: $text-01;
     font-weight: 600;
     height: auto;
@@ -29,7 +28,7 @@
     }
   }
 
-  .#{$prefix}--tabs-trigger {
+  .ag--tabs-trigger {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,7 +52,7 @@
     }
   }
 
-  .#{$prefix}--tabs-trigger-text {
+  .ag--tabs-trigger-text {
     text-decoration: none;
     font-weight: 600;
     color: $text-01;
@@ -63,7 +62,7 @@
     }
   }
 
-  .#{$prefix}--tabs__nav {
+  .ag--tabs__nav {
     @include layer('overlay');
     margin: 0;
     padding: 0;
@@ -74,7 +73,7 @@
     flex-direction: column;
 
     @include breakpoint(bp--sm--major) {
-      @include typescale('epsilon');
+      @include typescale('p');
       flex-direction: row;
       margin-right: $spacing-md;
       margin-left: $spacing-md;
@@ -87,7 +86,7 @@
     }
   }
 
-  .#{$prefix}--tabs__nav--hidden {
+  .ag--tabs__nav--hidden {
     display: none;
 
     @include breakpoint(bp--sm--major) {
@@ -95,8 +94,8 @@
     }
   }
 
-  .#{$prefix}--tabs__nav-item {
-    @include typescale('zeta');
+  .ag--tabs__nav-item {
+    @include typescale('p-sm');
     background-color: $color-white;
     padding: 0;
     cursor: pointer;
@@ -121,13 +120,13 @@
     }
   }
 
-  .#{$prefix}--tabs__nav-item--selected {
+  .ag--tabs__nav-item--selected {
     border: none;
 
     @include breakpoint(bp--sm--major) {
       border-bottom: 2px solid $color-primary;
 
-      .#{$prefix}--tabs__nav-link {
+      .ag--tabs__nav-link {
         color: $color-primary;
 
         &:focus {
@@ -137,7 +136,7 @@
     }
   }
 
-  .#{$prefix}--tabs__nav-item:hover .#{$prefix}--tabs__nav-link {
+  .ag--tabs__nav-item:hover .ag--tabs__nav-link {
     color: $color-white;
 
     @include breakpoint(bp--sm--major) {
@@ -145,7 +144,7 @@
     }
   }
 
-  .#{$prefix}--tabs__nav-link {
+  .ag--tabs__nav-link {
     display: inline-block;
     color: $text-01;
     text-decoration: none;

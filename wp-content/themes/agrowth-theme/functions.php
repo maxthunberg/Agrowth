@@ -34,14 +34,14 @@ remove_action( 'wp_head', 'wp_resource_hints', 2 );
 add_action('wp_enqueue_scripts', function () {
 
     // wp_enqueue_style( 'swiper', get_template_directory_uri() . '/scss/swiper.min.css',false,'1.1','all');
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/scss/styles.css',false,'1.1.16','all');
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/scss/styles.css',false,'1.1.18','all');
 
     wp_deregister_script('jquery');
     // wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', '', '', true);
     // wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-3.2.1.js', '','', true);
     // wp_enqueue_script('jquery');
 
-		wp_register_script('script', get_template_directory_uri() . '/js/script.min.js', '','1.1.16', true);
+		wp_register_script('script', get_template_directory_uri() . '/js/script.min.js', '','1.1.18', true);
 		wp_enqueue_script('script');
 
     // wp_register_script('main', get_template_directory_uri() . '/js/main.js', '','', true);
@@ -53,6 +53,10 @@ add_action('wp_enqueue_scripts', function () {
 function add_image($image, $params, $class) {
 	$base = 'https://res.cloudinary.com/agrowth/image/upload/';
 	$filename = $image['filename'];
+
+	if (	$params === 0 ) {
+		$params = 'g_south,q_60,c_fill,w_1280';
+	}
 
 	$output = $base.$params.'/'.$filename;
 

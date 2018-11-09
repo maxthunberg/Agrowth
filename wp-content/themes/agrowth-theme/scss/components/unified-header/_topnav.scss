@@ -1,9 +1,9 @@
 @import '../../globals/scss/import-once';
 
 @include exports('topnav') {
-  .#{$prefix}--top-nav {
+  .ag--top-nav {
     @include reset;
-    @include pt-serif;
+    @include body-text;
     display: flex;
     justify-content: space-between;
     background-color: $nav-01;
@@ -16,8 +16,8 @@
     z-index: 9500;
   }
 
-  .#{$prefix}--top-nav__left-container,
-  .#{$prefix}--top-nav__right-container {
+  .ag--top-nav__left-container,
+  .ag--top-nav__right-container {
     @include reset;
     list-style: none;
     display: flex;
@@ -25,10 +25,10 @@
     min-width: 50%;
   }
 
-  .#{$prefix}--top-nav__left-container,
-  .#{$prefix}--top-nav__right-container {
-    .#{$prefix}--dropdown {
-      @include typescale('omega');
+  .ag--top-nav__left-container,
+  .ag--top-nav__right-container {
+    .ag--dropdown {
+      @include typescale('p-sm');
       list-style: none;
       background-color: $nav-01;
       color: $color-white;
@@ -37,14 +37,14 @@
       align-items: center;
     }
 
-    .#{$prefix}--dropdown__arrow {
+    .ag--dropdown__arrow {
       fill: $color-white;
       right: 0.75rem;
       width: rem(12px);
       height: rem(24px);
     }
 
-    .#{$prefix}--dropdown-text {
+    .ag--dropdown-text {
       @include font-smoothing;
       max-width: rem(200px);
       white-space: nowrap;
@@ -53,7 +53,7 @@
       font-weight: 600;
     }
 
-    .#{$prefix}--dropdown-list {
+    .ag--dropdown-list {
       width: auto;
       position: absolute;
       top: 100%;
@@ -68,7 +68,7 @@
       z-index: -1;
     }
 
-    .#{$prefix}--dropdown-item {
+    .ag--dropdown-item {
       min-width: rem(170px);
       overflow: hidden;
       white-space: nowrap;
@@ -80,26 +80,26 @@
       }
     }
 
-    .#{$prefix}--dropdown-link {
+    .ag--dropdown-link {
       color: $color-white;
     }
   }
 
-  .#{$prefix}--top-nav__left-container,
-  .#{$prefix}--top-nav__right-container {
-    .#{$prefix}--dropdown--open {
+  .ag--top-nav__left-container,
+  .ag--top-nav__right-container {
+    .ag--dropdown--open {
       background-color: $color-blue; // anna
     }
 
-    .#{$prefix}--dropdown--open .#{$prefix}--dropdown-text {
+    .ag--dropdown--open .ag--dropdown-text {
       color: $color-aqua-darker; // anna
     }
 
-    .#{$prefix}--dropdown--open .#{$prefix}--dropdown__arrow {
+    .ag--dropdown--open .ag--dropdown__arrow {
       fill: $color-aqua-darker; // anna
     }
 
-    .#{$prefix}--dropdown--open .#{$prefix}--dropdown-list {
+    .ag--dropdown--open .ag--dropdown-list {
       transform: translateY(0);
       opacity: 1;
       visibility: visible;
@@ -107,8 +107,8 @@
     }
   }
 
-  .#{$prefix}--top-nav__left-container__link {
-    @include typescale('legal');
+  .ag--top-nav__left-container__link {
+    @include typescale('p-micro');
     @include font-smoothing;
     display: flex;
     justify-content: flex-start;
@@ -123,47 +123,47 @@
     &:focus {
       color: $color-aqua-darker; // anna
 
-      .#{$prefix}--top-nav__left-container__link--icon {
+      .ag--top-nav__left-container__link--icon {
         fill: $color-aqua-darker; // anna
       }
     }
   }
 
-  .#{$prefix}--top-nav__left-container__link--icon {
+  .ag--top-nav__left-container__link--icon {
     width: 0.675rem;
     height: 0.7rem;
     fill: $color-white;
     margin-right: 0.3rem;
   }
 
-  .#{$prefix}--top-nav__left-container__item {
+  .ag--top-nav__left-container__item {
     &:focus {
       outline: 0;
     }
   }
 
-  .#{$prefix}--top-nav__left-container {
-    .#{$prefix}--dropdown {
+  .ag--top-nav__left-container {
+    .ag--dropdown {
       &:focus,
       &:hover {
         outline: 0;
 
-        .#{$prefix}--dropdown__arrow use {
+        .ag--dropdown__arrow use {
           fill: $color-aqua-darker; // anna
         }
 
-        .#{$prefix}--dropdown-text {
+        .ag--dropdown-text {
           background-color: $color-blue; // anna
           color: $color-aqua-darker; // anna
         }
       }
     }
 
-    .#{$prefix}--dropdown-list {
+    .ag--dropdown-list {
       padding-bottom: 0.5rem;
     }
 
-    .#{$prefix}--dropdown__arrow {
+    .ag--dropdown__arrow {
       top: 0.3rem;
       left: 0.75rem;
       opacity: 0;
@@ -171,14 +171,14 @@
       animation: $transition--base cubic-bezier(0.64, 0.57, 0.67, 1.53) 650ms 1 normal forwards fade;
     }
 
-    .#{$prefix}--dropdown-text {
+    .ag--dropdown-text {
       animation: $transition--base cubic-bezier(0.6, 0.22, 0.38, 2.03) 1 normal forwards pop-in;
       opacity: 0;
       transform: scale(0.5);
       padding: 0.725rem 1rem 0.725rem 2rem;
     }
 
-    .#{$prefix}--dropdown-link {
+    .ag--dropdown-link {
       padding: 0.6rem 0.75rem;
 
       &:hover,
@@ -189,18 +189,18 @@
     }
   }
 
-  .#{$prefix}--top-nav__right-container {
+  .ag--top-nav__right-container {
     justify-content: flex-end;
   }
 
-  .#{$prefix}--top-nav__right-container__item[data-trial],
-  .#{$prefix}--top-nav__right-container__item[data-credit] {
-    .#{$prefix}--dropdown-text {
+  .ag--top-nav__right-container__item[data-trial],
+  .ag--top-nav__right-container__item[data-credit] {
+    .ag--dropdown-text {
       padding: 0.75rem 2rem 0.75rem 1rem;
       color: $color-white;
     }
 
-    .#{$prefix}--dropdown-list {
+    .ag--dropdown-list {
       left: initial;
       outline: 0;
       right: 0;
@@ -208,34 +208,34 @@
       transform: translateY(-10%);
     }
 
-    .#{$prefix}--dropdown__arrow {
+    .ag--dropdown__arrow {
       top: 0.5rem;
     }
 
-    .#{$prefix}--dropdown--open .#{$prefix}--dropdown-list {
+    .ag--dropdown--open .ag--dropdown-list {
       transform: translateY(0);
     }
 
-    .#{$prefix}--dropdown--open .#{$prefix}--dropdown-text {
+    .ag--dropdown--open .ag--dropdown-text {
       color: $color-aqua-darker; // anna
     }
 
-    .#{$prefix}--dropdown:hover,
-    .#{$prefix}--dropdown:focus {
+    .ag--dropdown:hover,
+    .ag--dropdown:focus {
       outline: 0;
       background-color: $color-blue; // anna
 
-      .#{$prefix}--dropdown-text {
+      .ag--dropdown-text {
         color: $color-aqua-darker; // anna
       }
 
-      .#{$prefix}--dropdown__arrow use {
+      .ag--dropdown__arrow use {
         fill: $color-aqua-darker; // anna
       }
     }
 
-    .#{$prefix}--dropdown__trial-content,
-    .#{$prefix}--dropdown__credit-content {
+    .ag--dropdown__trial-content,
+    .ag--dropdown__credit-content {
       cursor: auto;
       display: flex;
       flex-direction: column;
@@ -249,44 +249,44 @@
       }
     }
 
-    .#{$prefix}--dropdown__trial-content--desc,
-    .#{$prefix}--dropdown__credit-content--desc {
+    .ag--dropdown__trial-content--desc,
+    .ag--dropdown__credit-content--desc {
       margin-bottom: 1rem;
     }
 
-    .#{$prefix}--dropdown__trial-content .#{$prefix}--link,
-    .#{$prefix}--dropdown__credit-content .#{$prefix}--link {
-      @include typescale('legal');
+    .ag--dropdown__trial-content .ag--link,
+    .ag--dropdown__credit-content .ag--link {
+      @include typescale('p-micro');
       color: $color-aqua-darker; // anna
       margin-top: 1rem;
       text-align: center;
     }
 
-    .#{$prefix}--dropdown__trial-content--desc {
-      @include typescale('omega');
+    .ag--dropdown__trial-content--desc {
+      @include typescale('p-sm');
     }
 
-    .#{$prefix}--dropdown__credit-content div {
-      .#{$prefix}--dropdown__credit-content--heading {
+    .ag--dropdown__credit-content div {
+      .ag--dropdown__credit-content--heading {
         @include font-smoothing;
-        @include typescale('omega');
+        @include typescale('p-sm');
         font-weight: 600;
       }
 
-      .#{$prefix}--dropdown__credit-content--desc {
-        @include typescale('zeta');
+      .ag--dropdown__credit-content--desc {
+        @include typescale('p-sm');
       }
 
       &:last-child {
-        .#{$prefix}--dropdown__credit-content--desc {
+        .ag--dropdown__credit-content--desc {
           margin-bottom: 0;
         }
       }
     }
   }
 
-  .#{$prefix}--top-nav__right-container__item:last-child {
-    .#{$prefix}--dropdown {
+  .ag--top-nav__right-container__item:last-child {
+    .ag--dropdown {
       &:focus,
       &:hover {
         background-color: $color-blue; // anna
@@ -294,7 +294,7 @@
       }
     }
 
-    .#{$prefix}--dropdown__arrow {
+    .ag--dropdown__arrow {
       transform-origin: 50% 40%;
 
       use {
@@ -302,7 +302,7 @@
       }
     }
 
-    .#{$prefix}--dropdown-text--profile-image {
+    .ag--dropdown-text--profile-image {
       height: rem(36px);
       width: rem(36px);
       min-height: rem(36px);
@@ -313,7 +313,7 @@
       margin: 0rem 1rem;
     }
 
-    .#{$prefix}--dropdown-text--profile-image .profile-image {
+    .ag--dropdown-text--profile-image .profile-image {
       display: flex;
       align-items: center;
       border-radius: 50%;
@@ -327,14 +327,14 @@
       }
     }
 
-    .#{$prefix}--dropdown-list {
+    .ag--dropdown-list {
       right: 0;
       left: inherit;
       padding: 1rem;
       min-width: 225px;
     }
 
-    .#{$prefix}--dropdown-item {
+    .ag--dropdown-item {
       display: flex;
       justify-content: space-between;
 
@@ -350,12 +350,12 @@
     }
   }
 
-  .#{$prefix}--top-nav__right-container__item[data-credit] .#{$prefix}--dropdown-list {
+  .ag--top-nav__right-container__item[data-credit] .ag--dropdown-list {
     min-width: 0;
     width: 100%;
   }
 
-  .#{$prefix}--dropdown__profile-dropdown--picture {
+  .ag--dropdown__profile-dropdown--picture {
     max-width: 3rem;
     max-height: 3rem;
     border-radius: 50%;
@@ -363,23 +363,23 @@
     fill: $color-white;
   }
 
-  .#{$prefix}--dropdown__profile-dropdown--information {
+  .ag--dropdown__profile-dropdown--information {
     margin-left: 1rem;
 
     p {
       @include font-smoothing;
-      @include typescale('zeta');
+      @include typescale('p-sm');
       font-weight: 600;
     }
   }
 
-  .#{$prefix}--dropdown__profile-dropdown__container {
+  .ag--dropdown__profile-dropdown__container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 
     a {
-      @include typescale('omega');
+      @include typescale('p-sm');
       color: $color-aqua-darker; // anna
 
       &:hover {
@@ -406,8 +406,8 @@
   }
 
   @for $i from 1 to 4 {
-    .#{$prefix}--top-nav__left-container--item:nth-child(#{$i}) {
-      .#{$prefix}--dropdown-text {
+    .ag--top-nav__left-container--item:nth-child(#{$i}) {
+      .ag--dropdown-text {
         animation-delay: ($i * 100ms) + 100ms;
       }
     }

@@ -1,7 +1,7 @@
 @import '../../globals/scss/import-once';
 
 @include exports('account-switcher') {
-  .#{$prefix}--account-switcher {
+  .ag--account-switcher {
     @include reset;
     list-style: none;
     position: relative;
@@ -12,7 +12,7 @@
     min-width: rem(350px);
   }
 
-  .#{$prefix}--account-switcher__linked-icon {
+  .ag--account-switcher__linked-icon {
     fill: $color-white;
     height: 1rem;
     width: 1rem;
@@ -20,7 +20,7 @@
     transform: rotate(45deg);
   }
 
-  .#{$prefix}--account-switcher__toggle {
+  .ag--account-switcher__toggle {
     z-index: 9000;
     height: rem(36px);
     width: auto;
@@ -37,7 +37,7 @@
       outline: 0;
       background-color: $color-blue; // anna
 
-      .#{$prefix}--account-switcher__toggle--text {
+      .ag--account-switcher__toggle--text {
         color: $color-aqua-darker; // anna
       }
 
@@ -47,13 +47,13 @@
     }
   }
 
-  .#{$prefix}--account-switcher__toggle--hidden {
+  .ag--account-switcher__toggle--hidden {
     opacity: 0;
     visibility: hidden;
   }
 
-  .#{$prefix}--account-switcher__toggle--text {
-    @include typescale('legal');
+  .ag--account-switcher__toggle--text {
+    @include typescale('p-micro');
     letter-spacing: 0.5px;
     overflow: hidden;
     display: inline-flex;
@@ -62,36 +62,36 @@
     font-weight: 300;
   }
 
-  .#{$prefix}--account-switcher__toggle--text[data-switcher-account-sl],
-  .#{$prefix}--account-switcher__toggle--text[data-switcher-account] {
+  .ag--account-switcher__toggle--text[data-switcher-account-sl],
+  .ag--account-switcher__toggle--text[data-switcher-account] {
     @include font-smoothing;
     font-weight: 600;
   }
 
-  .#{$prefix}--account-switcher__toggle--text[data-switcher-account] {
+  .ag--account-switcher__toggle--text[data-switcher-account] {
     display: inline-flex;
     align-items: center;
   }
 
-  .#{$prefix}--account-switcher__toggle--text[data-switcher-account] .#{$prefix}--account-switcher__linked-icon {
+  .ag--account-switcher__toggle--text[data-switcher-account] .ag--account-switcher__linked-icon {
     margin-right: 0;
   }
 
-  .#{$prefix}--account-switcher__toggle--text > [data-dropdown-account-linked] {
+  .ag--account-switcher__toggle--text > [data-dropdown-account-linked] {
     margin-left: 0.5rem;
     margin-right: 0;
   }
 
-  .#{$prefix}--account-switcher__toggle--text:last-child {
+  .ag--account-switcher__toggle--text:last-child {
     padding-right: 0;
   }
 
-  .#{$prefix}--account-switcher__menu {
+  .ag--account-switcher__menu {
     @include reset;
     list-style: none;
   }
 
-  .#{$prefix}--account-switcher__menu__container {
+  .ag--account-switcher__menu__container {
     @include box-shadow('large');
     transition: $transition--base all $bx--standard-easing;
     position: absolute;
@@ -108,19 +108,19 @@
     z-index: 8000;
   }
 
-  .#{$prefix}--account-switcher--open {
+  .ag--account-switcher--open {
     color: $color-aqua-darker; // anna
 
-    .#{$prefix}--account-switcher__toggle {
+    .ag--account-switcher__toggle {
       color: $color-aqua-darker; // anna
       background-color: $color-blue; // anna
     }
 
-    .#{$prefix}--account-switcher__linked-icon {
+    .ag--account-switcher__linked-icon {
       fill: $color-aqua-darker; // anna
     }
 
-    .#{$prefix}--account-switcher__menu__container {
+    .ag--account-switcher__menu__container {
       visibility: visible;
       max-height: rem(2000px);
       opacity: 1;
@@ -128,7 +128,7 @@
     }
   }
 
-  .#{$prefix}--account-switcher__menu__item {
+  .ag--account-switcher__menu__item {
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -151,7 +151,7 @@
       padding: 0.75rem 0 1rem 1.5rem;
 
       a {
-        @include typescale('legal');
+        @include typescale('p-micro');
         padding-right: 1rem;
         color: $color-aqua-darker; // anna
 
@@ -166,8 +166,8 @@
     }
   }
 
-  .#{$prefix}--account-switcher__menu__item--title {
-    @include typescale('zeta');
+  .ag--account-switcher__menu__item--title {
+    @include typescale('p-sm');
     @include font-smoothing;
     font-weight: 600;
     height: 44px;
@@ -177,8 +177,8 @@
     flex: 1;
   }
 
-  .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown {
-    @include typescale('zeta');
+  .ag--account-switcher__menu__item .ag--dropdown {
+    @include typescale('p-sm');
     flex: 3;
     background-color: $color-blue; // anna
     display: block;
@@ -186,11 +186,11 @@
     min-width: 200px;
   }
 
-  .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown[data-value=''] .#{$prefix}--dropdown-text {
+  .ag--account-switcher__menu__item .ag--dropdown[data-value=''] .ag--dropdown-text {
     color: $color-white; // anna
   }
 
-  .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown--scroll {
+  .ag--account-switcher__menu__item .ag--dropdown--scroll {
     max-height: 180px;
     overflow-y: auto;
 
@@ -210,28 +210,28 @@
     }
   }
 
-  .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown li {
+  .ag--account-switcher__menu__item .ag--dropdown li {
     @include font-smoothing;
     font-weight: 400;
     max-width: 400px;
   }
 
-  .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown__arrow {
+  .ag--account-switcher__menu__item .ag--dropdown__arrow {
     fill: $color-aqua-darker; // anna
   }
 
-  .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown-text {
+  .ag--account-switcher__menu__item .ag--dropdown-text {
     padding-right: 2rem;
     align-self: flex-start;
     background-color: $color-blue; // anna
 
-    .#{$prefix}--account-switcher__linked-icon {
+    .ag--account-switcher__linked-icon {
       fill: $color-white; // anna
       vertical-align: middle;
     }
   }
 
-  .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown-list {
+  .ag--account-switcher__menu__item .ag--dropdown-list {
     position: relative;
     transform: translateY(-10px);
     max-height: 0;
@@ -240,11 +240,11 @@
     top: 0;
   }
 
-  .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown-item {
+  .ag--account-switcher__menu__item .ag--dropdown-item {
     background-color: $color-blue; // anna
 
-    > .#{$prefix}--dropdown-link:hover,
-    .#{$prefix}--dropdown-link:focus {
+    > .ag--dropdown-link:hover,
+    .ag--dropdown-link:focus {
       background-color: $color-aqua-darker; // anna
       color: $color-blue; // anna
 
@@ -254,7 +254,7 @@
     }
   }
 
-  .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown-link {
+  .ag--account-switcher__menu__item .ag--dropdown-link {
     height: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -270,19 +270,19 @@
     }
   }
 
-  .#{$prefix}--account-switcher__menu__item .#{$prefix}--dropdown--open {
-    .#{$prefix}--dropdown-text {
+  .ag--account-switcher__menu__item .ag--dropdown--open {
+    .ag--dropdown-text {
       color: $color-white; // anna
     }
 
-    .#{$prefix}--dropdown-list {
+    .ag--dropdown-list {
       display: flex;
       flex-direction: column;
       max-height: 2000px;
       z-index: 10;
     }
 
-    .#{$prefix}--dropdown-item {
+    .ag--dropdown-item {
       background-color: $color-blue; // anna
     }
   }

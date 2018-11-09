@@ -6,7 +6,6 @@
 @import '../../globals/scss/typography';
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
 @import 'mixins';
 @import 'left-nav-trigger';
 @import 'global-header';
@@ -15,7 +14,7 @@
 @import 'account-switcher';
 
 @include exports('unified-header') {
-  .#{$prefix}--unified-header {
+  .ag--unified-header {
     @include reset;
     position: fixed;
     z-index: z('header');

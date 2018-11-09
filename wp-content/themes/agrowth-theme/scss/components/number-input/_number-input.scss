@@ -8,14 +8,14 @@
 @import '../form/form';
 
 @include exports('number-input') {
-  .#{$prefix}--number {
+  .ag--number {
     @include reset;
     display: flex;
   }
 
-  .#{$prefix}--number input[type='number'] {
-    @include typescale('zeta');
-    @include pt-serif;
+  .ag--number input[type='number'] {
+    @include typescale('p-sm');
+    @include body-text;
     box-sizing: border-box;
     display: inline-flex;
     width: 100%;
@@ -38,14 +38,14 @@
       cursor: not-allowed;
     }
 
-    &:disabled ~ .#{$prefix}--number__controls {
+    &:disabled ~ .ag--number__controls {
       opacity: 0.5;
       cursor: not-allowed;
       pointer-events: none;
     }
   }
 
-  .#{$prefix}--number input[type='number'] {
+  .ag--number input[type='number'] {
     appearance: textfield; // Firefox: Hide spinner (up and down buttons)
 
     &::-ms-clear {
@@ -57,7 +57,7 @@
     }
   }
 
-  .#{$prefix}--number__controls {
+  .ag--number__controls {
     @include reset;
     position: relative;
     display: block;
@@ -68,7 +68,7 @@
     align-items: center;
   }
 
-  .#{$prefix}--number__control-btn {
+  .ag--number__control-btn {
     @include button-reset;
     position: relative;
     bottom: 0;
@@ -88,7 +88,7 @@
     }
   }
 
-  .#{$prefix}--number__controls svg {
+  .ag--number__controls svg {
     fill: $color-primary;
     width: rem(9px);
     height: rem(9px);
@@ -101,11 +101,11 @@
   }
 }
 
-.#{$prefix}--number[data-invalid] {
+.ag--number[data-invalid] {
   input[type='number'] {
     box-shadow: 0 2px 0px 0px $support-error;
   }
-  ~ .#{$prefix}--form-requirement {
+  ~ .ag--form-requirement {
     max-height: rem(200px);
   }
 }

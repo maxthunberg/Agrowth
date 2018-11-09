@@ -10,23 +10,23 @@
 @import '../../globals/scss/import-once';
 
 @include exports('time-picker') {
-  .#{$prefix}--time-picker {
+  .ag--time-picker {
     display: flex;
     align-items: flex-start;
   }
 
-  .#{$prefix}--time-picker .#{$prefix}--select-input {
+  .ag--time-picker .ag--select-input {
     padding-right: $spacing-xl;
   }
 
-  .#{$prefix}--time-picker .#{$prefix}--select__arrow {
+  .ag--time-picker .ag--select__arrow {
     right: 0.875rem;
   }
 
-  .#{$prefix}--time-picker__input-field {
+  .ag--time-picker__input-field {
     @include reset;
-    @include pt-serif;
-    @include typescale('zeta');
+    @include body-text;
+    @include typescale('p-sm');
     display: flex;
     align-items: center;
     background-color: $field-primary;

@@ -35,30 +35,54 @@ $nav-06: $color-teal !default;
 $nav-07: $color-teal !default;
 $nav-08: $color-teal !default;
 
-// Brand Colors
-$color-primary: #ff6665;
-  $color-primary-darker: #CE312C;
-  $color-primary-dark: #E84C47;
-  $color-primary-light: #FF7F7C;
-  $color-primary-lighter: #FF9896 ;
+// // Brand Colors
+// $color-primary: #ff6665;
+//   $color-primary-darker: #CE312C;
+//   $color-primary-dark: #E84C47;
+//   $color-primary-light: #FF7F7C;
+//   $color-primary-lighter: #FF9896 ;
+//
+// $color-secondary: #58ED9F;
+//   $color-secondary-darker: #14BB69;
+//   $color-secondary-dark: #34D583;
+//   $color-secondary-light: #6BFFB7;
+//   $color-secondary-lighter: #86FFD1;
 
-$color-secondary: #58ED9F;
-  $color-secondary-darker: #14BB69;
-  $color-secondary-dark: #34D583;
-  $color-secondary-light: #6BFFB7;
-  $color-secondary-lighter: #86FFD1;
+
+// Brand Colors
+$color-primary: #58ED9F;
+  $color-primary-darker: #14BB69;
+  $color-primary-dark: #34D583;
+  $color-primary-light: #6BFFB7;
+  $color-primary-lighter: #86FFD1 ;
+
+$color-secondary: #ff6665;
+  $color-secondary-darker: #CE312C;
+  $color-secondary-dark: #E84C47;
+  $color-secondary-light: #FF7F7C;
+  $color-secondary-lighter: #FF9896;
 
 $brand-03: #86FFD1;
 
+// $color-white: #fff;
+//   $color-white-03: #f9f9f9;
+//   $color-white-05: #f2f2f2;
+//   $color-white-10: #e6e6e6;
+//   $color-white-20: #ccc;
+//
+// $color-grey: #757575;
+// $color-dark: #292929;
+// $color-black: #1a1a1a;
+
 $color-white: #fff;
-  $color-white-03: #f9f9f9;
-  $color-white-05: #f2f2f2;
-  $color-white-10: #e6e6e6;
+  $color-white-03: #F8FBFE;
+  $color-white-05: #F4F9FE;
+  $color-white-10: #E4ECF4;
   $color-white-20: #ccc;
 
-$color-grey: #757575;
-$color-dark: #292929;
-$color-black: #1a1a1a;
+$color-grey: #8091A3;
+$color-dark: #28323C;
+$color-black: #0C1620;
 
 $text-01: $color-dark;
 $text-02: $color-grey;
@@ -89,7 +113,7 @@ $input-label-weight: 600 !default;
 // Button Theme Variables
 $button-font-weight: 600 !default;
 $button-font-size: 0.875rem !default;
-$button-border-radius: 0 !default;
+$button-border-radius: .25rem !default;
 $button-height: 40px !default;
 $button-padding-lg: 0 $spacing-lg !default;
 $button-padding: 0 $spacing-md !default;

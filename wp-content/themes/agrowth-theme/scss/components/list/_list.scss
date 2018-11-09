@@ -10,45 +10,45 @@
 @import '../../globals/scss/import-once';
 
 @include exports('lists') {
-  .#{$prefix}--list--nested,
-  .#{$prefix}--list--unordered,
-  .#{$prefix}--list--ordered {
+  .ag--list--nested,
+  .ag--list--unordered,
+  .ag--list--ordered {
     @include reset;
-    @include pt-serif;
-    @include typescale('zeta');
+    @include body-text;
+    @include typescale('p-sm');
     @include font-smoothing;
     margin-left: $spacing-xl;
     line-height: 1.5;
   }
 
-  .#{$prefix}--list--unordered,
-  .#{$prefix}--list--ordered {
+  .ag--list--unordered,
+  .ag--list--ordered {
     padding: $spacing-md;
   }
 
-  .#{$prefix}--list__item {
+  .ag--list__item {
     font-weight: 600;
     padding-left: $spacing-2xs;
   }
 
-  .#{$prefix}--list--unordered > .#{$prefix}--list__item {
+  .ag--list--unordered > .ag--list__item {
     list-style-type: disc;
   }
 
-  .#{$prefix}--list--ordered > .#{$prefix}--list__item {
+  .ag--list--ordered > .ag--list__item {
     list-style-type: decimal;
   }
 
-  .#{$prefix}--list--nested {
+  .ag--list--nested {
     margin-left: $spacing-xs;
   }
 
-  .#{$prefix}--list--nested > .#{$prefix}--list__item {
+  .ag--list--nested > .ag--list__item {
     list-style-type: none;
     font-weight: 400;
   }
 
-  .#{$prefix}--list--nested > .#{$prefix}--list__item:before {
+  .ag--list--nested > .ag--list__item:before {
     content: '-';
     padding-right: $spacing-2xs;
   }

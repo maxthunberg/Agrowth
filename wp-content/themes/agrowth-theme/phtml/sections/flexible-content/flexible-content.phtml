@@ -128,10 +128,19 @@ if( have_rows('flexible_content') ):?>
 
                 // vars
 								$src = get_sub_field('image_src');
+                $params = 'g_south,q_60,c_fill,w_960';
+                $class = 'image';
+
                 $caption = get_sub_field('caption');
               ?>
               <div class="component--image">
-                <img src="<?= $src ?>" class="image" />
+                <?php add_image(
+                      $src,
+                      $params,
+                      $class
+                    );
+                ?>
+
                 <p class="image--caption bx--type-epsilon"> <?= $caption ?></p>
               </div>
 

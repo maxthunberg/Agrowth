@@ -11,13 +11,13 @@ $css--helpers: true;
 @import '../text-input/text-input';
 
 @include exports('pagination') {
-  .#{$prefix}--data-table-v2-container + .#{$prefix}--pagination {
+  .ag--data-table-v2-container + .ag--pagination {
     border-top: 0;
   }
 
-  .#{$prefix}--pagination {
+  .ag--pagination {
     @include reset;
-    @include pt-serif;
+    @include body-text;
     width: 100%;
     background-color: $color-white;
     padding: $spacing-xs $spacing-md;
@@ -25,24 +25,24 @@ $css--helpers: true;
     align-items: center;
     border: 1px solid $color-white-10;
 
-    .#{$prefix}--form-item {
+    .ag--form-item {
       flex: auto;
     }
   }
 
-  .#{$prefix}--pagination__left {
+  .ag--pagination__left {
     display: flex;
     align-items: center;
   }
 
-  .#{$prefix}--pagination__right {
+  .ag--pagination__right {
     display: flex;
     align-items: center;
     margin-left: auto;
   }
 
-  .#{$prefix}--pagination__text {
-    @include typescale('omega');
+  .ag--pagination__text {
+    @include typescale('p-sm');
     color: $text-02;
     display: none;
 
@@ -51,7 +51,7 @@ $css--helpers: true;
     }
   }
 
-  .#{$prefix}--pagination__button-icon {
+  .ag--pagination__button-icon {
     height: rem(12px);
     width: rem(12px);
     fill: $color-white-20;
@@ -59,14 +59,14 @@ $css--helpers: true;
     transition: $transition--base;
   }
 
-  .#{$prefix}--pagination__button {
+  .ag--pagination__button {
     @include reset;
     border: none;
     background: none;
     cursor: pointer;
 
     &:hover {
-      .#{$prefix}--pagination__button-icon {
+      .ag--pagination__button-icon {
         fill: $color-primary;
       }
     }
@@ -78,37 +78,37 @@ $css--helpers: true;
     &:disabled:hover {
       cursor: default;
 
-      .#{$prefix}--pagination__button-icon {
+      .ag--pagination__button-icon {
         fill: $color-white-20;
       }
     }
   }
 
-  .#{$prefix}--pagination__button--backward {
+  .ag--pagination__button--backward {
     margin-left: $spacing-md;
     margin-right: $spacing-lg;
   }
 
-  .#{$prefix}--pagination__button--forward {
+  .ag--pagination__button--forward {
     margin-left: $spacing-lg;
   }
 
-  .#{$prefix}--pagination__button--no-index {
+  .ag--pagination__button--no-index {
     border-right: 0;
     margin-right: 1px;
   }
 
-  .#{$prefix}--pagination {
-    .#{$prefix}--select {
+  .ag--pagination {
+    .ag--select {
       margin-right: $spacing-xs;
     }
 
-    .#{$prefix}--select--inline {
+    .ag--select--inline {
       margin-right: 0;
       width: rem(48px);
     }
 
-    .#{$prefix}--select-input {
+    .ag--select-input {
       height: rem(24px);
       width: rem(54px);
       padding: 0 $spacing-xs;
@@ -120,12 +120,12 @@ $css--helpers: true;
       }
     }
 
-    .#{$prefix}--select__arrow {
+    .ag--select__arrow {
       right: 0.5rem;
       top: 0.625rem;
     }
 
-    .#{$prefix}--text-input {
+    .ag--text-input {
       height: rem(24px);
       min-width: rem(24px);
       width: rem(24px);
@@ -140,13 +140,13 @@ $css--helpers: true;
     }
   }
 
-  .#{$prefix}--pagination--inline {
+  .ag--pagination--inline {
     height: 42px;
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
     margin-right: -1rem;
 
-    .#{$prefix}--pagination__button {
+    .ag--pagination__button {
       height: 100%;
       border-left: 1px solid $color-white-10;
       border-right: 1px solid $color-white-10;
@@ -154,24 +154,24 @@ $css--helpers: true;
       margin: 0;
     }
 
-    .#{$prefix}--pagination__button--forward {
+    .ag--pagination__button--forward {
       border-right: 0;
     }
 
-    .#{$prefix}--pagination__button--backward {
+    .ag--pagination__button--backward {
       margin-left: $spacing-md;
     }
 
-    .#{$prefix}--select--inline {
+    .ag--select--inline {
       position: relative;
       top: -1.5px;
     }
 
-    .#{$prefix}--select-input {
+    .ag--select-input {
       padding-left: $spacing-md;
     }
 
-    .#{$prefix}--select__arrow {
+    .ag--select__arrow {
       right: 0.7rem;
     }
   }

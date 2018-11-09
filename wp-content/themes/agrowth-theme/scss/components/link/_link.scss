@@ -17,16 +17,16 @@
     }
   }
   .section-content a,
-  .#{$prefix}--link {
+  .ag--link {
     position: relative;
     @include reset;
-    @include pt-serif;
-    // @include typescale('zeta');
+    @include body-text;
+    // @include typescale('p-sm');
     @include font-smoothing;
     font-weight: 400;
     text-decoration: none;
     line-height: 1.5;
-    color: $color-primary;
+    color: $color-primary-dark;
     align-self: flex-start;
     transition: $transition--base;
     &:after {
@@ -40,7 +40,7 @@
     }
 
     &:visited {
-      color: $color-primary;
+      color: $color-primary-dark;
     }
 
     &:active,
@@ -55,7 +55,7 @@
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: $color-primary;
+        background-color: $color-primary-dark;
       }
 
     }
@@ -70,34 +70,34 @@
     }
   }
 
-  .#{$prefix}--link__secondary {
+  .ag--link__secondary {
     position: relative;
     @include reset;
-    @include pt-serif;
-    @include typescale('zeta');
+    @include body-text;
+    @include typescale('p-sm');
     @include font-smoothing;
     font-weight: 400;
-    color: $color-secondary-dark;
+    color: $color-secondary;
     text-decoration: none;
     border-bottom: 1px solid $color-white-20;
     padding: 1px 0;
     transition: $transition--base;
 
     &:visited {
-      color: $color-secondary-dark;
+      color: $color-secondary;
     }
 
     &:active,
     &:hover,
     &:focus {
       position: relative;
-      color: $color-secondary-dark;
-      border-bottom: 1px solid $color-secondary-dark;
+      color: $color-secondary;
+      border-bottom: 1px solid $color-secondary;
       transition: $transition--base;
     }
 
     &:focus {
-      outline: 1px solid $color-secondary-dark;
+      outline: 1px solid $color-secondary;
     }
 
     &[aria-disabled="true"] {
@@ -105,11 +105,11 @@
       pointer-events: none;
     }
   }
-  .#{$prefix}--link__white {
+  .ag--link__white {
     position: relative;
     @include reset;
-    @include pt-serif;
-    @include typescale('zeta');
+    @include body-text;
+    @include typescale('p-sm');
     @include font-smoothing;
     font-weight: 400;
     color: $color-white;

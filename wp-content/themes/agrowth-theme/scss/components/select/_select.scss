@@ -12,15 +12,15 @@
 @import '../form/form';
 
 @include exports('select') {
-  .#{$prefix}--select {
+  .ag--select {
     @include reset;
     position: relative;
     display: block;
   }
 
-  .#{$prefix}--select-input {
-    @include pt-serif;
-    @include typescale('zeta');
+  .ag--select-input {
+    @include body-text;
+    @include typescale('p-sm');
     appearance: none;
     display: block;
     width: 100%;
@@ -46,7 +46,7 @@
     }
   }
 
-  .#{$prefix}--select__arrow {
+  .ag--select__arrow {
     fill: $color-primary;
     position: absolute;
     right: 1rem;
@@ -56,35 +56,35 @@
     pointer-events: none;
   }
 
-  .#{$prefix}--select-optgroup,
-  .#{$prefix}--select-option {
+  .ag--select-optgroup,
+  .ag--select-option {
     color: $text-01; // For the options to show in IE11
   }
 
   // Override some Firefox user-agent styles
   @-moz-document url-prefix() {
-    .#{$prefix}--select-option {
+    .ag--select-option {
       background-color: $color-white;
       color: $text-01;
     }
 
-    .#{$prefix}--select-optgroup {
+    .ag--select-optgroup {
       color: $text-01;
     }
   }
 }
 
-.#{$prefix}--select--inline {
+.ag--select--inline {
   display: flex;
   align-items: center;
 
-  .#{$prefix}--label {
+  .ag--label {
     white-space: nowrap;
     margin: 0 $spacing-xs 0 0;
     font-weight: 400;
   }
 
-  .#{$prefix}--select-input {
+  .ag--select-input {
     background-color: transparent;
     color: $color-primary;
     font-weight: 600;

@@ -1,38 +1,30 @@
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/css--reset';
 @import 'mixins';
 
-@include exports('snippet') {
-  .#{$prefix}--snippet--code {
+  .bx--snippet--code {
     @include bx--snippet;
     background-color: $color-dark;
     padding: $spacing-md $spacing-2xl $spacing-md $spacing-md;
   }
 
-  .#{$prefix}--snippet code {
-    @include typescale('epsilon');
+  .bx--snippet code {
+    @include typescale('p');
     letter-spacing: 1px;
     line-height: 1.5;
     color: $color-white;
   }
 
-  .#{$prefix}--snippet--code .#{$prefix}--snippet-container {
+  .bx--snippet--code .bx--snippet-container {
     max-height: rem(192px);
     overflow-y: scroll;
     margin-right: $spacing-md;
     position: relative;
   }
 
-  .#{$prefix}--snippet--code .#{$prefix}--snippet-container pre {
+  .bx--snippet--code .bx--snippet-container pre {
     white-space: pre-wrap;
   }
 
-  .#{$prefix}--snippet--terminal {
+  .bx--snippet--terminal {
     @include bx--snippet;
     background-color: $text-01;
     color: $color-white;
@@ -40,7 +32,7 @@
     padding: 0 $spacing-2xl 0 $spacing-md;
   }
 
-  .#{$prefix}--snippet--terminal .#{$prefix}--snippet-container {
+  .bx--snippet--terminal .bx--snippet-container {
     display: flex;
     align-items: center;
     height: 130%;
@@ -49,7 +41,7 @@
     position: relative;
   }
 
-  .#{$prefix}--snippet__icon {
+  .bx--snippet__icon {
     fill: $color-secondary-dark;
     height: rem(24px);
     width: rem(18px);
@@ -60,7 +52,7 @@
     }
   }
 
-  .#{$prefix}--snippet--terminal .#{$prefix}--snippet__icon {
+  .bx--snippet--terminal .bx--snippet__icon {
     fill: $color-white;
 
     &:hover {
@@ -68,7 +60,7 @@
     }
   }
 
-  .#{$prefix}--snippet-button {
+  .bx--snippet-button {
     @include reset;
     cursor: pointer;
     position: absolute;
@@ -86,12 +78,11 @@
     }
   }
 
-  .#{$prefix}--snippet .#{$prefix}--btn--copy__feedback {
-    @include pt-serif;
+  .bx--snippet .bx--btn--copy__feedback {
+    @include body-text;
     z-index: z('overlay');
     font-weight: 400;
     left: inherit;
     top: 1rem;
     right: 1.25rem;
   }
-}

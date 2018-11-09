@@ -5,30 +5,29 @@
 @import '../../globals/scss/css--reset';
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/import-once';
-@import '../../globals/scss/css--typography';
 @import '../button/button';
 @import '../form/form';
 @import '../loading/loading';
 
 @include exports('file-uploader') {
-  .#{$prefix}--file {
+  .ag--file {
     // width: 100%;
     width: 50%;
   }
-  .#{$prefix}--file:nth-child(1) {
+  .ag--file:nth-child(1) {
     // width: 100%;
     padding-right: 1rem;
     width: 50%;
   }
-  .#{$prefix}--file-split {
+  .ag--file-split {
     @include customflex(0,0,0,0);
   }
 
-  .#{$prefix}--file-input {
+  .ag--file-input {
     @include hidden;
   }
 
-  .#{$prefix}--file-btn {
+  .ag--file-btn {
     background-color: transparent;
     border: 1px solid $color-secondary-dark;
     color: $color-secondary-dark;
@@ -43,20 +42,20 @@
     }
   }
 
-  .#{$prefix}--label-description {
+  .ag--label-description {
     @include reset;
-    @include typescale('zeta');
-    @include line-height('body');
+    @include typescale('p-sm');
+    @include line-height('p-sm');
     color: $text-02;
     margin-bottom: $spacing-lg;
   }
 
-  .#{$prefix}--file-container {
+  .ag--file-container {
     display: block;
     width: 100%;
     margin-top: $spacing-lg;
   }
-  .#{$prefix}--file__selected-file {
+  .ag--file__selected-file {
     // @include text-overflow(300px);
     width: 100%;
     display: flex;
@@ -72,23 +71,23 @@
     }
   }
 
-  .#{$prefix}--file__selected-file:nth-child(1) {
+  .ag--file__selected-file:nth-child(1) {
     background-color: rgba($color-secondary-dark, .1);
   }
-  .#{$prefix}--file__selected-file:nth-child(2) {
+  .ag--file__selected-file:nth-child(2) {
       opacity: 1;
   }
-  .#{$prefix}--file__selected-file:nth-child(3) {
+  .ag--file__selected-file:nth-child(3) {
       opacity: .2;
   }
-  .#{$prefix}--file__selected-file:nth-child(n+4){
+  .ag--file__selected-file:nth-child(n+4){
       display: none;
   }
 
 
 
-  .#{$prefix}--file-filename {
-    @include typescale('omega');
+  .ag--file-filename {
+    @include typescale('p-sm');
     @include text-overflow(100%);
     display: inline-flex;
     align-items: center;
@@ -97,23 +96,23 @@
     height: 1.875rem;
   }
 
-  .#{$prefix}--file__state-container {
+  .ag--file__state-container {
     display: flex;
     align-items: center;
 
-    .#{$prefix}--loading {
+    .ag--loading {
       width: 1.125rem;
       height: 1.125rem;
       margin-right: $spacing-xs;
     }
 
-    .#{$prefix}--loading__svg {
+    .ag--loading__svg {
       stroke: $color-white-20;
     }
   }
 
-  .#{$prefix}--file__state-container .#{$prefix}--file-close,
-  .#{$prefix}--file__state-container .#{$prefix}--file-complete {
+  .ag--file__state-container .ag--file-close,
+  .ag--file__state-container .ag--file-complete {
     width: 1rem;
     height: 1rem;
     fill: $text-01;
@@ -124,11 +123,11 @@
     }
   }
 
-  .#{$prefix}--file__state-container .#{$prefix}--file-close {
+  .ag--file__state-container .ag--file-close {
     fill: $color-white-20;
   }
 
-  .#{$prefix}--file__state-container .#{$prefix}--file-complete {
+  .ag--file__state-container .ag--file-complete {
     fill: $support-success;
   }
 }

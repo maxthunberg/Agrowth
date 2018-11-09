@@ -8,7 +8,7 @@
 @mixin css-body {
   body {
     @include reset;
-    @include pt-serif;
+    @include body-text;
     color: $text-01;
     background-color: $color-white-03;
     line-height: 1;

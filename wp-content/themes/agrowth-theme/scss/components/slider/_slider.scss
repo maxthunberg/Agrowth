@@ -14,7 +14,7 @@
 @import '../text-input/text-input';
 
 @include exports('slider') {
-  .#{$prefix}--slider-container {
+  .ag--slider-container {
     max-width: rem(600px);
     min-width: rem(200px);
     display: flex;
@@ -26,17 +26,17 @@
     }
   }
 
-  .#{$prefix}--slider {
+  .ag--slider {
     position: relative;
     width: 100%;
     margin: 0 $spacing-md;
   }
 
-  .#{$prefix}--slider--disabled {
+  .ag--slider--disabled {
     opacity: 0.5;
   }
 
-  .#{$prefix}--slider--disabled .#{$prefix}--slider__thumb {
+  .ag--slider--disabled .ag--slider__thumb {
     &:hover {
       transform: translate(-50%, -50%);
     }
@@ -50,8 +50,8 @@
     }
   }
 
-  .#{$prefix}--slider__range-label {
-    @include typescale('zeta');
+  .ag--slider__range-label {
+    @include typescale('p-sm');
     color: $text-02;
 
     &:last-of-type {
@@ -59,7 +59,7 @@
     }
   }
 
-  .#{$prefix}--slider__track {
+  .ag--slider__track {
     position: absolute;
     width: 100%;
     height: rem(4px);
@@ -68,7 +68,7 @@
     transform: translate(0%, -50%);
   }
 
-  .#{$prefix}--slider__filled-track {
+  .ag--slider__filled-track {
     position: absolute;
     width: 100%;
     height: rem(4px);
@@ -78,7 +78,7 @@
     transform: translate(0%, -50%);
   }
 
-  .#{$prefix}--slider__thumb {
+  .ag--slider__thumb {
     position: absolute;
     height: rem(24px);
     width: rem(24px);
@@ -106,12 +106,12 @@
     }
   }
 
-  .#{$prefix}--slider__input {
+  .ag--slider__input {
     display: none;
   }
 
-  .#{$prefix}--slider-text-input,
-  .#{$prefix}-slider-text-input {
+  .ag--slider-text-input,
+  .ag---slider-text-input {
     width: rem(60px);
     min-width: 0;
     height: 2rem;

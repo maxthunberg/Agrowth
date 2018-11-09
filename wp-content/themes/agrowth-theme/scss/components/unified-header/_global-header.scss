@@ -1,9 +1,9 @@
 @import '../../globals/scss/import-once';
 
 @include exports('global-header') {
-  .#{$prefix}--global-header {
+  .ag--global-header {
     @include layer('sticky-nav');
-    @include pt-serif;
+    @include body-text;
     width: 100%;
     position: fixed;
     top: rem(36px);
@@ -16,12 +16,12 @@
     z-index: 9000;
   }
 
-  .#{$prefix}--global-header__title {
+  .ag--global-header__title {
     display: flex;
     align-items: center;
   }
 
-  .#{$prefix}--global-header__title--logo {
+  .ag--global-header__title--logo {
     display: flex;
     align-items: center;
     padding: 0 rem(8px);
@@ -31,13 +31,13 @@
 
     &:hover,
     &:focus {
-      .#{$prefix}--logo__text {
+      .ag--logo__text {
         color: $color-aqua; // anna
       }
     }
   }
 
-  .#{$prefix}--global-header__title--current-page {
+  .ag--global-header__title--current-page {
     @include font-smoothing;
     display: flex;
     align-items: center;
@@ -46,27 +46,27 @@
     line-height: inherit;
     color: $color-aqua-darker; // anna
 
-    .#{$prefix}--unified-header--apps & {
+    .ag--unified-header--apps & {
       color: $nav-05;
     }
 
-    .#{$prefix}--unified-header--infrastructure & {
+    .ag--unified-header--infrastructure & {
       color: $nav-07;
     }
 
-    .#{$prefix}--unified-header--services & {
+    .ag--unified-header--services & {
       color: $nav-03;
     }
   }
 
-  .#{$prefix}--global-header .#{$prefix}--logo__image {
+  .ag--global-header .ag--logo__image {
     cursor: pointer;
     position: relative;
     margin-right: 1.125rem;
   }
 
-  .#{$prefix}--global-header .#{$prefix}--logo__text {
-    @include typescale('delta');
+  .ag--global-header .ag--logo__text {
+    @include typescale('p');
     @include font-smoothing;
     font-weight: 400;
     cursor: pointer;
@@ -78,19 +78,19 @@
     }
   }
 
-  .#{$prefix}--global-header__left-container {
+  .ag--global-header__left-container {
     display: flex;
     align-items: center;
   }
 
-  .#{$prefix}--global-header__right-container {
+  .ag--global-header__right-container {
     display: flex;
     align-items: center;
     padding-right: 1%;
     background-color: $nav-02;
   }
 
-  .#{$prefix}--global-header__menu {
+  .ag--global-header__menu {
     @include reset;
     list-style: none;
     width: 100%;
@@ -98,7 +98,7 @@
     justify-content: flex-end;
   }
 
-  .#{$prefix}--global-header__menu__item {
+  .ag--global-header__menu__item {
     @include reset;
     width: 100%;
     flex: 0 1 100px;
@@ -110,16 +110,16 @@
     }
 
     &:last-child {
-      & .#{$prefix}--dropdown-list {
+      & .ag--dropdown-list {
         right: 0;
       }
     }
   }
 
-  .#{$prefix}--global-header__menu__item--link {
+  .ag--global-header__menu__item--link {
     @include reset;
     @include font-smoothing;
-    @include typescale('zeta');
+    @include typescale('p-sm');
     font-weight: 600;
     display: flex;
     justify-content: center;
@@ -141,7 +141,7 @@
     }
   }
 
-  .#{$prefix}--global-header__menu__item .#{$prefix}--dropdown {
+  .ag--global-header__menu__item .ag--dropdown {
     height: rem(50px);
     background-color: transparent;
 
@@ -149,18 +149,18 @@
       outline: 0;
       background-color: $color-blue; // anna
 
-      .#{$prefix}--dropdown__menu-text {
+      .ag--dropdown__menu-text {
         color: $color-aqua-darker; // anna
       }
 
-      .#{$prefix}--dropdown__menu-text,
-      .#{$prefix}--dropdown__list {
+      .ag--dropdown__menu-text,
+      .ag--dropdown__list {
         outline: 0;
       }
     }
   }
 
-  .#{$prefix}--global-header__menu .#{$prefix}--dropdown-text {
+  .ag--global-header__menu .ag--dropdown-text {
     @include font-smoothing;
     display: flex;
     justify-content: center;
@@ -177,7 +177,7 @@
     }
   }
 
-  .#{$prefix}--global-header__menu .#{$prefix}--dropdown-list {
+  .ag--global-header__menu .ag--dropdown-list {
     transition: $transition--base all $bx--standard-easing;
     transform: translateY(-150%);
     opacity: 0;
@@ -191,12 +191,12 @@
     padding-bottom: 0.5rem;
   }
 
-  .#{$prefix}--global-header__menu .#{$prefix}--dropdown-item {
+  .ag--global-header__menu .ag--dropdown-item {
     min-width: 200px;
     width: 100%;
   }
 
-  .#{$prefix}--global-header__menu .#{$prefix}--dropdown-link {
+  .ag--global-header__menu .ag--dropdown-link {
     padding: 0.5rem 0.75rem;
     color: $color-white; // anna
 
@@ -206,13 +206,13 @@
     }
   }
 
-  .#{$prefix}--global-header__menu .#{$prefix}--dropdown--open {
-    .#{$prefix}--dropdown-text {
+  .ag--global-header__menu .ag--dropdown--open {
+    .ag--dropdown-text {
       background-color: $color-blue; // anna
       color: $color-aqua-darker; // anna
     }
 
-    .#{$prefix}--dropdown-list {
+    .ag--dropdown-list {
       transform: translateY(0);
       opacity: 1;
       visibility: visible;

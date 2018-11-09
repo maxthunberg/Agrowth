@@ -9,71 +9,70 @@
 @import '../../globals/scss/typography';
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
 
 @include exports('modules') {
   @include deprecate(
     'Accessing the `module` component from the `carbon-components` package ' +
       'is deprecated. Use the `carbon-addons-bluemix` package instead.'
   ) {
-    .#{$prefix}--module {
+    .ag--module {
       @include reset;
-      @include pt-serif;
+      @include body-text;
       display: flex;
       flex-direction: column;
       padding: rem(10px);
       flex: 1 0 auto;
       margin: 0;
 
-      .#{$prefix}--module__inner {
+      .ag--module__inner {
         @include layer('raised');
         background-color: $color-white;
         border: 1px solid transparent;
       }
 
-      .#{$prefix}--module__header {
+      .ag--module__header {
         display: flex;
         align-items: center;
         padding: 1rem 1.5rem;
         border-bottom: 1px solid $color-white-10;
       }
 
-      .#{$prefix}--module__title {
-        @include typescale('zeta');
+      .ag--module__title {
+        @include typescale('p-sm');
         @include font-smoothing;
         letter-spacing: 0;
         font-weight: 600;
         color: $text-01;
       }
 
-      .#{$prefix}--module__content {
+      .ag--module__content {
         display: flex;
         flex-direction: column;
         flex: 3;
         padding: 1.5rem;
 
         p {
-          @include typescale('zeta');
+          @include typescale('p-sm');
         }
       }
 
-      .#{$prefix}--module__content--centered {
+      .ag--module__content--centered {
         align-items: center;
         justify-content: center;
         padding: 5rem;
       }
 
-      .#{$prefix}--module__content--scrollable {
+      .ag--module__content--scrollable {
         max-height: rem(300px);
         overflow-y: scroll;
         margin-bottom: 2rem;
       }
 
-      &.#{$prefix}--module--single {
+      &.ag--module--single {
         max-width: rem(500px);
       }
 
-      &.#{$prefix}--module--double {
+      &.ag--module--double {
         max-width: rem(1000px);
       }
     }

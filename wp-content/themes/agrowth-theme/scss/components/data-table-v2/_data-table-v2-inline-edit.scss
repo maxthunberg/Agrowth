@@ -1,20 +1,20 @@
-.#{$prefix}--inline-edit-label {
+.ag--inline-edit-label {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   &:hover {
-    .#{$prefix}--inline-edit-label__icon {
+    .ag--inline-edit-label__icon {
       opacity: 1;
     }
   }
 }
 
-.#{$prefix}--inline-edit-label--inactive {
+.ag--inline-edit-label--inactive {
   display: none;
 }
 
-.#{$prefix}--inline-edit-label__action {
+.ag--inline-edit-label__action {
   @include button-reset(false);
 
   &:hover {
@@ -25,23 +25,23 @@
     @include focus-outline;
     padding: $spacing-3xs;
 
-    .#{$prefix}--inline-edit-label__icon {
+    .ag--inline-edit-label__icon {
       width: auto;
       opacity: 1;
     }
   }
 }
 
-.#{$prefix}--inline-edit-label__icon {
+.ag--inline-edit-label__icon {
   fill: $color-white-20;
   opacity: 0;
 }
 
-.#{$prefix}--inline-edit-input {
+.ag--inline-edit-input {
   display: none;
 }
 
-.#{$prefix}--inline-edit-input--active {
+.ag--inline-edit-input--active {
   display: block;
   margin-left: rem(-12px);
 
@@ -50,7 +50,7 @@
   }
 }
 
-.#{$prefix}--data-table-v2--short {
+.ag--data-table-v2--short {
   input {
     height: rem(32px);
   }
@@ -59,7 +59,7 @@
     padding: 0.45rem 2.75rem 0.45rem $spacing-md;
   }
 
-  .#{$prefix}--select__arrow {
+  .ag--select__arrow {
     top: 0.875rem;
   }
 }

@@ -75,7 +75,7 @@
 
 @mixin button-reset($width: true) {
   @include reset;
-  @include pt-serif;
+  @include body-text;
   @include font-smoothing;
   @include letter-spacing;
   display: inline-block;
@@ -116,7 +116,7 @@ REASON: #{$reason}';
 // ---------------------------------------------
 
 @mixin light-ui {
-  .#{$prefix}--global-light-ui & {
+  .ag--global-light-ui & {
     @content;
   }
 }

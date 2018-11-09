@@ -5,13 +5,13 @@
 @import '../../globals/scss/import-once';
 
 @include exports('form') {
-  .#{$prefix}--fieldset {
+  .ag--fieldset {
     @include reset;
     margin-bottom: $spacing-xl;
   }
 
-  .#{$prefix}--form-item {
-    @include pt-serif;
+  .ag--form-item {
+    @include body-text;
     flex: 1;
     margin-right: $spacing-md;
     margin-bottom: $spacing-lg;
@@ -22,8 +22,8 @@
     }
   }
 
-  .#{$prefix}--form-item__uploader {
-    @include pt-serif;
+  .ag--form-item__uploader {
+    @include body-text;
     flex: 1;
     margin-right: 0;
     margin-bottom: $spacing-lg;
@@ -34,21 +34,21 @@
     }
   }
 
-  .#{$prefix}--label {
+  .ag--label {
     @include reset;
-    @include pt-serif;
-    @include typescale('zeta');
+    @include body-text;
+    @include typescale('p-sm');
     font-weight: $input-label-weight;
     display: inline-block;
     vertical-align: baseline;
     margin-bottom: $spacing-xs;
   }
 
-  .#{$prefix}--label .#{$prefix}--tooltip__trigger {
-    @include typescale('zeta');
+  .ag--label .ag--tooltip__trigger {
+    @include typescale('p-sm');
   }
 
-  .#{$prefix}--label--disabled {
+  .ag--label--disabled {
     opacity: 0.5;
   }
 
@@ -57,14 +57,14 @@
   select[data-invalid] {
     box-shadow: 0 2px 0px 0px $support-error;
 
-    ~ .#{$prefix}--form-requirement {
+    ~ .ag--form-requirement {
       max-height: rem(200px);
     }
   }
 
-  .#{$prefix}--form-requirement {
+  .ag--form-requirement {
     @include reset;
-    @include typescale('omega');
+    @include typescale('p-sm');
     margin: $spacing-sm 0 0;
     max-height: 0;
     overflow: hidden;

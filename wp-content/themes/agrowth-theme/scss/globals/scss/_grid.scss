@@ -32,7 +32,7 @@ $grid-breakpoints: (xs: 375px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl:
 $gutter-breakpoints: (xs: 5px, sm: 10px);
 $grid-gutter-breakpoints: (xs: 2rem, sm: 3rem);
 
-.#{$prefix}--grid {
+.ag--grid {
     padding-left: 2rem!important;
     padding-right: 2rem!important;
 
@@ -55,7 +55,7 @@ $grid-gutter-breakpoints: (xs: 2rem, sm: 3rem);
   }
 }
 
-.#{$prefix}--row {
+.ag--row {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
@@ -77,20 +77,20 @@ $grid-gutter-breakpoints: (xs: 2rem, sm: 3rem);
 }
 
 @for $i from 1 through $columns {
-  .#{$prefix}--col-xs-#{$i} {
+  .ag--col-xs-#{$i} {
     flex-basis: (100% * $i / $columns);
   }
 }
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @media (min-width: breakpoint($breakpoint)) {
-    .#{$prefix}--col-#{$breakpoint}-auto {
+    .ag--col-#{$breakpoint}-auto {
       flex: 0 0 auto;
       width: auto;
     }
 
     @for $i from 1 through $columns {
-      .#{$prefix}--col-#{$breakpoint}-#{$i} {
+      .ag--col-#{$breakpoint}-#{$i} {
         flex-basis: (100% * $i / $columns);
       }
     }
@@ -105,10 +105,10 @@ $gutter-size: 10px;
   max-width: (100% * $col-num / $columns);
 }
 
-.#{$prefix}--col-xs,
-.#{$prefix}--col-sm,
-.#{$prefix}--col-md,
-.#{$prefix}--col-lg {
+.ag--col-xs,
+.ag--col-sm,
+.ag--col-md,
+.ag--col-lg {
   flex-basis: 0;
   flex: 1;
   flex-grow: 1;

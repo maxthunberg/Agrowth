@@ -1,24 +1,24 @@
-.#{$prefix}--data-table-v2-container {
+.ag--data-table-v2-container {
   width: 100%;
   min-width: rem(500px);
   overflow-x: auto;
   padding-top: $spacing-3xs; // allow space for focus styles
 }
 
-.#{$prefix}--data-table-v2 {
+.ag--data-table-v2 {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
   border-bottom: 1px solid $color-white-10;
 
   thead {
-    @include typescale('zeta');
+    @include typescale('p-sm');
     background-color: $color-white-03;
     font-weight: 700;
   }
 
   tbody {
-    @include typescale('zeta');
+    @include typescale('p-sm');
     background-color: $color-white;
   }
 
@@ -40,7 +40,7 @@
         }
       }
 
-      .#{$prefix}--overflow-menu {
+      .ag--overflow-menu {
         opacity: 1;
       }
     }
@@ -69,11 +69,11 @@
   }
 
   // Overrrides
-  .#{$prefix}--checkbox-label {
+  .ag--checkbox-label {
     padding-left: rem(28px);
   }
 
-  .#{$prefix}--overflow-menu {
+  .ag--overflow-menu {
     opacity: 0;
 
     &:focus {
@@ -81,30 +81,30 @@
       opacity: 1;
       box-shadow: none;
 
-      .#{$prefix}--overflow-menu__icon {
+      .ag--overflow-menu__icon {
         box-shadow: inset 0px 0px 0px 1px $color-primary;
       }
     }
   }
 
-  .#{$prefix}--overflow-menu__icon {
+  .ag--overflow-menu__icon {
     transform: rotate(90deg);
   }
 }
 
 // Options
 
-.#{$prefix}--data-table-v2-header {
+.ag--data-table-v2-header {
   margin-bottom: $spacing-xs;
 }
 
-.#{$prefix}--data-table-v2--zebra {
+.ag--data-table-v2--zebra {
   tbody tr:nth-child(even) {
     background-color: $color-white-03;
   }
 }
 
-.#{$prefix}--data-table-v2--no-border {
+.ag--data-table-v2--no-border {
   tr {
     &:last-of-type {
       td {
@@ -125,29 +125,29 @@
   }
 }
 
-.#{$prefix}--data-table-v2--compact {
+.ag--data-table-v2--compact {
   tbody tr {
     height: rem(24px);
   }
 }
 
-.#{$prefix}--data-table-v2--short {
+.ag--data-table-v2--short {
   tbody tr {
     height: rem(32px);
   }
 }
 
-.#{$prefix}--data-table-v2--tall {
+.ag--data-table-v2--tall {
   tbody tr {
     height: rem(64px);
   }
 }
 
-.#{$prefix}--data-table-v2--static {
+.ag--data-table-v2--static {
   width: auto;
 }
 
-.#{$prefix}--data-table-v2--zebra tbody tr.#{$prefix}--data-table-v2--selected,
-tbody tr.#{$prefix}--data-table-v2--selected {
+.ag--data-table-v2--zebra tbody tr.ag--data-table-v2--selected,
+tbody tr.ag--data-table-v2--selected {
   background-color: rgba($color-secondary, 0.1);
 }

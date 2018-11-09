@@ -4,17 +4,16 @@
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
 
 @include exports('lightbox') {
-  .#{$prefix}--lightbox {
+  .ag--lightbox {
     width: rem(1056px);
     @include layer('pop-out');
   }
-  .#{$prefix}--lightbox__main {
+  .ag--lightbox__main {
     position: relative;
   }
-  .#{$prefix}--lightbox__btn {
+  .ag--lightbox__btn {
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -39,15 +38,15 @@
       fill: $color-white-20;
     }
   }
-  .#{$prefix}--lightbox__item {
+  .ag--lightbox__item {
     display: none;
     width: 100%;
   }
-  .#{$prefix}--lightbox__item--shown {
+  .ag--lightbox__item--shown {
     display: block;
   }
 
-  .#{$prefix}--lightbox__footer {
+  .ag--lightbox__footer {
     background: $color-white;
     overflow: hidden;
   }

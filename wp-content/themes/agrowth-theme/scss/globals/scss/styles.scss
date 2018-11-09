@@ -2,29 +2,23 @@
 // 🌍 Global
 //-------------------------
 
-$css--font-face: false !default;
 $css--helpers: true !default;
 $css--body: true !default;
-$css--use-experimental-grid: false !default;
-$css--use-experimental-grid-fallback: false !default;
 $css--use-layer: true !default;
 $css--reset: true !default;
-$css--typography: true !default;
-$css--plex: false !default;
 
 @import 'colors';
 @import 'vars';
 @import 'mixins';
+@import 'helper-mixins';
 @import 'layout';
 @import 'layer';
 @import 'spacing';
 @import 'typography';
 @import 'import-once';
 @import 'css--reset';
-@import 'css--font-face';
 @import 'css--helpers';
 @import 'css--body';
-@import 'css--typography';
 @import 'grid';
 @import 'sections';
 @import 'flexbox';
@@ -71,7 +65,6 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/copy-button/copy-button';
 @import '../../components/file-uploader/file-uploader';
 @import '../../components/checkbox/checkbox';
-@import '../../components/combo-box/combo-box';
 @import '../../components/radio-button/radio-button';
 @import '../../components/toggle/toggle';
 @import '../../components/search/search';
@@ -81,7 +74,6 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/number-input/number-input';
 @import '../../components/form/form';
 @import '../../components/link/link';
-@import '../../components/list-box/list-box';
 @import '../../components/list/list';
 @import '../../components/data-table/data-table';
 @import '../../components/data-table-v2/data-table-v2';
@@ -91,12 +83,10 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/card/card';
 @import '../../components/content-switcher/content-switcher';
 @import '../../components/date-picker/date-picker';
-@import '../../components/detail-page-header/detail-page-header';
 @import '../../components/dropdown/dropdown';
 @import '../../components/loading/loading';
 @import '../../components/modal/modal';
 @import '../../components/module/module';
-@import '../../components/multi-select/multi-select';
 @import '../../components/notification/inline-notification';
 @import '../../components/notification/navbar-notification';
 @import '../../components/notification/toast-notification';
@@ -104,7 +94,6 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import '../../components/tabs/tabs';
 @import '../../components/tag/tag';
 @import '../../components/unified-header/unified-header';
-// @import '../../components/interior-left-nav/interior-left-nav';
 @import '../../components/pagination/pagination';
 @import '../../components/accordion/accordion';
 @import '../../components/progress-indicator/progress-indicator';

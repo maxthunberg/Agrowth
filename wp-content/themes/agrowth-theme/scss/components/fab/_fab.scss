@@ -6,7 +6,7 @@
 @import '../../globals/scss/import-once';
 
 @include exports('fab') {
-  .#{$prefix}--fab {
+  .ag--fab {
     @include reset;
     @include rotate(0, $transition--base);
     display: inline-block;
@@ -24,12 +24,12 @@
     &__svg {
       width: 100%;
 
-      .#{$prefix}--fab__hexagon {
+      .ag--fab__hexagon {
         transition: fill $transition--base;
         fill: $color-blue;
       }
 
-      .#{$prefix}--fab__plus-icon {
+      .ag--fab__plus-icon {
         @include rotate(0, $transition--base);
         fill: $color-white;
       }
@@ -39,12 +39,12 @@
     &[data-state='closed'] {
       @include rotate(90deg, $transition--base);
 
-      .#{$prefix}--fab__hexagon {
+      .ag--fab__hexagon {
         transition: fill $transition--base;
         fill: $color-blue;
       }
 
-      .#{$prefix}--fab__plus-icon {
+      .ag--fab__plus-icon {
         @include rotate(-45deg, $transition--base);
       }
     }

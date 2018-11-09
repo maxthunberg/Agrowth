@@ -11,14 +11,13 @@
 @import '../../globals/scss/typography';
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
 
 @import '../button/button';
 
 @include exports('modal') {
-  .#{$prefix}--modal {
+  .ag--modal {
     @include reset;
-    @include pt-serif;
+    @include body-text;
     position: fixed;
     top: 0;
     right: 0;
@@ -42,11 +41,11 @@
     }
   }
 
-  .#{$prefix}--modal--danger {
+  .ag--modal--danger {
     @include modal--color($support-error);
   }
 
-  .#{$prefix}--modal-container {
+  .ag--modal-container {
     @include reset;
     @include layer('pop-out');
     position: relative;
@@ -73,13 +72,13 @@
     }
   }
 
-  .#{$prefix}--modal-header {
+  .ag--modal-header {
     margin-bottom: $spacing-lg;
   }
 
-  .#{$prefix}--modal-header__label {
+  .ag--modal-header__label {
     @include reset;
-    @include typescale('omega');
+    @include typescale('p-sm');
     color: $text-01;
     font-weight: 600;
     text-transform: uppercase;
@@ -87,14 +86,14 @@
     margin-bottom: $spacing-xs;
   }
 
-  .#{$prefix}--modal-header__heading {
+  .ag--modal-header__heading {
     @include reset;
-    @include typescale('beta');
+    @include typescale('four');
     font-weight: 300;
     color: $text-02;
   }
 
-  .#{$prefix}--modal-content {
+  .ag--modal-content {
     overflow-y: auto;
     margin-bottom: $spacing-3xl;
 
@@ -103,7 +102,7 @@
     }
   }
 
-  .#{$prefix}--modal-footer {
+  .ag--modal-footer {
     margin-top: auto;
     text-align: right;
     background-color: $modal-footer-background-color;
@@ -118,7 +117,7 @@
     }
   }
 
-  .#{$prefix}--modal-close {
+  .ag--modal-close {
     position: absolute;
     top: rem(16px);
     right: rem(16px);
@@ -134,7 +133,7 @@
     }
   }
 
-  .#{$prefix}--modal-close__icon {
+  .ag--modal-close__icon {
     transition: 200ms;
     fill: $color-white-20;
     width: rem(12px);

@@ -13,7 +13,7 @@
 @import '../../globals/scss/import-once';
 
 @include exports('overflow-menu') {
-  .#{$prefix}--overflow-menu {
+  .ag--overflow-menu {
     @include reset;
     position: relative;
     width: rem(20px);
@@ -26,7 +26,7 @@
     }
   }
 
-  .#{$prefix}--overflow-menu__icon {
+  .ag--overflow-menu__icon {
     width: 100%;
     height: 100%;
     padding: 0.5rem;
@@ -38,7 +38,7 @@
     }
   }
 
-  .#{$prefix}--overflow-menu-options {
+  .ag--overflow-menu-options {
     @include reset;
     @include layer('overlay');
     display: none;
@@ -55,11 +55,11 @@
     left: -20px;
   }
 
-  .#{$prefix}--overflow-menu-options--open {
+  .ag--overflow-menu-options--open {
     display: flex;
   }
 
-  .#{$prefix}--overflow-menu-options:before {
+  .ag--overflow-menu-options:before {
     content: '';
     position: absolute;
     display: block;
@@ -74,7 +74,7 @@
     left: 24px;
   }
 
-  .#{$prefix}--overflow-menu-options__option {
+  .ag--overflow-menu-options__option {
     @include reset;
     display: flex;
     background-color: transparent;
@@ -83,14 +83,14 @@
     padding: 0;
   }
 
-  .#{$prefix}--overflow-menu--divider {
+  .ag--overflow-menu--divider {
     border-top: 1px solid $color-white-10;
   }
 
-  .#{$prefix}--overflow-menu-options__btn {
+  .ag--overflow-menu-options__btn {
     @include reset;
-    @include typescale('zeta');
-    @include pt-serif;
+    @include typescale('p-sm');
+    @include body-text;
     font-weight: 400;
     width: 100%;
     height: 100%;
@@ -107,30 +107,30 @@
       color: $color-white;
     }
 
-    .#{$prefix}--overflow-menu-options__option--danger & {
+    .ag--overflow-menu-options__option--danger & {
       &:focus {
         background-color: $support-error;
       }
     }
   }
 
-  .#{$prefix}--overflow-menu-options__option:hover {
+  .ag--overflow-menu-options__option:hover {
     background-color: $color-primary;
   }
 
-  .#{$prefix}--overflow-menu-options__option:hover .#{$prefix}--overflow-menu-options__btn {
+  .ag--overflow-menu-options__option:hover .ag--overflow-menu-options__btn {
     color: $color-white;
   }
 
-  .#{$prefix}--overflow-menu-options__option--danger {
+  .ag--overflow-menu-options__option--danger {
     border-top: 1px solid $color-white-10;
   }
 
-  .#{$prefix}--overflow-menu-options__option--danger:hover {
+  .ag--overflow-menu-options__option--danger:hover {
     background-color: $support-error;
   }
 
-  .#{$prefix}--overflow-menu--flip {
+  .ag--overflow-menu--flip {
     left: -140px;
 
     &:before {

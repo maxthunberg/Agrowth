@@ -1,21 +1,16 @@
-@import '../../globals/scss/colors';
-@import '../../globals/scss/vars';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/css--typography';
 @import '../checkbox/checkbox';
-@import '../../globals/scss/import-once';
 @import '../../components/overflow-menu/overflow-menu';
 
 @include exports('data-table') {
-  .#{$prefix}--responsive-table-container {
+  .bx--responsive-table-container {
     @include reset;
-    @include pt-serif;
+    @include body-text;
     overflow-x: auto;
     overflow-y: hidden;
     width: 99.9%;
   }
 
-  .#{$prefix}--responsive-table {
+  .bx--responsive-table {
     @include reset;
     background-color: $color-white;
     width: 100%;
@@ -26,18 +21,18 @@
 
     td {
       @include reset;
-      @include typescale('zeta');
+      @include typescale('p-sm');
       padding: 0 rem(6px);
       vertical-align: middle;
     }
 
     td p {
-      @include typescale('zeta');
+      @include typescale('p-sm');
     }
 
     th {
       @include reset;
-      @include typescale('omega');
+      @include typescale('p-sm');
       padding: rem(9px) rem(6px);
       vertical-align: middle;
       font-weight: 600;
@@ -76,7 +71,7 @@
     }
   }
 
-  .#{$prefix}--responsive-table--tall {
+  .bx--responsive-table--tall {
     td,
     th {
       padding-top: rem(10px);
@@ -84,20 +79,20 @@
     }
   }
 
-  .#{$prefix}--table-row {
+  .bx--table-row {
     @include reset;
     height: $data-table-row-height;
     padding-left: 1rem;
   }
 
-  .#{$prefix}--table-head .#{$prefix}--table-row {
+  .bx--table-head .bx--table-row {
     border-bottom: $data-table-heading-border-bottom;
     height: rem(32px);
   }
 
-  .#{$prefix}--table-header {
+  .bx--table-header {
     @include reset;
-    @include typescale('omega');
+    @include typescale('p-sm');
     font-weight: 600;
     letter-spacing: 1px;
     text-align: left;
@@ -106,26 +101,26 @@
   }
 
   // zebra stripes
-  .#{$prefix}--table-body {
-    > .#{$prefix}--parent-row,
-    > .#{$prefix}--parent-row {
+  .bx--table-body {
+    > .bx--parent-row,
+    > .bx--parent-row {
       background-color: $color-white;
 
-      & + .#{$prefix}--expandable-row {
+      & + .bx--expandable-row {
         background-color: $color-white;
       }
 
       &--even {
         background-color: $color-white-05;
 
-        & + .#{$prefix}--expandable-row {
+        & + .bx--expandable-row {
           background-color: $color-white-05;
         }
       }
     }
   }
 
-  .#{$prefix}--table-body .#{$prefix}--table-row {
+  .bx--table-body .bx--table-row {
     border: 1px solid transparent;
 
     &:first-child:hover,
@@ -142,7 +137,7 @@
   }
 
   // expandable styles
-  .#{$prefix}--expandable-row {
+  .bx--expandable-row {
     > td {
       border-left: 4px solid $color-primary;
       padding: 2rem;
@@ -154,7 +149,7 @@
   }
 
   // actions
-  .#{$prefix}--table-expand {
+  .bx--table-expand {
     padding-left: rem(8px);
     padding-right: rem(12px);
     text-align: center;
@@ -170,7 +165,7 @@
     }
   }
 
-  .#{$prefix}--table-expand__svg {
+  .bx--table-expand__svg {
     fill: $color-white-20;
     transform: rotate(0deg);
     transition: transform 200ms $bx--standard-easing;
@@ -184,7 +179,7 @@
     }
   }
 
-  .#{$prefix}--table-expand[data-previous-value='collapsed'] .#{$prefix}--table-expand__svg {
+  .bx--table-expand[data-previous-value='collapsed'] .bx--table-expand__svg {
     transform: rotate(90deg);
     transition: transform 200ms $bx--standard-easing;
   }
@@ -193,7 +188,7 @@
     cursor: pointer;
   }
 
-  .#{$prefix}--table-sort__svg {
+  .bx--table-sort__svg {
     fill: $color-white-20;
     width: 8px;
     height: 8px;
@@ -201,19 +196,19 @@
     transition: transform 200ms $bx--standard-easing;
   }
 
-  .#{$prefix}--table-sort--ascending .#{$prefix}--table-sort__svg {
+  .bx--table-sort--ascending .bx--table-sort__svg {
     transform: rotate(180deg);
     transition: transform 200ms $bx--standard-easing;
   }
 
-  .#{$prefix}--table-select {
+  .bx--table-select {
     @include reset;
     width: rem(30px);
     text-align: center;
     padding-left: 0;
     padding-right: 0;
 
-    .#{$prefix}--checkbox-label {
+    .bx--checkbox-label {
       display: inline-flex;
       margin: 0;
 
@@ -222,16 +217,16 @@
       }
     }
 
-    .#{$prefix}--checkbox-appearance {
+    .bx--checkbox-appearance {
       margin: 0;
     }
   }
 
-  .#{$prefix}--table-overflow {
+  .bx--table-overflow {
     width: rem(40px);
     text-align: center;
 
-    .#{$prefix}--overflow-menu {
+    .bx--overflow-menu {
       padding: 0;
     }
   }

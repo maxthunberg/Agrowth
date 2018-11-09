@@ -7,14 +7,14 @@
 @import '../../globals/scss/import-once';
 
 @include exports('progress-indicator') {
-  .#{$prefix}--progress {
+  .ag--progress {
     @include reset;
-    @include pt-serif;
+    @include body-text;
     display: flex;
     list-style: none;
   }
 
-  .#{$prefix}--progress-step {
+  .ag--progress-step {
     position: relative;
     display: inline-flex;
     flex-direction: column;
@@ -24,7 +24,7 @@
     overflow: visible;
   }
 
-  .#{$prefix}--progress-line {
+  .ag--progress-line {
     position: absolute;
     top: $progress-indicator-line-offset;
     right: 100%;
@@ -32,12 +32,12 @@
     width: calc(100% - 24px);
     border: $progress-indicator-bar-width;
 
-    .#{$prefix}--progress-step:first-child & {
+    .ag--progress-step:first-child & {
       display: none;
     }
   }
 
-  .#{$prefix}--progress-step svg {
+  .ag--progress-step svg {
     position: relative;
     z-index: 1;
     width: 1.5rem;
@@ -46,12 +46,12 @@
     margin-bottom: $spacing-xs;
   }
 
-  .#{$prefix}--progress-label {
+  .ag--progress-label {
     line-height: 1;
     width: 75%;
   }
 
-  .#{$prefix}--progress-step--current {
+  .ag--progress-step--current {
     circle:first-child {
       stroke: $color-primary;
       stroke-width: $progress-indicator-stroke-width;
@@ -62,33 +62,33 @@
       fill: $color-primary;
     }
 
-    .#{$prefix}--progress-label {
+    .ag--progress-label {
       @include font-smoothing;
       color: $color-primary;
       font-weight: 600;
     }
-    .#{$prefix}--progress-line {
+    .ag--progress-line {
       background-color: $color-primary;
     }
   }
 
-  .#{$prefix}--progress-step--incomplete {
+  .ag--progress-step--incomplete {
     circle {
       stroke: $color-white-20;
       stroke-width: $progress-indicator-stroke-width;
       fill: transparent;
     }
 
-    .#{$prefix}--progress-label {
+    .ag--progress-label {
       color: $text-02;
     }
 
-    .#{$prefix}--progress-line {
+    .ag--progress-line {
       background-color: $color-white-20;
     }
   }
 
-  .#{$prefix}--progress-step--complete {
+  .ag--progress-step--complete {
     circle {
       stroke: $color-primary;
       stroke-width: $progress-indicator-stroke-width;
@@ -99,12 +99,12 @@
       fill: $color-primary;
     }
 
-    .#{$prefix}--progress-label {
+    .ag--progress-label {
       @include font-smoothing;
       color: $color-primary;
       font-weight: 600;
     }
-    .#{$prefix}--progress-line {
+    .ag--progress-line {
       background-color: $color-primary;
     }
   }

@@ -4,7 +4,7 @@
 @import 'import-once';
 
 @mixin css-helpers {
-  .#{$prefix}--visually-hidden {
+  .ag--visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -17,9 +17,9 @@
     white-space: nowrap;
   }
 
-  .#{$prefix}--body {
+  .ag--body {
     @include reset;
-    @include pt-serif;
+    @include body-text;
     color: $text-01;
     background-color: $color-white-03;
     line-height: 1;

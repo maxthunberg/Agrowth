@@ -14,7 +14,7 @@ form span.wpcf7-not-valid-tip {
   border: solid 1px $support-error;
   border-left: solid 4px $support-error;
   background-color: $color-white;
-  @include pt-serif;
+  @include body-text;
   font-size: rem(12px);
   color: $support-error;
   padding: .5rem;
@@ -22,9 +22,9 @@ form span.wpcf7-not-valid-tip {
 }
 
 div.wpcf7-response-output {
-  @include pt-serif;
-  @include typescale('gamma');
-  @include line-height('heading');
+  @include body-text;
+  @include typescale('five');
+  @include line-height('five');
   background-color: $color-white;
   border: solid 1px $color-grey;
   border-left: solid 4px $color-grey;
@@ -48,11 +48,11 @@ div.wpcf7-response-output.wpcf7-validation-errors {
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0px rgba($color-secondary-dark,0.5),  0 0 0 8px rgba($color-secondary-lighter,0.5);
+    box-shadow: 0 0 0 0px rgba($color-primary-dark,0.5),  0 0 0 8px rgba($color-primary-lighter,0.5);
 
   }
   100% {
-    box-shadow: 0 0 0 8px rgba($color-secondary-dark,0.5),  0 0 0 4px rgba($color-secondary-lighter,0.5);
+    box-shadow: 0 0 0 8px rgba($color-primary-dark,0.5),  0 0 0 4px rgba($color-primary-lighter,0.5);
 
   }
 }
@@ -60,34 +60,34 @@ div.wpcf7-response-output.wpcf7-validation-errors {
 
 @-webkit-keyframes pulse {
 0% {
-  -webkit-box-shadow: 0 0 0 0 rgba($color-secondary-dark,0.5);
+  -webkit-box-shadow: 0 0 0 0 rgba($color-primary-dark,0.5);
 }
 70% {
-    -webkit-box-shadow: 0 0 0 8px rgba($color-secondary-dark,0.5);
+    -webkit-box-shadow: 0 0 0 8px rgba($color-primary-dark,0.5);
 }
 100% {
-    -webkit-box-shadow: 0 0 0 0 rgba($color-secondary-dark,0);
+    -webkit-box-shadow: 0 0 0 0 rgba($color-primary-dark,0);
 }
 }
 @keyframes pulse {
 0% {
-  -moz-box-shadow: 0 0 0 0 rgba($color-secondary-dark,0.5);
-  box-shadow: 0 0 0 0 rgba($color-secondary-dark,0.5);
+  -moz-box-shadow: 0 0 0 0 rgba($color-primary-dark,0.5);
+  box-shadow: 0 0 0 0 rgba($color-primary-dark,0.5);
 }
 70% {
-    -moz-box-shadow: 0 0 0 8px rgba($color-secondary-dark,0);
-    box-shadow: 0 0 0 8px rgba($color-secondary-dark,0);
+    -moz-box-shadow: 0 0 0 8px rgba($color-primary-dark,0);
+    box-shadow: 0 0 0 8px rgba($color-primary-dark,0);
 }
 100% {
-    -moz-box-shadow: 0 0 0 0 rgba($color-secondary-dark,0);
-    box-shadow: 0 0 0 0 rgba($color-secondary-dark,0);
+    -moz-box-shadow: 0 0 0 0 rgba($color-primary-dark,0);
+    box-shadow: 0 0 0 0 rgba($color-primary-dark,0);
 }
 }
 
 .pulse-sm {
   display: block;
   position: absolute;
-  background: $color-secondary-dark;
+  background: $color-primary-dark;
   height: .5rem;
   width: .5rem;
   border-radius: 50%;
@@ -97,7 +97,7 @@ div.wpcf7-response-output.wpcf7-validation-errors {
 .pulse-lg {
   display: block;
   position: absolute;
-  background: $color-secondary-dark;
+  background: $color-primary-dark;
   height: 1rem;
   width: 1rem;
   border-radius: 50%;

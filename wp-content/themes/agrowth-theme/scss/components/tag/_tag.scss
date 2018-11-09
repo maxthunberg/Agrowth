@@ -6,9 +6,9 @@
 @import 'mixins';
 
 @include exports('tags') {
-  .#{$prefix}--tag {
-    @include pt-serif;
-    @include typescale('omega');
+  .ag--tag {
+    @include body-text;
+    @include typescale('p-micro');
     display: inline-flex;
     align-items: center;
     padding: 0 $spacing-xs;
@@ -21,47 +21,47 @@
     }
   }
 
-  .#{$prefix}--tag--seo {
+  .ag--tag--seo {
     @include tag-theme($color-blue, $color-blue-darker);
   }
 
-  .#{$prefix}--tag--digital-design {
+  .ag--tag--digital-design {
     @include tag-theme($color-aqua, $color-aqua-darker);
   }
 
-  .#{$prefix}--tag--digital-marknadsforing {
+  .ag--tag--digital-marknadsforing {
     @include tag-theme($color-teal, $color-teal-darker);
   }
 
-  .#{$prefix}--tag--karriar {
+  .ag--tag--karriar {
     @include tag-theme($color-secondary, $color-secondary-darker);
   }
 
-  .#{$prefix}--tag--ux {
+  .ag--tag--ux {
     @include tag-theme($color-yellow, $color-yellow-darker);
   }
 
-  .#{$prefix}--tag--whitepaper {
+  .ag--tag--whitepaper {
     @include tag-theme($color-orange, $color-orange-darker);
   }
 
-  .#{$prefix}--tag--kundcase {
+  .ag--tag--kundcase {
     @include tag-theme($color-red, $color-red-darker);
   }
 
-  .#{$prefix}--tag--digital-tillvaxt {
+  .ag--tag--digital-tillvaxt {
     @include tag-theme($color-primary, $color-primary-darker);
   }
 
-  .#{$prefix}--tag--ebook {
+  .ag--tag--ebook {
     @include tag-theme($color-pink, $color-pink-darker);
   }
 
-  .#{$prefix}--tag--big-data {
+  .ag--tag--big-data {
     @include tag-theme($color-magenta, $color-magenta-darker);
   }
 
-  .#{$prefix}--tag--research {
+  .ag--tag--research {
     @include tag-theme($color-purple, $color-purple-darker);
   }
 

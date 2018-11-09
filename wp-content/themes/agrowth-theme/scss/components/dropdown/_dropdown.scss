@@ -10,14 +10,13 @@
 @import '../../globals/scss/spacing';
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
 @import '../../globals/scss/layout';
 
 @include exports('dropdown') {
-  .#{$prefix}--dropdown {
+  .ag--dropdown {
     @include reset;
-    @include pt-serif;
-    @include typescale('zeta');
+    @include body-text;
+    @include typescale('p-sm');
     position: relative;
     list-style: none;
     display: block;
@@ -36,27 +35,27 @@
       @include focus-outline('border');
     }
 
-    &.#{$prefix}--dropdown--open:focus {
+    &.ag--dropdown--open:focus {
       outline: none;
       box-shadow: 0 -1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
     }
   }
 
-  .#{$prefix}--dropdown--up {
-    &.#{$prefix}--dropdown--open:focus {
+  .ag--dropdown--up {
+    &.ag--dropdown--open:focus {
       box-shadow: 0 1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
 
-      .#{$prefix}--dropdown-list {
+      .ag--dropdown-list {
         box-shadow: 0 -1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
       }
     }
 
-    .#{$prefix}--dropdown-list {
+    .ag--dropdown-list {
       bottom: 2.5rem;
     }
   }
 
-  .#{$prefix}--dropdown__arrow {
+  .ag--dropdown__arrow {
     fill: $color-primary;
     position: absolute;
     right: 1rem;
@@ -68,11 +67,11 @@
     transform-origin: 50% 45%;
   }
 
-  .#{$prefix}--dropdown[data-value=''] .#{$prefix}--dropdown-text {
+  .ag--dropdown[data-value=''] .ag--dropdown-text {
     color: $text-03;
   }
 
-  .#{$prefix}--dropdown-text {
+  .ag--dropdown-text {
     height: rem(40px);
     padding-top: rem(13px);
     padding-bottom: rem(13px);
@@ -85,10 +84,10 @@
     border: $input-border;
   }
 
-  .#{$prefix}--dropdown-list {
+  .ag--dropdown-list {
     @include reset;
     @include layer('overlay');
-    @include typescale('zeta');
+    @include typescale('p-sm');
     background-color: $color-white;
     display: flex;
     flex-direction: column;
@@ -101,12 +100,12 @@
     overflow: hidden;
   }
 
-  .#{$prefix}--dropdown-item {
+  .ag--dropdown-item {
     transition: opacity $transition--expansion $bx--ease-in;
     opacity: 0;
   }
 
-  .#{$prefix}--dropdown-link {
+  .ag--dropdown-link {
     display: block;
     color: currentColor;
     text-decoration: none;
@@ -122,32 +121,32 @@
     }
   }
 
-  .#{$prefix}--dropdown--selected {
+  .ag--dropdown--selected {
     display: none;
   }
 
-  .#{$prefix}--dropdown--open {
-    .#{$prefix}--dropdown__arrow {
+  .ag--dropdown--open {
+    .ag--dropdown__arrow {
       transform: rotate(-180deg);
     }
 
-    .#{$prefix}--dropdown-list {
+    .ag--dropdown-list {
       max-height: 15rem;
       overflow: auto;
     }
 
     &:focus {
-      .#{$prefix}--dropdown-list {
+      .ag--dropdown-list {
         box-shadow: 0 1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
       }
     }
 
-    .#{$prefix}--dropdown-item {
+    .ag--dropdown-item {
       opacity: 1;
     }
   }
 
-  .#{$prefix}--dropdown--disabled {
+  .ag--dropdown--disabled {
     opacity: 0.5;
     cursor: not-allowed;
 

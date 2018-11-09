@@ -2,7 +2,7 @@
 
 <!--OTHER ARTICLES-->
 <div class="services bg-03 section-8rem error404">
-  <div class="bx--col-xs-12 bx--col-md-12 bx--col-lg-12 error404-container"><h2 class="bx--type-giga">404</h2><h3 class="bx--type-gamma error404-text"><?= get_field('404_heading', 'options');?></h3></div>
+  <div class="bx--col-xs-12 bx--col-md-12 bx--col-lg-12 error404-container"><h2 class="heading-one">404</h2><h3 class="bx--type-gamma error404-text"><?= get_field('404_heading', 'options');?></h3></div>
 
     <div class="bx--grid">
       <div class="bx--row">

@@ -13,10 +13,10 @@
 @import '../form/form';
 
 @include exports('text-area') {
-  .#{$prefix}--text-area {
+  .ag--text-area {
     @include reset;
-    @include pt-serif;
-    @include typescale('zeta');
+    @include body-text;
+    @include typescale('p-sm');
     width: 100%;
     min-width: 10rem;
     padding: $spacing-md;
@@ -51,10 +51,10 @@
     }
   }
 
-  .about-us-form .#{$prefix}--text-area {
+  .about-us-form .ag--text-area {
     @include reset;
-    @include pt-serif;
-    @include typescale('zeta');
+    @include body-text;
+    @include typescale('p-sm');
     width: 100%;
     min-width: 10rem;
     padding: $spacing-md;

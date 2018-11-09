@@ -1,29 +1,21 @@
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
 
-@include exports('carousel') {
-  .#{$prefix}--carousel {
+  .bx--carousel {
     display: flex;
     align-items: center;
   }
-  .#{$prefix}--carousel-container {
+  .bx--carousel-container {
     max-width: rem(810px);
     overflow: hidden;
     padding: 0 1px;
   }
-  .#{$prefix}--filmstrip {
+  .bx--filmstrip {
     display: flex;
     justify-content: space-between;
     transition: transform 100ms $bx--ease-out;
     padding: rem(24px) 0;
     width: auto;
   }
-  .#{$prefix}--filmstrip-btn {
+  .bx--filmstrip-btn {
     @include button-reset;
     height: rem(20px);
     width: rem(20px);
@@ -40,7 +32,7 @@
     }
   }
 
-  .#{$prefix}--carousel__btn {
+  .bx--carousel__btn {
     @include button-reset(false);
     cursor: pointer;
     padding: 0;
@@ -67,7 +59,7 @@
       fill: $color-primary;
     }
   }
-  .#{$prefix}--carousel__item {
+  .bx--carousel__item {
     @include button-reset;
     padding: 0;
     line-height: 0;
@@ -79,7 +71,6 @@
       @include focus-outline;
     }
   }
-  .#{$prefix}--carousel__item--active {
+  .bx--carousel__item--active {
     @include focus-outline;
   }
-}

@@ -5,11 +5,10 @@
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
 
 @include exports('navbar') {
 
-  .#{$prefix}--navbar {
+  .ag--navbar {
     @include customflex(0, center, space-between, 0);
     position: fixed;
     display: flex;
@@ -54,13 +53,13 @@
                 transition: $transition--base;
               }
               &:hover:before, &:focus:after {
-                border-bottom: 1px solid $color-primary;
+                border-bottom: 1px solid $color-primary-dark;
                 transition: $transition--base;
               }
 
               &:hover, &:focus {
                 .navbar--link{
-                  color: $color-primary;
+                  color: $color-primary-dark;
                 }
               }
 
@@ -72,7 +71,7 @@
                 text-decoration: none;
                 color: $color-dark;
                 &:focus {
-                  color: $color-primary;
+                  color: $color-primary-dark;
                 }
 
                 .link--label {
@@ -80,7 +79,7 @@
                     position: absolute;
                     top: -.125rem;
                     right: -.5rem;
-                    background: $color-secondary-dark;
+                    background: $color-primary-dark;
                     height: .5rem;
                     width: .5rem;
                     border-radius: 50%;
@@ -113,7 +112,7 @@
 
 @media (max-width: breakpoint('lg')) { // 992px
 
-  .#{$prefix}--navbar {
+  .ag--navbar {
     .navbar--inner {
         .navbar--right {
           .btn--contact--desktop {

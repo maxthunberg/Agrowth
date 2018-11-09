@@ -78,7 +78,7 @@
       }
 
       .circle-sm.icon {
-        @include linear-gradient($color-primary, $color-primary-light);
+        @include linear-gradient($color-primary-dark, $color-primary);
         &:hover {
           @include linear-gradient($color-white, $color-white);
           border: 1px solid $color-white-10;

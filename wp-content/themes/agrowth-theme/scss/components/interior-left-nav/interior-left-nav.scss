@@ -16,9 +16,9 @@
     'Accessing the `interior-left-nav` component from the `carbon-components`' +
       'package is deprecated. Use the `carbon-addons-bluemix` package instead.'
   ) {
-    .#{$prefix}--interior-left-nav {
+    .ag--interior-left-nav {
       @include reset;
-      @include pt-serif;
+      @include body-text;
       width: rem(250px);
       position: fixed;
       top: rem(90px);
@@ -70,7 +70,7 @@
           }
 
           &-link {
-            @include typescale('zeta');
+            @include typescale('p-sm');
             color: $color-blue;
             font-weight: 400;
             position: relative;
@@ -85,7 +85,7 @@
           &-icon {
             display: flex;
 
-            .#{$prefix}--interior-left-nav__icon {
+            .ag--interior-left-nav__icon {
               fill: $color__blue-51;
               width: rem(8px);
               height: rem(8px);
@@ -109,7 +109,7 @@
               color: $color__blue-51;
             }
 
-            .left-nav-list__item-icon .#{$prefix}--interior-left-nav__icon {
+            .left-nav-list__item-icon .ag--interior-left-nav__icon {
               transform: rotate(180deg);
             }
           }
@@ -150,7 +150,7 @@
           opacity: 0;
 
           &-link {
-            @include typescale('zeta');
+            @include typescale('p-sm');
             color: $color-blue;
             padding: 0.75rem 1.35rem 0.75rem 4.5rem;
             font-weight: 400;
@@ -183,7 +183,7 @@
       }
     }
 
-    .#{$prefix}--interior-left-nav--collapseable {
+    .ag--interior-left-nav--collapseable {
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -194,7 +194,7 @@
       ul,
       li,
       hr,
-      .#{$prefix}--interior-left-nav-collapse__target {
+      .ag--interior-left-nav-collapse__target {
         opacity: 1;
       }
 
@@ -250,11 +250,11 @@
       }
 
       .left-nav-list--nested .left-nav-list__item-link {
-        @include typescale('omega');
+        @include typescale('p-sm');
         padding-left: rem(40px);
       }
 
-      .#{$prefix}--interior-left-nav-collapse {
+      .ag--interior-left-nav-collapse {
         cursor: pointer;
         background-color: rgba($color__blue-51, 0.1);
         display: flex;
@@ -274,13 +274,13 @@
         }
       }
 
-      .#{$prefix}--interior-left-nav-collapse__target {
+      .ag--interior-left-nav-collapse__target {
         margin-left: rem(10px);
         margin-right: rem(10px);
       }
 
-      .#{$prefix}--interior-left-nav-collapse__link {
-        @include typescale('zeta');
+      .ag--interior-left-nav-collapse__link {
+        @include typescale('p-sm');
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -291,7 +291,7 @@
         }
       }
 
-      .#{$prefix}--interior-left-nav-collapse__arrow {
+      .ag--interior-left-nav-collapse__arrow {
         transform: rotate(0);
         fill: $color__blue-51;
         height: 12px;
@@ -299,8 +299,8 @@
       }
     }
 
-    .#{$prefix}--interior-left-nav--collapsing,
-    .#{$prefix}--interior-left-nav--collapsed {
+    .ag--interior-left-nav--collapsing,
+    .ag--interior-left-nav--collapsed {
       width: rem(48px);
       transition: background-color 300ms $bx--standard-easing, width 300ms $bx--standard-easing;
       cursor: pointer;
@@ -314,14 +314,14 @@
       ul,
       li,
       hr,
-      .#{$prefix}--interior-left-nav-collapse__target {
+      .ag--interior-left-nav-collapse__target {
         opacity: 0;
         transition: opacity 300ms $bx--standard-easing;
         overflow: hidden;
         white-space: nowrap;
       }
 
-      .#{$prefix}--interior-left-nav-collapse {
+      .ag--interior-left-nav-collapse {
         background-color: transparent;
 
         &:hover {
@@ -329,28 +329,28 @@
         }
       }
 
-      .#{$prefix}--interior-left-nav-collapse__arrow {
+      .ag--interior-left-nav-collapse__arrow {
         transform: rotate(180deg);
         transition: transform 300ms $bx--standard-easing;
       }
     }
 
-    .#{$prefix}--interior-left-nav--collapsed {
+    .ag--interior-left-nav--collapsed {
       ul,
       li,
       hr,
-      .#{$prefix}--interior-left-nav-collapse__target {
+      .ag--interior-left-nav-collapse__target {
         display: none;
       }
 
-      .#{$prefix}--interior-left-nav-collapse {
+      .ag--interior-left-nav-collapse {
         justify-content: center;
         padding-left: 0;
         padding-right: 0;
       }
     }
 
-    .#{$prefix}--interior-left-nav--expanding {
+    .ag--interior-left-nav--expanding {
       width: rem(200px);
       transition: width 300ms $bx--standard-easing;
       background-color: #fff;
@@ -358,14 +358,14 @@
       ul,
       li,
       hr,
-      .#{$prefix}--interior-left-nav-collapse__target {
+      .ag--interior-left-nav-collapse__target {
         opacity: 1;
         transition: opacity 300ms $bx--standard-easing;
         overflow: hidden;
         white-space: nowrap;
       }
 
-      .#{$prefix}--interior-left-nav-collapse__arrow {
+      .ag--interior-left-nav-collapse__arrow {
         transform: rotate(0deg);
         transition: transform 300ms $bx--standard-easing;
       }

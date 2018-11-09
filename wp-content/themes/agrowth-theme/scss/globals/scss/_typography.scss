@@ -1,36 +1,121 @@
-@import 'vars';
+$font-family-poppins: 'Poppins', Helvetica, Arial, sans-serif !default;
 
-$font-family-archivo-black: 'Archivo Black', Gadget, sans-serif !default;
-$font-family-pt-serif: 'PT Serif', "Times New Roman", Times, serif !default;
-$font-family-mono: 'PT Serif', "Times New Roman", Times, serif !default;
-$font-family-pt-serif: 'PT Serif', Times, serif !default;
-
-$base-font-size: 16px !default; // Default, Use with em() and rem() functions
+$base-font-size: 16px!default;
 
 $typescale-map: (
-  'giga' : 4.75rem,
-  'mega' : 3.375rem,
-  'alpha' : 2.25rem,
-  'beta' : 1.75rem,
-  'gamma' : 1.25rem,
-  'delta' : 1.125rem,
-  'epsilon' : 1rem,
-  'zeta' : 0.875rem,
-  'omega' : 0.75rem,
-  'caption' : 0.75rem,
-  'legal' : 0.6875rem,
-  'p' : 1.125rem
+  'one' : 3.5rem,         'one-mobile' : 2.5rem,
+  'two' : 2.75rem,        'two-mobile' : 2rem,
+  'three' : 2rem,         'three-mobile' : 1.5rem,
+  'four' : 1.5rem,        'four-mobile' : 1.25rem,
+  'five' : 1.125rem,      'five-mobile' : 1rem,
+
+  's-one' : 1.5rem,       's-one-mobile' : 1.25rem,
+  's-two' : 1.25rem,      's-two-mobile' : 1rem,
+  's-three' : 1rem,       's-three-mobile' : .75rem,
+  's-four' : .75rem,      's-four-mobile' : .5rem,
+
+  'p' : 1.125rem,         'p-mobile' : 1.125rem,
+  'p-sm' : 1rem,          'p-sm-mobile' : 1rem,
+  'p-micro' : 0.875rem,   'p-micro-mobile' : 0.875rem
+  );
+
+$margin-map: (
+  'one' : 0 0 1.5rem 0,         'one-mobile' : 0 0 1.25rem 0,
+  'two' : 0 0 1rem 0,           'two-mobile' : 0 0 .75rem 0,
+  'three' : 0 0 1rem 0,         'three-mobile' : 0 0 .75rem 0,
+  'four' : 0 0 .75rem 0,        'four-mobile' : 0 0 .5rem 0,
+  'five' : 0 0 .75rem 0,        'five-mobile' : 0 0 .5rem 0,
+
+  's-one' : 0 0 .125rem 0,      's-one-mobile' : 0 0 .125rem 0,
+  's-two' : 0 0 .125rem 0,      's-two-mobile' : 0 0 .125rem 0,
+  's-three' : 0 0 .125rem 0,    's-three-mobile' : 0 0 .125rem 0,
+  's-four' : 0 0 .125rem 0,     's-four-mobile' : 0 0 .125rem 0,
+
+  'p' : .0 0 .5rem 0,           'p-mobile' : 0 0 .5rem 0,
+  'p-sm' : 0 0 .5rem 0,         'p-sm-mobile' : 0 0 .5rem 0,
+  'p-micro' : 0 0 .25rem 0,     'p-micro-mobile' : 0 0 .25rem 0,
 );
 
+$line-height-map: (
+  'one' : 1.25,           'one-mobile' : 1.25,
+  'two' : 1.25,           'two-mobile' : 1.25,
+  'three' : 1.25,         'three-mobile' : 1.25,
+  'four' : 1.25,          'four-mobile' : 1.25,
+  'five' : 1.25,          'five-mobile' : 1.25,
+
+  's-one' : 1.25,         's-one-mobile' : 1.25,
+  's-two' : 1.25,         's-two-mobile' : 1.25,
+  's-three' : 1.25,       's-three-mobile' : 1.25,
+  's-four' : 1.25,        's-four-mobile' : 1.25,
+
+  'p' : 1.5,             'p-mobile' : 1.5,
+  'p-sm' : 1.5,          'p-sm-mobile' : 1.5,
+  'p-micro' : 1.5,       'p-micro-mobile' : 1.5,
+);
+
+$font-weight-map: (
+  'one' : 600,            'one-mobile' : 600,
+  'two' : 600,            'two-mobile' : 600,
+  'three' : 600,          'three-mobile' : 600,
+  'four' : 600,           'four-mobile' : 600,
+  'five' : 600,           'five-mobile' : 600,
+
+  's-one' : 400,            's-one-mobile' : 400,
+  's-two' : 400,            's-two-mobile' : 400,
+  's-three' : 400,          's-three-mobile' : 400,
+  's-four' : 400,           's-four-mobile' : 400,
+
+  'p' : 300,              'p-mobile' : 300,
+  'p-sm' : 300,           'p-sm-mobile' : 300,
+  'p-micro' : 400,        'p-micro-mobile' : 400,
+);
+
+$letterspacing-map: (
+  's-one' :  6px,
+  's-two' :  5px,
+  's-three' : 4px,
+  's-four' :  3px,
+);
+
+@mixin letter-spacing($size: null) {
+  @if map-has-key($letterspacing-map, $size) {
+    letter-spacing: map-get($letterspacing-map, $size);
+  } @else {
+    letter-spacing: 0.25rem;
+  }
+}
 
 @mixin typescale($size) {
   @if map-has-key($typescale-map, $size) {
     font-size: map-get($typescale-map, $size);
   } @else {
-    @warn 'This is not a step of the Agrowth type scale!';
+    @warn 'This is not a step of the Sendify type scale!';
   }
 }
 
+@mixin line-height($height) {
+  @if map-has-key($line-height-map, $height) {
+    line-height: map-get($line-height-map, $height);
+  } @else {
+    @warn 'This is not a step of the Sendify type scale!';
+  }
+}
+
+@mixin font-weight($weight) {
+  @if map-has-key($font-weight-map, $weight) {
+    font-weight: map-get($font-weight-map, $weight);
+  } @else {
+    @warn 'This is not a step of the Sendify type scale!';
+  }
+}
+
+@mixin margin($margin) {
+  @if map-has-key($margin-map, $margin) {
+    margin: map-get($margin-map, $margin);
+  } @else {
+    @warn 'This is not a step of the Sendify type scale!';
+  }
+}
 
 @function rem($px) {
   @return ($px / $base-font-size) * 1rem;
@@ -40,23 +125,13 @@ $typescale-map: (
   @return ($px / $base-font-size) * 1em;
 }
 
-@mixin archivo-black {
-  font-family: $font-family-archivo-black;
+@mixin heading-text {
+  font-family: $font-family-poppins;
 }
-@mixin pt-serif {
-  font-family: $font-family-pt-serif;
+@mixin body-text {
+  font-family: $font-family-poppins;
 }
 
-// There are two line heights to choose from. One for headings and one for body text
-@mixin line-height($el) {
-  @if $el == 'heading' {
-    line-height: 1.25;
-  } @else if $el == 'body' {
-    line-height: 1.5;
-  } @else {
-    @warn 'Invalid argument used for @mixin line-height($el) . Please use 'heading' or 'body'.';
-  }
-}
 
 // Only applied to bold weight text
 @mixin font-smoothing {
@@ -64,27 +139,342 @@ $typescale-map: (
   -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin letter-spacing {
-  letter-spacing: 0.5px;
+
+// Default styling for various elements
+
+input,textarea {
+  @include body-text;
+  @include typescale('p-sm');
+  @include font-weight('p-sm');
 }
 
-$font-size-map: (
-  '76' : 4.75rem,
-  '54' : 3.375rem,
-  '36' : 2.25rem,
-  '28' : 1.75rem,
-  '20' : 1.25rem,
-  '18' : 1.125rem,
-  '16' : 1rem,
-  '14' : 0.875rem,
-  '12' : 0.75rem,
-  '11' : 0.6875rem,
- );
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .heading-one,
+  .heading-two,
+  .heading-three,
+  .heading-four,
+  .heading-five {
+    @include heading-text;
+    text-align: left;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    color: $color-black;
 
-@mixin font-size($size) {
-  @if map-has-key($font-size-map, $size) {
-    font-size: map-get($font-size-map, $size);
-  } @else {
-    @warn 'This is not a step of the Carbon Type Scale! Valid sizes are 11, 12, 14, 16, 18, 20, 28, 36, 54, and 76';
+    // Modifiers - Alignment
+    &.center {
+      text-align: center;
+      max-width: none;
+    }
+
+    &.right {
+      text-align: right;
+    }
+
+    // Modifiers - Colors
+    &.light {
+      color: $color-white;
+      strong {
+        color: $color-white;
+        font-weight: 700;
+      }
+    }
+
+    strong {
+      color: $color-black;
+      font-weight: 700;
+    }
+
   }
+
+  .sub-heading-one,
+  .sub-heading-two,
+  .sub-heading-three,
+  .sub-heading-four,
+  .sub-heading-five {
+    @include heading-text;
+    text-align: left;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    color: $color-grey;
+
+    // Modifiers - Alignment
+    &.center {
+      text-align: center;
+      max-width: none;
+    }
+
+    &.right {
+      text-align: right;
+    }
+
+    // Modifiers - Colors
+    &.light {
+      color: $color-white;
+      strong {
+        color: $color-white;
+        font-weight: 700;
+      }
+    }
+
+    strong {
+      color: $color-black;
+      font-weight: 700;
+    }
+
+  }
+
+  .paragraph,
+  .paragraph-sm,
+  .paragraph-micro, p {
+    @include body-text;
+    text-align: left;
+    width: 100%;
+    max-width: 635px;
+    margin: 0;
+    padding: 0;
+    color: $color-dark;
+
+    // Modifiers - Alignment
+    &.center {
+      text-align: center;
+      max-width: none;
+    }
+
+    &.right {
+      text-align: right;
+    }
+
+    // Modifiers - Colors
+    &.light {
+      color: rgba($color-white,.8);
+      strong {
+        color: $color-white;
+        font-weight: 700;
+      }
+    }
+
+    strong {
+      color: $color-black;
+      font-weight: 700;
+    }
+
+  }
+
+
+
+
+  // Typography structure
+
+  h1,
+  .heading-one {
+    @include typescale('one');
+    @include line-height('one');
+    @include font-weight('one');
+    @include margin('one');
+  }
+
+  h2,
+  .heading-two {
+    @include typescale('two');
+    @include line-height('two');
+    @include font-weight('two');
+    @include margin('two');
+  }
+
+  h3,
+  .heading-three {
+    @include typescale('three');
+    @include line-height('three');
+    @include font-weight('three');
+    @include margin('three');
+  }
+
+  h4,
+  .heading-four {
+    @include typescale('four');
+    @include line-height('four');
+    @include font-weight('four');
+    @include margin('four');
+  }
+
+  h5,
+  h6,
+  .heading-five {
+    @include typescale('five');
+    @include line-height('five');
+    @include font-weight('five');
+    @include margin('five');
+  }
+
+
+
+  .sub-heading-one {
+    @include typescale('s-one');
+    @include line-height('s-one');
+    @include font-weight('s-one');
+    @include margin('s-one');
+    @include letter-spacing('s-one');
+  }
+
+  .sub-heading-two {
+    @include typescale('s-two');
+    @include line-height('s-two');
+    @include font-weight('s-two');
+    @include margin('s-two');
+    @include letter-spacing('s-two');
+  }
+
+  .sub-heading-three {
+    @include typescale('s-three');
+    @include line-height('s-three');
+    @include font-weight('s-three');
+    @include margin('s-three');
+    @include letter-spacing('s-three');
+  }
+
+  .sub-heading-four {
+    @include typescale('s-four');
+    @include line-height('s-four');
+    @include font-weight('s-four');
+    @include margin('s-four');
+    @include letter-spacing('s-four');
+  }
+
+
+
+  p,
+  .paragraph {
+    @include typescale('p');
+    @include line-height('p');
+    @include font-weight('p');
+    @include margin('p');
+  }
+
+  .paragraph-sm {
+    @include typescale('p-sm');
+    @include line-height('p-sm');
+    @include font-weight('p-sm');
+    @include margin('p-sm');
+  }
+
+  .paragraph-micro {
+    @include typescale('p-micro');
+    @include line-height('p-micro');
+    @include font-weight('p-micro');
+    @include margin('p-micro');
+  }
+
+
+  // Typography for small devices
+
+  @media (max-width: breakpoint('md') ) { // 768px {
+
+    h1,
+    .heading-one {
+      @include typescale('one-mobile');
+      @include line-height('one-mobile');
+      @include font-weight('one-mobile');
+      @include margin('one-mobile');
+    }
+
+    h2,
+    .heading-two {
+      @include typescale('two-mobile');
+      @include line-height('two-mobile');
+      @include font-weight('two-mobile');
+      @include margin('two-mobile');
+    }
+
+    h3,
+    .heading-three {
+      @include typescale('three-mobile');
+      @include line-height('three-mobile');
+      @include font-weight('three-mobile');
+      @include margin('three-mobile');
+    }
+
+    h4,
+    .heading-four {
+      @include typescale('four-mobile');
+      @include line-height('four-mobile');
+      @include font-weight('four-mobile');
+      @include margin('four-mobile');
+    }
+
+    h5,
+    h6,
+    .heading-five {
+      @include typescale('five-mobile');
+      @include line-height('five-mobile');
+      @include font-weight('five-mobile');
+      @include margin('five-mobile');
+    }
+
+
+
+    .sub-heading-one {
+      @include typescale('s-one-mobile');
+      @include line-height('s-one-mobile');
+      @include font-weight('s-one-mobile');
+      @include margin('s-one-mobile');
+    }
+
+    .sub-heading-two {
+      @include typescale('s-two-mobile');
+      @include line-height('s-two-mobile');
+      @include font-weight('s-two-mobile');
+      @include margin('s-two-mobile');
+    }
+
+    .sub-heading-three {
+      @include typescale('s-three-mobile');
+      @include line-height('s-three-mobile');
+      @include font-weight('s-three-mobile');
+      @include margin('s-three-mobile');
+    }
+
+    .sub-heading-four {
+      @include typescale('s-four-mobile');
+      @include line-height('s-four-mobile');
+      @include font-weight('s-four-mobile');
+      @include margin('s-four-mobile');
+    }
+
+
+
+
+    p,
+    .paragraph {
+      @include typescale('p-mobile');
+      @include line-height('p-mobile');
+      @include font-weight('p-mobile');
+      @include margin('p-mobile');
+    }
+
+    .paragraph-sm {
+      @include typescale('p-sm-mobile');
+      @include line-height('p-sm-mobile');
+      @include font-weight('p-sm-mobile');
+      @include margin('p-sm-mobile');
+    }
+
+    .paragraph-micro {
+      @include typescale('p-micro-mobile');
+      @include line-height('p-micro-mobile');
+      @include font-weight('p-micro-mobile');
+      @include margin('p-micro-mobile');
+    }
+
+
+
 }

@@ -5,11 +5,10 @@
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
 
 @include exports('navbar--mobile') {
 
-  .#{$prefix}--navbar__mobile {
+  .ag--navbar__mobile {
     @include customflex(0, center, space-between, 0);
     position: fixed;
     display: none;
@@ -128,7 +127,7 @@
   }
 
 
-    .#{$prefix}--navbar--submenu__mobile {
+    .ag--navbar--submenu__mobile {
       @include customflex(0, center, center, 0);
       position: fixed;
       flex-direction: column;
@@ -152,7 +151,7 @@
       }
     }
 
-    .#{$prefix}--navbar--submenu__mobile.visible {
+    .ag--navbar--submenu__mobile.visible {
       display: none;
       @include customflex(0,0,0,0);
       opacity: 1;
@@ -163,19 +162,19 @@
 
 }
 @media (min-width: breakpoint('xl')) { // 1600px
-  .#{$prefix}--navbar--submenu__mobile.visible {
+  .ag--navbar--submenu__mobile.visible {
     display: none;
   }
 }
 
 @media (max-width: breakpoint('xl')) { // 1200px
-  .#{$prefix}--navbar--submenu__mobile.visible {
+  .ag--navbar--submenu__mobile.visible {
     display: none;
   }
 }
 
 @media (max-width: breakpoint('lg')) { // 992px
-  .#{$prefix}--navbar--submenu__mobile.visible {
+  .ag--navbar--submenu__mobile.visible {
     display: none;
   }
 }
@@ -184,7 +183,7 @@
   .bx--navbar__mobile {
     display: flex;
   }
-  .#{$prefix}--navbar--submenu__mobile.visible {
+  .ag--navbar--submenu__mobile.visible {
     display: flex;
   }
 

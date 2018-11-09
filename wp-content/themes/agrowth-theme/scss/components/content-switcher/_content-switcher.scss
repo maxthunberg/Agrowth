@@ -1,23 +1,14 @@
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/import-once';
-
-@include exports('content-switcher') {
-  .#{$prefix}--content-switcher {
-    @include pt-serif;
+.bx--content-switcher {
+    @include body-text;
     display: flex;
     height: rem(40px);
   }
 
-  .#{$prefix}--content-switcher-btn {
+  .bx--content-switcher-btn {
     @include reset;
     @include font-smoothing;
-    @include typescale('zeta');
-    @include pt-serif;
+    @include typescale('p-sm');
+    @include body-text;
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -49,7 +40,7 @@
     }
   }
 
-  .#{$prefix}--content-switcher__icon {
+  .bx--content-switcher__icon {
     margin-right: $spacing-xs;
     fill: currentColor;
     // need to color any child path or g
@@ -58,15 +49,15 @@
     }
   }
 
-  .#{$prefix}--content-switcher-btn:not(:last-of-type) {
+  .bx--content-switcher-btn:not(:last-of-type) {
     border-right: none;
   }
 
-  .#{$prefix}--content-switcher-btn:not(:first-of-type) {
+  .bx--content-switcher-btn:not(:first-of-type) {
     border-left: $content-switcher-option-border;
   }
 
-  .#{$prefix}--content-switcher-btn:first-of-type {
+  .bx--content-switcher-btn:first-of-type {
     border-bottom-left-radius: $content-switcher-border-radius;
     border-top-left-radius: $content-switcher-border-radius;
 
@@ -80,7 +71,7 @@
     }
   }
 
-  .#{$prefix}--content-switcher-btn:last-of-type {
+  .bx--content-switcher-btn:last-of-type {
     border-top-right-radius: $content-switcher-border-radius;
     border-bottom-right-radius: $content-switcher-border-radius;
 
@@ -94,7 +85,7 @@
     }
   }
 
-  .#{$prefix}--content-switcher-btn.#{$prefix}--content-switcher--selected {
+  .bx--content-switcher-btn.bx--content-switcher--selected {
     background-color: $color-primary;
     color: $color-white;
     font-weight: 400;
@@ -104,4 +95,3 @@
       border-color: $color-primary;
     }
   }
-}

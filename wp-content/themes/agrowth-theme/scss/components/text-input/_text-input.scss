@@ -13,10 +13,10 @@
 @import '../form/form';
 
 @include exports('text-input') {
-  .#{$prefix}--text-input {
+  .ag--text-input {
     @include reset;
-    @include pt-serif;
-    @include typescale('zeta');
+    @include body-text;
+    @include typescale('p-sm');
     display: block;
     width: 100%;
     height: rem(40px);
@@ -52,10 +52,10 @@
     }
   }
 
-  .about-us-form .#{$prefix}--text-input {
+  .about-us-form .ag--text-input {
     @include reset;
-    @include pt-serif;
-    @include typescale('zeta');
+    @include body-text;
+    @include typescale('p-sm');
     display: block;
     width: 100%;
     height: rem(40px);

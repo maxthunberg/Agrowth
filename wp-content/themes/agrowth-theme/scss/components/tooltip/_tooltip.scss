@@ -6,17 +6,16 @@
 @import '../../globals/scss/helper-mixins';
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
 
 @include exports('tooltip') {
-  .#{$prefix}--tooltip--simple {
+  .ag--tooltip--simple {
     display: flex;
     align-items: center;
   }
 
-  .#{$prefix}--tooltip__trigger {
-    @include pt-serif;
-    @include typescale('epsilon');
+  .ag--tooltip__trigger {
+    @include body-text;
+    @include typescale('p');
     display: inline-flex;
     align-items: center;
     color: $text-01;
@@ -41,7 +40,7 @@
     }
   }
 
-  .#{$prefix}--tooltip {
+  .ag--tooltip {
     @include layer('overlay');
     @include reset;
     position: absolute;
@@ -54,11 +53,11 @@
     border-radius: rem(4px);
 
     p {
-      @include pt-serif;
-      @include typescale('zeta');
+      @include body-text;
+      @include typescale('p-sm');
     }
 
-    .#{$prefix}--tooltip__label {
+    .ag--tooltip__label {
       font-weight: 400;
       text-transform: uppercase;
       @include letter-spacing;
@@ -112,16 +111,16 @@
     }
   }
 
-  .#{$prefix}--tooltip--shown {
+  .ag--tooltip--shown {
     display: block;
   }
 
   // Simple CSS only tooltip
-  .#{$prefix}--tooltip--simple__top,
-  .#{$prefix}--tooltip--simple__bottom {
-    @include pt-serif;
+  .ag--tooltip--simple__top,
+  .ag--tooltip--simple__bottom {
+    @include body-text;
     @include reset;
-    @include typescale('delta');
+    @include typescale('p');
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -135,14 +134,14 @@
     // Tooltip - renders as a combo of :before and :after elements
     &:before,
     &:after {
-      @include pt-serif;
+      @include body-text;
       position: absolute;
       display: none;
       background: $color-white;
     }
 
     &:before {
-      @include typescale('zeta');
+      @include typescale('p-sm');
       @include layer('overlay');
       max-width: rem(240px);
       padding: $spacing-lg;
@@ -189,7 +188,7 @@
   }
 
   // Tooltip caret - top position
-  .#{$prefix}--tooltip--simple__top {
+  .ag--tooltip--simple__top {
     &:before {
       bottom: 1.8rem;
     }
@@ -201,7 +200,7 @@
   }
 
   // Tooltip caret - bottom position
-  .#{$prefix}--tooltip--simple__bottom {
+  .ag--tooltip--simple__bottom {
     &:before {
       top: 1rem;
     }
