@@ -1,11 +1,4 @@
-@import 'colors';
-@import 'vars';
-@import 'mixins';
-@import 'typography';
-@import 'css--reset';
-@import 'import-once';
 
-@mixin css-body {
   body {
     @include reset;
     @include body-text;
@@ -19,10 +12,3 @@
       background: $color-white-10;
     }
   }
-}
-
-@include exports('css--body') {
-  @if global-variable-exists('css--body') == false or $css--body == true {
-    @include css-body;
-  }
-}

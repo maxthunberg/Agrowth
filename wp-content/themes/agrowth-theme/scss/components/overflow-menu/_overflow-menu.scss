@@ -1,19 +1,5 @@
-//-----------------------------
-// Overflow Menu
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/layer';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/import-once';
-
-@include exports('overflow-menu') {
-  .ag--overflow-menu {
+  .bx--overflow-menu {
     @include reset;
     position: relative;
     width: rem(20px);
@@ -26,7 +12,7 @@
     }
   }
 
-  .ag--overflow-menu__icon {
+  .bx--overflow-menu__icon {
     width: 100%;
     height: 100%;
     padding: 0.5rem;
@@ -38,7 +24,7 @@
     }
   }
 
-  .ag--overflow-menu-options {
+  .bx--overflow-menu-options {
     @include reset;
     @include layer('overlay');
     display: none;
@@ -55,11 +41,11 @@
     left: -20px;
   }
 
-  .ag--overflow-menu-options--open {
+  .bx--overflow-menu-options--open {
     display: flex;
   }
 
-  .ag--overflow-menu-options:before {
+  .bx--overflow-menu-options:before {
     content: '';
     position: absolute;
     display: block;
@@ -74,7 +60,7 @@
     left: 24px;
   }
 
-  .ag--overflow-menu-options__option {
+  .bx--overflow-menu-options__option {
     @include reset;
     display: flex;
     background-color: transparent;
@@ -83,11 +69,11 @@
     padding: 0;
   }
 
-  .ag--overflow-menu--divider {
+  .bx--overflow-menu--divider {
     border-top: 1px solid $color-white-10;
   }
 
-  .ag--overflow-menu-options__btn {
+  .bx--overflow-menu-options__btn {
     @include reset;
     @include typescale('p-sm');
     @include body-text;
@@ -107,34 +93,33 @@
       color: $color-white;
     }
 
-    .ag--overflow-menu-options__option--danger & {
+    .bx--overflow-menu-options__option--danger & {
       &:focus {
         background-color: $support-error;
       }
     }
   }
 
-  .ag--overflow-menu-options__option:hover {
+  .bx--overflow-menu-options__option:hover {
     background-color: $color-primary;
   }
 
-  .ag--overflow-menu-options__option:hover .ag--overflow-menu-options__btn {
+  .bx--overflow-menu-options__option:hover .bx--overflow-menu-options__btn {
     color: $color-white;
   }
 
-  .ag--overflow-menu-options__option--danger {
+  .bx--overflow-menu-options__option--danger {
     border-top: 1px solid $color-white-10;
   }
 
-  .ag--overflow-menu-options__option--danger:hover {
+  .bx--overflow-menu-options__option--danger:hover {
     background-color: $support-error;
   }
 
-  .ag--overflow-menu--flip {
+  .bx--overflow-menu--flip {
     left: -140px;
 
     &:before {
       left: 145px;
     }
   }
-}

@@ -22,7 +22,7 @@ footer {
       @include customflex(0,center,center,0);
       height: rem(44px);
       width: rem(44px);
-      transition: $transition--default;
+      transition: $transition--enter__fast;
 
       svg {
         height: 1rem;
@@ -39,14 +39,14 @@ footer {
       background-color: $color-facebook;
       &:hover {
         background-color: $color-facebook-dark;
-        transition: $transition--default;
+        transition: $transition--enter__fast;
       }
     }
     .social-media--btn.linkedin {
       background-color: $color-linkedin;
       &:hover {
         background-color: $color-linkedin-dark;
-        transition: $transition--default;
+        transition: $transition--enter__fast;
       }
     }
   }
@@ -88,7 +88,7 @@ footer {
         @include customflex(0,center,center,0);
         height: rem(44px);
         width: rem(44px);
-        transition: $transition--default;
+        transition: $transition--enter__fast;
         margin: 0 .5rem;
 
         svg {
@@ -106,14 +106,14 @@ footer {
         background-color: $color-facebook;
         &:hover {
           background-color: $color-facebook-dark;
-          transition: $transition--default;
+          transition: $transition--enter__fast;
         }
       }
       .social-media--btn.linkedin {
         background-color: $color-linkedin;
         &:hover {
           background-color: $color-linkedin-dark;
-          transition: $transition--default;
+          transition: $transition--enter__fast;
         }
       }
     }

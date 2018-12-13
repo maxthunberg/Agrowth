@@ -1,21 +1,8 @@
-$css--helpers: true;
-
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/css--helpers';
-@import '../../globals/scss/import-once';
-@import '../select/select';
-@import '../text-input/text-input';
-
-@include exports('pagination') {
-  .ag--data-table-v2-container + .ag--pagination {
+  .bx--data-table-v2-container + .bx--pagination {
     border-top: 0;
   }
 
-  .ag--pagination {
+  .bx--pagination {
     @include reset;
     @include body-text;
     width: 100%;
@@ -25,23 +12,23 @@ $css--helpers: true;
     align-items: center;
     border: 1px solid $color-white-10;
 
-    .ag--form-item {
+    .bx--form-item {
       flex: auto;
     }
   }
 
-  .ag--pagination__left {
+  .bx--pagination__left {
     display: flex;
     align-items: center;
   }
 
-  .ag--pagination__right {
+  .bx--pagination__right {
     display: flex;
     align-items: center;
     margin-left: auto;
   }
 
-  .ag--pagination__text {
+  .bx--pagination__text {
     @include typescale('p-sm');
     color: $text-02;
     display: none;
@@ -51,22 +38,22 @@ $css--helpers: true;
     }
   }
 
-  .ag--pagination__button-icon {
+  .bx--pagination__button-icon {
     height: rem(12px);
     width: rem(12px);
     fill: $color-white-20;
     pointer-events: none;
-    transition: $transition--base;
+    transition: $transition--enter__fast;
   }
 
-  .ag--pagination__button {
+  .bx--pagination__button {
     @include reset;
     border: none;
     background: none;
     cursor: pointer;
 
     &:hover {
-      .ag--pagination__button-icon {
+      .bx--pagination__button-icon {
         fill: $color-primary;
       }
     }
@@ -78,37 +65,37 @@ $css--helpers: true;
     &:disabled:hover {
       cursor: default;
 
-      .ag--pagination__button-icon {
+      .bx--pagination__button-icon {
         fill: $color-white-20;
       }
     }
   }
 
-  .ag--pagination__button--backward {
+  .bx--pagination__button--backward {
     margin-left: $spacing-md;
     margin-right: $spacing-lg;
   }
 
-  .ag--pagination__button--forward {
+  .bx--pagination__button--forward {
     margin-left: $spacing-lg;
   }
 
-  .ag--pagination__button--no-index {
+  .bx--pagination__button--no-index {
     border-right: 0;
     margin-right: 1px;
   }
 
-  .ag--pagination {
-    .ag--select {
+  .bx--pagination {
+    .bx--select {
       margin-right: $spacing-xs;
     }
 
-    .ag--select--inline {
+    .bx--select--inline {
       margin-right: 0;
       width: rem(48px);
     }
 
-    .ag--select-input {
+    .bx--select-input {
       height: rem(24px);
       width: rem(54px);
       padding: 0 $spacing-xs;
@@ -120,12 +107,12 @@ $css--helpers: true;
       }
     }
 
-    .ag--select__arrow {
+    .bx--select__arrow {
       right: 0.5rem;
       top: 0.625rem;
     }
 
-    .ag--text-input {
+    .bx--text-input {
       height: rem(24px);
       min-width: rem(24px);
       width: rem(24px);
@@ -140,13 +127,13 @@ $css--helpers: true;
     }
   }
 
-  .ag--pagination--inline {
+  .bx--pagination--inline {
     height: 42px;
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
     margin-right: -1rem;
 
-    .ag--pagination__button {
+    .bx--pagination__button {
       height: 100%;
       border-left: 1px solid $color-white-10;
       border-right: 1px solid $color-white-10;
@@ -154,25 +141,24 @@ $css--helpers: true;
       margin: 0;
     }
 
-    .ag--pagination__button--forward {
+    .bx--pagination__button--forward {
       border-right: 0;
     }
 
-    .ag--pagination__button--backward {
+    .bx--pagination__button--backward {
       margin-left: $spacing-md;
     }
 
-    .ag--select--inline {
+    .bx--select--inline {
       position: relative;
       top: -1.5px;
     }
 
-    .ag--select-input {
+    .bx--select-input {
       padding-left: $spacing-md;
     }
 
-    .ag--select__arrow {
+    .bx--select__arrow {
       right: 0.7rem;
     }
   }
-}

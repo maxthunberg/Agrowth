@@ -1,23 +1,63 @@
 .contact-form {
-  .bx--row {
+  position: relative;
+  padding: 4rem 2rem 0;
+  margin: 4rem 4rem;
+  transition: $transition--enter__fast;
+  .contact-form--container {
      @include customflex(0, 0,center,0);
-    .contact-form--col {
-      // flex-basis: 50%;
+     border-radius: 1rem;
+     width: 100%;
+     height: 100%;
+    .card.form {
+      margin-top:4rem;
+      @include customflex(column, 0,center,0);
+      box-shadow: $box-shadow--sticky-nav;
+      padding: 4rem;
+      width: 100%;
+      max-width: 768px;
+      transition: $transition--enter__fast;
     }
+  }
+  .bg-green {
+    position: absolute;
+    top:0;
+    left:0;
+    height: calc(100% - 8rem);
+    width: 100%;
+    border-radius: 1rem;
+    @include linear-gradient($color-primary-dark,$color-primary);
+    transition: $transition--enter__fast;
   }
 }
 
-.contact-form.whitepaper{
-  background-color: $color-white;
-  border: 1px solid $color-white-10;
-  border-radius: .25rem;
-  box-shadow: $box-shadow--raised;
-  padding: 2rem 2rem 0;
-  margin-bottom: 2rem;
-  .bx--row {
+.contact-form.animate {
+  position: relative;
+  padding: 4rem 2rem 0;
+  margin: 4rem 0;
+  transition: $transition--enter__fast;
+  .contact-form--container {
      @include customflex(0, 0,center,0);
-    .contact-form--col {
-      // flex-basis: 50%;
+     border-radius: 1rem;
+     width: 100%;
+     height: 100%;
+    .card.form {
+      margin-top:0;
+      @include customflex(column, 0,center,0);
+      box-shadow: $box-shadow--sticky-nav;
+      padding: 4rem;
+      width: 100%;
+      max-width: 768px;
+      transition: $transition--enter__fast;
     }
+  }
+  .bg-green {
+    position: absolute;
+    top:0;
+    left:0;
+    height: calc(100% - 8rem);
+    width: 100%;
+    border-radius: 0;
+    @include linear-gradient($color-primary-dark,$color-primary);
+    transition: $transition--enter__fast;
   }
 }

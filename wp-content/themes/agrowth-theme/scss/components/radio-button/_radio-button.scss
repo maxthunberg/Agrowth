@@ -1,28 +1,15 @@
-//-----------------------------
-// Radio
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
-@import '../form/form';
-@import '../../globals/scss/css--reset';
-
-@include exports('radio-button') {
-  .ag--radio-button-group {
+  .bx--radio-button-group {
     display: flex;
     align-items: center;
     margin-top: $spacing-xs;
   }
 
-  .ag--radio-button {
+  .bx--radio-button {
     @include hidden;
   }
 
-  .ag--radio-button__label {
+  .bx--radio-button__label {
     @include typescale('p-sm');
     @include body-text;
     display: flex;
@@ -32,7 +19,7 @@
 
   }
 
-  .ag--radio-button__appearance {
+  .bx--radio-button__appearance {
     @include reset;
     background-color: $color-white;
     border-radius: 50%;
@@ -41,15 +28,15 @@
     height: rem(18px);
     width: rem(18px);
     margin-right: $spacing-xs;
-    transition: border $transition--base $bx--ease-in;
+    transition: border $duration--fast__enter $easing--enter;
   }
 
-  .ag--radio-button:checked + .ag--radio-button__label .ag--radio-button__appearance {
+  .bx--radio-button:checked + .bx--radio-button__label .bx--radio-button__appearance {
     display: flex;
     align-items: center;
     justify-content: center;
     border-color: $color-primary;
-    transition: border-color $transition--base $bx--ease-in;
+    transition: border-color $duration--fast__enter $easing--enter;
 
     &:before {
       content: '';
@@ -59,33 +46,32 @@
       height: 0.5rem;
       border-radius: 50%;
       background-color: $color-primary;
-      transition: background-color $transition--base $bx--ease-in;
+      transition: background-color $duration--fast__enter $easing--enter;
     }
   }
-  .ag--radio-button:checked:hover + .ag--radio-button__label .ag--radio-button__appearance {
+  .bx--radio-button:checked:hover + .bx--radio-button__label .bx--radio-button__appearance {
     border-color: $color-primary-light;
-    transition: border-color $transition--base $bx--ease-in;
+    transition: border-color $duration--fast__enter $easing--enter;
 
     &:before {
       background-color: $color-primary-light;
-      transition: background-color $transition--base $bx--ease-in;
+      transition: background-color $duration--fast__enter $easing--enter;
     }
   }
-  .ag--radio-button:disabled + .ag--radio-button__label {
+  .bx--radio-button:disabled + .bx--radio-button__label {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
-  .ag--radio-button:disabled:hover + .ag--radio-button__label .ag--radio-button__appearance {
+  .bx--radio-button:disabled:hover + .bx--radio-button__label .bx--radio-button__appearance {
     border-color: $color-white-20;
   }
 
-  .ag--radio-button:focus + .ag--radio-button__label .ag--radio-button__appearance {
+  .bx--radio-button:focus + .bx--radio-button__label .bx--radio-button__appearance {
     @include focus-outline('blurred');
   }
 
-  .ag--radio-button:hover + .ag--radio-button__label .ag--radio-button__appearance {
+  .bx--radio-button:hover + .bx--radio-button__label .bx--radio-button__appearance {
     border-color: $color-white-10;
-    transition: border-color $transition--base $bx--ease-in;
+    transition: border-color $duration--fast__enter $easing--enter;
   }
-}

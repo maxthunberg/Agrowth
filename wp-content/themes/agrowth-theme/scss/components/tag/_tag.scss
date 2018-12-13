@@ -1,19 +1,13 @@
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/import-once';
-@import 'mixins';
-
-@include exports('tags') {
-  .ag--tag {
+  .bx--tag {
     @include body-text;
-    @include typescale('p-micro');
+    font-weight: 500;
+    @include typescale('p-xs');
     display: inline-flex;
     align-items: center;
     padding: 0 $spacing-xs;
     height: 1.25rem;
-    margin: $spacing-3xs;
+    margin: .25rem;
+    margin-left: 0;
     border-radius: rem(4px);
 
     &:not(:first-child) {
@@ -21,48 +15,46 @@
     }
   }
 
-  .ag--tag--seo {
+  .bx--tag--seo {
     @include tag-theme($color-blue, $color-blue-darker);
   }
 
-  .ag--tag--digital-design {
+  .bx--tag--digital-design {
     @include tag-theme($color-aqua, $color-aqua-darker);
   }
 
-  .ag--tag--digital-marknadsforing {
+  .bx--tag--digital-marknadsforing {
     @include tag-theme($color-teal, $color-teal-darker);
   }
 
-  .ag--tag--karriar {
+  .bx--tag--karriar {
     @include tag-theme($color-secondary, $color-secondary-darker);
   }
 
-  .ag--tag--ux {
+  .bx--tag--ux {
     @include tag-theme($color-yellow, $color-yellow-darker);
   }
 
-  .ag--tag--whitepaper {
+  .bx--tag--whitepaper {
     @include tag-theme($color-orange, $color-orange-darker);
   }
 
-  .ag--tag--kundcase {
+  .bx--tag--kundcase {
     @include tag-theme($color-red, $color-red-darker);
   }
 
-  .ag--tag--digital-tillvaxt {
+  .bx--tag--digital-tillvaxt {
     @include tag-theme($color-primary, $color-primary-darker);
   }
 
-  .ag--tag--ebook {
+  .bx--tag--ebook {
     @include tag-theme($color-pink, $color-pink-darker);
   }
 
-  .ag--tag--big-data {
+  .bx--tag--big-data {
     @include tag-theme($color-magenta, $color-magenta-darker);
   }
 
-  .ag--tag--research {
+  .bx--tag--research {
     @include tag-theme($color-purple, $color-purple-darker);
   }
-
-}

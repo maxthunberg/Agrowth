@@ -4,11 +4,17 @@
     $heading = get_field('heading', $page_for_posts);
     $paragraph = get_field('paragraph', $page_for_posts);
     $herobgimg = get_field('background-image', $page_for_posts);
+    $curvesimg = get_field('curves_image', $page_for_posts);
+    $overlaycolor = get_field('overlay_color', $page_for_posts);
+    $overlayopacity = get_field('overlay_opacity', $page_for_posts);
   else:
     $subheading = get_field('sub-heading');
     $heading = get_field('heading');
     $paragraph = get_field('paragraph');
     $herobgimg = get_field('background_image');
+    $curvesimg = get_field('curves_image');
+    $overlaycolor = get_field('overlay_color');
+    $overlayopacity = get_field('overlay_opacity');
   endif;
 ?>
 <?php if ( $post->post_type == 'post' && !is_home() ): ?>
@@ -115,9 +121,9 @@
   <?php endif;?>
     <div class="bx--row">
       <div class="bx--col-xs-12 bx--col-md-10 bx--col-lg-6 hero-container">
-          <h5 class="sub-heading-two hero-subheading"><?= $subheading ?></h5>
-          <h1 class="heading-two hero-heading"><?= $heading ?></h1>
-          <p class="paragraph hero-paragraph"><?= $paragraph ?></p>
+          <h5 class="sub-heading-two hero-subheading light"><?= $subheading ?></h5>
+          <h1 class="heading-two hero-heading light"><?= $heading ?></h1>
+          <p class="paragraph hero-paragraph light"><?= $paragraph ?></p>
       </div>
       <?php if( get_field('image') ): ?>
 
@@ -135,6 +141,13 @@
 
       <?php endif; ?>
     </div>
+
+    <div class="hero--overlay" style="background: <?= @$overlaycolor ?>; opacity: <?= @$overlayopacity ?>;"></div>
+
+    <div class="hero--curves">
+      <img src="<?= $curvesimg ?>">
+    </div>
+
   </div>
 
 <?php endif; ?>

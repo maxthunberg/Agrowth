@@ -1,23 +1,11 @@
-//-----------------------------
-// Link
-//-----------------------------
 
-@import '../../globals/scss/colors';
-@import '../../globals/scss/vars';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/css--reset';
-
-@include exports('link') {
   .section-content .no-link {
     &:after {
       display: none;
     }
   }
   .section-content a,
-  .ag--link {
+  .bx--link {
     position: relative;
     @include reset;
     @include body-text;
@@ -28,7 +16,7 @@
     line-height: 1.5;
     color: $color-primary-dark;
     align-self: flex-start;
-    transition: $transition--base;
+    transition: $transition--enter__fast;
     &:after {
       content: '';
       position: absolute;
@@ -47,7 +35,7 @@
     &:hover,
     &:focus {
       position: relative;
-      transition: $transition--base;
+      transition: $transition--enter__fast;
       &:after {
         content: '';
         position: absolute;
@@ -70,7 +58,7 @@
     }
   }
 
-  .ag--link__secondary {
+  .bx--link__secondary {
     position: relative;
     @include reset;
     @include body-text;
@@ -81,7 +69,7 @@
     text-decoration: none;
     border-bottom: 1px solid $color-white-20;
     padding: 1px 0;
-    transition: $transition--base;
+    transition: $transition--enter__fast;
 
     &:visited {
       color: $color-secondary;
@@ -93,7 +81,7 @@
       position: relative;
       color: $color-secondary;
       border-bottom: 1px solid $color-secondary;
-      transition: $transition--base;
+      transition: $transition--enter__fast;
     }
 
     &:focus {
@@ -105,7 +93,7 @@
       pointer-events: none;
     }
   }
-  .ag--link__white {
+  .bx--link__white {
     position: relative;
     @include reset;
     @include body-text;
@@ -116,7 +104,7 @@
     text-decoration: none;
     border-bottom: 1px solid $color-white-20;
     padding: 1px 0;
-    transition: $transition--base;
+    transition: $transition--enter__fast;
 
     &:visited {
       color: $color-white;
@@ -128,7 +116,7 @@
       position: relative;
       color: $color-white;
       border-bottom: 1px solid $color-white;
-      transition: $transition--base;
+      transition: $transition--enter__fast;
     }
 
     &:focus {
@@ -140,4 +128,3 @@
       pointer-events: none;
     }
   }
-}

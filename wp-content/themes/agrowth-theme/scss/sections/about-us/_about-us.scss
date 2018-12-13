@@ -62,7 +62,7 @@
           transform: translateY(0);
           text-align: center;
           opacity: 1;
-          transition: $transition--default;
+          transition: $transition--enter__fast;
           h5 {
             color: $color-primary;
           }

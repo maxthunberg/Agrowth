@@ -1,19 +1,5 @@
-//-----------------------------
-// Notifications
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/layer';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/mixins';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--helpers';
-
-@include exports('navbar-notifications') {
-  .ag--navbar-notification {
+  .bx--navbar-notification {
     @include reset;
     @include body-text;
     @include font-smoothing;
@@ -27,59 +13,59 @@
     color: $color-dark;
     width: 100%;
     left:0;
-    transition: top $transition--base $bx--standard-easing;
+    transition: top $duration--fast__enter $easing--enter;
 
   }
-  .ag--navbar-notification.active {
+  .bx--navbar-notification.active {
     top: 0px;
   }
 
-  .ag--navbar-notification--error {
+  .bx--navbar-notification--error {
     @include navbar-notification--color($support-error,$support-error);
   }
 
-  .ag--navbar-notification--success {
+  .bx--navbar-notification--success {
     @include navbar-notification--color($support-success,$support-success);
   }
 
-  .ag--navbar-notification--info {
+  .bx--navbar-notification--info {
     @include navbar-notification--color($support-info,$support-info);
   }
 
-  .ag--navbar-notification--warning {
+  .bx--navbar-notification--warning {
     @include navbar-notification--color($support-warning,$support-warning);
   }
 
-  .ag--navbar-notification--primary {
+  .bx--navbar-notification--primary {
     @include navbar-notification--color($color-primary,$color-white);
     @include linear-gradient($color-primary, $color-primary-light);
-    .ag--navbar-notification__close-icon {
+    .bx--navbar-notification__close-icon {
       fill: $color-white;
     }
     color: $color-white;
   }
 
-  .ag--navbar-notification--secondary {
+  .bx--navbar-notification--secondary {
     @include navbar-notification--color($color-secondary-dark, $color-white);
     @include linear-gradient($color-secondary-dark, $color-secondary);
-    .ag--navbar-notification__close-icon {
+    .bx--navbar-notification__close-icon {
       fill: $color-white;
     }
     color: $color-white;
   }
 
-  .ag--navbar-notification__details {
+  .bx--navbar-notification__details {
     display: flex;
     align-items: center;
   }
 
-  .ag--navbar-notification__icon {
+  .bx--navbar-notification__icon {
     height: 16px;
     width: 16px;
     min-width: 22px;
   }
 
-  .ag--navbar-notification__text-wrapper {
+  .bx--navbar-notification__text-wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -91,20 +77,20 @@
     }
   }
 
-  .ag--navbar-notification__title {
+  .bx--navbar-notification__title {
     @include typescale('p-sm');
     font-weight: 700;
     margin: 0 $spacing-xs 0 0;
     line-height: 1.125;
   }
 
-  .ag--navbar-notification__subtitle {
+  .bx--navbar-notification__subtitle {
     @include typescale('p-sm');
     margin: 0 $spacing-md 0 0;
     line-height: 1.125;
   }
 
-  .ag--navbar-notification__close-button {
+  .bx--navbar-notification__close-button {
     background-color: transparent;
     border: none;
     padding: .5rem;
@@ -116,7 +102,7 @@
     }
   }
 
-  .ag--navbar-notification__close-icon {
+  .bx--navbar-notification__close-icon {
     height: 10px;
     width: 10px;
     fill: $color-dark;
@@ -124,4 +110,3 @@
     top: 3px;
     right: 3px;
   }
-}

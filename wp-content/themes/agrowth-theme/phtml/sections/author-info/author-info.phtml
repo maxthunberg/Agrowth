@@ -17,7 +17,7 @@ if( empty($fname)){
   $full_name = "{$fname} {$lname}";
 }?>
 
-<div class="author">
+<div class="author card no-link">
 
   <div class="author--img-container">
     <?php echo get_wp_user_avatar($author); ?>
@@ -26,15 +26,15 @@ if( empty($fname)){
   <div class="author--info">
 
     <?php if ( $full_name !== ''):?>
-      <h4><?=$full_name;?></h4>
+      <h4 class="heading-five"><?=$full_name;?></h4>
     <?php else :?>
-      <h4>Agrowth</h4>
+      <h4 class="heading-five">Agrowth</h4>
     <?php endif;?>
 
     <?php if ( $worktitle !== null ): ?>
-    <p class="bx--type-epsilon__paragraph"><?= $worktitle . ' @ worktitle';?></p>
+    <p class="paragraph-sm"><?= $worktitle . ' @ worktitle';?></p>
     <?php else :?>
-    <p class="bx--type-epsilon__paragraph">@ Agrowth</p>
+    <p class="paragraph-sm">@Agrowth</p>
     <?php endif;?>
   </div>
 

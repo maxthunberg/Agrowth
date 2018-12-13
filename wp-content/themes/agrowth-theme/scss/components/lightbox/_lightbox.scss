@@ -1,19 +1,12 @@
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/css--reset';
 
-@include exports('lightbox') {
-  .ag--lightbox {
+  .bx--lightbox {
     width: rem(1056px);
     @include layer('pop-out');
   }
-  .ag--lightbox__main {
+  .bx--lightbox__main {
     position: relative;
   }
-  .ag--lightbox__btn {
+  .bx--lightbox__btn {
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -38,16 +31,15 @@
       fill: $color-white-20;
     }
   }
-  .ag--lightbox__item {
+  .bx--lightbox__item {
     display: none;
     width: 100%;
   }
-  .ag--lightbox__item--shown {
+  .bx--lightbox__item--shown {
     display: block;
   }
 
-  .ag--lightbox__footer {
+  .bx--lightbox__footer {
     background: $color-white;
     overflow: hidden;
   }
-}

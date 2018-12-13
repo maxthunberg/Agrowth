@@ -1,4 +1,11 @@
-<div class="bx--navbar--submenu">
+
+
+<?php if ( is_front_page() ):?>
+  <div class="bx--navbar--submenu transparent">
+<?php else: ?>
+  <div class="bx--navbar--submenu">
+<?php endif;?>
+
   <div class="snippet"></div>
 
   <!-- Navbar menu -->
@@ -34,7 +41,7 @@
                   <p><?= $text ?></p>
                 </div>
 
-                <?php if ( $animate == 1):?><span class="pulse-sm topright-1rem"></span><?php endif;?>
+
               </div>
           	</a>
 
@@ -45,7 +52,7 @@
 
       </div>
       <div class="submenu--footer">
-        <p>Dags att ta första steget på er digitala tillväxtresa,</p>
+        <p class="paragraph no-margin">Dags att ta första steget på er digitala tillväxtresa,</p>
         <a href="/tjanster/tillvaxtanalys" class="bx--link">tillväxtanalysen</a>
       </div>
 
@@ -76,7 +83,7 @@
           <a class="card-link" href="<?= $cardlink ?>">
             <div class="card card-consultant__sm">
               <div class="consultants-text-container">
-                <p class="bx--type-epsilon__paragraph consultants-heading"><?= $text ?></p>
+                <p class="paragraph no-margin consultants-heading"><?= $text ?></p>
               </div>
 
             </div>
@@ -88,8 +95,8 @@
       <?php endwhile; ?>
 
       <div class="submenu--footer">
-        <p>Dags att ta första steget på er digitala tillväxtresa,</p>
-        <a href="/tjanster/tillvaxtanalys" class="bx--link__secondary">tillväxtanalysen</a>
+        <p class="paragraph no-margin">Dags att ta första steget på er digitala tillväxtresa,</p>
+        <a href="/tjanster/tillvaxtanalys" class="bx--link">tillväxtanalysen</a>
       </div>
 
       </div>

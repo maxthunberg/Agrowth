@@ -1,18 +1,5 @@
-//-----------------------------
-// Tabs
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/layer';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/import-once';
-
-@include exports('tabs') {
-  .ag--tabs {
+  .bx--tabs {
     @include typescale('p-sm');
     @include font-smoothing;
     @include body-text;
@@ -28,7 +15,7 @@
     }
   }
 
-  .ag--tabs-trigger {
+  .bx--tabs-trigger {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,7 +39,7 @@
     }
   }
 
-  .ag--tabs-trigger-text {
+  .bx--tabs-trigger-text {
     text-decoration: none;
     font-weight: 600;
     color: $text-01;
@@ -62,7 +49,7 @@
     }
   }
 
-  .ag--tabs__nav {
+  .bx--tabs__nav {
     @include layer('overlay');
     margin: 0;
     padding: 0;
@@ -86,7 +73,7 @@
     }
   }
 
-  .ag--tabs__nav--hidden {
+  .bx--tabs__nav--hidden {
     display: none;
 
     @include breakpoint(bp--sm--major) {
@@ -94,7 +81,7 @@
     }
   }
 
-  .ag--tabs__nav-item {
+  .bx--tabs__nav-item {
     @include typescale('p-sm');
     background-color: $color-white;
     padding: 0;
@@ -120,13 +107,13 @@
     }
   }
 
-  .ag--tabs__nav-item--selected {
+  .bx--tabs__nav-item--selected {
     border: none;
 
     @include breakpoint(bp--sm--major) {
       border-bottom: 2px solid $color-primary;
 
-      .ag--tabs__nav-link {
+      .bx--tabs__nav-link {
         color: $color-primary;
 
         &:focus {
@@ -136,7 +123,7 @@
     }
   }
 
-  .ag--tabs__nav-item:hover .ag--tabs__nav-link {
+  .bx--tabs__nav-item:hover .bx--tabs__nav-link {
     color: $color-white;
 
     @include breakpoint(bp--sm--major) {
@@ -144,7 +131,7 @@
     }
   }
 
-  .ag--tabs__nav-link {
+  .bx--tabs__nav-link {
     display: inline-block;
     color: $text-01;
     text-decoration: none;
@@ -175,4 +162,3 @@
       }
     }
   }
-}

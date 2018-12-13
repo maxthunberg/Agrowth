@@ -1,10 +1,4 @@
-@import 'vars';
-@import 'css--reset';
-@import 'typography';
-@import 'import-once';
-
-@mixin css-helpers {
-  .ag--visually-hidden {
+.bx--visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -17,20 +11,13 @@
     white-space: nowrap;
   }
 
-  .ag--body {
+  .bx--body {
     @include reset;
     @include body-text;
     color: $text-01;
     background-color: $color-white-03;
     line-height: 1;
   }
-}
-
-@include exports('css--helpers') {
-  @if global-variable-exists('css--helpers') == false or $css--helpers == true {
-    @include css-helpers;
-  }
-}
 
 
 

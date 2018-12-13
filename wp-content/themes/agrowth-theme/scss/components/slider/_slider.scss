@@ -1,20 +1,5 @@
-//-----------------------------
-// Slider
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/layer';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/import-once';
-@import '../form/form';
-@import '../text-input/text-input';
-
-@include exports('slider') {
-  .ag--slider-container {
+  .bx--slider-container {
     max-width: rem(600px);
     min-width: rem(200px);
     display: flex;
@@ -26,17 +11,17 @@
     }
   }
 
-  .ag--slider {
+  .bx--slider {
     position: relative;
     width: 100%;
     margin: 0 $spacing-md;
   }
 
-  .ag--slider--disabled {
+  .bx--slider--disabled {
     opacity: 0.5;
   }
 
-  .ag--slider--disabled .ag--slider__thumb {
+  .bx--slider--disabled .bx--slider__thumb {
     &:hover {
       transform: translate(-50%, -50%);
     }
@@ -50,7 +35,7 @@
     }
   }
 
-  .ag--slider__range-label {
+  .bx--slider__range-label {
     @include typescale('p-sm');
     color: $text-02;
 
@@ -59,7 +44,7 @@
     }
   }
 
-  .ag--slider__track {
+  .bx--slider__track {
     position: absolute;
     width: 100%;
     height: rem(4px);
@@ -68,7 +53,7 @@
     transform: translate(0%, -50%);
   }
 
-  .ag--slider__filled-track {
+  .bx--slider__filled-track {
     position: absolute;
     width: 100%;
     height: rem(4px);
@@ -78,7 +63,7 @@
     transform: translate(0%, -50%);
   }
 
-  .ag--slider__thumb {
+  .bx--slider__thumb {
     position: absolute;
     height: rem(24px);
     width: rem(24px);
@@ -86,12 +71,12 @@
     border-radius: 50%;
     top: 0;
     transform: translate(-50%, -50%);
-    transition: transform 100ms $bx--standard-easing, background 100ms $bx--standard-easing;
+    transition: transform 100ms $easing--enter, background 100ms $easing--enter;
     cursor: pointer;
     outline: none;
 
     &--clicked {
-      transition: left $transition--base $bx--standard-easing;
+      transition: left $duration--fast__enter $easing--enter;
     }
 
     &:hover {
@@ -106,12 +91,12 @@
     }
   }
 
-  .ag--slider__input {
+  .bx--slider__input {
     display: none;
   }
 
-  .ag--slider-text-input,
-  .ag---slider-text-input {
+  .bx--slider-text-input,
+  .bx---slider-text-input {
     width: rem(60px);
     min-width: 0;
     height: 2rem;
@@ -124,4 +109,3 @@
       display: none;
     }
   }
-}

@@ -1,0 +1,70 @@
+.client-logos {
+  @include customflex(0, center, center, 0);
+  background: $color-white;
+  width: 100%;
+  padding: 2rem 0 0 0;
+  height: auto;
+  .bx--row {
+    @include customflex(0, center, center, 0);
+    width: 100%;
+    .client-logos--container {
+      @include customflex(0, 0, 0, wrap);
+      width: 100%;
+        .client__img-container {
+          @include customflex(0, center, center, 0);
+          width: 20%;
+          background-color: rgba($color-white, .2);
+          padding: 1rem 1.5rem;
+          transition: $transition--enter__fast;
+          .client__logo {
+            width: auto;
+            height: 3rem;
+          }
+
+        }
+    }
+  }
+
+}
+
+@media (max-width: breakpoint('lg') ) { // 992px
+  .client-logos {
+    .bx--row {
+      .client-logos--container {
+        @include customflex(0, center, center, wrap);
+        .client__img-container {
+          width: 33%;
+          .client__logo {
+            width: auto;
+            height: 3rem;
+          }
+        }
+
+      }
+    }
+
+  }
+
+
+}
+
+@media (max-width: breakpoint('sm')) { // 768px
+  .client-logos {
+    .bx--row {
+      .client-logos--container {
+        @include customflex(0, center, center, wrap);
+        .client__img-container {
+          width: 50%;
+          .client__logo {
+            width: auto;
+            height: 3rem;
+          }
+        }
+
+      }
+    }
+
+  }
+
+
+}

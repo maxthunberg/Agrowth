@@ -1,21 +1,5 @@
-//-----------------------------
-// Modals
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/layer';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/css--reset';
-
-@import '../button/button';
-
-@include exports('modal') {
-  .ag--modal {
+  .bx--modal {
     @include reset;
     @include body-text;
     position: fixed;
@@ -41,11 +25,11 @@
     }
   }
 
-  .ag--modal--danger {
+  .bx--modal--danger {
     @include modal--color($support-error);
   }
 
-  .ag--modal-container {
+  .bx--modal-container {
     @include reset;
     @include layer('pop-out');
     position: relative;
@@ -72,11 +56,11 @@
     }
   }
 
-  .ag--modal-header {
+  .bx--modal-header {
     margin-bottom: $spacing-lg;
   }
 
-  .ag--modal-header__label {
+  .bx--modal-header__label {
     @include reset;
     @include typescale('p-sm');
     color: $text-01;
@@ -86,14 +70,14 @@
     margin-bottom: $spacing-xs;
   }
 
-  .ag--modal-header__heading {
+  .bx--modal-header__heading {
     @include reset;
     @include typescale('four');
     font-weight: 300;
     color: $text-02;
   }
 
-  .ag--modal-content {
+  .bx--modal-content {
     overflow-y: auto;
     margin-bottom: $spacing-3xl;
 
@@ -102,7 +86,7 @@
     }
   }
 
-  .ag--modal-footer {
+  .bx--modal-footer {
     margin-top: auto;
     text-align: right;
     background-color: $modal-footer-background-color;
@@ -117,7 +101,7 @@
     }
   }
 
-  .ag--modal-close {
+  .bx--modal-close {
     position: absolute;
     top: rem(16px);
     right: rem(16px);
@@ -133,10 +117,9 @@
     }
   }
 
-  .ag--modal-close__icon {
+  .bx--modal-close__icon {
     transition: 200ms;
     fill: $color-white-20;
     width: rem(12px);
     height: rem(12px);
   }
-}

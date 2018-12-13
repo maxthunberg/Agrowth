@@ -1,24 +1,11 @@
-//-----------------------------
-// Select
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/import-once';
-@import '../form/form';
-
-@include exports('select') {
-  .ag--select {
+  .bx--select {
     @include reset;
     position: relative;
     display: block;
   }
 
-  .ag--select-input {
+  .bx--select-input {
     @include body-text;
     @include typescale('p-sm');
     appearance: none;
@@ -46,7 +33,7 @@
     }
   }
 
-  .ag--select__arrow {
+  .bx--select__arrow {
     fill: $color-primary;
     position: absolute;
     right: 1rem;
@@ -56,35 +43,35 @@
     pointer-events: none;
   }
 
-  .ag--select-optgroup,
-  .ag--select-option {
+  .bx--select-optgroup,
+  .bx--select-option {
     color: $text-01; // For the options to show in IE11
   }
 
   // Override some Firefox user-agent styles
   @-moz-document url-prefix() {
-    .ag--select-option {
+    .bx--select-option {
       background-color: $color-white;
       color: $text-01;
     }
 
-    .ag--select-optgroup {
+    .bx--select-optgroup {
       color: $text-01;
     }
   }
-}
 
-.ag--select--inline {
+
+.bx--select--inline {
   display: flex;
   align-items: center;
 
-  .ag--label {
+  .bx--label {
     white-space: nowrap;
     margin: 0 $spacing-xs 0 0;
     font-weight: 400;
   }
 
-  .ag--select-input {
+  .bx--select-input {
     background-color: transparent;
     color: $color-primary;
     font-weight: 600;

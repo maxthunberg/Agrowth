@@ -1,12 +1,5 @@
-@import '../../globals/scss/colors';
-@import '../../globals/scss/vars';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/layer';
-@import '../../globals/scss/import-once';
 
-@include exports('fab') {
-  .ag--fab {
+  .bx--fab {
     @include reset;
     @include rotate(0, $transition--base);
     display: inline-block;
@@ -24,12 +17,12 @@
     &__svg {
       width: 100%;
 
-      .ag--fab__hexagon {
+      .bx--fab__hexagon {
         transition: fill $transition--base;
         fill: $color-blue;
       }
 
-      .ag--fab__plus-icon {
+      .bx--fab__plus-icon {
         @include rotate(0, $transition--base);
         fill: $color-white;
       }
@@ -39,14 +32,13 @@
     &[data-state='closed'] {
       @include rotate(90deg, $transition--base);
 
-      .ag--fab__hexagon {
+      .bx--fab__hexagon {
         transition: fill $transition--base;
         fill: $color-blue;
       }
 
-      .ag--fab__plus-icon {
+      .bx--fab__plus-icon {
         @include rotate(-45deg, $transition--base);
       }
     }
   }
-}

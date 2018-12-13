@@ -1,14 +1,4 @@
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/css--reset';
-
-@include exports('navbar--mobile') {
-
-  .ag--navbar__mobile {
+.bx--navbar__mobile {
     @include customflex(0, center, space-between, 0);
     position: fixed;
     display: none;
@@ -21,7 +11,7 @@
     border-bottom: 1px solid $color-white-10;
     opacity: 1;
     z-index: z('header');
-    transition: top $transition--base $bx--standard-easing;
+    transition: top $duration--fast__enter $easing--enter;
     .navbar--inner {
       display: flex;
       justify-content: space-between;
@@ -47,7 +37,7 @@
             height: 44px;
             width: 44px;
             background-color: transparent;
-            transition: $transition--default;
+            transition: $transition--enter__fast;
 
             .hamburger-line {
               position: absolute;
@@ -57,26 +47,26 @@
             }
             .line-1 {
               transform: translateY(-4px);
-              transition: $transition--default;
+              transition: $transition--enter__fast;
             }
             .line-2 {
               transform: translateY(4px);
-              transition: $transition--default;
+              transition: $transition--enter__fast;
             }
 
             &:hover {
               cursor: pointer;
-              transition: $transition--default;
+              transition: $transition--enter__fast;
               .hamburger-line {
                 background-color: rgba($color-dark,.5);
               }
               .line-1 {
                 transform: translateY(-4px);
-                transition: $transition--default;
+                transition: $transition--enter__fast;
               }
               .line-2 {
                 transform: translateY(4px);
-                transition: $transition--default;
+                transition: $transition--enter__fast;
               }
 
             }
@@ -88,26 +78,26 @@
             }
             .line-1 {
               transform: rotate(45deg);
-              transition: $transition--default;
+              transition: $transition--enter__fast;
             }
             .line-2 {
               transform: rotate(-45deg);
-              transition: $transition--default;
+              transition: $transition--enter__fast;
             }
 
             &:hover {
               cursor: pointer;
-              transition: $transition--default;
+              transition: $transition--enter__fast;
               .hamburger-line {
                 background-color: rgba($color-dark,.5);
               }
               .line-1 {
                 transform: rotate(45deg);
-                transition: $transition--default;
+                transition: $transition--enter__fast;
               }
               .line-2 {
                 transform: rotate(-45deg);
-                transition: $transition--default;
+                transition: $transition--enter__fast;
               }
 
             }
@@ -127,7 +117,7 @@
   }
 
 
-    .ag--navbar--submenu__mobile {
+    .bx--navbar--submenu__mobile {
       @include customflex(0, center, center, 0);
       position: fixed;
       flex-direction: column;
@@ -138,7 +128,7 @@
       background: transparent;
       opacity: 0;
       z-index: z('hidden');
-      transition: background-color $transition--base $bx--standard-easing;
+      transition: background-color $duration--fast__enter $easing--enter;
 
       .navbar--ul {
         .navbar--li {
@@ -151,30 +141,30 @@
       }
     }
 
-    .ag--navbar--submenu__mobile.visible {
+    .bx--navbar--submenu__mobile.visible {
       display: none;
       @include customflex(0,0,0,0);
       opacity: 1;
       z-index: 5000;
       background-color: $color-white-03;
-      transition: $transition--default;
+      transition: $transition--enter__fast;
     }
 
-}
+
 @media (min-width: breakpoint('xl')) { // 1600px
-  .ag--navbar--submenu__mobile.visible {
+  .bx--navbar--submenu__mobile.visible {
     display: none;
   }
 }
 
 @media (max-width: breakpoint('xl')) { // 1200px
-  .ag--navbar--submenu__mobile.visible {
+  .bx--navbar--submenu__mobile.visible {
     display: none;
   }
 }
 
 @media (max-width: breakpoint('lg')) { // 992px
-  .ag--navbar--submenu__mobile.visible {
+  .bx--navbar--submenu__mobile.visible {
     display: none;
   }
 }
@@ -183,7 +173,7 @@
   .bx--navbar__mobile {
     display: flex;
   }
-  .ag--navbar--submenu__mobile.visible {
+  .bx--navbar--submenu__mobile.visible {
     display: flex;
   }
 

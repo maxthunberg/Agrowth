@@ -11,7 +11,7 @@
   .bx--filmstrip {
     display: flex;
     justify-content: space-between;
-    transition: transform 100ms $bx--ease-out;
+    transition: transform $duration--fast__enter $easing--enter;
     padding: rem(24px) 0;
     width: auto;
   }

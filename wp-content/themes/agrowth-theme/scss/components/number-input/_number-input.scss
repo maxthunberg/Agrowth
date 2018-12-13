@@ -1,19 +1,10 @@
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/css--reset';
-@import '../form/form';
 
-@include exports('number-input') {
-  .ag--number {
+  .bx--number {
     @include reset;
     display: flex;
   }
 
-  .ag--number input[type='number'] {
+  .bx--number input[type='number'] {
     @include typescale('p-sm');
     @include body-text;
     box-sizing: border-box;
@@ -38,14 +29,14 @@
       cursor: not-allowed;
     }
 
-    &:disabled ~ .ag--number__controls {
+    &:disabled ~ .bx--number__controls {
       opacity: 0.5;
       cursor: not-allowed;
       pointer-events: none;
     }
   }
 
-  .ag--number input[type='number'] {
+  .bx--number input[type='number'] {
     appearance: textfield; // Firefox: Hide spinner (up and down buttons)
 
     &::-ms-clear {
@@ -57,7 +48,7 @@
     }
   }
 
-  .ag--number__controls {
+  .bx--number__controls {
     @include reset;
     position: relative;
     display: block;
@@ -68,7 +59,7 @@
     align-items: center;
   }
 
-  .ag--number__control-btn {
+  .bx--number__control-btn {
     @include button-reset;
     position: relative;
     bottom: 0;
@@ -88,7 +79,7 @@
     }
   }
 
-  .ag--number__controls svg {
+  .bx--number__controls svg {
     fill: $color-primary;
     width: rem(9px);
     height: rem(9px);
@@ -99,13 +90,13 @@
       fill: $color-secondary;
     }
   }
-}
 
-.ag--number[data-invalid] {
+
+.bx--number[data-invalid] {
   input[type='number'] {
     box-shadow: 0 2px 0px 0px $support-error;
   }
-  ~ .ag--form-requirement {
+  ~ .bx--form-requirement {
     max-height: rem(200px);
   }
 }

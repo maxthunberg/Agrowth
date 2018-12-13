@@ -1,19 +1,5 @@
-$css--helpers: true;
 
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/vars';
-@import '../../globals/scss/css--helpers';
-@import '../button/button';
-@import '../checkbox/checkbox';
-@import '../radio-button/radio-button';
-@import '../form/form';
-@import '../overflow-menu/overflow-menu';
-@import '../search/search';
-
-@include exports('toolbar') {
-  .ag--toolbar {
+  .bx--toolbar {
     @include body-text;
     display: flex;
     flex-flow: row nowrap;
@@ -24,25 +10,25 @@ $css--helpers: true;
       margin: 0 rem(4px);
     }
 
-    .ag--search-input {
+    .bx--search-input {
       height: rem(32px);
       background-color: transparent;
       outline: none;
     }
 
-    .ag--search-close {
+    .bx--search-close {
       display: none;
     }
 
-    .ag--overflow-menu__icon {
+    .bx--overflow-menu__icon {
       fill: $text-02;
-      transition: fill 50ms $bx--standard-easing;
+      transition: fill 50ms $easing--enter;
     }
 
-    .ag--search-magnifier {
+    .bx--search-magnifier {
       fill: $text-02;
       transform: scale(1.3);
-      transition: all 175ms $bx--standard-easing;
+      transition: all 175ms $easing--enter;
       top: rem(8px);
       left: rem(6px);
       cursor: pointer;
@@ -53,38 +39,38 @@ $css--helpers: true;
       padding: 0;
     }
 
-    .ag--toolbar-search--active {
+    .bx--toolbar-search--active {
       width: rem(250px);
 
-      .ag--search-magnifier {
+      .bx--search-magnifier {
         transform: scale(1);
         top: rem(9px);
       }
 
-      .ag--search-input {
+      .bx--search-input {
         background-color: $field-primary;
       }
 
-      .ag--search-close {
+      .bx--search-close {
         display: block;
       }
     }
 
-    .ag--checkbox-label {
+    .bx--checkbox-label {
       margin-bottom: 0;
     }
 
-    .ag--overflow-menu--open > .ag--overflow-menu__icon {
+    .bx--overflow-menu--open > .bx--overflow-menu__icon {
       fill: $color-primary;
     }
   }
 
-  .ag--toolbar-search {
+  .bx--toolbar-search {
     width: 1.8rem;
-    transition: all 175ms $bx--standard-easing;
+    transition: all 175ms $easing--enter;
   }
 
-  .ag--toolbar-search__btn {
+  .bx--toolbar-search__btn {
     position: absolute;
     left: 0;
     top: 0;
@@ -98,29 +84,28 @@ $css--helpers: true;
     }
   }
 
-  .ag--toolbar-filter-icon {
+  .bx--toolbar-filter-icon {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .ag--toolbar-menu__title {
+  .bx--toolbar-menu__title {
     @include typescale('p-sm');
     @include letter-spacing;
     font-weight: 600;
     padding: 0.5rem 1.25rem;
   }
 
-  .ag--toolbar-menu__option {
+  .bx--toolbar-menu__option {
     padding: 0.5rem 1.25rem;
   }
 
-  .ag--toolbar-menu__divider {
+  .bx--toolbar-menu__divider {
     width: 100%;
     border: 0;
     border-top: 1px solid $color-white-10;
   }
 
-  .ag--radio-button-group {
+  .bx--radio-button-group {
     border: none;
   }
-}

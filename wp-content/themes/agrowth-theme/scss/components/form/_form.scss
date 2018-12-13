@@ -1,16 +1,10 @@
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/import-once';
 
-@include exports('form') {
-  .ag--fieldset {
+  .bx--fieldset {
     @include reset;
     margin-bottom: $spacing-xl;
   }
 
-  .ag--form-item {
+  .bx--form-item {
     @include body-text;
     flex: 1;
     margin-right: $spacing-md;
@@ -22,7 +16,7 @@
     }
   }
 
-  .ag--form-item__uploader {
+  .bx--form-item__uploader {
     @include body-text;
     flex: 1;
     margin-right: 0;
@@ -34,7 +28,7 @@
     }
   }
 
-  .ag--label {
+  .bx--label {
     @include reset;
     @include body-text;
     @include typescale('p-sm');
@@ -44,11 +38,11 @@
     margin-bottom: $spacing-xs;
   }
 
-  .ag--label .ag--tooltip__trigger {
+  .bx--label .bx--tooltip__trigger {
     @include typescale('p-sm');
   }
 
-  .ag--label--disabled {
+  .bx--label--disabled {
     opacity: 0.5;
   }
 
@@ -57,12 +51,12 @@
   select[data-invalid] {
     box-shadow: 0 2px 0px 0px $support-error;
 
-    ~ .ag--form-requirement {
+    ~ .bx--form-requirement {
       max-height: rem(200px);
     }
   }
 
-  .ag--form-requirement {
+  .bx--form-requirement {
     @include reset;
     @include typescale('p-sm');
     margin: $spacing-sm 0 0;
@@ -77,4 +71,3 @@
       color: $support-error;
     }
   }
-}

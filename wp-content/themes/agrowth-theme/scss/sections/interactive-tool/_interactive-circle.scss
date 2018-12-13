@@ -10,7 +10,7 @@
     @include customflex(0,center,center,0);
     width: 100%;
     height: auto;
-    margin: 4rem 0 0 4rem;
+    margin: 0 0 0 4rem;
 
 
     .circle-inner, .circle-middle, .circle-outer {
@@ -120,7 +120,7 @@
       @include customflex(0,center,center,0);
       height: 448px;
       width: 448px;
-      margin: 0rem;
+      margin: 0 0 2rem 0;
     }
   }
   }

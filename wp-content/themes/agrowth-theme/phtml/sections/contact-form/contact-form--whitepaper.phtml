@@ -1,12 +1,17 @@
-<div class="contact-form whitepaper">
+<div class="contact-form">
 
-  	<div class="bx--col-lg-12 bx--col-xs-12 contact-form--col">
-    	<h3 class="contact-form--col__heading bx--type-gamma"><?= $heading ?></h3>
-    	<p class="contact-form--col__paragraph bx--type-delta__paragraph"><?= $paragraph ?></p>
-  	</div>
+  <div class="contact-form--container">
 
-  	<div class="bx--col-lg-6 bx--col-md-3 bx--col-xs-12 contact-form--col">
-			<?php echo do_shortcode('[contact-form-7 id="678" title="Contact form - Whitepaper" html_class="bx--form-item"]'); ?>
+    <div class="card form whitepaper no-link">
+
+        	<h3 class="contact-form__heading heading-four"><?= $heading ?></h3>
+        	<p class="contact-form__paragraph paragraph-sm"><?= $paragraph ?></p>
+
+    			<?php echo do_shortcode('[contact-form-7 id="678" title="Contact form - Whitepaper" html_class="bx--form-item"]'); ?>
+
     </div>
+  </div>
+  <div class="bg-green">
 
+  </div>
 </div>

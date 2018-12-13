@@ -84,6 +84,34 @@ div.wpcf7-response-output.wpcf7-validation-errors {
 }
 }
 
+
+@-webkit-keyframes pulselarge {
+0% {
+  -webkit-box-shadow: 0 0 0 0 rgba($color-primary-dark,0.5);
+}
+70% {
+    -webkit-box-shadow: 0 0 0 12rem rgba($color-primary-dark,0.5);
+}
+100% {
+    -webkit-box-shadow: 0 0 0 0 rgba($color-primary-dark,0);
+}
+}
+
+@keyframes pulselarge {
+0% {
+  -moz-box-shadow: 0 0 0 0 rgba($color-primary-dark,0.5);
+  box-shadow: 0 0 0 0 rgba($color-primary-dark,0.5);
+}
+70% {
+    -moz-box-shadow: 0 0 0 12rem rgba($color-primary-dark,0);
+    box-shadow: 0 0 0 12rem rgba($color-primary-dark,0);
+}
+100% {
+    -moz-box-shadow: 0 0 0 0 rgba($color-primary-dark,0);
+    box-shadow: 0 0 0 0 rgba($color-primary-dark,0);
+}
+}
+
 .pulse-sm {
   display: block;
   position: absolute;
@@ -98,11 +126,13 @@ div.wpcf7-response-output.wpcf7-validation-errors {
   display: block;
   position: absolute;
   background: $color-primary-dark;
-  height: 1rem;
-  width: 1rem;
+  height: .25rem;
+  width: .25rem;
   border-radius: 50%;
-  animation: pulse 2s infinite;
+  -webkit-animation: pulselarge 2s infinite;
+  animation: pulselarge 2s infinite;
 }
+
 
 // Absolute alignment
 
@@ -111,13 +141,13 @@ div.wpcf7-response-output.wpcf7-validation-errors {
 }
 
 .topleft {
-  top: 0;
-  left: 0;
+  top: -.5rem;
+  left: -.5rem;
 }
 
 .topright {
-  top: 0;
-  right: 0;
+  top: -.5rem;
+  right: -.5rem;
 }
 
 .bottomleft {
@@ -184,11 +214,11 @@ box-sizing: border-box;
 -webkit-background-clip: padding;
 -moz-background-clip: padding;
 background-clip:padding-box;
--webkit-border-radius:0;
--moz-border-radius:0;
--ms-border-radius:0;
--o-border-radius:0;
-border-radius:0;
+-webkit-border-radius:.25rem;
+-moz-border-radius:.25rem;
+-ms-border-radius:.25rem;
+-o-border-radius:.25rem;
+border-radius:.25rem;
 -webkit-appearance:none;
 }
 

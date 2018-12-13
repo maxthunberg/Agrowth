@@ -110,16 +110,19 @@ $(document).ready(function() {
 
   interactiveIconAnimation();
 
+
   // scroll animation navbar - Box shadow animated on scroll
+
+
   var navbar = $('.bx--navbar');
   var navbarMobile = $('.bx--navbar__mobile');
 
   $(window).on('scroll', function() {
 
       var scroll = $(this).scrollTop();
-      var primary = (scroll/600)/10;
+      var primary = (scroll/600)/20;
       var black = (scroll/600)/20;
-      var boxshadowPrimary = '0 4px 8px 0 rgba(255, 102, 101,' + primary +')';
+      var boxshadowPrimary = '0 4px 8px 0 rgba(35, 135, 235,' + primary +')';
       var boxshadowBlack = '0 8px 16px 0 rgba(0, 0, 0,' + black +')';
 
         if (scroll < 600) {
@@ -127,7 +130,7 @@ $(document).ready(function() {
               'box-shadow': boxshadowPrimary + ',' + boxshadowBlack
             });
         } else {
-          var boxshadowPrimary = '0 4px 8px 0 rgba(255, 102, 101, 0.1)';
+          var boxshadowPrimary = '0 4px 8px 0 rgba(35, 135, 235, 0.05)';
           var boxshadowBlack = '0 8px 16px 0 rgba(0, 0, 0, 0.05)';
           navbar.css({
               'box-shadow': boxshadowPrimary + ',' + boxshadowBlack
@@ -139,7 +142,7 @@ $(document).ready(function() {
               'box-shadow': boxshadowPrimary + ',' + boxshadowBlack
             });
         } else {
-          var boxshadowPrimary = '0 4px 8px 0 rgba(255, 102, 101, 0.1)';
+          var boxshadowPrimary = '0 4px 8px 0 rgba(35, 135, 235, 0.05)';
           var boxshadowBlack = '0 8px 16px 0 rgba(0, 0, 0, 0.05)';
           navbarMobile.css({
               'box-shadow': boxshadowPrimary + ',' + boxshadowBlack
@@ -147,44 +150,70 @@ $(document).ready(function() {
         }
   });
 
-  // scroll animation navbar - Opacity on hero elements
 
-	if ( $('.hero').length ) {
 
-		var image = $('.hero-image');
-		var bgimage = $('.hero__bg-image');
-		var subheading = $('.hero-subheading');
-		var heading = $('.hero-heading');
-		var paragraph = $('.hero-paragraph');
 
-		$(window).on('scroll', function() {
 
-			var scroll = $(this).scrollTop();
-			var heroBottom = $('.hero').offset().top + $('.hero').height();
-			var opacity = 1 - scroll/heroBottom;
+	if ( $('.bx--navbar.transparent').length ) {
 
-			if (scroll < heroBottom) {
-				image.css({
-					'opacity': opacity
-				});
-				bgimage.css({
-					'opacity': opacity
-				});
-				subheading.css({
-					'opacity': opacity
-				});
-				heading.css({
-					'opacity': opacity
-				});
-				paragraph.css({
-					'opacity': opacity
-				});
-			} else {
-				return false;
-			}
-		});
+		  $(window).on('scroll', function() {
+
+					var scroll = $(this).scrollTop();
+
+					if (scroll > 100) {
+						$('.bx--navbar').removeClass('transparent');
+						$('.bx--navbar--submenu').removeClass('transparent');
+					} else {
+						$('.bx--navbar').addClass('transparent');
+						$('.bx--navbar--submenu').addClass('transparent');
+					}
+
+		  });
 
 	}
+
+
+
+  // // scroll animation navbar - Opacity on hero elements
+	//
+	// if ( $('.hero').length ) {
+	//
+	// 	var image = $('.hero-image');
+	// 	var bgimage = $('.hero__bg-image');
+	// 	var subheading = $('.hero-subheading');
+	// 	var heading = $('.hero-heading');
+	// 	var paragraph = $('.hero-paragraph');
+	//
+	// 	$(window).on('scroll', function() {
+	//
+	// 		var scroll = $(this).scrollTop();
+	// 		var heroBottom = $('.hero').offset().top + $('.hero').height();
+	// 		var opacity = 1 - scroll/heroBottom;
+	//
+	// 		if (scroll < heroBottom) {
+	// 			image.css({
+	// 				'opacity': opacity
+	// 			});
+	// 			bgimage.css({
+	// 				'opacity': opacity
+	// 			});
+	// 			subheading.css({
+	// 				'opacity': opacity
+	// 			});
+	// 			heading.css({
+	// 				'opacity': opacity
+	// 			});
+	// 			paragraph.css({
+	// 				'opacity': opacity
+	// 			});
+	// 		} else {
+	// 			return false;
+	// 		}
+	// 	});
+	//
+	// }
+
+
 
   // Turning circle
 
@@ -397,6 +426,31 @@ function calculateReadTime() {
 }
 
 calculateReadTime();
+
+function animateContactForm() {
+
+	$(window).scroll(function(){
+
+		var wind =  $(window);
+		var form = $('.contact-form');
+		var distance = form.offset().top - form.height() + 256;
+		console.log(distance);
+
+		if ( wind.scrollTop() >= distance) {
+				$('.contact-form').addClass('animate');
+		}
+
+		if ( wind.scrollTop() < distance) {
+				$('.contact-form').removeClass('animate');
+		}
+
+	});
+
+}
+
+if ( $('.contact-form').length ) {
+	animateContactForm();
+}
 
 
 

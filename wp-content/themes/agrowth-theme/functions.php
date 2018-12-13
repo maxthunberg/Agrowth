@@ -44,8 +44,8 @@ add_action('wp_enqueue_scripts', function () {
 		wp_register_script('script', get_template_directory_uri() . '/js/script.min.js', '','1.1.18', true);
 		wp_enqueue_script('script');
 
-    // wp_register_script('main', get_template_directory_uri() . '/js/main.js', '','', true);
-    // wp_enqueue_script('main');
+    wp_register_script('main', get_template_directory_uri() . '/js/main.js', '','', true);
+    wp_enqueue_script('main');
 
 });
 

@@ -1,0 +1,43 @@
+<?php if( have_rows('section_client_logos') ):
+
+	while( have_rows('section_client_logos') ): the_row();
+
+		// vars
+    $subheading = get_sub_field('subheading');
+    $heading = get_sub_field('heading');
+
+		?>
+
+    <div class="bx--grid client-logos section-6rem">
+      <div class="bx--row">
+
+          <?php
+          if( have_rows('client_logos') ):
+								$i = 0;
+					?>
+
+          <div class="bx--col-lg-12 bx--col-sm-12 client-logos--container">
+
+          	<?php while( have_rows('client_logos') ): the_row();
+
+          		// vars
+          		$logo = get_sub_field('logo');
+
+          		?>
+          		  <div class="client__img-container">
+                    <img class="client__logo" src="<?= $logo ?>" />
+                </div>
+
+          	<?php endwhile; ?>
+
+          </div>
+
+          <?php endif; ?>
+
+
+      </div>
+    </div>
+
+  <?php endwhile; ?>
+
+<?php endif; ?>

@@ -1,6 +1,6 @@
 
 .bx--breadcrumb {
-    @include typescale('p-sm');
+    @include typescale('p-xs');
     @include body-text;
     display: none;
     padding: $spacing-md;
@@ -12,7 +12,7 @@
   }
 
   .bx--breadcrumb.post {
-    @include typescale('p-sm');
+    @include typescale('p-xs');
     @include body-text;
     display: none;
     padding: $spacing-md;
@@ -25,7 +25,7 @@
   }
 
   .bx--breadcrumb.page--about-us {
-    @include typescale('p-sm');
+    @include typescale('p-xs');
     @include body-text;
     display: none;
     padding: $spacing-sm;
@@ -71,13 +71,13 @@
 
   .bx--breadcrumb .bx--link {
     white-space: nowrap;
-    transition: $transition--base;
+    transition: $transition--enter__fast;
 
     &:hover,
     &:focus {
       outline: none;
       color: $color-primary;
-      transition: $transition--base;
+      transition: $transition--enter__fast;
     }
 
     // Applies to Firefox only

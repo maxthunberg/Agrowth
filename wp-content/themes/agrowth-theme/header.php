@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -32,11 +31,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <meta charset="<?php bloginfo('charset'); ?>">
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <link id="favicon" rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|PT+Serif" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
 </head>
 <?php global $page_for_posts; ?>
@@ -54,5 +51,6 @@
       <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=531689&fmt=gif" />
     </noscript>
     <!-- Linkedin Tracking code -->
+
 
   <?php include( get_template_directory() . '/phtml/sections/navbar/navbar.phtml');?>

@@ -10,39 +10,39 @@
 @import '../loading/loading';
 
 @include exports('file-uploader') {
-  .ag--file {
+  .bx--file {
     // width: 100%;
     width: 50%;
   }
-  .ag--file:nth-child(1) {
+  .bx--file:nth-child(1) {
     // width: 100%;
     padding-right: 1rem;
     width: 50%;
   }
-  .ag--file-split {
+  .bx--file-split {
     @include customflex(0,0,0,0);
   }
 
-  .ag--file-input {
+  .bx--file-input {
     @include hidden;
   }
 
-  .ag--file-btn {
+  .bx--file-btn {
     background-color: transparent;
     border: 1px solid $color-secondary-dark;
     color: $color-secondary-dark;
     display: inline-flex;
     margin: 0;
-    transition: $transition--default;
+    transition: $duration--fast__enter;
     &:hover {
       background-color: $color-secondary-dark;
       border: 1px solid $color-secondary-dark;
       color: $color-white;
-      transition: $transition--default;
+      transition: $duration--fast__enter;
     }
   }
 
-  .ag--label-description {
+  .bx--label-description {
     @include reset;
     @include typescale('p-sm');
     @include line-height('p-sm');
@@ -50,12 +50,12 @@
     margin-bottom: $spacing-lg;
   }
 
-  .ag--file-container {
+  .bx--file-container {
     display: block;
     width: 100%;
     margin-top: $spacing-lg;
   }
-  .ag--file__selected-file {
+  .bx--file__selected-file {
     // @include text-overflow(300px);
     width: 100%;
     display: flex;
@@ -71,22 +71,22 @@
     }
   }
 
-  .ag--file__selected-file:nth-child(1) {
+  .bx--file__selected-file:nth-child(1) {
     background-color: rgba($color-secondary-dark, .1);
   }
-  .ag--file__selected-file:nth-child(2) {
+  .bx--file__selected-file:nth-child(2) {
       opacity: 1;
   }
-  .ag--file__selected-file:nth-child(3) {
+  .bx--file__selected-file:nth-child(3) {
       opacity: .2;
   }
-  .ag--file__selected-file:nth-child(n+4){
+  .bx--file__selected-file:nth-child(n+4){
       display: none;
   }
 
 
 
-  .ag--file-filename {
+  .bx--file-filename {
     @include typescale('p-sm');
     @include text-overflow(100%);
     display: inline-flex;
@@ -96,23 +96,23 @@
     height: 1.875rem;
   }
 
-  .ag--file__state-container {
+  .bx--file__state-container {
     display: flex;
     align-items: center;
 
-    .ag--loading {
+    .bx--loading {
       width: 1.125rem;
       height: 1.125rem;
       margin-right: $spacing-xs;
     }
 
-    .ag--loading__svg {
+    .bx--loading__svg {
       stroke: $color-white-20;
     }
   }
 
-  .ag--file__state-container .ag--file-close,
-  .ag--file__state-container .ag--file-complete {
+  .bx--file__state-container .bx--file-close,
+  .bx--file__state-container .bx--file-complete {
     width: 1rem;
     height: 1rem;
     fill: $text-01;
@@ -123,11 +123,11 @@
     }
   }
 
-  .ag--file__state-container .ag--file-close {
+  .bx--file__state-container .bx--file-close {
     fill: $color-white-20;
   }
 
-  .ag--file__state-container .ag--file-complete {
+  .bx--file__state-container .bx--file-complete {
     fill: $support-success;
   }
 }

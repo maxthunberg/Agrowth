@@ -1,18 +1,7 @@
-//-----------------------------
-// List
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/import-once';
-
-@include exports('lists') {
-  .ag--list--nested,
-  .ag--list--unordered,
-  .ag--list--ordered {
+  .bx--list--nested,
+  .bx--list--unordered,
+  .bx--list--ordered {
     @include reset;
     @include body-text;
     @include typescale('p-sm');
@@ -21,35 +10,34 @@
     line-height: 1.5;
   }
 
-  .ag--list--unordered,
-  .ag--list--ordered {
+  .bx--list--unordered,
+  .bx--list--ordered {
     padding: $spacing-md;
   }
 
-  .ag--list__item {
+  .bx--list__item {
     font-weight: 600;
     padding-left: $spacing-2xs;
   }
 
-  .ag--list--unordered > .ag--list__item {
+  .bx--list--unordered > .bx--list__item {
     list-style-type: disc;
   }
 
-  .ag--list--ordered > .ag--list__item {
+  .bx--list--ordered > .bx--list__item {
     list-style-type: decimal;
   }
 
-  .ag--list--nested {
+  .bx--list--nested {
     margin-left: $spacing-xs;
   }
 
-  .ag--list--nested > .ag--list__item {
+  .bx--list--nested > .bx--list__item {
     list-style-type: none;
     font-weight: 400;
   }
 
-  .ag--list--nested > .ag--list__item:before {
+  .bx--list--nested > .bx--list__item:before {
     content: '-';
     padding-right: $spacing-2xs;
   }
-}

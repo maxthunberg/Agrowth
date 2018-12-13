@@ -1,9 +1,9 @@
 .cta-section.primary {
-  @include linear-gradient($color-primary, $color-primary-light)
+  @include linear-gradient($color-primary-dark, $color-primary)
 }
 
 .cta-section.secondary {
-  @include linear-gradient($color-secondary-dark, $color-secondary)
+  @include linear-gradient($color-secondary, $color-secondary-light)
 }
 
 .cta-section.dark {
@@ -12,7 +12,7 @@
 
 
 .cta-section {
-  @include linear-gradient($color-primary, $color-primary-light)
+  @include linear-gradient($color-primary-dark, $color-primary)
   padding: 2rem 0;
   border-bottom: 1px solid $color-white-10;
 

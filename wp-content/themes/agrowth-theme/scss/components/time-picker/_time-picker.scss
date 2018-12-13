@@ -1,29 +1,18 @@
-//-----------------------------
-// Time Picker
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/import-once';
-
-@include exports('time-picker') {
-  .ag--time-picker {
+  .bx--time-picker {
     display: flex;
     align-items: flex-start;
   }
 
-  .ag--time-picker .ag--select-input {
+  .bx--time-picker .bx--select-input {
     padding-right: $spacing-xl;
   }
 
-  .ag--time-picker .ag--select__arrow {
+  .bx--time-picker .bx--select__arrow {
     right: 0.875rem;
   }
 
-  .ag--time-picker__input-field {
+  .bx--time-picker__input-field {
     @include reset;
     @include body-text;
     @include typescale('p-sm');
@@ -45,4 +34,3 @@
       cursor: not-allowed;
     }
   }
-}

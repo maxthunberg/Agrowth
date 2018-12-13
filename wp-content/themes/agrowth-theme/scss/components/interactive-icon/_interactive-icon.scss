@@ -11,7 +11,7 @@
     width: 12rem;
     margin: 0 1rem;
     border-radius: 50%;
-    transition: $transition--default;
+    transition: $transition--enter__fast;
     overflow: hidden;
     img {
       height: 100%;
@@ -32,7 +32,7 @@
     transform: translateY(-.5rem);
     text-align: center;
     opacity: 0;
-    transition: $transition--default;
+    transition: $transition--enter__fast;
     text-align: center;
     .interactive-icon__paragraph {
       text-align: center;
@@ -44,7 +44,7 @@
       transform: translateY(0);
       text-align: center;
       opacity: 1;
-      transition: $transition--default;
+      transition: $transition--enter__fast;
     }
   }
 
@@ -64,7 +64,7 @@
     .interactive-icon .interactive-icon--text-container {
       transform: translateY(0);
       opacity: 1;
-      transition: $transition--default;
+      transition: $transition--enter__fast;
       }
 
   }

@@ -1,7 +1,7 @@
 @import '../checkbox/checkbox';
 @import '../../components/overflow-menu/overflow-menu';
 
-@include exports('data-table') {
+
   .bx--responsive-table-container {
     @include reset;
     @include body-text;
@@ -168,7 +168,7 @@
   .bx--table-expand__svg {
     fill: $color-white-20;
     transform: rotate(0deg);
-    transition: transform 200ms $bx--standard-easing;
+    transition: transform 200ms $easing--enter;
     width: 12px;
     height: 12px;
     margin-left: rem(7px);
@@ -181,7 +181,7 @@
 
   .bx--table-expand[data-previous-value='collapsed'] .bx--table-expand__svg {
     transform: rotate(90deg);
-    transition: transform 200ms $bx--standard-easing;
+    transition: transform 200ms $easing--enter;
   }
 
   [data-event='sort'] {
@@ -193,12 +193,12 @@
     width: 8px;
     height: 8px;
     transform: rotate(0deg);
-    transition: transform 200ms $bx--standard-easing;
+    transition: transform 200ms $easing--enter;
   }
 
   .bx--table-sort--ascending .bx--table-sort__svg {
     transform: rotate(180deg);
-    transition: transform 200ms $bx--standard-easing;
+    transition: transform 200ms $easing--enter;
   }
 
   .bx--table-select {
@@ -230,4 +230,3 @@
       padding: 0;
     }
   }
-}

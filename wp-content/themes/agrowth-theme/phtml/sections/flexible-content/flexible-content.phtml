@@ -329,11 +329,11 @@ if( have_rows('flexible_content') ):?>
 
                 <?php if ($contactform == '1'): ?>
 
-                  <?php include( get_template_directory() . '/phtml/sections/contact-form/contact-form.phtml'); ?>
+                  <?php // include( get_template_directory() . '/phtml/sections/contact-form/contact-form.phtml'); ?>
 
                 <?php else: ?>
 
-                  <?php include( get_template_directory() . '/phtml/sections/contact-form/contact-form--whitepaper.phtml'); ?>
+                  <?php // include( get_template_directory() . '/phtml/sections/contact-form/contact-form--whitepaper.phtml'); ?>
 
                 <?php endif; ?>
 
@@ -345,6 +345,7 @@ if( have_rows('flexible_content') ):?>
             </div>
       </div>
 </div>
+<?php include( get_template_directory() . '/phtml/sections/contact-form/contact-form--whitepaper.phtml'); ?>
 
 <?php
 

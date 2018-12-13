@@ -1,4 +1,6 @@
-$font-family-poppins: 'Poppins', Helvetica, Arial, sans-serif !default;
+$font-family-heading: 'Poppins', Helvetica, Arial, sans-serif !default;
+$font-family-body: 'Poppins', Helvetica, Arial, sans-serif !default;
+
 
 $base-font-size: 16px!default;
 
@@ -15,16 +17,16 @@ $typescale-map: (
   's-four' : .75rem,      's-four-mobile' : .5rem,
 
   'p' : 1.125rem,         'p-mobile' : 1.125rem,
-  'p-sm' : 1rem,          'p-sm-mobile' : 1rem,
-  'p-micro' : 0.875rem,   'p-micro-mobile' : 0.875rem
+  'p-sm' : 1rem,      'p-sm-mobile' : 1rem,
+  'p-xs' : 0.75rem,   'p-xs-mobile' : 0.75rem
   );
 
 $margin-map: (
-  'one' : 0 0 1.5rem 0,         'one-mobile' : 0 0 1.25rem 0,
-  'two' : 0 0 1rem 0,           'two-mobile' : 0 0 .75rem 0,
+  'one' : 0 0 2rem 0,         'one-mobile' : 0 0 1.5rem 0,
+  'two' : 0 0 1.5rem 0,           'two-mobile' : 0 0 1rem 0,
   'three' : 0 0 1rem 0,         'three-mobile' : 0 0 .75rem 0,
-  'four' : 0 0 .75rem 0,        'four-mobile' : 0 0 .5rem 0,
-  'five' : 0 0 .75rem 0,        'five-mobile' : 0 0 .5rem 0,
+  'four' : 0 0 .5rem 0,        'four-mobile' : 0 0 .5rem 0,
+  'five' : 0 0 .25rem 0,        'five-mobile' : 0 0 .25rem 0,
 
   's-one' : 0 0 .125rem 0,      's-one-mobile' : 0 0 .125rem 0,
   's-two' : 0 0 .125rem 0,      's-two-mobile' : 0 0 .125rem 0,
@@ -33,7 +35,7 @@ $margin-map: (
 
   'p' : .0 0 .5rem 0,           'p-mobile' : 0 0 .5rem 0,
   'p-sm' : 0 0 .5rem 0,         'p-sm-mobile' : 0 0 .5rem 0,
-  'p-micro' : 0 0 .25rem 0,     'p-micro-mobile' : 0 0 .25rem 0,
+  'p-xs' : 0 0 .25rem 0,     'p-xs-mobile' : 0 0 .25rem 0,
 );
 
 $line-height-map: (
@@ -50,7 +52,7 @@ $line-height-map: (
 
   'p' : 1.5,             'p-mobile' : 1.5,
   'p-sm' : 1.5,          'p-sm-mobile' : 1.5,
-  'p-micro' : 1.5,       'p-micro-mobile' : 1.5,
+  'p-xs' : 1.5,       'p-xs-mobile' : 1.5,
 );
 
 $font-weight-map: (
@@ -67,7 +69,7 @@ $font-weight-map: (
 
   'p' : 300,              'p-mobile' : 300,
   'p-sm' : 300,           'p-sm-mobile' : 300,
-  'p-micro' : 400,        'p-micro-mobile' : 400,
+  'p-xs' : 400,        'p-xs-mobile' : 400,
 );
 
 $letterspacing-map: (
@@ -126,10 +128,10 @@ $letterspacing-map: (
 }
 
 @mixin heading-text {
-  font-family: $font-family-poppins;
+  font-family: $font-family-heading;
 }
 @mixin body-text {
-  font-family: $font-family-poppins;
+  font-family: $font-family-body;
 }
 
 
@@ -177,6 +179,10 @@ input,textarea {
       text-align: right;
     }
 
+    &.no-margin {
+      margin-bottom: 0;
+    }
+
     // Modifiers - Colors
     &.light {
       color: $color-white;
@@ -217,9 +223,13 @@ input,textarea {
       text-align: right;
     }
 
+    &.no-margin {
+      margin-bottom: 0;
+    }
+
     // Modifiers - Colors
     &.light {
-      color: $color-white;
+      color: rgba($color-white,.8);
       strong {
         color: $color-white;
         font-weight: 700;
@@ -235,7 +245,7 @@ input,textarea {
 
   .paragraph,
   .paragraph-sm,
-  .paragraph-micro, p {
+  .paragraph-xs, p {
     @include body-text;
     text-align: left;
     width: 100%;
@@ -252,6 +262,10 @@ input,textarea {
 
     &.right {
       text-align: right;
+    }
+
+    &.no-margin {
+      margin-bottom: 0;
     }
 
     // Modifiers - Colors
@@ -367,11 +381,11 @@ input,textarea {
     @include margin('p-sm');
   }
 
-  .paragraph-micro {
-    @include typescale('p-micro');
-    @include line-height('p-micro');
-    @include font-weight('p-micro');
-    @include margin('p-micro');
+  .paragraph-xs {
+    @include typescale('p-xs');
+    @include line-height('p-xs');
+    @include font-weight('p-xs');
+    @include margin('p-xs');
   }
 
 
@@ -468,11 +482,11 @@ input,textarea {
       @include margin('p-sm-mobile');
     }
 
-    .paragraph-micro {
-      @include typescale('p-micro-mobile');
-      @include line-height('p-micro-mobile');
-      @include font-weight('p-micro-mobile');
-      @include margin('p-micro-mobile');
+    .paragraph-xs {
+      @include typescale('p-xs-mobile');
+      @include line-height('p-xs-mobile');
+      @include font-weight('p-xs-mobile');
+      @include margin('p-xs-mobile');
     }
 
 

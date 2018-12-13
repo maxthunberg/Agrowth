@@ -1,29 +1,15 @@
-//-----------------------------
-// Search
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/helper-mixins';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/layout';
-@import '../../globals/scss/import-once';
-
-@include exports('search') {
-  .ag--search {
+  .bx--search {
     display: flex;
     position: relative;
     width: 100%;
   }
 
-  .ag--search .ag--label {
+  .bx--search .bx--label {
     @include hidden;
   }
 
-  .ag--search-input {
+  .bx--search-input {
     @include reset;
     @include body-text;
     appearance: none;
@@ -49,53 +35,53 @@
     }
   }
 
-  .ag--search--sm .ag--search-input {
+  .bx--search--sm .bx--search-input {
     @include typescale('p-sm');
     height: rem(32px);
   }
 
-  .ag--search--lg .ag--search-input {
+  .bx--search--lg .bx--search-input {
     @include typescale('p-sm');
     height: rem(40px);
   }
 
-  .ag--search-magnifier,
-  .ag--search-close {
+  .bx--search-magnifier,
+  .bx--search-close {
     position: absolute;
     height: 1rem;
     width: 1rem;
     top: calc(50% - 0.5rem);
   }
 
-  .ag--search-magnifier {
+  .bx--search-magnifier {
     left: 0.75rem;
     fill: $color-white-20;
   }
 
-  .ag--search-close {
-    transition: $transition--base;
+  .bx--search-close {
+    transition: $transition--enter__fast;
     fill: $color-white-20;
     cursor: pointer;
     visibility: visible;
     opacity: 1;
   }
 
-  .ag--search--sm .ag--search-close {
+  .bx--search--sm .bx--search-close {
     right: 0.75rem;
   }
 
-  .ag--search--lg .ag--search-close {
+  .bx--search--lg .bx--search-close {
     right: rem(100px);
   }
 
-  .ag--search--lg .ag--search-close:last-child {
+  .bx--search--lg .bx--search-close:last-child {
     right: rem(12px);
   }
 
-  .ag--search-button {
+  .bx--search-button {
     @include reset;
     border: 0;
-    transition: $transition--base;
+    transition: $transition--enter__fast;
     height: rem(40px);
     width: rem(40px);
     min-width: rem(40px);
@@ -105,35 +91,34 @@
     padding: 0;
   }
 
-  .ag--search-button svg {
+  .bx--search-button svg {
     position: relative;
     top: -1px;
     box-sizing: border-box;
     vertical-align: middle;
-    transition: $transition--base;
+    transition: $transition--enter__fast;
     fill: $color-primary;
     height: 1rem;
     width: 1rem;
   }
 
-  .ag--search-button:hover,
-  .ag--search-button:focus {
+  .bx--search-button:hover,
+  .bx--search-button:focus {
     cursor: pointer;
     background-color: $color-primary;
     outline: 1px solid transparent;
   }
 
-  .ag--search-button:hover svg,
-  .ag--search-button:focus svg {
+  .bx--search-button:hover svg,
+  .bx--search-button:focus svg {
     fill: $color-white;
   }
 
-  .ag--search-close--hidden {
+  .bx--search-close--hidden {
     visibility: hidden;
     opacity: 0;
   }
 
-  .ag--search-view--hidden {
+  .bx--search-view--hidden {
     display: none;
   }
-}

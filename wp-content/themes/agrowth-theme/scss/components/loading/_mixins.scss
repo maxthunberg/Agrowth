@@ -1,8 +1,3 @@
-//-------------------------
-// Animations - Loading
-//-------------------------
-@import '../../globals/scss/vars';
-
 @mixin animation__loading--spin {
   // Animate the container
   animation-name: rotate;
@@ -15,19 +10,19 @@
   & svg circle {
     animation-name: init-stroke;
     animation-duration: 1000ms;
-    animation-timing-function: $bx--standard-easing;
+    animation-timing-function: $easing--enter;
   }
 }
 
 @mixin animation__loading--stop {
   // Animate the container
-  animation: rotate-end-p1 700ms $bx--ease-in forwards, rotate-end-p2 700ms $bx--ease-in 700ms forwards;
+  animation: rotate-end-p1 700ms $easing--enter forwards, rotate-end-p2 700ms $easing--enter 700ms forwards;
 
   // Animate the stroke
   & svg circle {
     animation-name: stroke-end;
     animation-duration: 700ms;
-    animation-timing-function: $bx--ease-in;
+    animation-timing-function: $easing--enter;
     animation-delay: 700ms;
     animation-fill-mode: forwards;
   }

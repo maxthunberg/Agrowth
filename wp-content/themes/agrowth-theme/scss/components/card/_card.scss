@@ -24,17 +24,17 @@
   transform: translateY(0px);
   z-index: 1;
   overflow: hidden;
-  transition: box-shadow $transition--base $bx--ease-in, transform $transition--base $bx--ease-in;
+  transition: box-shadow $duration--fast__enter $easing--enter, transform $duration--fast__enter $easing--enter;
   &:hover {
-    @include layer('sticky-nav');
+    @include layer('overlay');
     cursor: pointer;
     z-index: 2;
     transform: translateY(-2px);
-    transition: box-shadow $transition--base $bx--standard-easing, transform $transition--base $bx--standard-easing;
+    transition: box-shadow $duration--fast__exit $easing--exit, transform $duration--fast__exit $easing--exit;
   }
 }
 
-.card.interactive {
+.card.no-link {
   height: auto;
 
   &:hover {
@@ -61,6 +61,10 @@
     @include customflex(column, 0, 0, 0);
     .service-heading {
       position: relative;
+      @include customflex(0,0,0,0);
+      .bx--tag {
+        margin: 0 0 .25rem .5rem;
+      }
     }
   }
 }
@@ -116,8 +120,15 @@
 
   &:hover {
     &:before {
-      background: $color-secondary-dark;
+      background: $color-primary-dark;
     }
+  }
+  .card-consultant__img {
+    position: absolute;
+    right: -2rem;
+    bottom: 0;
+    width: 7rem;
+    height: auto;
   }
 }
 
@@ -145,7 +156,7 @@
   }
   &:hover {
     &:before {
-      background: $color-secondary-dark;
+      background: $color-primary-dark;
     }
   }
 }
@@ -201,12 +212,17 @@
       .info-container--part {
         @include customflex(0,0,0,0);
         margin-bottom: 1rem;
+        margin-right: 1.5rem;
         .icon {
           margin-right: .5rem;
         }
         p {
-          margin-right: 1.5rem;
+          margin: 0;
         }
+      }
+      .info-container--part:nth-child(2) {
+        margin-right: 0;
+
       }
 
     }
@@ -229,7 +245,7 @@
       width: 2.5rem;
       height: 2.5rem;
       min-width: 2.5rem;
-      // border: 1px solid $color-white-20;
+      border: 1px solid $color-white-20;
       margin-right: 1rem;
       .card--icon__icon {
         height: 1rem;

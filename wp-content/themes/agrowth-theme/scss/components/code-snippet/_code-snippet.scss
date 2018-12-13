@@ -45,7 +45,7 @@
     fill: $color-secondary-dark;
     height: rem(24px);
     width: rem(18px);
-    transition: $transition--base;
+    transition: $transition--enter__fast;
 
     &:hover {
       fill: $color-secondary;
