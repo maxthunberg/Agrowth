@@ -1,10 +1,10 @@
 
-  .bx--fieldset {
+  .ly--fieldset {
     @include reset;
     margin-bottom: $spacing-xl;
   }
 
-  .bx--form-item {
+  .ly--form-item {
     @include body-text;
     flex: 1;
     margin-right: $spacing-md;
@@ -16,7 +16,7 @@
     }
   }
 
-  .bx--form-item__uploader {
+  .ly--form-item__uploader {
     @include body-text;
     flex: 1;
     margin-right: 0;
@@ -28,7 +28,7 @@
     }
   }
 
-  .bx--label {
+  .ly--label {
     @include reset;
     @include body-text;
     @include typescale('p-sm');
@@ -38,11 +38,11 @@
     margin-bottom: $spacing-xs;
   }
 
-  .bx--label .bx--tooltip__trigger {
+  .ly--label .ly--tooltip__trigger {
     @include typescale('p-sm');
   }
 
-  .bx--label--disabled {
+  .ly--label--disabled {
     opacity: 0.5;
   }
 
@@ -51,12 +51,12 @@
   select[data-invalid] {
     box-shadow: 0 2px 0px 0px $support-error;
 
-    ~ .bx--form-requirement {
+    ~ .ly--form-requirement {
       max-height: rem(200px);
     }
   }
 
-  .bx--form-requirement {
+  .ly--form-requirement {
     @include reset;
     @include typescale('p-sm');
     margin: $spacing-sm 0 0;

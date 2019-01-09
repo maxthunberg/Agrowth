@@ -1,12 +1,12 @@
 
-  .bx--lightbox {
+  .ly--lightbox {
     width: rem(1056px);
     @include layer('pop-out');
   }
-  .bx--lightbox__main {
+  .ly--lightbox__main {
     position: relative;
   }
-  .bx--lightbox__btn {
+  .ly--lightbox__btn {
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -31,15 +31,15 @@
       fill: $color-white-20;
     }
   }
-  .bx--lightbox__item {
+  .ly--lightbox__item {
     display: none;
     width: 100%;
   }
-  .bx--lightbox__item--shown {
+  .ly--lightbox__item--shown {
     display: block;
   }
 
-  .bx--lightbox__footer {
+  .ly--lightbox__footer {
     background: $color-white;
     overflow: hidden;
   }

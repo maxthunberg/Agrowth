@@ -1,15 +1,15 @@
 
-  .bx--search {
+  .ly--search {
     display: flex;
     position: relative;
     width: 100%;
   }
 
-  .bx--search .bx--label {
+  .ly--search .ly--label {
     @include hidden;
   }
 
-  .bx--search-input {
+  .ly--search-input {
     @include reset;
     @include body-text;
     appearance: none;
@@ -35,30 +35,30 @@
     }
   }
 
-  .bx--search--sm .bx--search-input {
+  .ly--search--sm .ly--search-input {
     @include typescale('p-sm');
     height: rem(32px);
   }
 
-  .bx--search--lg .bx--search-input {
+  .ly--search--lg .ly--search-input {
     @include typescale('p-sm');
     height: rem(40px);
   }
 
-  .bx--search-magnifier,
-  .bx--search-close {
+  .ly--search-magnifier,
+  .ly--search-close {
     position: absolute;
     height: 1rem;
     width: 1rem;
     top: calc(50% - 0.5rem);
   }
 
-  .bx--search-magnifier {
+  .ly--search-magnifier {
     left: 0.75rem;
     fill: $color-white-20;
   }
 
-  .bx--search-close {
+  .ly--search-close {
     transition: $transition--enter__fast;
     fill: $color-white-20;
     cursor: pointer;
@@ -66,19 +66,19 @@
     opacity: 1;
   }
 
-  .bx--search--sm .bx--search-close {
+  .ly--search--sm .ly--search-close {
     right: 0.75rem;
   }
 
-  .bx--search--lg .bx--search-close {
+  .ly--search--lg .ly--search-close {
     right: rem(100px);
   }
 
-  .bx--search--lg .bx--search-close:last-child {
+  .ly--search--lg .ly--search-close:last-child {
     right: rem(12px);
   }
 
-  .bx--search-button {
+  .ly--search-button {
     @include reset;
     border: 0;
     transition: $transition--enter__fast;
@@ -91,7 +91,7 @@
     padding: 0;
   }
 
-  .bx--search-button svg {
+  .ly--search-button svg {
     position: relative;
     top: -1px;
     box-sizing: border-box;
@@ -102,23 +102,23 @@
     width: 1rem;
   }
 
-  .bx--search-button:hover,
-  .bx--search-button:focus {
+  .ly--search-button:hover,
+  .ly--search-button:focus {
     cursor: pointer;
     background-color: $color-primary;
     outline: 1px solid transparent;
   }
 
-  .bx--search-button:hover svg,
-  .bx--search-button:focus svg {
+  .ly--search-button:hover svg,
+  .ly--search-button:focus svg {
     fill: $color-white;
   }
 
-  .bx--search-close--hidden {
+  .ly--search-close--hidden {
     visibility: hidden;
     opacity: 0;
   }
 
-  .bx--search-view--hidden {
+  .ly--search-view--hidden {
     display: none;
   }

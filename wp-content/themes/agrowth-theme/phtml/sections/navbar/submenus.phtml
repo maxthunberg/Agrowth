@@ -1,9 +1,9 @@
 
 
 <?php if ( is_front_page() ):?>
-  <div class="bx--navbar--submenu transparent">
+  <div class="ly--navbar--submenu transparent">
 <?php else: ?>
-  <div class="bx--navbar--submenu">
+  <div class="ly--navbar--submenu">
 <?php endif;?>
 
   <div class="snippet"></div>
@@ -12,7 +12,7 @@
   <?php if( have_rows('submenu_services', 'option') ):?>
       <div class="submenu--container submenu-1">
         <div class="submenu--heading-container">
-          <h5 class="bx--type-zeta__subheading">Våra tjänster</h5>
+          <h5 class="heading-five">Våra tjänster</h5>
         </div>
 
         <div class="submenu--card-container">
@@ -24,7 +24,7 @@
           $link = get_sub_field('link', 'option');
           $text = $link['title'];
           $cardlink = $link['url'];
-          $label = get_sub_field('link_animation', 'option');
+          $animate = get_sub_field('pulse_animation', 'option');
 
           if( $link ):?>
 
@@ -38,8 +38,16 @@
                   <?php endif; ?>
 
                 <div class="service-text-container">
-                  <p><?= $text ?></p>
+                  <p class="paragraph-sm no-margin"><?= $text ?></p>
                 </div>
+
+                <?php if ( $animate == 1):?>
+                  <span class="ly--tag ly--tag--digital-tillvaxt">Börja här</span>
+                <?php endif;?>
+
+                <?php if ( $animate == 1):?>
+                  <span class="pulse-lg topleft"></span>
+                <?php endif;?>
 
 
               </div>
@@ -53,7 +61,7 @@
       </div>
       <div class="submenu--footer">
         <p class="paragraph no-margin">Dags att ta första steget på er digitala tillväxtresa,</p>
-        <a href="/tjanster/tillvaxtanalys" class="bx--link">tillväxtanalysen</a>
+        <a href="/tjanster/tillvaxtanalys" class="ly--link">tillväxtanalysen</a>
       </div>
 
     </div>
@@ -64,7 +72,7 @@
   <?php if( have_rows('submenu_consultants', 'option') ):?>
       <div class="submenu--container submenu-2">
         <div class="submenu--heading-container">
-          <h5 class="bx--type-zeta__subheading">Våra konsultroller</h5>
+          <h5 class="heading-five">Våra konsultroller</h5>
         </div>
 
         <div class="submenu--card-container">
@@ -83,7 +91,7 @@
           <a class="card-link" href="<?= $cardlink ?>">
             <div class="card card-consultant__sm">
               <div class="consultants-text-container">
-                <p class="paragraph no-margin consultants-heading"><?= $text ?></p>
+                <p class="paragraph-sm no-margin consultants-heading"><?= $text ?></p>
               </div>
 
             </div>
@@ -96,7 +104,70 @@
 
       <div class="submenu--footer">
         <p class="paragraph no-margin">Dags att ta första steget på er digitala tillväxtresa,</p>
-        <a href="/tjanster/tillvaxtanalys" class="bx--link">tillväxtanalysen</a>
+        <a href="/tjanster/tillvaxtanalys" class="ly--link">tillväxtanalysen</a>
+      </div>
+
+      </div>
+
+    </div>
+
+  <?php endif; ?>
+
+
+  <!-- Navbar menu -->
+  <?php if( have_rows('submenu_resources', 'option') ):?>
+      <div class="submenu--container submenu-3">
+        <div class="submenu--heading-container">
+          <h5 class="heading-five">Våra insikter</h5>
+        </div>
+
+        <div class="submenu--card-container__row">
+
+      <?php while( have_rows('submenu_resources', 'option') ): the_row();
+
+          // vars
+          $img = get_sub_field('image', 'option');
+          $link = get_sub_field('link', 'option');
+          $text = $link['title'];
+          $cardlink = $link['url'];
+          $label = get_sub_field('link_animation', 'option');
+
+          if( $link ):?>
+
+
+
+          <div class="submenu--card-part section-3col">
+            <a class="card__link">
+              <div class="card primary">
+                <p class="heading-five light center">Blogginlägg</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu--card-part section-3col">
+            <a class="card__link">
+              <div class="card secondary">
+                <p class="heading-five light center">Rapporter</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="submenu--card-part section-3col">
+            <a class="card__link">
+              <div class="card white">
+                <p class="heading-five center">Kundcase</p>
+              </div>
+            </a>
+          </div>
+
+
+          <?php endif; ?>
+
+      <?php endwhile; ?>
+
+      <div class="submenu--footer">
+        <p class="paragraph no-margin">Dags att ta första steget på er digitala tillväxtresa,</p>
+        <a href="/tjanster/tillvaxtanalys" class="ly--link">tillväxtanalysen</a>
       </div>
 
       </div>

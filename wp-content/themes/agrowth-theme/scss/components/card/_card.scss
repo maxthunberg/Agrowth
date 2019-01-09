@@ -17,7 +17,6 @@
   @include customflex(0, 0, 0, 0);
   @include layer('raised');
   background: $color-white;
-  // border: 1px solid $color-white-10;
   border-radius: .25rem;
   padding: 2rem;
   height: 100%;
@@ -35,7 +34,7 @@
 }
 
 .card.no-link {
-  height: auto;
+  // height: auto;
 
   &:hover {
     @include layer('raised');
@@ -62,7 +61,7 @@
     .service-heading {
       position: relative;
       @include customflex(0,0,0,0);
-      .bx--tag {
+      .ly--tag {
         margin: 0 0 .25rem .5rem;
       }
     }
@@ -71,6 +70,7 @@
 
 .card-service__sm {
   @include layer('base');
+  @include customflex(0, center, 0, 0);
   background: $color-white;
   // border: 1px solid transparent;
   padding: 1rem 1rem 1rem 1rem;
@@ -86,10 +86,13 @@
   }
   .service-text-container {
     @include customflex(0, center, 0, 0);
-    .service-heading {
-      position: relative;
-    }
   }
+
+  .ly--tag {
+    margin-left: 1rem!important;
+  }
+
+
   &:hover {
     @include layer('raised');
     // border: 1px solid $color-white-10;

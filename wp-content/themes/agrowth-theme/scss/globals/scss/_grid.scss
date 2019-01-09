@@ -26,44 +26,91 @@
 }
 
 $max-width: 1600px;
+$maxwidth-text: 680px;
 $columns: 12;
 
 $grid-breakpoints: (xs: 375px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px);
 $gutter-breakpoints: (xs: 5px, sm: 10px);
 $grid-gutter-breakpoints: (xs: 2rem, sm: 3rem);
 
-.bx--grid {
-    padding-left: 2rem!important;
-    padding-right: 2rem!important;
+// .grid {
+//     padding-left: 2rem!important;
+//     padding-right: 2rem!important;
 
   // margin-left: grid-gutter('xs');
   // margin-right: grid-gutter('xs');
   // padding-left: gutter('xs');
   // padding-right: gutter('xs');
 
-  @media (min-width: breakpoint('md')) {
-    padding-left: 6rem!important;
-    padding-right: 6rem!important;
-    // margin-left: grid-gutter('sm');
-    // margin-right: grid-gutter('sm');
-    // padding-left: gutter('sm');
-    // padding-right: gutter('sm');
-  }
+  // @media (min-width: breakpoint('md')) {
+  //   padding-left: 6rem!important;
+  //   padding-right: 6rem!important;
+  //   // margin-left: grid-gutter('sm');
+  //   // margin-right: grid-gutter('sm');
+  //   // padding-left: gutter('sm');
+  //   // padding-right: gutter('sm');
+  // }
 
-  &.max {
-    max-width: $max-width;
-  }
-}
+  // &.max {
+  //   max-width: $max-width;
+  // }
+// }
 
-.bx--row {
+
+// .row {
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   max-width: 1140px;
+//   width: 100%;
+//   padding-left: 1.25rem;
+//   padding-right: 1.25rem;
+//
+//   @media (min-width: breakpoint('sm')) {
+//     margin: 0;
+//   }
+// }
+
+.grid {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-
-  @media (min-width: breakpoint('sm')) {
-    margin: 0;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    &.flex-start {
+      justify-content: flex-start;
+    }
+    &.column {
+      flex-direction: column;
+    }
   }
 }
+
+.grid-fullwidth {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  .row {
+    max-width: none;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &.flex-start {
+    justify-content: flex-start;
+  }
+}
+
 
 [class*='#{$prefix}--col'] {
   position: relative;
@@ -77,20 +124,20 @@ $grid-gutter-breakpoints: (xs: 2rem, sm: 3rem);
 }
 
 @for $i from 1 through $columns {
-  .bx--col-xs-#{$i} {
+  .ly--col-xs-#{$i} {
     flex-basis: (100% * $i / $columns);
   }
 }
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   @media (min-width: breakpoint($breakpoint)) {
-    .bx--col-#{$breakpoint}-auto {
+    .ly--col-#{$breakpoint}-auto {
       flex: 0 0 auto;
       width: auto;
     }
 
     @for $i from 1 through $columns {
-      .bx--col-#{$breakpoint}-#{$i} {
+      .ly--col-#{$breakpoint}-#{$i} {
         flex-basis: (100% * $i / $columns);
       }
     }
@@ -105,12 +152,19 @@ $gutter-size: 10px;
   max-width: (100% * $col-num / $columns);
 }
 
-.bx--col-xs,
-.bx--col-sm,
-.bx--col-md,
-.bx--col-lg {
+.col-xs,
+.col-sm,
+.col-md,
+.col-lg {
   flex-basis: 0;
   flex: 1;
   flex-grow: 1;
   max-width: 100%;
+}
+.row-content {
+  max-width: $maxwidth-text;
+}
+
+.col-content {
+  max-width: $maxwidth-text;
 }

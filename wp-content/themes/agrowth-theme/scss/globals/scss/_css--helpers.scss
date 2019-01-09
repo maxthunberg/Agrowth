@@ -1,4 +1,4 @@
-.bx--visually-hidden {
+.ly--visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -11,7 +11,7 @@
     white-space: nowrap;
   }
 
-  .bx--body {
+  .ly--body {
     @include reset;
     @include body-text;
     color: $text-01;

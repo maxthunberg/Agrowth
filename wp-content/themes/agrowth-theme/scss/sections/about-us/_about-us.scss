@@ -1,6 +1,6 @@
 .our-offer {
   background-color: $color-white-05;
-  .bx--row {
+  .row {
     @include customflex(0,flex-start,center,0);
     .interactive-icon {
       flex-basis: 33.333%;
@@ -9,7 +9,7 @@
 }
 
 .our-vision {
-  @include linear-gradient($color-primary, $color-primary-light);
+  @include linear-gradient($color-primary-dark, $color-primary);
   color: $color-white;
   .our-vision--col:nth-child(2n+1) {
     padding-right: 2rem;
@@ -27,7 +27,7 @@
 .about-us-form {
   background-color: $color-white-05;
   border-bottom: 1px solid $color-white-10;
-  .bx--row {
+  .row {
     @include customflex(column,center,center,0);
     .about-us-form--col {
       @include customflex(column,center,center,0);
@@ -48,7 +48,7 @@
 
 @media (max-width: breakpoint('md') ) { // 768px
   .our-offer {
-    .bx--row {
+    .row {
       .section-heading {
         text-align: center;
       }
@@ -84,7 +84,7 @@
   }
 
   .about-us-form {
-    .bx--row {
+    .row {
       .about-us-form--col {
         max-width: rem(512px);
         width: 100%;

@@ -1,15 +1,15 @@
-  button.bx--btn {
+  button.ly--btn {
     display: inline-block;
   }
 
   // Reset intrisic padding in Firefox (see #731)
-  button.bx--btn::-moz-focus-inner {
+  button.ly--btn::-moz-focus-inner {
     padding: 0;
     border: 0;
   }
 
   // Vertically center icon inside <button>
-  button.bx--btn .bx--btn__icon {
+  button.ly--btn .ly--btn__icon {
     position: relative;
     vertical-align: middle;
     top: -1px;
@@ -20,11 +20,11 @@
     }
   }
 
-  .bx--btn {
+  .ly--btn {
     @include button-base;
   }
 
-  .bx--btn__primary {
+  .ly--btn__primary {
     @include button-theme(
       $color-primary-dark,
       transparent,
@@ -39,7 +39,7 @@
 
   }
 
-  .bx--btn__secondary {
+  .ly--btn__secondary {
     @include button-theme(
       $color-secondary,
       transparent,
@@ -54,7 +54,7 @@
 
   }
 
-  .bx--btn__white {
+  .ly--btn__white {
     @include button-theme(
       $color-white,
       transparent,
@@ -69,7 +69,7 @@
 
   }
 
-  .secondary > .bx--btn__white {
+  .secondary > .ly--btn__white {
     @include button-theme(
       $color-white,
       transparent,
@@ -85,7 +85,7 @@
 
   }
 
-  .primary > .bx--btn__white {
+  .primary > .ly--btn__white {
     @include button-theme(
       $color-white,
       transparent,
@@ -101,7 +101,7 @@
 
   }
 
-  .bx--btn__dark {
+  .ly--btn__dark {
     @include button-theme(
       $color-dark,
       transparent,
@@ -116,7 +116,7 @@
 
   }
 
-  .primary > .bx--btn__dark {
+  .primary > .ly--btn__dark {
     @include button-theme(
       $color-dark,
       transparent,
@@ -131,7 +131,7 @@
 
   }
 
-  .secondary > .bx--btn__dark {
+  .secondary > .ly--btn__dark {
     @include button-theme(
       $color-dark,
       transparent,
@@ -146,7 +146,7 @@
 
   }
 
-  .bx--btn--outline {
+  .ly--btn--outline {
     @include button-theme(
       transparent,
       $color-primary,
@@ -164,8 +164,8 @@
       color: $color-primary;
     }
 
-    &:hover > .bx--btn__icon,
-    &:focus > .bx--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-white;
     }
 
@@ -175,7 +175,7 @@
     }
   }
 
-  .bx--btn--outline__secondary {
+  .ly--btn--outline__secondary {
     @include button-theme(
       transparent,
       $color-secondary-dark,
@@ -193,8 +193,8 @@
       color: $color-secondary-dark;
     }
 
-    &:hover > .bx--btn__icon,
-    &:focus > .bx--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-white;
     }
 
@@ -204,7 +204,7 @@
     }
   }
 
-  .bx--btn--outline__white {
+  .ly--btn--outline__white {
     @include button-theme(
       transparent,
       $color-white,
@@ -222,8 +222,8 @@
       color: $color-white;
     }
 
-    &:hover > .bx--btn__icon,
-    &:focus > .bx--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-dark;
     }
 
@@ -233,7 +233,7 @@
     }
   }
 
-  .primary .bx--btn--outline__white {
+  .primary .ly--btn--outline__white {
     @include button-theme(
       transparent,
       $color-white,
@@ -251,8 +251,8 @@
       color: $color-white;
     }
 
-    &:hover > .bx--btn__icon,
-    &:focus > .bx--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-primary;
     }
 
@@ -262,7 +262,7 @@
     }
   }
 
-  .secondary .bx--btn--outline__white {
+  .secondary .ly--btn--outline__white {
     @include button-theme(
       transparent,
       $color-white,
@@ -280,8 +280,8 @@
       color: $color-white;
     }
 
-    &:hover > .bx--btn__icon,
-    &:focus > .bx--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-secondary-dark;
     }
 
@@ -292,7 +292,7 @@
   }
 
 
-  .bx--btn--outline__dark {
+  .ly--btn--outline__dark {
     @include button-theme(
       transparent,
       $color-dark,
@@ -310,8 +310,8 @@
       color: $color-dark;
     }
 
-    &:hover > .bx--btn__icon,
-    &:focus > .bx--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-white;
     }
 
@@ -321,7 +321,7 @@
     }
   }
 
-  .primary .bx--btn--outline__dark {
+  .primary .ly--btn--outline__dark {
     @include button-theme(
       transparent,
       $color-dark,
@@ -339,8 +339,8 @@
       color: $color-dark;
     }
 
-    &:hover > .bx--btn__icon,
-    &:focus > .bx--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-primary;
     }
 
@@ -350,7 +350,7 @@
     }
   }
 
-  .secondary .bx--btn--outline__dark {
+  .secondary .ly--btn--outline__dark {
     @include button-theme(
       transparent,
       $color-dark,
@@ -368,8 +368,8 @@
       color: $color-dark;
     }
 
-    &:hover > .bx--btn__icon,
-    &:focus > .bx--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-secondary-dark;
     }
 
@@ -380,7 +380,7 @@
   }
 
 
-  .bx--btn--ghost {
+  .ly--btn--ghost {
     @include button-theme(
       transparent,
       transparent,
@@ -393,12 +393,12 @@
     &:focus {
       color: $color-white;
 
-      .bx--btn__icon {
+      .ly--btn__icon {
         fill: $color-white;
       }
     }
 
-    .bx--btn__icon {
+    .ly--btn__icon {
       margin-left: $spacing-xs;
     }
 
@@ -406,26 +406,26 @@
     &:focus:disabled {
       color: $color-primary;
 
-      .bx--btn__icon {
+      .ly--btn__icon {
         fill: $color-primary;
       }
     }
   }
 
 
-  .bx--btn--sm {
+  .ly--btn--sm {
     height: 2rem;
     padding: $button-padding-sm;
     letter-spacing: 0;
   }
 
-  .bx--btn--lg {
+  .ly--btn--lg {
     height: rem(44px);
     padding: $button-padding-lg;
     letter-spacing: 0;
   }
 
-  .bx--btn--secondary + .bx--btn--primary,
-  .bx--btn--tertiary + .bx--btn--danger--primary {
+  .ly--btn--secondary + .ly--btn--primary,
+  .ly--btn--tertiary + .ly--btn--danger--primary {
     margin-left: $spacing-md;
   }

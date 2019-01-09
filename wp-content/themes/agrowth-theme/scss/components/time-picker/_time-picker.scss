@@ -1,18 +1,18 @@
 
-  .bx--time-picker {
+  .ly--time-picker {
     display: flex;
     align-items: flex-start;
   }
 
-  .bx--time-picker .bx--select-input {
+  .ly--time-picker .ly--select-input {
     padding-right: $spacing-xl;
   }
 
-  .bx--time-picker .bx--select__arrow {
+  .ly--time-picker .ly--select__arrow {
     right: 0.875rem;
   }
 
-  .bx--time-picker__input-field {
+  .ly--time-picker__input-field {
     @include reset;
     @include body-text;
     @include typescale('p-sm');

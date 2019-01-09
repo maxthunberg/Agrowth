@@ -2,7 +2,7 @@
 @import '../../components/overflow-menu/overflow-menu';
 
 
-  .bx--responsive-table-container {
+  .ly--responsive-table-container {
     @include reset;
     @include body-text;
     overflow-x: auto;
@@ -10,7 +10,7 @@
     width: 99.9%;
   }
 
-  .bx--responsive-table {
+  .ly--responsive-table {
     @include reset;
     background-color: $color-white;
     width: 100%;
@@ -71,7 +71,7 @@
     }
   }
 
-  .bx--responsive-table--tall {
+  .ly--responsive-table--tall {
     td,
     th {
       padding-top: rem(10px);
@@ -79,18 +79,18 @@
     }
   }
 
-  .bx--table-row {
+  .ly--table-row {
     @include reset;
     height: $data-table-row-height;
     padding-left: 1rem;
   }
 
-  .bx--table-head .bx--table-row {
+  .ly--table-head .ly--table-row {
     border-bottom: $data-table-heading-border-bottom;
     height: rem(32px);
   }
 
-  .bx--table-header {
+  .ly--table-header {
     @include reset;
     @include typescale('p-sm');
     font-weight: 600;
@@ -101,26 +101,26 @@
   }
 
   // zebra stripes
-  .bx--table-body {
-    > .bx--parent-row,
-    > .bx--parent-row {
+  .ly--table-body {
+    > .ly--parent-row,
+    > .ly--parent-row {
       background-color: $color-white;
 
-      & + .bx--expandable-row {
+      & + .ly--expandable-row {
         background-color: $color-white;
       }
 
       &--even {
         background-color: $color-white-05;
 
-        & + .bx--expandable-row {
+        & + .ly--expandable-row {
           background-color: $color-white-05;
         }
       }
     }
   }
 
-  .bx--table-body .bx--table-row {
+  .ly--table-body .ly--table-row {
     border: 1px solid transparent;
 
     &:first-child:hover,
@@ -137,7 +137,7 @@
   }
 
   // expandable styles
-  .bx--expandable-row {
+  .ly--expandable-row {
     > td {
       border-left: 4px solid $color-primary;
       padding: 2rem;
@@ -149,7 +149,7 @@
   }
 
   // actions
-  .bx--table-expand {
+  .ly--table-expand {
     padding-left: rem(8px);
     padding-right: rem(12px);
     text-align: center;
@@ -165,7 +165,7 @@
     }
   }
 
-  .bx--table-expand__svg {
+  .ly--table-expand__svg {
     fill: $color-white-20;
     transform: rotate(0deg);
     transition: transform 200ms $easing--enter;
@@ -179,7 +179,7 @@
     }
   }
 
-  .bx--table-expand[data-previous-value='collapsed'] .bx--table-expand__svg {
+  .ly--table-expand[data-previous-value='collapsed'] .ly--table-expand__svg {
     transform: rotate(90deg);
     transition: transform 200ms $easing--enter;
   }
@@ -188,7 +188,7 @@
     cursor: pointer;
   }
 
-  .bx--table-sort__svg {
+  .ly--table-sort__svg {
     fill: $color-white-20;
     width: 8px;
     height: 8px;
@@ -196,19 +196,19 @@
     transition: transform 200ms $easing--enter;
   }
 
-  .bx--table-sort--ascending .bx--table-sort__svg {
+  .ly--table-sort--ascending .ly--table-sort__svg {
     transform: rotate(180deg);
     transition: transform 200ms $easing--enter;
   }
 
-  .bx--table-select {
+  .ly--table-select {
     @include reset;
     width: rem(30px);
     text-align: center;
     padding-left: 0;
     padding-right: 0;
 
-    .bx--checkbox-label {
+    .ly--checkbox-label {
       display: inline-flex;
       margin: 0;
 
@@ -217,16 +217,16 @@
       }
     }
 
-    .bx--checkbox-appearance {
+    .ly--checkbox-appearance {
       margin: 0;
     }
   }
 
-  .bx--table-overflow {
+  .ly--table-overflow {
     width: rem(40px);
     text-align: center;
 
-    .bx--overflow-menu {
+    .ly--overflow-menu {
       padding: 0;
     }
   }

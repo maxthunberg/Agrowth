@@ -10,8 +10,8 @@ getPostViews(get_the_ID());
 <!-- Content Switcher Tool -->
 <?php  include( get_template_directory() . '/phtml/sections/resources/content-switcher.phtml');?>
 
-<!-- <div class="bx--grid post-feed section-4rem">
-    <div class="bx--row append">
+<!-- <div class="grid post-feed section-4rem">
+    <div class="row append">
 
     </div>
 </div> -->
@@ -27,8 +27,8 @@ getPostViews(get_the_ID());
 
                     $query = new WP_Query( $args );
                     ?>
-                    <div class="bx--grid post-feed section-4rem">
-                      <div class="bx--row">
+                    <div class="grid post-feed section-4rem">
+                      <div class="row">
                     <?php while ( $query->have_posts() ) : $query->the_post();?>
                         <div class="section-3col">
                             <?php include( get_template_directory() . '/phtml/sections/cards/card-post.phtml');?>

@@ -1,38 +1,38 @@
 @import 'mixins';
 
-  .bx--snippet--code {
-    @include bx--snippet;
+  .ly--snippet--code {
+    @include ly--snippet;
     background-color: $color-dark;
     padding: $spacing-md $spacing-2xl $spacing-md $spacing-md;
   }
 
-  .bx--snippet code {
+  .ly--snippet code {
     @include typescale('p');
     letter-spacing: 1px;
     line-height: 1.5;
     color: $color-white;
   }
 
-  .bx--snippet--code .bx--snippet-container {
+  .ly--snippet--code .ly--snippet-container {
     max-height: rem(192px);
     overflow-y: scroll;
     margin-right: $spacing-md;
     position: relative;
   }
 
-  .bx--snippet--code .bx--snippet-container pre {
+  .ly--snippet--code .ly--snippet-container pre {
     white-space: pre-wrap;
   }
 
-  .bx--snippet--terminal {
-    @include bx--snippet;
+  .ly--snippet--terminal {
+    @include ly--snippet;
     background-color: $text-01;
     color: $color-white;
     height: 3.5rem;
     padding: 0 $spacing-2xl 0 $spacing-md;
   }
 
-  .bx--snippet--terminal .bx--snippet-container {
+  .ly--snippet--terminal .ly--snippet-container {
     display: flex;
     align-items: center;
     height: 130%;
@@ -41,7 +41,7 @@
     position: relative;
   }
 
-  .bx--snippet__icon {
+  .ly--snippet__icon {
     fill: $color-secondary-dark;
     height: rem(24px);
     width: rem(18px);
@@ -52,7 +52,7 @@
     }
   }
 
-  .bx--snippet--terminal .bx--snippet__icon {
+  .ly--snippet--terminal .ly--snippet__icon {
     fill: $color-white;
 
     &:hover {
@@ -60,7 +60,7 @@
     }
   }
 
-  .bx--snippet-button {
+  .ly--snippet-button {
     @include reset;
     cursor: pointer;
     position: absolute;
@@ -78,7 +78,7 @@
     }
   }
 
-  .bx--snippet .bx--btn--copy__feedback {
+  .ly--snippet .ly--btn--copy__feedback {
     @include body-text;
     z-index: z('overlay');
     font-weight: 400;

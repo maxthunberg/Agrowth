@@ -1,15 +1,15 @@
 @import '../button/button';
 
-  .bx--btn--copy {
+  .ly--btn--copy {
     position: relative;
     overflow: visible;
 
-    .bx--btn__icon {
+    .ly--btn__icon {
       margin-left: rem(5px);
     }
   }
 
-  .bx--btn--copy__feedback {
+  .ly--btn--copy__feedback {
     position: absolute;
     display: none;
     top: 1.2rem;

@@ -5,6 +5,7 @@ footer {
   padding: 0;
   .footer-container__info {
     @include customflex(0,center,center,0);
+    flex: 1;
     p {
       color: $color-grey;
     }

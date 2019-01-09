@@ -1,5 +1,5 @@
 
-  .bx--slider-container {
+  .ly--slider-container {
     max-width: rem(600px);
     min-width: rem(200px);
     display: flex;
@@ -11,17 +11,17 @@
     }
   }
 
-  .bx--slider {
+  .ly--slider {
     position: relative;
     width: 100%;
     margin: 0 $spacing-md;
   }
 
-  .bx--slider--disabled {
+  .ly--slider--disabled {
     opacity: 0.5;
   }
 
-  .bx--slider--disabled .bx--slider__thumb {
+  .ly--slider--disabled .ly--slider__thumb {
     &:hover {
       transform: translate(-50%, -50%);
     }
@@ -35,7 +35,7 @@
     }
   }
 
-  .bx--slider__range-label {
+  .ly--slider__range-label {
     @include typescale('p-sm');
     color: $text-02;
 
@@ -44,7 +44,7 @@
     }
   }
 
-  .bx--slider__track {
+  .ly--slider__track {
     position: absolute;
     width: 100%;
     height: rem(4px);
@@ -53,7 +53,7 @@
     transform: translate(0%, -50%);
   }
 
-  .bx--slider__filled-track {
+  .ly--slider__filled-track {
     position: absolute;
     width: 100%;
     height: rem(4px);
@@ -63,7 +63,7 @@
     transform: translate(0%, -50%);
   }
 
-  .bx--slider__thumb {
+  .ly--slider__thumb {
     position: absolute;
     height: rem(24px);
     width: rem(24px);
@@ -91,12 +91,12 @@
     }
   }
 
-  .bx--slider__input {
+  .ly--slider__input {
     display: none;
   }
 
-  .bx--slider-text-input,
-  .bx---slider-text-input {
+  .ly--slider-text-input,
+  .ly---slider-text-input {
     width: rem(60px);
     min-width: 0;
     height: 2rem;

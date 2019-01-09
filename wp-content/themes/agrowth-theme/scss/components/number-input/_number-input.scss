@@ -1,10 +1,10 @@
 
-  .bx--number {
+  .ly--number {
     @include reset;
     display: flex;
   }
 
-  .bx--number input[type='number'] {
+  .ly--number input[type='number'] {
     @include typescale('p-sm');
     @include body-text;
     box-sizing: border-box;
@@ -29,14 +29,14 @@
       cursor: not-allowed;
     }
 
-    &:disabled ~ .bx--number__controls {
+    &:disabled ~ .ly--number__controls {
       opacity: 0.5;
       cursor: not-allowed;
       pointer-events: none;
     }
   }
 
-  .bx--number input[type='number'] {
+  .ly--number input[type='number'] {
     appearance: textfield; // Firefox: Hide spinner (up and down buttons)
 
     &::-ms-clear {
@@ -48,7 +48,7 @@
     }
   }
 
-  .bx--number__controls {
+  .ly--number__controls {
     @include reset;
     position: relative;
     display: block;
@@ -59,7 +59,7 @@
     align-items: center;
   }
 
-  .bx--number__control-btn {
+  .ly--number__control-btn {
     @include button-reset;
     position: relative;
     bottom: 0;
@@ -79,7 +79,7 @@
     }
   }
 
-  .bx--number__controls svg {
+  .ly--number__controls svg {
     fill: $color-primary;
     width: rem(9px);
     height: rem(9px);
@@ -92,11 +92,11 @@
   }
 
 
-.bx--number[data-invalid] {
+.ly--number[data-invalid] {
   input[type='number'] {
     box-shadow: 0 2px 0px 0px $support-error;
   }
-  ~ .bx--form-requirement {
+  ~ .ly--form-requirement {
     max-height: rem(200px);
   }
 }

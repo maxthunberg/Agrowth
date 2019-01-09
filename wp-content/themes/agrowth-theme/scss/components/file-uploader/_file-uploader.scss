@@ -10,24 +10,24 @@
 @import '../loading/loading';
 
 @include exports('file-uploader') {
-  .bx--file {
+  .ly--file {
     // width: 100%;
     width: 50%;
   }
-  .bx--file:nth-child(1) {
+  .ly--file:nth-child(1) {
     // width: 100%;
     padding-right: 1rem;
     width: 50%;
   }
-  .bx--file-split {
+  .ly--file-split {
     @include customflex(0,0,0,0);
   }
 
-  .bx--file-input {
+  .ly--file-input {
     @include hidden;
   }
 
-  .bx--file-btn {
+  .ly--file-btn {
     background-color: transparent;
     border: 1px solid $color-secondary-dark;
     color: $color-secondary-dark;
@@ -42,7 +42,7 @@
     }
   }
 
-  .bx--label-description {
+  .ly--label-description {
     @include reset;
     @include typescale('p-sm');
     @include line-height('p-sm');
@@ -50,12 +50,12 @@
     margin-bottom: $spacing-lg;
   }
 
-  .bx--file-container {
+  .ly--file-container {
     display: block;
     width: 100%;
     margin-top: $spacing-lg;
   }
-  .bx--file__selected-file {
+  .ly--file__selected-file {
     // @include text-overflow(300px);
     width: 100%;
     display: flex;
@@ -71,22 +71,22 @@
     }
   }
 
-  .bx--file__selected-file:nth-child(1) {
+  .ly--file__selected-file:nth-child(1) {
     background-color: rgba($color-secondary-dark, .1);
   }
-  .bx--file__selected-file:nth-child(2) {
+  .ly--file__selected-file:nth-child(2) {
       opacity: 1;
   }
-  .bx--file__selected-file:nth-child(3) {
+  .ly--file__selected-file:nth-child(3) {
       opacity: .2;
   }
-  .bx--file__selected-file:nth-child(n+4){
+  .ly--file__selected-file:nth-child(n+4){
       display: none;
   }
 
 
 
-  .bx--file-filename {
+  .ly--file-filename {
     @include typescale('p-sm');
     @include text-overflow(100%);
     display: inline-flex;
@@ -96,23 +96,23 @@
     height: 1.875rem;
   }
 
-  .bx--file__state-container {
+  .ly--file__state-container {
     display: flex;
     align-items: center;
 
-    .bx--loading {
+    .ly--loading {
       width: 1.125rem;
       height: 1.125rem;
       margin-right: $spacing-xs;
     }
 
-    .bx--loading__svg {
+    .ly--loading__svg {
       stroke: $color-white-20;
     }
   }
 
-  .bx--file__state-container .bx--file-close,
-  .bx--file__state-container .bx--file-complete {
+  .ly--file__state-container .ly--file-close,
+  .ly--file__state-container .ly--file-complete {
     width: 1rem;
     height: 1rem;
     fill: $text-01;
@@ -123,11 +123,11 @@
     }
   }
 
-  .bx--file__state-container .bx--file-close {
+  .ly--file__state-container .ly--file-close {
     fill: $color-white-20;
   }
 
-  .bx--file__state-container .bx--file-complete {
+  .ly--file__state-container .ly--file-complete {
     fill: $support-success;
   }
 }

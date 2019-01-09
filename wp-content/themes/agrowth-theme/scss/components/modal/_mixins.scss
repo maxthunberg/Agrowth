@@ -3,7 +3,7 @@
 // ---------------------------------------------
 
 @mixin modal--color($color) {
-  .bx--modal-container {
+  .ly--modal-container {
     border-top-color: $color;
   }
 }

@@ -29,24 +29,24 @@ $transition--enter__slow: all $duration--slow__enter $easing--enter;
 
 
 
-// $bx--ease-in: cubic-bezier(0.25, 0, 1, 1); // Used primarily for removing elements from the screen.
-// $bx--ease-out: cubic-bezier(
+// $ly--ease-in: cubic-bezier(0.25, 0, 1, 1); // Used primarily for removing elements from the screen.
+// $ly--ease-out: cubic-bezier(
 //   0,
 //   0,
 //   0.25,
 //   1
 // ); // Used for adding elements to the screen or changing on-screen states at a users's input.
 //
-// // $bx--standard-easing: cubic-bezier(.12,.85,.31,1); // Used for the majority of animations.
-// // $bx--standard-easing: cubic-bezier(.58,.46,.36,.93); // Used for the majority of animations.
-// // $bx--standard-easing: cubic-bezier(.46,0,.28,.97); // Used for the majority of animations.
-// $bx--standard-easing: cubic-bezier(.62,.03,.67,.99); // Used for the majority of animations.
+// // $ly--standard-easing: cubic-bezier(.12,.85,.31,1); // Used for the majority of animations.
+// // $ly--standard-easing: cubic-bezier(.58,.46,.36,.93); // Used for the majority of animations.
+// // $ly--standard-easing: cubic-bezier(.46,0,.28,.97); // Used for the majority of animations.
+// $ly--standard-easing: cubic-bezier(.62,.03,.67,.99); // Used for the majority of animations.
 //
-// $bx--reverse-easing: cubic-bezier(.54,.27,.51,.85); // Used for the majority of animations.
+// $ly--reverse-easing: cubic-bezier(.54,.27,.51,.85); // Used for the majority of animations.
 //
 // $transition--base: 175ms;
 // $transition--expansion: 350ms;
 //
-// $transition--default: all $transition--base $bx--standard-easing;
-// $transition--long: all $transition--expansion $bx--standard-easing;
-// $transition--long-reverse: all $transition--expansion $bx--reverse-easing;
+// $transition--default: all $transition--base $ly--standard-easing;
+// $transition--long: all $transition--expansion $ly--standard-easing;
+// $transition--long-reverse: all $transition--expansion $ly--reverse-easing;

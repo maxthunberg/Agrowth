@@ -1,4 +1,4 @@
-.bx--form-item.bx--checkbox-wrapper {
+.ly--form-item.ly--checkbox-wrapper {
     margin-bottom: $spacing-md;
 
     &:first-of-type {
@@ -10,11 +10,11 @@
     }
   }
 
-  .bx--checkbox {
+  .ly--checkbox {
     @include hidden;
   }
 
-  .bx--checkbox-label {
+  .ly--checkbox-label {
     @include reset;
     @include body-text;
     @include font-smoothing;
@@ -27,7 +27,7 @@
     min-height: rem(16px);
   }
 
-  .bx--checkbox-label::before {
+  .ly--checkbox-label::before {
     box-sizing: border-box;
     content: '';
     position: absolute;
@@ -40,7 +40,7 @@
   }
 
   // Checkmark
-  .bx--checkbox-label::after {
+  .ly--checkbox-label::after {
     content: '';
     width: 10px;
     height: 5px;
@@ -54,33 +54,33 @@
     margin-top: rem(-5px);
   }
 
-  .bx--checkbox:checked + .bx--checkbox-label::before,
-  .bx--checkbox:indeterminate + .bx--checkbox-label::before,
-  .bx--checkbox-label[data-contained-checkbox-state='true']::before,
-  .bx--checkbox-label[data-contained-checkbox-state='mixed']::before {
+  .ly--checkbox:checked + .ly--checkbox-label::before,
+  .ly--checkbox:indeterminate + .ly--checkbox-label::before,
+  .ly--checkbox-label[data-contained-checkbox-state='true']::before,
+  .ly--checkbox-label[data-contained-checkbox-state='mixed']::before {
     background-color: $color-primary;
     border-color: $color-primary;
   }
 
-  .bx--checkbox:checked + .bx--checkbox-label::after,
-  .bx--checkbox-label[data-contained-checkbox-state='true']::after {
+  .ly--checkbox:checked + .ly--checkbox-label::after,
+  .ly--checkbox-label[data-contained-checkbox-state='true']::after {
     opacity: 1;
     transform: scale(1) rotate(-45deg);
   }
 
-  .bx--checkbox:not(:checked) + .bx--checkbox-label::after {
+  .ly--checkbox:not(:checked) + .ly--checkbox-label::after {
     opacity: 0;
     transform: scale(0) rotate(-45deg);
   }
 
-  .bx--checkbox:focus + .bx--checkbox-label::before,
-  .bx--checkbox-label__focus::before {
+  .ly--checkbox:focus + .ly--checkbox-label::before,
+  .ly--checkbox-label__focus::before {
     @include focus-outline('blurred');
   }
 
   // Indeterminate dash
-  .bx--checkbox:indeterminate + .bx--checkbox-label::after,
-  .bx--checkbox-label[data-contained-checkbox-state='mixed']::after {
+  .ly--checkbox:indeterminate + .ly--checkbox-label::after,
+  .ly--checkbox-label[data-contained-checkbox-state='mixed']::after {
     transform: scale(1) rotate(0deg);
     border-left: 0 solid $color-white;
     border-bottom: 2px solid $color-white;
@@ -90,14 +90,14 @@
   }
 
   //Disabled
-  .bx--checkbox:disabled + .bx--checkbox-label,
-  .bx--checkbox:disabled ~ .bx--checkbox-label-text,
-  .bx--checkbox-label[data-contained-checkbox-disabled='true'] {
+  .ly--checkbox:disabled + .ly--checkbox-label,
+  .ly--checkbox:disabled ~ .ly--checkbox-label-text,
+  .ly--checkbox-label[data-contained-checkbox-disabled='true'] {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
-  .bx--checkbox-appearance {
+  .ly--checkbox-appearance {
     position: absolute;
     left: 0;
     top: calc(50% - 9px);
@@ -110,38 +110,38 @@
     min-width: rem(18px);
   }
 
-  // Backwards compatibilty for old checkbox html using .bx--checkbox-appearance
-  .bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance {
+  // Backwards compatibilty for old checkbox html using .ly--checkbox-appearance
+  .ly--checkbox:checked + .ly--checkbox-label .ly--checkbox-appearance {
     top: rem(-1px);
   }
 
-  .bx--checkbox:checked + .bx--checkbox-appearance,
-  .bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance {
+  .ly--checkbox:checked + .ly--checkbox-appearance,
+  .ly--checkbox:checked + .ly--checkbox-label .ly--checkbox-appearance {
     display: flex;
     align-items: baseline;
     background-color: $color-primary;
     border-color: $color-primary;
   }
 
-  .bx--checkbox:focus + .bx--checkbox-label .bx--checkbox-appearance,
-  .bx--checkbox:focus + .bx--checkbox-appearance {
+  .ly--checkbox:focus + .ly--checkbox-label .ly--checkbox-appearance,
+  .ly--checkbox:focus + .ly--checkbox-appearance {
     @include focus-outline('blurred');
   }
 
-  .bx--checkbox:disabled + .bx--checkbox-appearance {
+  .ly--checkbox:disabled + .ly--checkbox-appearance {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
-  .bx--checkbox-checkmark {
+  .ly--checkbox-checkmark {
     display: none;
     fill: $color-white;
     width: 100%;
     height: 100%;
   }
 
-  .bx--checkbox:checked + .bx--checkbox-appearance .bx--checkbox-checkmark,
-  .bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance .bx--checkbox-checkmark {
+  .ly--checkbox:checked + .ly--checkbox-appearance .ly--checkbox-checkmark,
+  .ly--checkbox:checked + .ly--checkbox-label .ly--checkbox-appearance .ly--checkbox-checkmark {
     display: block;
 
     @-moz-document url-prefix() {

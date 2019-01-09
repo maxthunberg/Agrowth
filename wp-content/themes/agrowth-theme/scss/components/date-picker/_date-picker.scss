@@ -1,32 +1,32 @@
 
-  .bx--date-picker {
+  .ly--date-picker {
     display: flex;
     align-items: flex-start;
   }
 
-  .bx--date-picker-container {
+  .ly--date-picker-container {
     position: relative;
   }
 
-  .bx--date-picker.bx--date-picker--simple {
-    .bx--date-picker__input {
+  .ly--date-picker.ly--date-picker--simple {
+    .ly--date-picker__input {
       width: 7.125rem;
     }
   }
 
-  .bx--date-picker.bx--date-picker--simple.bx--date-picker--short {
-    .bx--date-picker__input {
+  .ly--date-picker.ly--date-picker--simple.ly--date-picker--short {
+    .ly--date-picker__input {
       width: 5.7rem;
     }
   }
 
-  .bx--date-picker.bx--date-picker--single {
-    .bx--date-picker__input {
+  .ly--date-picker.ly--date-picker--single {
+    .ly--date-picker__input {
       width: 9rem;
     }
   }
 
-  .bx--date-picker__input {
+  .ly--date-picker__input {
     @include reset;
     @include body-text;
     @include typescale('p-sm');
@@ -40,7 +40,7 @@
     border: 1px solid transparent;
 
     &:focus,
-    &.bx--focused {
+    &.ly--focused {
       @include focus-outline('border');
     }
 
@@ -58,7 +58,7 @@
     }
   }
 
-  .bx--date-picker__icon {
+  .ly--date-picker__icon {
     position: absolute;
     top: 2.25rem;
     left: 1rem;
@@ -67,29 +67,29 @@
     z-index: 1;
   }
 
-  .bx--date-picker__icon + .bx--date-picker__input {
+  .ly--date-picker__icon + .ly--date-picker__input {
     padding-left: $spacing-3xl;
   }
 
-  .bx--date-picker--range {
+  .ly--date-picker--range {
     display: flex;
     position: relative;
   }
 
-  .bx--date-picker--range > .bx--date-picker-container:first-child {
+  .ly--date-picker--range > .ly--date-picker-container:first-child {
     margin-right: $spacing-xs;
   }
 
-  .bx--date-picker--range .bx--date-picker__icon {
+  .ly--date-picker--range .ly--date-picker__icon {
     right: -1.75rem;
     left: auto;
   }
 
-  .bx--date-picker--range .bx--date-picker__input {
+  .ly--date-picker--range .ly--date-picker__input {
     width: 7.075rem;
   }
 
-  .bx--date-picker__calendar,
+  .ly--date-picker__calendar,
   .flatpickr-calendar.open {
     @include layer('pop-out');
     background-color: $color-white;
@@ -115,14 +115,14 @@
     }
   }
 
-  .bx--date-picker__month,
+  .ly--date-picker__month,
   .flatpickr-month {
     width: 100%;
     margin-bottom: $spacing-2xs;
   }
 
-  .bx--date-picker__month .flatpickr-prev-month,
-  .bx--date-picker__month .flatpickr-next-month,
+  .ly--date-picker__month .flatpickr-prev-month,
+  .ly--date-picker__month .flatpickr-next-month,
   .flatpickr-month .flatpickr-prev-month,
   .flatpickr-month .flatpickr-next-month {
     padding: 0;
@@ -134,19 +134,19 @@
     }
   }
 
-  .bx--date-picker__month .flatpickr-current-month,
+  .ly--date-picker__month .flatpickr-current-month,
   .flatpickr-month .flatpickr-current-month {
     @include typescale('p-sm');
     text-transform: uppercase;
     padding: 0;
   }
 
-  .bx--date-picker__month .flatpickr-current-month svg,
+  .ly--date-picker__month .flatpickr-current-month svg,
   .flatpickr-month .flatpickr-current-month svg {
     fill: $text-01;
   }
 
-  .bx--date-picker__month .flatpickr-current-month .cur-month,
+  .ly--date-picker__month .flatpickr-current-month .cur-month,
   .flatpickr-month .flatpickr-current-month .cur-month {
     margin-right: 0.25rem;
     color: $text-01;
@@ -158,7 +158,7 @@
     width: rem(38px);
   }
 
-  .bx--date-picker__month .numInputWrapper .numInput,
+  .ly--date-picker__month .numInputWrapper .numInput,
   .flatpickr-month .numInputWrapper .numInput {
     font-weight: 600;
     color: $text-01;
@@ -174,8 +174,8 @@
     }
   }
 
-  .bx--date-picker__month .numInputWrapper span.arrowUp,
-  .bx--date-picker__month .numInputWrapper span.arrowDown,
+  .ly--date-picker__month .numInputWrapper span.arrowUp,
+  .ly--date-picker__month .numInputWrapper span.arrowDown,
   .flatpickr-month .numInputWrapper span.arrowUp,
   .flatpickr-month .numInputWrapper span.arrowDown {
     left: 2.6rem;
@@ -197,24 +197,24 @@
     }
   }
 
-  .bx--date-picker__month .numInputWrapper span.arrowUp,
+  .ly--date-picker__month .numInputWrapper span.arrowUp,
   .flatpickr-month .numInputWrapper span.arrowUp {
     top: 1px;
   }
 
-  .bx--date-picker__month .numInputWrapper span.arrowDown,
+  .ly--date-picker__month .numInputWrapper span.arrowDown,
   .flatpickr-month .numInputWrapper span.arrowDown {
     top: 9px;
   }
 
-  span.bx--date-picker__weekday,
+  span.ly--date-picker__weekday,
   span.flatpickr-weekday {
     @include typescale('p-sm');
     font-weight: 600;
     color: $text-01;
   }
 
-  .bx--date-picker__day,
+  .ly--date-picker__day,
   .flatpickr-day {
     @include typescale('p-sm');
     height: rem(25px);
@@ -238,17 +238,17 @@
     }
   }
 
-  .bx--date-picker__day.today,
+  .ly--date-picker__day.today,
   .flatpickr-day.today {
     border: 2px solid $color-primary;
   }
 
-  .bx--date-picker__day.today.no-border,
+  .ly--date-picker__day.today.no-border,
   .flatpickr-day.today.no-border {
     border: none;
   }
 
-  .bx--date-picker__day.disabled,
+  .ly--date-picker__day.disabled,
   .flatpickr-day.disabled {
     cursor: not-allowed;
     color: $color-white-20;
@@ -258,27 +258,27 @@
     }
   }
 
-  .bx--date-picker__day.inRange,
+  .ly--date-picker__day.inRange,
   .flatpickr-day.inRange {
     background: $color-secondary;
     box-shadow: -6px 0 0 $color-secondary, 6px 0 0 $color-secondary;
     border: 2px solid transparent;
   }
 
-  .bx--date-picker__day.selected,
+  .ly--date-picker__day.selected,
   .flatpickr-day.selected {
     background: $color-primary;
     color: $color-white;
     border: 2px solid transparent;
   }
 
-  .bx--date-picker__day.startRange.selected,
+  .ly--date-picker__day.startRange.selected,
   .flatpickr-day.startRange.selected {
     box-shadow: none;
     z-index: 2;
   }
 
-  .bx--date-picker__day.endRange.inRange,
+  .ly--date-picker__day.endRange.inRange,
   .flatpickr-day.endRange.inRange {
     background: $color-white;
     color: $text-01;
@@ -287,7 +287,7 @@
     box-shadow: none;
   }
 
-  .bx--date-picker__day.endRange.inRange.selected,
+  .ly--date-picker__day.endRange.inRange.selected,
   .flatpickr-day.endRange.inRange.selected {
     background: $color-primary;
     border: none;
@@ -295,7 +295,7 @@
     box-shadow: none;
   }
 
-  .bx--date-picker__day.startRange.inRange:not(.selected),
+  .ly--date-picker__day.startRange.inRange:not(.selected),
   .flatpickr-day.startRange.inRange:not(.selected) {
     box-shadow: none;
     background: $color-white;
@@ -303,7 +303,7 @@
     z-index: 3;
   }
 
-  .bx--date-picker__days,
+  .ly--date-picker__days,
   .dayContainer {
     width: rem(225px);
     min-width: rem(225px);
@@ -317,7 +317,7 @@
     height: rem(168px);
   }
 
-  .bx--date-picker__weekdays,
+  .ly--date-picker__weekdays,
   .flatpickr-weekdays {
     width: rem(225px);
     margin-bottom: $spacing-2xs;

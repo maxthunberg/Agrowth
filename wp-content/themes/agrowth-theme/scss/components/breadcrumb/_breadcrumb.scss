@@ -1,5 +1,5 @@
 
-.bx--breadcrumb {
+.ly--breadcrumb {
     @include typescale('p-xs');
     @include body-text;
     display: none;
@@ -11,7 +11,7 @@
     }
   }
 
-  .bx--breadcrumb.post {
+  .ly--breadcrumb.post {
     @include typescale('p-xs');
     @include body-text;
     display: none;
@@ -24,7 +24,7 @@
     }
   }
 
-  .bx--breadcrumb.page--about-us {
+  .ly--breadcrumb.page--about-us {
     @include typescale('p-xs');
     @include body-text;
     display: none;
@@ -38,30 +38,30 @@
     }
   }
 
-  .bx--breadcrumb-item {
+  .ly--breadcrumb-item {
     margin-right: $spacing-md;
     display: flex;
     align-items: center;
   }
 
-  .bx--breadcrumb-item::after {
+  .ly--breadcrumb-item::after {
     content: '/';
     margin-left: $spacing-md;
     color: $text-03;
   }
 
-  .bx--breadcrumb--no-trailing-slash .bx--breadcrumb-item:last-child::after {
+  .ly--breadcrumb--no-trailing-slash .ly--breadcrumb-item:last-child::after {
     content: '';
   }
 
-  .bx--breadcrumb-item:last-child {
+  .ly--breadcrumb-item:last-child {
     margin-right: 0;
 
     &::after {
       margin-right: 0;
     }
   }
-  .bx--link_current {
+  .ly--link_current {
     white-space: nowrap;
     font-weight: 400;
     text-decoration: none;
@@ -69,7 +69,7 @@
     color: $color-dark;
   }
 
-  .bx--breadcrumb .bx--link {
+  .ly--breadcrumb .ly--link {
     white-space: nowrap;
     transition: $transition--enter__fast;
 

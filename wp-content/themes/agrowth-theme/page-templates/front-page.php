@@ -19,7 +19,7 @@ get_header();
 <?php  include( get_template_directory() . '/phtml/sections/consultants/consultants-section.phtml');?>
 
 <!-- About us Section -->
-<?php  include( get_template_directory() . '/phtml/sections/interactive-tool/interactive-circle.phtml');?>
+<?php  // include( get_template_directory() . '/phtml/sections/interactive-tool/interactive-circle.phtml');?>
 
 <!-- Client cases logos -->
 <?php // include( get_template_directory() . '/phtml/sections/clients/case-studies.phtml');?>

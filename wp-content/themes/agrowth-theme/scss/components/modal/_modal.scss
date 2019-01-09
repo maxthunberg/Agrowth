@@ -1,5 +1,5 @@
 
-  .bx--modal {
+  .ly--modal {
     @include reset;
     @include body-text;
     position: fixed;
@@ -25,11 +25,11 @@
     }
   }
 
-  .bx--modal--danger {
+  .ly--modal--danger {
     @include modal--color($support-error);
   }
 
-  .bx--modal-container {
+  .ly--modal-container {
     @include reset;
     @include layer('pop-out');
     position: relative;
@@ -56,11 +56,11 @@
     }
   }
 
-  .bx--modal-header {
+  .ly--modal-header {
     margin-bottom: $spacing-lg;
   }
 
-  .bx--modal-header__label {
+  .ly--modal-header__label {
     @include reset;
     @include typescale('p-sm');
     color: $text-01;
@@ -70,14 +70,14 @@
     margin-bottom: $spacing-xs;
   }
 
-  .bx--modal-header__heading {
+  .ly--modal-header__heading {
     @include reset;
     @include typescale('four');
     font-weight: 300;
     color: $text-02;
   }
 
-  .bx--modal-content {
+  .ly--modal-content {
     overflow-y: auto;
     margin-bottom: $spacing-3xl;
 
@@ -86,7 +86,7 @@
     }
   }
 
-  .bx--modal-footer {
+  .ly--modal-footer {
     margin-top: auto;
     text-align: right;
     background-color: $modal-footer-background-color;
@@ -101,7 +101,7 @@
     }
   }
 
-  .bx--modal-close {
+  .ly--modal-close {
     position: absolute;
     top: rem(16px);
     right: rem(16px);
@@ -117,7 +117,7 @@
     }
   }
 
-  .bx--modal-close__icon {
+  .ly--modal-close__icon {
     transition: 200ms;
     fill: $color-white-20;
     width: rem(12px);

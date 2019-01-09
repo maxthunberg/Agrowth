@@ -2,7 +2,7 @@ $loading__gap: 40;
 $loading__size: 10.5rem;
 
 
-  .bx--loading {
+  .ly--loading {
     @include reset;
     @include animation__loading--spin;
     width: $loading__size;
@@ -10,7 +10,7 @@ $loading__size: 10.5rem;
   }
 
   // Animation (Spin by default)
-  .bx--loading__svg {
+  .ly--loading__svg {
     fill: transparent;
     stroke: $brand-03;
     stroke-width: 7;
@@ -19,20 +19,20 @@ $loading__size: 10.5rem;
     stroke-dashoffset: $loading__gap;
   }
 
-  .bx--loading--stop {
+  .ly--loading--stop {
     @include animation__loading--stop;
   }
 
-  .bx--loading--small {
+  .ly--loading--small {
     width: 2rem;
     height: 2rem;
 
-    .bx--loading__svg {
+    .ly--loading__svg {
       stroke: $color-white-20;
     }
   }
 
-  .bx--loading-overlay {
+  .ly--loading-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -46,6 +46,6 @@ $loading__size: 10.5rem;
     z-index: z('overlay');
   }
 
-  .bx--loading-overlay--stop {
+  .ly--loading-overlay--stop {
     display: none;
   }

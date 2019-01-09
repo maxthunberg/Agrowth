@@ -38,6 +38,7 @@ $mq-xl: 1600px;
 $gutter-xs: 0 2rem;
 $gutter: 0 3rem;
 
+
 //-------------------------
 // ☠️  Manage deprecations
 //-------------------------
@@ -56,8 +57,6 @@ $deprecations--entry: true;
 $deprecations--reasons: ();
 // This message will be prepended to any deprecation notice
 $deprecations--message: 'Deprecated code was found, this code will be removed before the next release of Carbon.';
-
-
 //-------------------------
 // 🍕 Components
 //-------------------------

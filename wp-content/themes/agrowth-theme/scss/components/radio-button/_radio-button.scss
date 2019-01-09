@@ -1,15 +1,15 @@
 
-  .bx--radio-button-group {
+  .ly--radio-button-group {
     display: flex;
     align-items: center;
     margin-top: $spacing-xs;
   }
 
-  .bx--radio-button {
+  .ly--radio-button {
     @include hidden;
   }
 
-  .bx--radio-button__label {
+  .ly--radio-button__label {
     @include typescale('p-sm');
     @include body-text;
     display: flex;
@@ -19,7 +19,7 @@
 
   }
 
-  .bx--radio-button__appearance {
+  .ly--radio-button__appearance {
     @include reset;
     background-color: $color-white;
     border-radius: 50%;
@@ -31,7 +31,7 @@
     transition: border $duration--fast__enter $easing--enter;
   }
 
-  .bx--radio-button:checked + .bx--radio-button__label .bx--radio-button__appearance {
+  .ly--radio-button:checked + .ly--radio-button__label .ly--radio-button__appearance {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +49,7 @@
       transition: background-color $duration--fast__enter $easing--enter;
     }
   }
-  .bx--radio-button:checked:hover + .bx--radio-button__label .bx--radio-button__appearance {
+  .ly--radio-button:checked:hover + .ly--radio-button__label .ly--radio-button__appearance {
     border-color: $color-primary-light;
     transition: border-color $duration--fast__enter $easing--enter;
 
@@ -58,20 +58,20 @@
       transition: background-color $duration--fast__enter $easing--enter;
     }
   }
-  .bx--radio-button:disabled + .bx--radio-button__label {
+  .ly--radio-button:disabled + .ly--radio-button__label {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
-  .bx--radio-button:disabled:hover + .bx--radio-button__label .bx--radio-button__appearance {
+  .ly--radio-button:disabled:hover + .ly--radio-button__label .ly--radio-button__appearance {
     border-color: $color-white-20;
   }
 
-  .bx--radio-button:focus + .bx--radio-button__label .bx--radio-button__appearance {
+  .ly--radio-button:focus + .ly--radio-button__label .ly--radio-button__appearance {
     @include focus-outline('blurred');
   }
 
-  .bx--radio-button:hover + .bx--radio-button__label .bx--radio-button__appearance {
+  .ly--radio-button:hover + .ly--radio-button__label .ly--radio-button__appearance {
     border-color: $color-white-10;
     transition: border-color $duration--fast__enter $easing--enter;
   }

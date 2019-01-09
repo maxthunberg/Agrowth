@@ -19,10 +19,10 @@
 ?>
 <?php if ( $post->post_type == 'post' && !is_home() ): ?>
 
-            <div class="bx--grid section-content__outer">
-                <div class="bx--row">
+            <div class="grid hero-post">
+                <div class="row">
 
-                    <div class="section-content">
+                    <div class="hero-post--container">
 
                       <!-- Author information card -->
                       <?php include( get_template_directory() . '/phtml/sections/author-info/author-info__sm.phtml'); ?>
@@ -57,12 +57,12 @@
 <?php elseif ( is_page_template('page-templates/about-us.php') ):?>
 
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero about-us hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
+    <div class="grid hero about-us hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
   <?php else:?>
-    <div class="bx--grid hero">
+    <div class="grid hero">
   <?php endif;?>
-      <div class="bx--row">
-        <div class="bx--col-xs-12 bx--col-md-8 hero-container">
+      <div class="row">
+        <div class="ly--col-xs-12 ly--col-md-8 hero-container">
             <h5 class="sub-heading-one hero-subheading"><?= $subheading ?></h5>
             <h1 class="heading-one hero-heading"><?= $heading ?></h1>
         </div>
@@ -73,13 +73,13 @@
 <?php elseif ( is_singular('services') ):?>
 
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
+    <div class="grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
   <?php else:?>
-    <div class="bx--grid hero services">
+    <div class="grid hero services">
   <?php endif;?>
-      <div class="bx--row">
+      <div class="row">
 
-        <div class="bx--col-lg-12 hero-container">
+        <div class="ly--col-lg-12 hero-container">
           <div class="hero--image-container">
             <?php add_thumbnail_image('g_south,q_60,c_fill,w_1280', '');?>
           </div>
@@ -98,14 +98,14 @@
 <?php elseif ( is_singular('consultants') ):?>
 
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
+    <div class="grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
 
   <?php else:?>
-    <div class="bx--grid hero consultants">
+    <div class="grid hero consultants">
   <?php endif;?>
-      <div class="bx--row">
+      <div class="row">
 
-        <div class="bx--col-lg-12 hero-container">
+        <div class="ly--col-lg-12 hero-container">
             <h5 class="sub-heading-two hero-subheading">Konsultroll</h5>
             <h1 class="heading-two hero-heading"><?= the_title() ?></h1>
         </div>
@@ -115,12 +115,12 @@
 
 <?php else: ?>
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
+    <div class="grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
   <?php else:?>
-    <div class="bx--grid hero">
+    <div class="grid hero">
   <?php endif;?>
-    <div class="bx--row">
-      <div class="bx--col-xs-12 bx--col-md-10 bx--col-lg-6 hero-container">
+    <div class="row">
+      <div class="ly--col-xs-12 ly--col-md-10 ly--col-lg-6 hero-container">
           <h5 class="sub-heading-two hero-subheading light"><?= $subheading ?></h5>
           <h1 class="heading-two hero-heading light"><?= $heading ?></h1>
           <p class="paragraph hero-paragraph light"><?= $paragraph ?></p>

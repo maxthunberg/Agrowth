@@ -1,12 +1,12 @@
 
-  .bx--progress {
+  .ly--progress {
     @include reset;
     @include body-text;
     display: flex;
     list-style: none;
   }
 
-  .bx--progress-step {
+  .ly--progress-step {
     position: relative;
     display: inline-flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
     overflow: visible;
   }
 
-  .bx--progress-line {
+  .ly--progress-line {
     position: absolute;
     top: $progress-indicator-line-offset;
     right: 100%;
@@ -24,12 +24,12 @@
     width: calc(100% - 24px);
     border: $progress-indicator-bar-width;
 
-    .bx--progress-step:first-child & {
+    .ly--progress-step:first-child & {
       display: none;
     }
   }
 
-  .bx--progress-step svg {
+  .ly--progress-step svg {
     position: relative;
     z-index: 1;
     width: 1.5rem;
@@ -38,12 +38,12 @@
     margin-bottom: $spacing-xs;
   }
 
-  .bx--progress-label {
+  .ly--progress-label {
     line-height: 1;
     width: 75%;
   }
 
-  .bx--progress-step--current {
+  .ly--progress-step--current {
     circle:first-child {
       stroke: $color-primary;
       stroke-width: $progress-indicator-stroke-width;
@@ -54,33 +54,33 @@
       fill: $color-primary;
     }
 
-    .bx--progress-label {
+    .ly--progress-label {
       @include font-smoothing;
       color: $color-primary;
       font-weight: 600;
     }
-    .bx--progress-line {
+    .ly--progress-line {
       background-color: $color-primary;
     }
   }
 
-  .bx--progress-step--incomplete {
+  .ly--progress-step--incomplete {
     circle {
       stroke: $color-white-20;
       stroke-width: $progress-indicator-stroke-width;
       fill: transparent;
     }
 
-    .bx--progress-label {
+    .ly--progress-label {
       color: $text-02;
     }
 
-    .bx--progress-line {
+    .ly--progress-line {
       background-color: $color-white-20;
     }
   }
 
-  .bx--progress-step--complete {
+  .ly--progress-step--complete {
     circle {
       stroke: $color-primary;
       stroke-width: $progress-indicator-stroke-width;
@@ -91,12 +91,12 @@
       fill: $color-primary;
     }
 
-    .bx--progress-label {
+    .ly--progress-label {
       @include font-smoothing;
       color: $color-primary;
       font-weight: 600;
     }
-    .bx--progress-line {
+    .ly--progress-line {
       background-color: $color-primary;
     }
   }

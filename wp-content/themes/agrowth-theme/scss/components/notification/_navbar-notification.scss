@@ -1,5 +1,5 @@
 
-  .bx--navbar-notification {
+  .ly--navbar-notification {
     @include reset;
     @include body-text;
     @include font-smoothing;
@@ -16,56 +16,56 @@
     transition: top $duration--fast__enter $easing--enter;
 
   }
-  .bx--navbar-notification.active {
+  .ly--navbar-notification.active {
     top: 0px;
   }
 
-  .bx--navbar-notification--error {
+  .ly--navbar-notification--error {
     @include navbar-notification--color($support-error,$support-error);
   }
 
-  .bx--navbar-notification--success {
+  .ly--navbar-notification--success {
     @include navbar-notification--color($support-success,$support-success);
   }
 
-  .bx--navbar-notification--info {
+  .ly--navbar-notification--info {
     @include navbar-notification--color($support-info,$support-info);
   }
 
-  .bx--navbar-notification--warning {
+  .ly--navbar-notification--warning {
     @include navbar-notification--color($support-warning,$support-warning);
   }
 
-  .bx--navbar-notification--primary {
+  .ly--navbar-notification--primary {
     @include navbar-notification--color($color-primary,$color-white);
     @include linear-gradient($color-primary, $color-primary-light);
-    .bx--navbar-notification__close-icon {
+    .ly--navbar-notification__close-icon {
       fill: $color-white;
     }
     color: $color-white;
   }
 
-  .bx--navbar-notification--secondary {
+  .ly--navbar-notification--secondary {
     @include navbar-notification--color($color-secondary-dark, $color-white);
     @include linear-gradient($color-secondary-dark, $color-secondary);
-    .bx--navbar-notification__close-icon {
+    .ly--navbar-notification__close-icon {
       fill: $color-white;
     }
     color: $color-white;
   }
 
-  .bx--navbar-notification__details {
+  .ly--navbar-notification__details {
     display: flex;
     align-items: center;
   }
 
-  .bx--navbar-notification__icon {
+  .ly--navbar-notification__icon {
     height: 16px;
     width: 16px;
     min-width: 22px;
   }
 
-  .bx--navbar-notification__text-wrapper {
+  .ly--navbar-notification__text-wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -77,20 +77,20 @@
     }
   }
 
-  .bx--navbar-notification__title {
+  .ly--navbar-notification__title {
     @include typescale('p-sm');
     font-weight: 700;
     margin: 0 $spacing-xs 0 0;
     line-height: 1.125;
   }
 
-  .bx--navbar-notification__subtitle {
+  .ly--navbar-notification__subtitle {
     @include typescale('p-sm');
     margin: 0 $spacing-md 0 0;
     line-height: 1.125;
   }
 
-  .bx--navbar-notification__close-button {
+  .ly--navbar-notification__close-button {
     background-color: transparent;
     border: none;
     padding: .5rem;
@@ -102,7 +102,7 @@
     }
   }
 
-  .bx--navbar-notification__close-icon {
+  .ly--navbar-notification__close-icon {
     height: 10px;
     width: 10px;
     fill: $color-dark;

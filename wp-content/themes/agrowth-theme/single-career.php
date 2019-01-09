@@ -17,8 +17,8 @@ get_header();
 <?php  include( get_template_directory() . '/phtml/sections/flexible-content/flexible-content.phtml');?>
 
 <!-- Other services -->
-<div class="bx--grid resources-footer__outer services">
-  <div class="bx--row">
+<div class="grid resources-footer__outer services">
+  <div class="row">
 
       <div class="bx--col-md-12 resources-footer more-articles">
         <h3>Fler tjänster</h3>

@@ -1,5 +1,5 @@
 
-  .bx--fab {
+  .ly--fab {
     @include reset;
     @include rotate(0, $transition--base);
     display: inline-block;
@@ -17,12 +17,12 @@
     &__svg {
       width: 100%;
 
-      .bx--fab__hexagon {
+      .ly--fab__hexagon {
         transition: fill $transition--base;
         fill: $color-blue;
       }
 
-      .bx--fab__plus-icon {
+      .ly--fab__plus-icon {
         @include rotate(0, $transition--base);
         fill: $color-white;
       }
@@ -32,12 +32,12 @@
     &[data-state='closed'] {
       @include rotate(90deg, $transition--base);
 
-      .bx--fab__hexagon {
+      .ly--fab__hexagon {
         transition: fill $transition--base;
         fill: $color-blue;
       }
 
-      .bx--fab__plus-icon {
+      .ly--fab__plus-icon {
         @include rotate(-45deg, $transition--base);
       }
     }

@@ -1,9 +1,9 @@
-  .bx--tooltip--simple {
+  .ly--tooltip--simple {
     display: flex;
     align-items: center;
   }
 
-  .bx--tooltip__trigger {
+  .ly--tooltip__trigger {
     @include body-text;
     @include typescale('p');
     display: inline-flex;
@@ -30,7 +30,7 @@
     }
   }
 
-  .bx--tooltip {
+  .ly--tooltip {
     @include layer('overlay');
     @include reset;
     position: absolute;
@@ -48,7 +48,7 @@
       margin: 0;
     }
 
-    .bx--tooltip__label {
+    .ly--tooltip__label {
       font-weight: 400;
       text-transform: uppercase;
       color: $color-grey;
@@ -100,13 +100,13 @@
     }
   }
 
-  .bx--tooltip--shown {
+  .ly--tooltip--shown {
     display: block;
   }
 
   // Simple CSS only tooltip
-  .bx--tooltip--simple__top,
-  .bx--tooltip--simple__bottom {
+  .ly--tooltip--simple__top,
+  .ly--tooltip--simple__bottom {
     @include body-text;
     @include reset;
     @include typescale('p');
@@ -177,7 +177,7 @@
   }
 
   // Tooltip caret - top position
-  .bx--tooltip--simple__top {
+  .ly--tooltip--simple__top {
     &:before {
       bottom: 1.8rem;
     }
@@ -189,7 +189,7 @@
   }
 
   // Tooltip caret - bottom position
-  .bx--tooltip--simple__bottom {
+  .ly--tooltip--simple__bottom {
     &:before {
       top: 1rem;
     }
@@ -202,14 +202,14 @@
 
 
 @media (max-width: breakpoint('md')) { // 768px
-  .bx--tooltip {
+  .ly--tooltip {
     display: none;
   }
 
 }
 
 @media (max-width: breakpoint('sm')) { // 576px
-  .bx--tooltip {
+  .ly--tooltip {
     display: none;
   }
 }

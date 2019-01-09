@@ -17,7 +17,7 @@ $typescale-map: (
   's-four' : .75rem,      's-four-mobile' : .5rem,
 
   'p' : 1.125rem,         'p-mobile' : 1.125rem,
-  'p-sm' : 1rem,      'p-sm-mobile' : 1rem,
+  'p-sm' : 0.875rem,      'p-sm-mobile' : 0.875rem,
   'p-xs' : 0.75rem,   'p-xs-mobile' : 0.75rem
   );
 
@@ -67,8 +67,8 @@ $font-weight-map: (
   's-three' : 400,          's-three-mobile' : 400,
   's-four' : 400,           's-four-mobile' : 400,
 
-  'p' : 300,              'p-mobile' : 300,
-  'p-sm' : 300,           'p-sm-mobile' : 300,
+  'p' : 400,              'p-mobile' : 400,
+  'p-sm' : 400,           'p-sm-mobile' : 400,
   'p-xs' : 400,        'p-xs-mobile' : 400,
 );
 
@@ -192,7 +192,7 @@ input,textarea {
       }
     }
 
-    strong {
+    &.bold, strong {
       color: $color-black;
       font-weight: 700;
     }
@@ -236,7 +236,7 @@ input,textarea {
       }
     }
 
-    strong {
+    &.bold, strong {
       color: $color-black;
       font-weight: 700;
     }
@@ -249,7 +249,7 @@ input,textarea {
     @include body-text;
     text-align: left;
     width: 100%;
-    max-width: 635px;
+    // max-width: $maxwidth-text;
     margin: 0;
     padding: 0;
     color: $color-dark;
@@ -365,7 +365,6 @@ input,textarea {
   }
 
 
-
   p,
   .paragraph {
     @include typescale('p');
@@ -391,7 +390,7 @@ input,textarea {
 
   // Typography for small devices
 
-  @media (max-width: breakpoint('md') ) { // 768px {
+  @media (max-width: breakpoint('md') ) { // 768px
 
     h1,
     .heading-one {
@@ -463,7 +462,6 @@ input,textarea {
       @include font-weight('s-four-mobile');
       @include margin('s-four-mobile');
     }
-
 
 
 

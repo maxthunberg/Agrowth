@@ -1,5 +1,5 @@
 
-  .bx--tabs {
+  .ly--tabs {
     @include typescale('p-sm');
     @include font-smoothing;
     @include body-text;
@@ -15,7 +15,7 @@
     }
   }
 
-  .bx--tabs-trigger {
+  .ly--tabs-trigger {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,7 +39,7 @@
     }
   }
 
-  .bx--tabs-trigger-text {
+  .ly--tabs-trigger-text {
     text-decoration: none;
     font-weight: 600;
     color: $text-01;
@@ -49,7 +49,7 @@
     }
   }
 
-  .bx--tabs__nav {
+  .ly--tabs__nav {
     @include layer('overlay');
     margin: 0;
     padding: 0;
@@ -73,7 +73,7 @@
     }
   }
 
-  .bx--tabs__nav--hidden {
+  .ly--tabs__nav--hidden {
     display: none;
 
     @include breakpoint(bp--sm--major) {
@@ -81,7 +81,7 @@
     }
   }
 
-  .bx--tabs__nav-item {
+  .ly--tabs__nav-item {
     @include typescale('p-sm');
     background-color: $color-white;
     padding: 0;
@@ -107,13 +107,13 @@
     }
   }
 
-  .bx--tabs__nav-item--selected {
+  .ly--tabs__nav-item--selected {
     border: none;
 
     @include breakpoint(bp--sm--major) {
       border-bottom: 2px solid $color-primary;
 
-      .bx--tabs__nav-link {
+      .ly--tabs__nav-link {
         color: $color-primary;
 
         &:focus {
@@ -123,7 +123,7 @@
     }
   }
 
-  .bx--tabs__nav-item:hover .bx--tabs__nav-link {
+  .ly--tabs__nav-item:hover .ly--tabs__nav-link {
     color: $color-white;
 
     @include breakpoint(bp--sm--major) {
@@ -131,7 +131,7 @@
     }
   }
 
-  .bx--tabs__nav-link {
+  .ly--tabs__nav-link {
     display: inline-block;
     color: $text-01;
     text-decoration: none;

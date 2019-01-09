@@ -1,7 +1,7 @@
 <?php if( have_rows('our_vision') ):?>
 
-	<div class="bx--grid our-vision section-8rem">
-		<div class="bx--row">
+	<div class="grid our-vision section-8rem">
+		<div class="row">
 
 	<?php while( have_rows('our_vision') ): the_row();
 
@@ -10,9 +10,9 @@
 				$paragraph = get_sub_field('paragraph');
 				?>
 
-		        <div class="bx--col-xs-12 bx--col-md-6 our-vision--col section-2col revealer-0">
-		          <h3 class="heading-three"><?= $heading ?></h3>
-		          <p class="paragraph"><?= $paragraph ?></p>
+		        <div class="ly--col-xs-12 ly--col-md-6 our-vision--col section-2col revealer-0">
+		          <h3 class="heading-four light"><?= $heading ?></h3>
+		          <p class="paragraph light"><?= $paragraph ?></p>
 		        </div>
 
 	<?php endwhile; ?>

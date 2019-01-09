@@ -1,4 +1,4 @@
-<div class="bx--navbar--submenu__mobile">
+<div class="ly--navbar--submenu__mobile">
 
   <!-- Navbar menu -->
   <?php if( have_rows('navbar_menu_mobile', 'option') ): ?>
@@ -16,7 +16,7 @@
 
           if( $link ):?>
 
-            <a class="bx--link bx--type-beta navbar--submenu__text" href="<?= $link['url']; ?>" target="<?= $link['target']; ?>">
+            <a class="ly--link ly--type-beta navbar--submenu__text" href="<?= $link['url']; ?>" target="<?= $link['target']; ?>">
               <?= $link['title']; ?>
               <?php if ( $label):?><span class="link--label"></span><?php endif;?>
             </a>

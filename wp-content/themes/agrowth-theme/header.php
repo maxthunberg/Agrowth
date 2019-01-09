@@ -53,4 +53,4 @@
     <!-- Linkedin Tracking code -->
 
 
-  <?php include( get_template_directory() . '/phtml/sections/navbar/navbar.phtml');?>
+  <?php  include( get_template_directory() . '/phtml/sections/navbar/navbar.phtml');?>

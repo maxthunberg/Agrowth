@@ -8,6 +8,9 @@ Template Name: Single Template
 get_header();
 
 $ingress = get_field('ingress');
+
+$paywall = get_field('select_paywall');
+
 ?>
 
 <!-- Breadcrumbs -->
@@ -16,13 +19,14 @@ $ingress = get_field('ingress');
 <!-- HERO -->
 <?php  include( get_template_directory() . '/phtml/sections/hero/hero.phtml');?>
 
+
 <!-- Flexible Content -->
 <?php  include( get_template_directory() . '/phtml/sections/flexible-content/flexible-content.phtml');?>
 
 
 <!-- Other services -->
-<div class="bx--grid resources-footer__outer">
-  <div class="bx--row">
+<div class="grid resources-footer__outer">
+  <div class="row">
     <div class="bx--col-md-12 resources-footer resources-footer__info">
       <div class="tag-container">
         <?php foreach ( ( get_the_category() ) as $category ):
@@ -38,7 +42,7 @@ $ingress = get_field('ingress');
 
       </div>
       <div class="bx--col-md-12 more-articles">
-        <h3>Fler artiklar</h3>
+        <h3>Fler inlägg</h3>
       </div>
       <div class="bx--col-md-12 section-2rem resources-footer resources-footer__cards">
 
@@ -66,6 +70,7 @@ $ingress = get_field('ingress');
     </div>
   </div>
 </div>
+
 
 <!-- Widgets -->
 <?php  include( get_template_directory() . '/phtml/sections/widgets/widgets.phtml');?>

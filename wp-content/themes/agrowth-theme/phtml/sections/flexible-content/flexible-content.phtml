@@ -1,358 +1,382 @@
 <?php
 
-// check if the flexible content field has rows of data
-if( have_rows('flexible_content') ):?>
-
-    <?php if ( is_singular('services') ) :?>
-
-      <div class="bx--grid section-content__outer sticky-container">
-        <div class="bx--row">
-
-            <div class="section-content">
-
-              <!-- Sticky Bar-->
-              <?php  include( get_template_directory() . '/phtml/sections/flexible-content/sticky-bar.phtml');?>
-
-    <?php elseif (is_singular('consultants') ) :?>
-
-      <div class="bx--grid section-content__outer sticky-container">
-        <div class="bx--row">
-
-            <div class="section-content">
-
-              <!-- Sticky Bar-->
-              <?php  include( get_template_directory() . '/phtml/sections/flexible-content/sticky-bar.phtml');?>
-
-    <?php elseif (is_singular('post') ) :?>
-
-      <div class="bx--grid section-content__outer sticky-container">
-        <div class="bx--row">
-
-            <div class="section-content">
-
-              <!-- Sticky Bar-->
-              <?php  include( get_template_directory() . '/phtml/sections/flexible-content/sticky-bar.phtml');?>
-
-    <?php endif; ?>
-    <?php
- 	// loop through the rows of data
-    while ( have_rows('flexible_content') ) : the_row();
-
-              // Ingress
-              if ( get_row_layout() == 'ingress' ):
-
-                // vars
-								$text = get_sub_field('text');
-
-							?>
-              <div class="ingress">
-                <p class="bx--type-beta__paragraph"><?= $text ?></p>
-              </div>
-
-        <?php
-              // H2 - Section
-              elseif ( get_row_layout() == 'h2_section' ):
-
-                // vars
-                $heading = get_sub_field('heading');
-                $paragraph = get_sub_field('paragraph', false, false);
-
-              ?>
-
-              <div class="h2-section">
-                <h2><?= $heading ?></h2>
-                <p class="bx--type-delta__paragraph"><?= $paragraph ?></p>
-              </div>
-
-	      <?php
-							// H3 - Section
-			        elseif ( get_row_layout() == 'h3_section' ):
-
-								// vars
-								$heading = get_sub_field('heading');
-								$paragraph = get_sub_field('paragraph', false, false);
-
-							?>
-
-              <div class="h3-section">
-                <h3><?= $heading ?></h3>
-                <p class="bx--type-delta__paragraph"><?= $paragraph ?></p>
-              </div>
-
-				<?php
-							// H4 - Section
-			        elseif ( get_row_layout() == 'h4_section' ):
-
-								// vars
-								$heading = get_sub_field('heading');
-								$paragraph = get_sub_field('paragraph', false, false);
-
-							?>
-
-              <div class="h4-section">
-                <h4 class="bx--type-gamma__subheading heading"><?= $heading ?></h4>
-                <p class="bx--type-delta__paragraph"><?= $paragraph ?></p>
-              </div>
-
-				<?php
-							// H5 - Section
-							elseif ( get_row_layout() == 'h5_section' ):
-
-								// vars
-								$heading = get_sub_field('heading');
-								$paragraph = get_sub_field('paragraph', false, false);
-
-							?>
-
-              <div class="h5-section">
-                <h5 class="bx--type-delta__subheading heading"><?= $heading ?></h5>
-                <p class="bx--type-delta__paragraph"><?= $paragraph ?></p>
-              </div>
-
-        <?php
-							// H5 - Section
-							elseif ( get_row_layout() == 'paragraph' ):
-
-								// vars
-								$paragraph = get_sub_field('paragraph', false, false);
-
-							?>
-
-              <div class="paragraph">
-                <p class="bx--type-delta__paragraph"><?= $paragraph ?></p>
-              </div>
-
-        <?php
-              // Image
-              elseif ( get_row_layout() == 'image' ):
-
-                // vars
-								$src = get_sub_field('image_src');
-                $params = 'g_south,q_60,c_fill,w_960';
-                $class = 'image';
-
-                $caption = get_sub_field('caption');
-              ?>
-              <div class="component--image">
-                <?php add_image(
-                      $src,
-                      $params,
-                      $class
-                    );
-                ?>
-
-                <p class="image--caption bx--type-epsilon"> <?= $caption ?></p>
-              </div>
-
-				<?php
-              // Soft CTA
-              elseif ( get_row_layout() == 'soft-cta' ):
-
-                // vars
-                $src = get_sub_field('image_src');
-                $caption = get_sub_field('caption');
-              ?>
-
-
-        <?php
-              // Unordered List
-              elseif ( get_row_layout() == 'list' ):
-                    $heading = get_sub_field('heading');
-              ?>
-
-              <?php if ( have_rows('list_item') ):?>
-                  <h4 class="bx--type-delta__subheading bullet-list__heading"><?= $heading ?></h4>
-                  <ul class="component--bullet-list">
-                <?php
-                      while ( have_rows('list_item') ): the_row();
-
-                      // vars
-                      $listheading = get_sub_field('list_heading');
-                      $text = get_sub_field('text');
-                      $choose = get_sub_field('choose_list_type');
-                ?>
-                <?php if ( $choose == '1' ): ?>
-                        <li class="component--bullet-list__item">
-
-                          <?php if ( $listheading ): ?>
-                            <h4 class="bx--type-epsilon__subheading component--bullet-list__subheading"><?= $listheading ?></h4>
-                          <?php endif; ?>
-
-                          <?php if ( $text ): ?>
-                            <p><?= $text ?></p>
-                          <?php endif; ?>
-
-                        </li>
-                <?php elseif ( $choose == '2' ): ?>
-                        <li class="component--bullet-list__item minus">
-
-                          <?php if ( $listheading ): ?>
-                            <h4 class="bx--type-epsilon__subheading component--bullet-list__subheading"><?= $listheading ?></h4>
-                          <?php endif; ?>
-
-                          <?php if ( $text ): ?>
-                            <p><?= $text ?></p>
-                          <?php endif; ?>
-
-                        </li>
-                <?php elseif ( $choose == '3' ): ?>
-                        <li class="component--bullet-list__item plus">
-
-                          <?php if ( $listheading ): ?>
-                            <h4 class="bx--type-epsilon__subheading component--bullet-list__subheading"><?= $listheading ?></h4>
-                          <?php endif; ?>
-
-                          <?php if ( $text ): ?>
-                            <p><?= $text ?></p>
-                          <?php endif; ?>
-
-                        </li>
-                <?php endif; ?>
-
-                <?php endwhile;?>
-                </ul>
-
-              <?php endif;
-
-              // Quote
-              elseif ( get_row_layout() == 'quote' ):
-
-                // vars
-                $qoute = get_sub_field('quote');
-                $qoutee = get_sub_field('quotee');
-              ?>
-
-              <div class="component component--quote">
-                <p class="quote__text"><?= $qoute ?></p>
-                <span class="quote__author"><?= $qoutee ?></span>
-              </div>
-
-
-
-        <?php
-              // Ordered List
-              elseif ( get_row_layout() == 'ordered_list' ):
-                    $heading = get_sub_field('heading');
-                    $i = 1;
-              ?>
-
-              <?php if ( have_rows('list_item') ):?>
-                  <h4 class="bx--type-delta__subheading ordered-list__heading"><?= $heading ?></h4>
-                  <ul class="component--ordered-list">
-                <?php
-                      while ( have_rows('list_item') ): the_row();
-
-                      // vars
-                      $listheading = get_sub_field('list_heading');
-                      $text = get_sub_field('text');
-                      $bordercolor = get_sub_field('border_color');
-
-                      // Choice of border color
-                      if ( $bordercolor == '1' ) {
-                        $color = '#757575';
-                      } elseif ( $bordercolor == '2' ) {
-                        $color = '#FF6665';
-                      } elseif ( $bordercolor == '3' ) {
-                        $color = '#34D583';
-                      } elseif ( $bordercolor == '4' ) {
-                        $color = '#292929';
-                      }
-
-                ?>
-                        <li class="component--ordered-list__item" style="border-left: .25rem solid <?= $color ?>">
-
-                          <span class="component--ordered-list__number" style="color: <?= $color ?>;"><?= $i++ ?></span>
-
-                          <?php if ( $listheading ): ?>
-                            <h4 class="bx--type-epsilon__subheading component--ordered-list__subheading"><?= $listheading ?></h4>
-                          <?php endif; ?>
-
-                          <?php if ( $text ): ?>
-                            <p><?= $text ?></p>
-                          <?php endif; ?>
-
-                        </li>
-
-                <?php endwhile;?>
-                </ul>
-
-              <?php endif;
-
-              // Quote
-              elseif ( get_row_layout() == 'quote' ):
-
-                // vars
-                $qoute = get_sub_field('quote');
-                $qoutee = get_sub_field('qoutee');
-              ?>
-
-        <?php
-              // Accordion
-              elseif ( get_row_layout() == 'accordion' ):
-
-              ?>
-
-              <?php if ( have_rows('accordion_field') ):?>
-                  <ul data-accordion class="bx--accordion">
-                <?php
-                      while ( have_rows('accordion_field') ): the_row();
-
-                      // vars
-                      $title = get_sub_field('title');
-                      $content = get_sub_field('content');
-                      $i = 0;
-                ?>
-                      <li data-accordion-item class="bx--accordion__item">
-                        <button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane<?= $i++?>">
-                          <svg class="bx--accordion__arrow" width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
-                            <path d="M0 10.6L4.7 6 0 1.4 1.4 0l6.1 6-6.1 6z"></path>
-                          </svg>
-                          <p class="bx--accordion__title"><?= $title ?></p>
-                        </button>
-                        <div id="pane<?= $i++?>" class="bx--accordion__content">
-                          <p><?= $content ?></p>
-                        </div>
-                      </li>
-
-                <?php endwhile;?>
-                </ul>
-
-              <?php endif; ?>
-
-        <?php
-              // Contact form
-              elseif ( get_row_layout() == 'contact_form' ):
-                $heading = get_sub_field('heading');
-                $paragraph = get_sub_field('paragraph');
-                $contactform = get_sub_field('select_form');
-                ?>
-
-                <?php if ($contactform == '1'): ?>
-
-                  <?php // include( get_template_directory() . '/phtml/sections/contact-form/contact-form.phtml'); ?>
-
-                <?php else: ?>
-
-                  <?php // include( get_template_directory() . '/phtml/sections/contact-form/contact-form--whitepaper.phtml'); ?>
-
-                <?php endif; ?>
-
-
-			  <?php endif; ?>
-
-    <?php endwhile; ?>
-
-            </div>
-      </div>
-</div>
-<?php include( get_template_directory() . '/phtml/sections/contact-form/contact-form--whitepaper.phtml'); ?>
-
-<?php
-
-else :
-
-    // no layouts found
-
-endif;
+$paywall = get_field('select_paywall');
+$paywallheading = get_sub_field('paywall_heading');
+$paywallparagraph = get_sub_field('paywall_paragraph');
 
 ?>
+
+<section class="flexible-content post <?php echo $paywall ? 'paywall' : ''; ?>">
+
+  <?php if ( $paywall == 2 ): ?>
+    <div class="paywall-container">
+      <!-- Paywall Form -->
+      <?php  include( get_template_directory() . '/phtml/sections/contact-form/contact-form--paywall.phtml');?>
+    </div>
+  <?php endif; ?>
+
+    <!-- Sticky Bar-->
+    <?php  include( get_template_directory() . '/phtml/sections/flexible-content/sticky-bar.phtml');?>
+
+      <?php if( have_rows('flexible_content') ): ?>
+
+            <?php while ( have_rows('flexible_content') ) : the_row(); ?>
+
+
+                  <?php if ( get_row_layout() == 'text_section' ):
+
+                        // vars
+                        $heading = get_sub_field('heading');
+                        $paragraph = get_sub_field('paragraph');
+                        $tagoverride = get_sub_field('tag_override');
+                        $tag = get_sub_field('select_tag');
+                        $size = get_sub_field('select_size');
+                        $sizeValue = $size['value'];
+                        $sizeLabel = $size['label'];
+                        $onlyparagraph = get_sub_field('only_paragraph');
+
+                      ?>
+
+                      <div class="grid component text-section">
+                        <div class="grid-container component--outer">
+                          <div class="component--container">
+
+                            <?php if ($onlyparagraph === false):?>
+                              <h<?php echo ($tagoverride) ? $tag : $sizeValue  ?> class="heading-<?php echo ($sizeLabel) ? $sizeLabel : '' ?>"><?= $heading ?></h<?php echo ($tag) ? $tag : $sizeValue  ?>>
+                            <?php endif;?>
+
+                            <p class="paragraph"><?= $paragraph ?></p>
+
+                          </div>
+                        </div>
+                      </div>
+
+
+                  <?php elseif ( get_row_layout() == 'image' ):
+
+                        // vars
+                        $image = get_sub_field('image');
+                        $caption = get_sub_field('caption');
+
+                      ?>
+
+                          <?php if( $image ): ?>
+
+                            <div class="grid component image">
+                              <div class="grid-container component--outer">
+                                <div class="component--container">
+
+                                    <?php
+                                      echo add_image(
+                                        $img,  // ACF-field
+                                        'q_70', // Parameters
+                                        'post-image featured-image' // Classes
+                                      );
+
+                                      ?>
+
+                                 <?php if ( $caption ): ?>
+                                   <p class="image__caption paragraph-sm"><?= $caption ?></p>
+                                 <?php endif; ?>
+
+                               </div>
+                             </div>
+                           </div>
+                          <?php endif; ?>
+
+
+                  <?php elseif ( get_row_layout() == 'background_image' ):
+
+                        // vars
+                        $image = get_sub_field('bg_image');
+                        $height = get_sub_field('height');
+                        $position = get_sub_field('position');
+
+                      ?>
+
+                          <?php if( $image ): ?>
+
+                            <div class="component bg-image" style="background-image: url('<?= add_bg_image($image,''); ?>'); height: <?php echo ($height == true) ? $height : '320px'; ?>; background-position: <?php echo ($position == true) ? $position : 'top left'; ?> "></div>
+
+                          <?php endif; ?>
+
+                    <?php elseif ( get_row_layout() == 'social_proof' ): ?>
+
+                          <?php if( have_rows('social_proof') ): ?>
+
+                            <div class="grid component socialproof">
+
+                                <div class="grid-container component--outer">
+
+                                  <div class="component--container">
+
+                              	<?php while( have_rows('social_proof') ): the_row();
+
+                              		// vars
+                              		$typeofcard = get_sub_field('select_card');
+
+                              		?>
+
+                              			<?php if ( $typeofcard == 1 ): // If card testimonial ?>
+
+                                        <?php if( have_rows('card_testimonial') ):
+
+                                        	while( have_rows('card_testimonial') ): the_row();
+
+                                            // Testimonial
+                                        		$quote = get_sub_field('quote');
+                                            $quotee = get_sub_field('quotee');
+
+                                        		?>
+
+                                            <div class="card card--testimonial no-link">
+
+                                              <h5 class="quote paragraph"><?= $quote ?></h5>
+                                              <p class="quotee paragraph-sm"><?= $quotee ?></p>
+
+                                            </div>
+
+                                        	<?php endwhile; ?>
+
+                                        <?php endif; ?>
+
+
+                                    <?php elseif ($typeofcard == 2 ) : // If card stats with info ?>
+
+                                      <?php if( have_rows('card_stats_info') ):
+
+                                        while( have_rows('card_stats_info') ): the_row();
+
+                                        // Stat + info
+                                        $stat = get_sub_field('stat');
+                                        $heading = get_sub_field('heading');
+                                        $info = get_sub_field('info');
+
+                                          ?>
+
+                                          <div class="card card--stat-info no-link">
+                                            <div class="stat-box">
+                                              <span class="stat heading-five center no-margin"><?= $stat ?></span>
+                                            </div>
+                                            <div class="info-box">
+
+                                              <h5 class="paragraph-xs bold no-margin"><?= $heading ?></h5>
+                                              <p class="paragraph-xs"><?= $info ?></p>
+                                            </div>
+                                          </div>
+
+                                        <?php endwhile; ?>
+
+                                      <?php endif; ?>
+
+
+                                    <?php endif; ?>
+
+
+                              	<?php endwhile; ?>
+                                </div>
+                              </div>
+                            </div>
+
+                            <?php endif; ?>
+
+
+
+                        <?php elseif ( get_row_layout() == 'key_values' ):
+
+                              // Vars
+                              $bgcolor = get_sub_field('bgcolor');
+
+                          ?>
+
+
+
+                          <?php if( have_rows('card') ): ?>
+
+                            <div class="component key-values" <?php echo ($bgcolor) ? 'style="background-color: ' . $bgcolor . ';"' : '' ?>>
+                              <div class="component--outer">
+
+                                <div class="component--container">
+
+                                  <?php while( have_rows('card') ): the_row();
+
+                                  // Stat + info
+                                  $icon = get_sub_field('icon');
+                                  $heading = get_sub_field('heading');
+                                  $paragraph = get_sub_field('paragraph');
+                                  $bgcolor = get_sub_field('bgcolor');
+
+                                    ?>
+
+                                    <div class="card card--key-values">
+                                      <div class="icon-box">
+                                          <?php echo sprintf('<img src="%s" />',
+                                              CloudinaryImage::set()
+                                                  ->set_by_url($icon['url'])
+                                                  ->set_attr('craft','fill')
+                                                  ->set_attr("width",64)
+                                                  ->set_extension('png')
+                                          ); ?>
+                                      </div>
+
+                                      <h5 class="heading heading-five"><?= $heading ?></h5>
+                                      <p class="paragraph-sm"><?= $paragraph ?></p>
+
+                                    </div>
+
+                                  <?php endwhile; ?>
+
+                                  </div>
+                                </div>
+                              </div>
+                          <?php endif; ?>
+
+                        <?php elseif ( get_row_layout() == 'soft_cta' ): ?>
+
+                          <?php if( have_rows('soft_cta') ):?>
+
+                            <div class="grid component softcta">
+                              <div class="grid-container component--outer">
+
+                                <div class="component--container">
+
+                                  <?php while( have_rows('soft_cta') ): the_row();
+
+                                  // Stat + info
+                                  $img = get_sub_field('image');
+                                  $text = get_sub_field('text');
+                                  $link = get_sub_field('link');
+                                  $url = $link['url'];
+                                  $label = $link['title'];
+
+                                    ?>
+
+                                  <a class="card__link" href="<?= $url ?>">
+
+                                      <div class="card card--softcta">
+                                        <div class="softcta--img-container">
+                                          <?php add_image($img, '', 'softcta__image'); ?>
+                                        </div>
+
+                                        <div class="softcta--text-container">
+                                          <p class="softcta__text paragraph-sm"><?= $text ?></p>
+                                          <span class="softcta__link paragraph-sm" href="<?= $url ?>"><?= $label ?></span>
+                                        </div>
+
+                                      </div>
+
+                                    </a>
+
+                                  <?php endwhile; ?>
+
+                                  </div>
+                                </div>
+                              </div>
+                          <?php endif; ?>
+
+
+
+
+                        <?php elseif ( get_row_layout() == 'quote' ):
+
+                          // vars
+                          $quote = get_sub_field('quote');
+                          $quotee = get_sub_field('quotee');
+
+                          ?>
+
+                          <div class="grid component quote">
+                            <div class="grid-container component--outer">
+
+                              <div class="component--container">
+
+                                <p class="quote__paragraph heading-five"><?= $quote ?></p>
+                                <span class="quote__author paragraph-sm"> <?= $quotee ?></span>
+
+                              </div>
+                            </div>
+                          </div>
+
+
+                        <?php elseif ( get_row_layout() == 'accordion' ): ?>
+
+                          <div class="grid component faq">
+                            <div class="grid-container component--outer">
+
+                              <div class="component--container">
+
+
+                                <?php if( have_rows('accordion_field') ): ?>
+
+
+                        				<div class="component component--accordion ui styled fluid accordion">
+
+                        						<?php while( have_rows('accordion_field') ): the_row();
+
+                        							// vars
+                        							$title = get_sub_field('title');
+                        							$content = get_sub_field('content');
+
+                        							?>
+
+                        								<div class="title">
+                        									<i class="dropdown icon heading-five"></i>
+                        									<?= $title ?>
+                        								</div>
+
+                        								<div class="content">
+                        									<p class="transition hidden paragraph-sm">
+                        										<?= $content ?>
+                        									</p>
+                        								</div>
+
+
+
+                        						<?php endwhile; ?>
+
+                        				</div>
+
+                        				<?php endif; ?>
+
+
+                              </div>
+                            </div>
+                          </div>
+
+
+                        <?php elseif ( get_row_layout() == 'contact_form' ):
+
+                          // Vars
+                          $formheading = get_sub_field('form_heading');
+                          $formparagraph = get_sub_field('form_paragraph');
+                          $selectcolor = get_sub_field('form_color');
+                          ?>
+
+                          <div class="component ly--contact-form">
+
+                            <div class="contact-form--container">
+
+                              <div class="card form no-link">
+
+                                    <div class="ly--col-lg-12 ly--col-xs-12 contact-form--col">
+                                      <h3 class="contact-form--col__heading ly--type-beta"><?= $formheading ?></h3>
+                                      <p class="contact-form--col__paragraph ly--type-delta__paragraph"><?= $formparagraph ?></p>
+                                    </div>
+
+                                    <div class="ly--col-lg-6 ly--col-md-3 ly--col-xs-12 contact-form--col">
+                                      <?php echo do_shortcode('[contact-form-7 id="518" title="Contact form - Default" html_class="ly--form-item"]'); ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-<?php echo $selectcolor ? $selectcolor : 'primary'; ?>"></div>
+
+                          </div>
+
+                  <?php endif; // End layouts ?>
+
+            <?php endwhile; // End flexible_content ?>
+
+          <?php endif; // End layouts ?>
+
+</section>

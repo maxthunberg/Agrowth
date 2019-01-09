@@ -4,7 +4,7 @@
   width: 100%;
   padding: 2rem 0 0 0;
   height: auto;
-  .bx--row {
+  .row {
     @include customflex(0, center, center, 0);
     width: 100%;
     .client-logos--container {
@@ -29,7 +29,7 @@
 
 @media (max-width: breakpoint('lg') ) { // 992px
   .client-logos {
-    .bx--row {
+    .row {
       .client-logos--container {
         @include customflex(0, center, center, wrap);
         .client__img-container {
@@ -50,7 +50,7 @@
 
 @media (max-width: breakpoint('sm')) { // 768px
   .client-logos {
-    .bx--row {
+    .row {
       .client-logos--container {
         @include customflex(0, center, center, wrap);
         .client__img-container {

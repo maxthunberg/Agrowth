@@ -1,21 +1,21 @@
 
-  .bx--carousel {
+  .ly--carousel {
     display: flex;
     align-items: center;
   }
-  .bx--carousel-container {
+  .ly--carousel-container {
     max-width: rem(810px);
     overflow: hidden;
     padding: 0 1px;
   }
-  .bx--filmstrip {
+  .ly--filmstrip {
     display: flex;
     justify-content: space-between;
     transition: transform $duration--fast__enter $easing--enter;
     padding: rem(24px) 0;
     width: auto;
   }
-  .bx--filmstrip-btn {
+  .ly--filmstrip-btn {
     @include button-reset;
     height: rem(20px);
     width: rem(20px);
@@ -32,7 +32,7 @@
     }
   }
 
-  .bx--carousel__btn {
+  .ly--carousel__btn {
     @include button-reset(false);
     cursor: pointer;
     padding: 0;
@@ -59,7 +59,7 @@
       fill: $color-primary;
     }
   }
-  .bx--carousel__item {
+  .ly--carousel__item {
     @include button-reset;
     padding: 0;
     line-height: 0;
@@ -71,6 +71,6 @@
       @include focus-outline;
     }
   }
-  .bx--carousel__item--active {
+  .ly--carousel__item--active {
     @include focus-outline;
   }

@@ -5,7 +5,7 @@
     }
   }
   .section-content a,
-  .bx--link {
+  .ly--link {
     position: relative;
     @include reset;
     @include body-text;
@@ -58,7 +58,7 @@
     }
   }
 
-  .bx--link__secondary {
+  .ly--link__secondary {
     position: relative;
     @include reset;
     @include body-text;
@@ -93,7 +93,7 @@
       pointer-events: none;
     }
   }
-  .bx--link__white {
+  .ly--link__white {
     position: relative;
     @include reset;
     @include body-text;

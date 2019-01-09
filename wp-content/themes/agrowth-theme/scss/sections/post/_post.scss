@@ -31,7 +31,7 @@
 
 .resources-footer__outer {
   border-bottom: 1px solid $color-white-10;
-  .bx--row {
+  .row {
     @include customflex(column, center, 0, wrap);
 
     .resources-footer {
@@ -62,7 +62,7 @@
 }
 
 .resources-footer__outer.services {
-  .bx--row {
+  .row {
     .resources-footer {
       width: 100%;
       max-width: none;

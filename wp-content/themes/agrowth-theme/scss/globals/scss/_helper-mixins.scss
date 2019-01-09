@@ -98,7 +98,7 @@ REASON: #{$reason}';
 // ---------------------------------------------
 
 @mixin light-ui {
-  .bx--global-light-ui & {
+  .ly--global-light-ui & {
     @content;
   }
 }

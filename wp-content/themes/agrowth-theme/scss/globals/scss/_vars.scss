@@ -1,7 +1,7 @@
 @import 'colors';
 @import 'spacing';
 
-$prefix: 'bx' !default;
+$prefix: 'ly' !default;
 
 // Color Theme Variables
 $nav-01: $color-blue !default;
@@ -28,17 +28,33 @@ $nav-08: $color-teal !default;
 
 
 // Brand Colors
-$color-primary: #58ED9F;
-  $color-primary-darker: #14BB69;
-  $color-primary-dark: #34D583;
-  $color-primary-light: #6BFFB7;
-  $color-primary-lighter: #86FFD1 ;
+// $color-primary: #58ED9F;
+//   $color-primary-darker: #14BB69;
+//   $color-primary-dark: #34D583;
+//   $color-primary-light: #6BFFB7;
+//   $color-primary-lighter: #86FFD1 ;
 
-$color-secondary: #ff6665;
-  $color-secondary-darker: #CE312C;
-  $color-secondary-dark: #E84C47;
-  $color-secondary-light: #FF7F7C;
-  $color-secondary-lighter: #FF9896;
+
+$color-primary: #58EDCD;
+  $color-primary-darker: #14BB9B;
+  $color-primary-dark: #34D5AC;
+  $color-primary-light: #6BFFE1;
+  $color-primary-lighter: #86FFEC;
+
+// $color-secondary: #ff6665;
+//   $color-secondary-darker: #CE312C;
+//   $color-secondary-dark: #E84C47;
+//   $color-secondary-light: #FF7F7C;
+//   $color-secondary-lighter: #FF9896;
+
+$color-secondary: #5AAAFA;
+  $color-secondary-darker: #2387EB;
+  $color-secondary-dark: #3A94EF;
+  $color-secondary-light: #84C1FD;
+  $color-secondary-lighter: #B0D7FE;
+
+
+
 
 $brand-03: #86FFD1;
 

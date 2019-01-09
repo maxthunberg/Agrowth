@@ -2,7 +2,7 @@
   position: relative;
   min-height: rem(448px);
 
-  .bx--row {
+  .row {
     .hero--container {
       width: 100%;
       @include customflex(column,0,0,0);
@@ -100,7 +100,7 @@
 
 .why-us {
   background-color: $color-white-05;
-  .bx--row {
+  .row {
     @include customflex(0,flex-start,center,0);
     .interactive-icon {
       flex-basis: 20%;
@@ -109,14 +109,14 @@
 }
 
 @media (max-width: breakpoint('xl') ) { // 992px
-  .why-us .bx--row .interactive-icon {
+  .why-us .row .interactive-icon {
     flex-basis: 20%;
   }
 
 }
 
 @media (max-width: breakpoint('lg') ) { // 992px
-  .why-us .bx--row .interactive-icon {
+  .why-us .row .interactive-icon {
     flex-basis: 33.333%;
   }
 }
@@ -124,7 +124,7 @@
 @media (max-width: breakpoint('md') ) { // 768px
   .hero--career {
       min-height: rem(448px);
-    .bx--row {
+    .row {
         @include customflex(column,center,0,0);
       .hero--container {
         @include customflex(column,0,0,0);
@@ -141,7 +141,7 @@
     }
   }
 
-  .why-us .bx--row .interactive-icon {
+  .why-us .row .interactive-icon {
     flex-basis: 50%;
   }
   .our-values {
@@ -184,7 +184,7 @@
 }
 
 @media (max-width: breakpoint('sm') ) { // 992px
-  .why-us .bx--row .interactive-icon {
+  .why-us .row .interactive-icon {
     flex-basis: 100%;
   }
 
@@ -193,7 +193,7 @@
 
 @media (max-width: breakpoint('xs') ) { // 992px
 
-  .why-us .bx--row .interactive-icon {
+  .why-us .row .interactive-icon {
     flex-basis: 100%;
     padding: 0;
   }

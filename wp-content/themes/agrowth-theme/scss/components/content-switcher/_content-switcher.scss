@@ -1,10 +1,10 @@
-.bx--content-switcher {
+.ly--content-switcher {
     @include body-text;
     display: flex;
     height: rem(40px);
   }
 
-  .bx--content-switcher-btn {
+  .ly--content-switcher-btn {
     @include reset;
     @include font-smoothing;
     @include typescale('p-sm');
@@ -40,7 +40,7 @@
     }
   }
 
-  .bx--content-switcher__icon {
+  .ly--content-switcher__icon {
     margin-right: $spacing-xs;
     fill: currentColor;
     // need to color any child path or g
@@ -49,15 +49,15 @@
     }
   }
 
-  .bx--content-switcher-btn:not(:last-of-type) {
+  .ly--content-switcher-btn:not(:last-of-type) {
     border-right: none;
   }
 
-  .bx--content-switcher-btn:not(:first-of-type) {
+  .ly--content-switcher-btn:not(:first-of-type) {
     border-left: $content-switcher-option-border;
   }
 
-  .bx--content-switcher-btn:first-of-type {
+  .ly--content-switcher-btn:first-of-type {
     border-bottom-left-radius: $content-switcher-border-radius;
     border-top-left-radius: $content-switcher-border-radius;
 
@@ -71,7 +71,7 @@
     }
   }
 
-  .bx--content-switcher-btn:last-of-type {
+  .ly--content-switcher-btn:last-of-type {
     border-top-right-radius: $content-switcher-border-radius;
     border-bottom-right-radius: $content-switcher-border-radius;
 
@@ -85,7 +85,7 @@
     }
   }
 
-  .bx--content-switcher-btn.bx--content-switcher--selected {
+  .ly--content-switcher-btn.ly--content-switcher--selected {
     background-color: $color-primary;
     color: $color-white;
     font-weight: 400;

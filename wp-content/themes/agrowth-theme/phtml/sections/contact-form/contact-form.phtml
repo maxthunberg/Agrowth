@@ -4,22 +4,32 @@
 			while( have_rows('contact_form', 'option') ): the_row();
 
 				// vars
-				$heading = get_sub_field('heading','option');
-		    $subheading = get_sub_field('subheading', 'option');
+				$contactheading = get_sub_field('heading','option');
+		    $contactsubheading = get_sub_field('subheading', 'option');
+				$selectcolor = get_sub_field('form_color', 'option');
+
 		?>
 
-			<div class="contact-form">
+			<div class="ly--contact-form">
 
-			    	<div class="bx--col-lg-12 bx--col-xs-12 contact-form--col">
-			      	<h3 class="contact-form--col__heading bx--type-beta"><?= $heading ?></h3>
-			      	<p class="contact-form--col__paragraph bx--type-delta__paragraph"><?= $subheading ?></p>
-			    	</div>
+				<div class="contact-form--container">
 
-			    	<div class="bx--col-lg-6 bx--col-md-3 bx--col-xs-12 contact-form--col">
-							<?php echo do_shortcode('[contact-form-7 id="518" title="Contact form - Default" html_class="bx--form-item"]'); ?>
-			      </div>
+					<div class="card form no-link">
 
-			  </div>
+					    	<div class="ly--col-lg-12 ly--col-xs-12 contact-form--col">
+					      	<h3 class="contact-form--col__heading ly--type-beta"><?= $contactheading ?></h3>
+					      	<p class="contact-form--col__paragraph ly--type-delta__paragraph"><?= $contactsubheading ?></p>
+					    	</div>
+
+					    	<div class="ly--col-lg-6 ly--col-md-3 ly--col-xs-12 contact-form--col">
+									<?php echo do_shortcode('[contact-form-7 id="518" title="Contact form - Default" html_class="ly--form-item"]'); ?>
+					      </div>
+						</div>
+				</div>
+
+				<div class="bg-<?php echo $selectcolor ? $selectcolor : 'primary'; ?>"></div>
+
+		  </div>
 
 	<?php endwhile; ?>
 

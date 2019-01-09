@@ -1,4 +1,4 @@
-  .bx--tag {
+  .ly--tag {
     @include body-text;
     font-weight: 500;
     @include typescale('p-xs');
@@ -15,46 +15,46 @@
     }
   }
 
-  .bx--tag--seo {
+  .ly--tag--seo {
     @include tag-theme($color-blue, $color-blue-darker);
   }
 
-  .bx--tag--digital-design {
+  .ly--tag--digital-design {
     @include tag-theme($color-aqua, $color-aqua-darker);
   }
 
-  .bx--tag--digital-marknadsforing {
+  .ly--tag--digital-marknadsforing {
     @include tag-theme($color-teal, $color-teal-darker);
   }
 
-  .bx--tag--karriar {
+  .ly--tag--karriar {
     @include tag-theme($color-secondary, $color-secondary-darker);
   }
 
-  .bx--tag--ux {
+  .ly--tag--ux {
     @include tag-theme($color-yellow, $color-yellow-darker);
   }
 
-  .bx--tag--whitepaper {
+  .ly--tag--whitepaper {
     @include tag-theme($color-orange, $color-orange-darker);
   }
 
-  .bx--tag--kundcase {
+  .ly--tag--kundcase {
     @include tag-theme($color-red, $color-red-darker);
   }
 
-  .bx--tag--digital-tillvaxt {
+  .ly--tag--digital-tillvaxt {
     @include tag-theme($color-primary, $color-primary-darker);
   }
 
-  .bx--tag--ebook {
+  .ly--tag--ebook {
     @include tag-theme($color-pink, $color-pink-darker);
   }
 
-  .bx--tag--big-data {
+  .ly--tag--big-data {
     @include tag-theme($color-magenta, $color-magenta-darker);
   }
 
-  .bx--tag--research {
+  .ly--tag--research {
     @include tag-theme($color-purple, $color-purple-darker);
   }

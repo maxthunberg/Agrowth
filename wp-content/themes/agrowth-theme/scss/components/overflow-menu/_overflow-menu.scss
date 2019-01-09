@@ -1,5 +1,5 @@
 
-  .bx--overflow-menu {
+  .ly--overflow-menu {
     @include reset;
     position: relative;
     width: rem(20px);
@@ -12,7 +12,7 @@
     }
   }
 
-  .bx--overflow-menu__icon {
+  .ly--overflow-menu__icon {
     width: 100%;
     height: 100%;
     padding: 0.5rem;
@@ -24,7 +24,7 @@
     }
   }
 
-  .bx--overflow-menu-options {
+  .ly--overflow-menu-options {
     @include reset;
     @include layer('overlay');
     display: none;
@@ -41,11 +41,11 @@
     left: -20px;
   }
 
-  .bx--overflow-menu-options--open {
+  .ly--overflow-menu-options--open {
     display: flex;
   }
 
-  .bx--overflow-menu-options:before {
+  .ly--overflow-menu-options:before {
     content: '';
     position: absolute;
     display: block;
@@ -60,7 +60,7 @@
     left: 24px;
   }
 
-  .bx--overflow-menu-options__option {
+  .ly--overflow-menu-options__option {
     @include reset;
     display: flex;
     background-color: transparent;
@@ -69,11 +69,11 @@
     padding: 0;
   }
 
-  .bx--overflow-menu--divider {
+  .ly--overflow-menu--divider {
     border-top: 1px solid $color-white-10;
   }
 
-  .bx--overflow-menu-options__btn {
+  .ly--overflow-menu-options__btn {
     @include reset;
     @include typescale('p-sm');
     @include body-text;
@@ -93,30 +93,30 @@
       color: $color-white;
     }
 
-    .bx--overflow-menu-options__option--danger & {
+    .ly--overflow-menu-options__option--danger & {
       &:focus {
         background-color: $support-error;
       }
     }
   }
 
-  .bx--overflow-menu-options__option:hover {
+  .ly--overflow-menu-options__option:hover {
     background-color: $color-primary;
   }
 
-  .bx--overflow-menu-options__option:hover .bx--overflow-menu-options__btn {
+  .ly--overflow-menu-options__option:hover .ly--overflow-menu-options__btn {
     color: $color-white;
   }
 
-  .bx--overflow-menu-options__option--danger {
+  .ly--overflow-menu-options__option--danger {
     border-top: 1px solid $color-white-10;
   }
 
-  .bx--overflow-menu-options__option--danger:hover {
+  .ly--overflow-menu-options__option--danger:hover {
     background-color: $support-error;
   }
 
-  .bx--overflow-menu--flip {
+  .ly--overflow-menu--flip {
     left: -140px;
 
     &:before {

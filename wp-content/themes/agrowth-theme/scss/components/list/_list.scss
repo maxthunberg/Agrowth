@@ -1,7 +1,7 @@
 
-  .bx--list--nested,
-  .bx--list--unordered,
-  .bx--list--ordered {
+  .ly--list--nested,
+  .ly--list--unordered,
+  .ly--list--ordered {
     @include reset;
     @include body-text;
     @include typescale('p-sm');
@@ -10,34 +10,34 @@
     line-height: 1.5;
   }
 
-  .bx--list--unordered,
-  .bx--list--ordered {
+  .ly--list--unordered,
+  .ly--list--ordered {
     padding: $spacing-md;
   }
 
-  .bx--list__item {
+  .ly--list__item {
     font-weight: 600;
     padding-left: $spacing-2xs;
   }
 
-  .bx--list--unordered > .bx--list__item {
+  .ly--list--unordered > .ly--list__item {
     list-style-type: disc;
   }
 
-  .bx--list--ordered > .bx--list__item {
+  .ly--list--ordered > .ly--list__item {
     list-style-type: decimal;
   }
 
-  .bx--list--nested {
+  .ly--list--nested {
     margin-left: $spacing-xs;
   }
 
-  .bx--list--nested > .bx--list__item {
+  .ly--list--nested > .ly--list__item {
     list-style-type: none;
     font-weight: 400;
   }
 
-  .bx--list--nested > .bx--list__item:before {
+  .ly--list--nested > .ly--list__item:before {
     content: '-';
     padding-right: $spacing-2xs;
   }

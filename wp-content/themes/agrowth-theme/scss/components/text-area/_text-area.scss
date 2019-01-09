@@ -1,5 +1,5 @@
 
-  .bx--text-area {
+  .ly--text-area {
     @include reset;
     @include body-text;
     @include typescale('p-sm');
@@ -37,7 +37,7 @@
     }
   }
 
-  .about-us-form .bx--text-area {
+  .about-us-form .ly--text-area {
     @include reset;
     @include body-text;
     @include typescale('p-sm');

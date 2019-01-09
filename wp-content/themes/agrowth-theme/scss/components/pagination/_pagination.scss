@@ -1,8 +1,8 @@
-  .bx--data-table-v2-container + .bx--pagination {
+  .ly--data-table-v2-container + .ly--pagination {
     border-top: 0;
   }
 
-  .bx--pagination {
+  .ly--pagination {
     @include reset;
     @include body-text;
     width: 100%;
@@ -12,23 +12,23 @@
     align-items: center;
     border: 1px solid $color-white-10;
 
-    .bx--form-item {
+    .ly--form-item {
       flex: auto;
     }
   }
 
-  .bx--pagination__left {
+  .ly--pagination__left {
     display: flex;
     align-items: center;
   }
 
-  .bx--pagination__right {
+  .ly--pagination__right {
     display: flex;
     align-items: center;
     margin-left: auto;
   }
 
-  .bx--pagination__text {
+  .ly--pagination__text {
     @include typescale('p-sm');
     color: $text-02;
     display: none;
@@ -38,7 +38,7 @@
     }
   }
 
-  .bx--pagination__button-icon {
+  .ly--pagination__button-icon {
     height: rem(12px);
     width: rem(12px);
     fill: $color-white-20;
@@ -46,14 +46,14 @@
     transition: $transition--enter__fast;
   }
 
-  .bx--pagination__button {
+  .ly--pagination__button {
     @include reset;
     border: none;
     background: none;
     cursor: pointer;
 
     &:hover {
-      .bx--pagination__button-icon {
+      .ly--pagination__button-icon {
         fill: $color-primary;
       }
     }
@@ -65,37 +65,37 @@
     &:disabled:hover {
       cursor: default;
 
-      .bx--pagination__button-icon {
+      .ly--pagination__button-icon {
         fill: $color-white-20;
       }
     }
   }
 
-  .bx--pagination__button--backward {
+  .ly--pagination__button--backward {
     margin-left: $spacing-md;
     margin-right: $spacing-lg;
   }
 
-  .bx--pagination__button--forward {
+  .ly--pagination__button--forward {
     margin-left: $spacing-lg;
   }
 
-  .bx--pagination__button--no-index {
+  .ly--pagination__button--no-index {
     border-right: 0;
     margin-right: 1px;
   }
 
-  .bx--pagination {
-    .bx--select {
+  .ly--pagination {
+    .ly--select {
       margin-right: $spacing-xs;
     }
 
-    .bx--select--inline {
+    .ly--select--inline {
       margin-right: 0;
       width: rem(48px);
     }
 
-    .bx--select-input {
+    .ly--select-input {
       height: rem(24px);
       width: rem(54px);
       padding: 0 $spacing-xs;
@@ -107,12 +107,12 @@
       }
     }
 
-    .bx--select__arrow {
+    .ly--select__arrow {
       right: 0.5rem;
       top: 0.625rem;
     }
 
-    .bx--text-input {
+    .ly--text-input {
       height: rem(24px);
       min-width: rem(24px);
       width: rem(24px);
@@ -127,13 +127,13 @@
     }
   }
 
-  .bx--pagination--inline {
+  .ly--pagination--inline {
     height: 42px;
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
     margin-right: -1rem;
 
-    .bx--pagination__button {
+    .ly--pagination__button {
       height: 100%;
       border-left: 1px solid $color-white-10;
       border-right: 1px solid $color-white-10;
@@ -141,24 +141,24 @@
       margin: 0;
     }
 
-    .bx--pagination__button--forward {
+    .ly--pagination__button--forward {
       border-right: 0;
     }
 
-    .bx--pagination__button--backward {
+    .ly--pagination__button--backward {
       margin-left: $spacing-md;
     }
 
-    .bx--select--inline {
+    .ly--select--inline {
       position: relative;
       top: -1.5px;
     }
 
-    .bx--select-input {
+    .ly--select-input {
       padding-left: $spacing-md;
     }
 
-    .bx--select__arrow {
+    .ly--select__arrow {
       right: 0.7rem;
     }
   }

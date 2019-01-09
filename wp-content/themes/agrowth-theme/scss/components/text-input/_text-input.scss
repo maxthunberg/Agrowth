@@ -1,4 +1,4 @@
-  .bx--text-input {
+  .ly--text-input {
     @include reset;
     @include body-text;
     @include typescale('p-sm');
@@ -38,7 +38,7 @@
     }
   }
 
-  .about-us-form .bx--text-input {
+  .about-us-form .ly--text-input {
     @include reset;
     @include body-text;
     @include typescale('p-sm');

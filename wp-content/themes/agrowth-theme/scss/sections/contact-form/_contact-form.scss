@@ -1,7 +1,8 @@
-.contact-form {
+.ly--contact-form {
+  @include customflex(0, 0, center,0);
   position: relative;
   padding: 4rem 2rem 0;
-  margin: 4rem 4rem;
+  margin: 6rem 0;
   transition: $transition--enter__fast;
   .contact-form--container {
      @include customflex(0, 0,center,0);
@@ -9,55 +10,67 @@
      width: 100%;
      height: 100%;
     .card.form {
-      margin-top:4rem;
+      transform: translateY(4rem);
       @include customflex(column, 0,center,0);
+      border-radius: .5rem;
       box-shadow: $box-shadow--sticky-nav;
-      padding: 4rem;
+      padding: 3rem;
       width: 100%;
-      max-width: 768px;
-      transition: $transition--enter__fast;
+      max-width: 640px;
+      transition: $transition--enter__normal;
+      .ly--form-item {
+        margin-bottom: 0;
+      }
+      .ly--btn {
+        margin-bottom: 0;
+      }
     }
   }
-  .bg-green {
+  .bg-primary {
     position: absolute;
     top:0;
-    left:0;
     height: calc(100% - 8rem);
-    width: 100%;
+    width: 80%;
+    max-width: 960px;
     border-radius: 1rem;
     @include linear-gradient($color-primary-dark,$color-primary);
-    transition: $transition--enter__fast;
+    transition: $transition--enter__normal;
+  }
+  .bg-secondary {
+    position: absolute;
+    top:0;
+    height: calc(100% - 8rem);
+    width: 80%;
+    max-width: 960px;
+    border-radius: 1rem;
+    @include linear-gradient($color-secondary-dark,$color-secondary);
+    transition: $transition--enter__normal;
+  }
+  .bg-dark {
+    position: absolute;
+    top:0;
+    height: calc(100% - 8rem);
+    width: 80%;
+    max-width: 960px;
+    border-radius: 1rem;
+    @include linear-gradient($color-black,$color-dark);
+    transition: $transition--enter__normal;
   }
 }
 
-.contact-form.animate {
-  position: relative;
-  padding: 4rem 2rem 0;
-  margin: 4rem 0;
-  transition: $transition--enter__fast;
+.ly--contact-form.animate {
+  transition: $transition--exit__fast;
   .contact-form--container {
-     @include customflex(0, 0,center,0);
-     border-radius: 1rem;
-     width: 100%;
-     height: 100%;
     .card.form {
-      margin-top:0;
-      @include customflex(column, 0,center,0);
+      transform: translateY(0);
       box-shadow: $box-shadow--sticky-nav;
-      padding: 4rem;
-      width: 100%;
-      max-width: 768px;
-      transition: $transition--enter__fast;
+      transition: $transition--exit__normal;
     }
   }
-  .bg-green {
-    position: absolute;
-    top:0;
-    left:0;
-    height: calc(100% - 8rem);
+  .bg-primary, .bg-secondary, .bg-dark {
     width: 100%;
+    max-width: 100%;
     border-radius: 0;
-    @include linear-gradient($color-primary-dark,$color-primary);
-    transition: $transition--enter__fast;
+    transition: $transition--exit__normal;
   }
 }

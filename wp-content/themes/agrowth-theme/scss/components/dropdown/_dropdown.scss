@@ -1,4 +1,4 @@
-  .bx--dropdown {
+  .ly--dropdown {
     @include reset;
     @include body-text;
     @include typescale('p-sm');
@@ -20,27 +20,27 @@
       @include focus-outline('border');
     }
 
-    &.bx--dropdown--open:focus {
+    &.ly--dropdown--open:focus {
       outline: none;
       box-shadow: 0 -1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
     }
   }
 
-  .bx--dropdown--up {
-    &.bx--dropdown--open:focus {
+  .ly--dropdown--up {
+    &.ly--dropdown--open:focus {
       box-shadow: 0 1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
 
-      .bx--dropdown-list {
+      .ly--dropdown-list {
         box-shadow: 0 -1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
       }
     }
 
-    .bx--dropdown-list {
+    .ly--dropdown-list {
       bottom: 2.5rem;
     }
   }
 
-  .bx--dropdown__arrow {
+  .ly--dropdown__arrow {
     fill: $color-primary;
     position: absolute;
     right: 1rem;
@@ -48,15 +48,15 @@
     width: rem(10px);
     height: rem(5px);
     pointer-events: none;
-    transition: transform $transition--expansion $bx--standard-easing;
+    transition: transform $transition--expansion $ly--standard-easing;
     transform-origin: 50% 45%;
   }
 
-  .bx--dropdown[data-value=''] .bx--dropdown-text {
+  .ly--dropdown[data-value=''] .ly--dropdown-text {
     color: $text-03;
   }
 
-  .bx--dropdown-text {
+  .ly--dropdown-text {
     height: rem(40px);
     padding-top: rem(13px);
     padding-bottom: rem(13px);
@@ -69,7 +69,7 @@
     border: $input-border;
   }
 
-  .bx--dropdown-list {
+  .ly--dropdown-list {
     @include reset;
     @include layer('overlay');
     @include typescale('p-sm');
@@ -81,16 +81,16 @@
     position: absolute;
     z-index: z('dropdown');
     max-height: 0;
-    transition: max-height $transition--expansion $bx--ease-in;
+    transition: max-height $transition--expansion $ly--ease-in;
     overflow: hidden;
   }
 
-  .bx--dropdown-item {
-    transition: opacity $transition--expansion $bx--ease-in;
+  .ly--dropdown-item {
+    transition: opacity $transition--expansion $ly--ease-in;
     opacity: 0;
   }
 
-  .bx--dropdown-link {
+  .ly--dropdown-link {
     display: block;
     color: currentColor;
     text-decoration: none;
@@ -106,32 +106,32 @@
     }
   }
 
-  .bx--dropdown--selected {
+  .ly--dropdown--selected {
     display: none;
   }
 
-  .bx--dropdown--open {
-    .bx--dropdown__arrow {
+  .ly--dropdown--open {
+    .ly--dropdown__arrow {
       transform: rotate(-180deg);
     }
 
-    .bx--dropdown-list {
+    .ly--dropdown-list {
       max-height: 15rem;
       overflow: auto;
     }
 
     &:focus {
-      .bx--dropdown-list {
+      .ly--dropdown-list {
         box-shadow: 0 1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
       }
     }
 
-    .bx--dropdown-item {
+    .ly--dropdown-item {
       opacity: 1;
     }
   }
 
-  .bx--dropdown--disabled {
+  .ly--dropdown--disabled {
     opacity: 0.5;
     cursor: not-allowed;
 
