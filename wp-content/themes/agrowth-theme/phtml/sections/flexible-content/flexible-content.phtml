@@ -131,7 +131,7 @@ if( have_rows('flexible_content') ):?>
                 $caption = get_sub_field('caption');
               ?>
               <div class="component--image">
-                <img src="<?= $src ?>" class="image" />
+                <img src="<?=  add_image($src, 'g_south,q_70,c_fill,w_720', $class) ?>" class="image" />
                 <p class="image--caption bx--type-epsilon"> <?= $caption ?></p>
               </div>
 
@@ -322,9 +322,13 @@ if( have_rows('flexible_content') ):?>
 
                   <?php include( get_template_directory() . '/phtml/sections/contact-form/contact-form.phtml'); ?>
 
-                <?php else: ?>
+                <?php elseif ($contactform == '2'): // Juristcase ?>
 
                   <?php include( get_template_directory() . '/phtml/sections/contact-form/contact-form--whitepaper.phtml'); ?>
+
+                <?php elseif ($contactform == '3'): // Tuv Nord Case ?>
+
+                  <?php include( get_template_directory() . '/phtml/sections/contact-form/contact-form--whitepaper-tuvnord.phtml'); ?>
 
                 <?php endif; ?>
 
