@@ -51,7 +51,9 @@ add_action('wp_enqueue_scripts', function () {
 
 // Cloudinary Images
 function add_image($image, $params, $class) {
+
 	$base = 'https://res.cloudinary.com/agrowth/image/upload/';
+
 	$filename = $image['filename'];
 
 	if (	$params === 0 ) {
@@ -62,6 +64,7 @@ function add_image($image, $params, $class) {
 
 	echo '<img src="' . @$output . '" class="' . @$class . '" />';
 }
+
 
 function add_bg_image($image, $params) {
 	if ( $image ) {
