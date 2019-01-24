@@ -1,0 +1,111 @@
+
+  .ly--slider-container {
+    max-width: rem(600px);
+    min-width: rem(200px);
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    @media screen and (min-width: 768px) {
+      min-width: rem(350px);
+    }
+  }
+
+  .ly--slider {
+    position: relative;
+    width: 100%;
+    margin: 0 $spacing-md;
+  }
+
+  .ly--slider--disabled {
+    opacity: 0.5;
+  }
+
+  .ly--slider--disabled .ly--slider__thumb {
+    &:hover {
+      transform: translate(-50%, -50%);
+    }
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+    &:active {
+      background: $color-primary;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .ly--slider__range-label {
+    @include typescale('p-sm');
+    color: $text-02;
+
+    &:last-of-type {
+      margin-right: $spacing-md;
+    }
+  }
+
+  .ly--slider__track {
+    position: absolute;
+    width: 100%;
+    height: rem(4px);
+    background: $color-white-20;
+    cursor: pointer;
+    transform: translate(0%, -50%);
+  }
+
+  .ly--slider__filled-track {
+    position: absolute;
+    width: 100%;
+    height: rem(4px);
+    background: $color-primary;
+    transform-origin: left;
+    pointer-events: none;
+    transform: translate(0%, -50%);
+  }
+
+  .ly--slider__thumb {
+    position: absolute;
+    height: rem(24px);
+    width: rem(24px);
+    background: $color-primary;
+    border-radius: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 100ms $easing--enter, background 100ms $easing--enter;
+    cursor: pointer;
+    outline: none;
+
+    &--clicked {
+      transition: left $duration--fast__enter $easing--enter;
+    }
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+    &:focus {
+      @include focus-outline('blurred');
+    }
+    &:active {
+      background: darken($color-primary, 5%);
+      transform: translate(-50%, -50%) scale(1.25);
+    }
+  }
+
+  .ly--slider__input {
+    display: none;
+  }
+
+  .ly--slider-text-input,
+  .ly---slider-text-input {
+    width: rem(60px);
+    min-width: 0;
+    height: 2rem;
+    padding: 0;
+    text-align: center;
+    font-weight: 600;
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }

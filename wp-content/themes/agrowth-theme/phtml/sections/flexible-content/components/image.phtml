@@ -1,0 +1,30 @@
+<?php
+  // vars
+  $image = get_sub_field('image');
+  $caption = get_sub_field('caption');
+
+?>
+
+    <?php if( $image ): ?>
+
+      <div class="grid component image">
+        <div class="grid-container component--outer">
+          <div class="component--container">
+
+              <?php
+                echo add_image(
+                  $img,  // ACF-field
+                  'q_70', // Parameters
+                  'post-image featured-image' // Classes
+                );
+
+                ?>
+
+           <?php if ( $caption ): ?>
+             <p class="image__caption paragraph-sm"><?= $caption ?></p>
+           <?php endif; ?>
+
+         </div>
+       </div>
+     </div>
+    <?php endif; ?>

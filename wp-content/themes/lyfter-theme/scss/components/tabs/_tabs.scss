@@ -1,0 +1,164 @@
+
+  .ly--tabs {
+    @include typescale('p-sm');
+    @include font-smoothing;
+    @include body-text;
+    color: $text-01;
+    font-weight: 600;
+    height: auto;
+    width: 100%;
+    position: relative;
+
+    @include breakpoint(bp--sm--major) {
+      background: none;
+      min-height: rem(49px);
+    }
+  }
+
+  .ly--tabs-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $spacing-md;
+    height: rem(40px);
+    cursor: pointer;
+    background-color: $field-primary;
+
+    svg {
+      width: rem(12px);
+      height: rem(12px);
+      fill: $color-primary;
+    }
+
+    &:focus {
+      @include focus-outline('border');
+    }
+
+    @include breakpoint(bp--sm--major) {
+      display: none;
+    }
+  }
+
+  .ly--tabs-trigger-text {
+    text-decoration: none;
+    font-weight: 600;
+    color: $text-01;
+
+    &:focus {
+      @include focus-outline('border');
+    }
+  }
+
+  .ly--tabs__nav {
+    @include layer('overlay');
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(bp--sm--major) {
+      @include typescale('p');
+      flex-direction: row;
+      margin-right: $spacing-md;
+      margin-left: $spacing-md;
+      background: none;
+      box-shadow: none;
+    }
+
+    @include breakpoint(bp--lg--major) {
+      margin-left: 0;
+    }
+  }
+
+  .ly--tabs__nav--hidden {
+    display: none;
+
+    @include breakpoint(bp--sm--major) {
+      display: flex;
+    }
+  }
+
+  .ly--tabs__nav-item {
+    @include typescale('p-sm');
+    background-color: $color-white;
+    padding: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: $color-primary;
+
+      @include breakpoint(bp--sm--major) {
+        outline: 1px solid transparent;
+        background: transparent;
+      }
+    }
+
+    @include breakpoint(bp--sm--major) {
+      background: transparent;
+      padding: $spacing-sm 0 $spacing-sm;
+
+      & + & {
+        margin-left: rem(48px);
+      }
+    }
+  }
+
+  .ly--tabs__nav-item--selected {
+    border: none;
+
+    @include breakpoint(bp--sm--major) {
+      border-bottom: 2px solid $color-primary;
+
+      .ly--tabs__nav-link {
+        color: $color-primary;
+
+        &:focus {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  .ly--tabs__nav-item:hover .ly--tabs__nav-link {
+    color: $color-white;
+
+    @include breakpoint(bp--sm--major) {
+      color: $color-primary;
+    }
+  }
+
+  .ly--tabs__nav-link {
+    display: inline-block;
+    color: $text-01;
+    text-decoration: none;
+    padding: $spacing-md;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &:focus {
+      outline: 1px solid transparent;
+      background-color: $color-primary;
+      color: $color-white;
+    }
+
+    @include breakpoint(bp--sm--major) {
+      padding: 0 $spacing-3xs;
+      width: auto;
+
+      &:hover {
+        color: $color-primary;
+      }
+
+      &:focus {
+        background-color: transparent;
+        color: $text-01;
+        outline: 1px solid transparent;
+        box-shadow: 0 0 0 1px $color-primary;
+      }
+    }
+  }

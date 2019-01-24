@@ -1,0 +1,27 @@
+<!-- Basic without calendar (mm/yy only) -->
+<div class="ly--form-item">
+  <div class="ly--date-picker ly--date-picker--simple ly--date-picker--short">
+    <div class="ly--date-picker-container">
+      <label for="date-picker-4" class="ly--label">Date Picker label</label>
+      <input type="text" id="date-picker-4" class="ly--date-picker__input" pattern="\d{1,2}/\d{4}" placeholder="mm/yyyy" data-date-picker-input
+      />
+      <div class="ly--form-requirement">
+        Invalid date format.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Basic without calendar -->
+<div class="ly--form-item">
+  <div class="ly--date-picker ly--date-picker--simple">
+    <div class="ly--date-picker-container">
+      <label for="date-picker-5" class="ly--label">Date Picker label</label>
+      <input data-invalid type="text" id="date-picker-5" class="ly--date-picker__input" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="mm/dd/yyyy"
+        data-date-picker-input />
+      <div class="ly--form-requirement">
+        Invalid date format.
+      </div>
+    </div>
+  </div>
+</div>

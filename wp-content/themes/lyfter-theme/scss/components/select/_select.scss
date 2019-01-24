@@ -1,0 +1,84 @@
+
+  .ly--select {
+    @include reset;
+    position: relative;
+    display: block;
+  }
+
+  .ly--select-input {
+    @include body-text;
+    @include typescale('p-sm');
+    appearance: none;
+    display: block;
+    width: 100%;
+    padding: $spacing-sm $spacing-2xl $spacing-sm $spacing-md;
+    color: $text-01;
+    background-color: $field-primary;
+    border: $input-border;
+    border-radius: 0;
+    cursor: pointer;
+
+    // Hide default select arrow in IE10+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus {
+      @include focus-outline('border');
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .ly--select__arrow {
+    fill: $color-primary;
+    position: absolute;
+    right: 1rem;
+    top: 1.175rem;
+    width: rem(10px);
+    height: rem(5px);
+    pointer-events: none;
+  }
+
+  .ly--select-optgroup,
+  .ly--select-option {
+    color: $text-01; // For the options to show in IE11
+  }
+
+  // Override some Firefox user-agent styles
+  @-moz-document url-prefix() {
+    .ly--select-option {
+      background-color: $color-white;
+      color: $text-01;
+    }
+
+    .ly--select-optgroup {
+      color: $text-01;
+    }
+  }
+
+
+.ly--select--inline {
+  display: flex;
+  align-items: center;
+
+  .ly--label {
+    white-space: nowrap;
+    margin: 0 $spacing-xs 0 0;
+    font-weight: 400;
+  }
+
+  .ly--select-input {
+    background-color: transparent;
+    color: $color-primary;
+    font-weight: 600;
+
+    &:disabled ~ * {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<?php if( have_rows('social_proof') ): ?>
+
+
+   <div class="grid component socialproof">
+
+       <div class="grid-container component--outer">
+
+         <div class="component--container">
+
+      <?php while( have_rows('social_proof') ): the_row();
+
+        // vars
+        $typeofcard = get_sub_field('select_card');
+
+        ?>
+
+          <?php if ( $typeofcard == 1 ): // If card testimonial ?>
+
+               <?php if( have_rows('card_testimonial') ):
+
+                while( have_rows('card_testimonial') ): the_row();
+
+                   // Testimonial
+                  $quote = get_sub_field('quote');
+                   $quotee = get_sub_field('quotee');
+
+                  ?>
+
+                   <div class="card card--testimonial no-link">
+
+                     <h5 class="quote paragraph"><?= $quote ?></h5>
+                     <p class="quotee paragraph-sm"><?= $quotee ?></p>
+
+                   </div>
+
+                <?php endwhile; ?>
+
+               <?php endif; ?>
+
+
+           <?php elseif ($typeofcard == 2 ) : // If card stats with info ?>
+
+             <?php if( have_rows('card_stats_info') ):
+
+               while( have_rows('card_stats_info') ): the_row();
+
+               // Stat + info
+               $stat = get_sub_field('stat');
+               $heading = get_sub_field('heading');
+               $info = get_sub_field('info');
+
+                 ?>
+
+                 <div class="card card--stat-info no-link">
+                   <div class="stat-box">
+                     <span class="stat heading-five center no-margin"><?= $stat ?></span>
+                   </div>
+                   <div class="info-box">
+
+                     <h5 class="paragraph-xs bold no-margin"><?= $heading ?></h5>
+                     <p class="paragraph-xs"><?= $info ?></p>
+                   </div>
+                 </div>
+
+               <?php endwhile; ?>
+
+             <?php endif; ?>
+
+
+           <?php endif; ?>
+
+
+      <?php endwhile; ?>
+       </div>
+     </div>
+   </div>
+
+   <?php endif; ?>

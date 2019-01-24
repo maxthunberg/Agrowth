@@ -1,0 +1,44 @@
+
+  .ly--fab {
+    @include reset;
+    @include rotate(0, $transition--base);
+    display: inline-block;
+    width: rem(72px);
+    height: rem(72px);
+    text-decoration: none;
+    filter: drop-shadow(0px 3px 3px 0 $box-shadow);
+
+    &__hidden {
+      @include hidden;
+      color: $color-white;
+    }
+
+    // Styles for "Open" state
+    &__svg {
+      width: 100%;
+
+      .ly--fab__hexagon {
+        transition: fill $transition--base;
+        fill: $color-blue;
+      }
+
+      .ly--fab__plus-icon {
+        @include rotate(0, $transition--base);
+        fill: $color-white;
+      }
+    }
+
+    // Styles for "Closed" state
+    &[data-state='closed'] {
+      @include rotate(90deg, $transition--base);
+
+      .ly--fab__hexagon {
+        transition: fill $transition--base;
+        fill: $color-blue;
+      }
+
+      .ly--fab__plus-icon {
+        @include rotate(-45deg, $transition--base);
+      }
+    }
+  }

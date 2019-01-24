@@ -1,0 +1,141 @@
+  .ly--dropdown {
+    @include reset;
+    @include body-text;
+    @include typescale('p-sm');
+    position: relative;
+    list-style: none;
+    display: block;
+    background-color: $color-white-03;
+    border: 1px solid $color-white-10;
+    width: 100%;
+    height: rem(40px);
+    cursor: pointer;
+    color: $text-01;
+
+    &:hover {
+      border: 1px solid $color-white-20;
+    }
+
+    &:focus {
+      @include focus-outline('border');
+    }
+
+    &.ly--dropdown--open:focus {
+      outline: none;
+      box-shadow: 0 -1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
+    }
+  }
+
+  .ly--dropdown--up {
+    &.ly--dropdown--open:focus {
+      box-shadow: 0 1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
+
+      .ly--dropdown-list {
+        box-shadow: 0 -1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
+      }
+    }
+
+    .ly--dropdown-list {
+      bottom: 2.5rem;
+    }
+  }
+
+  .ly--dropdown__arrow {
+    fill: $color-primary;
+    position: absolute;
+    right: 1rem;
+    top: 1.175rem;
+    width: rem(10px);
+    height: rem(5px);
+    pointer-events: none;
+    transition: transform $transition--expansion $ly--standard-easing;
+    transform-origin: 50% 45%;
+  }
+
+  .ly--dropdown[data-value=''] .ly--dropdown-text {
+    color: $text-03;
+  }
+
+  .ly--dropdown-text {
+    height: rem(40px);
+    padding-top: rem(13px);
+    padding-bottom: rem(13px);
+    padding-left: $spacing-md;
+    padding-right: $spacing-2xl;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: $input-border;
+  }
+
+  .ly--dropdown-list {
+    @include reset;
+    @include layer('overlay');
+    @include typescale('p-sm');
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    position: absolute;
+    z-index: z('dropdown');
+    max-height: 0;
+    transition: max-height $transition--expansion $ly--ease-in;
+    overflow: hidden;
+  }
+
+  .ly--dropdown-item {
+    transition: opacity $transition--expansion $ly--ease-in;
+    opacity: 0;
+  }
+
+  .ly--dropdown-link {
+    display: block;
+    color: currentColor;
+    text-decoration: none;
+    padding: $spacing-md $spacing-lg $spacing-md $spacing-md;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      background-color: $field-primary;
+      color: $color-primary;
+      outline: 1px solid transparent;
+    }
+  }
+
+  .ly--dropdown--selected {
+    display: none;
+  }
+
+  .ly--dropdown--open {
+    .ly--dropdown__arrow {
+      transform: rotate(-180deg);
+    }
+
+    .ly--dropdown-list {
+      max-height: 15rem;
+      overflow: auto;
+    }
+
+    &:focus {
+      .ly--dropdown-list {
+        box-shadow: 0 1px 0 0 $color-primary, 1px 0 0 0 $color-primary, -1px 0 0 0 $color-primary;
+      }
+    }
+
+    .ly--dropdown-item {
+      opacity: 1;
+    }
+  }
+
+  .ly--dropdown--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:focus {
+      outline: none;
+    }
+  }

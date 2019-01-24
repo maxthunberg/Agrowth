@@ -1,0 +1,84 @@
+<?php if( have_rows('section_resources') ):
+
+	while( have_rows('section_resources') ): the_row();
+
+		// vars
+    $subheading = get_sub_field('subheading');
+    $heading = get_sub_field('heading');
+		$btnlink = get_sub_field('btn_link');
+		$url = $btnlink["url"];
+		$label = $btnlink["title"];
+
+		?>
+<div class="grid-fullwidth resources-slider">
+  <div class="row">
+    <div class="ly--col-lg-12 section-heading_center">
+      <h5 class="sub-heading-three center"><?= $subheading ?></h5>
+      <h2 class="heading-three center"><?= $heading ?></h2>
+    </div>
+    <div class="ly--col-md-6 ly--col-xs-12 swiper-slider-outer">
+      <!-- Slider main container -->
+      <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+              <!-- Slides -->
+              <?php
+                    $args = array(
+                        'post_type' => 'post',
+                        'orderby' => 'date',
+                        'order'   => 'DESC',
+                        'posts_per_page' => 5,
+                    );
+
+                    $query = new WP_Query( $args );
+                    ?>
+
+                    <?php while ( $query->have_posts() ) : $query->the_post();?>
+                      <div class="swiper-slide">
+                            <?php include( get_template_directory() . '/phtml/sections/cards/card-post.phtml');?>
+                      </div>
+                  <?php  endwhile; ?>
+
+                    <?php
+                    wp_reset_postdata();?>
+
+          </div>
+          <!-- If we need pagination -->
+          <!-- <div class="swiper-pagination"></div> -->
+
+          <!-- If we need navigation buttons -->
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+
+      </div>
+    </div>
+    <div class="ly--col-lg-12 section-button_center">
+
+				<button class="ly--btn ly--btn__primary btn-prev" type="button">
+					<svg width="12" height="16" viewBox="0 0 12 16">
+					  <g fill="none" fill-rule="evenodd">
+					    <rect width="12" height="16"/>
+					    <polygon fill="#ffffff" points="1 8.071 8.071 1 9.485 2.414 3.828 8.071 9.485 13.728 8.071 15.142"/>
+					  </g>
+					</svg>
+				</button>
+
+      <a href="<?= $url ?>"><button class="ly--btn ly--btn__primary" type="button"><?= $label ?></button></a>
+
+				<button class="ly--btn ly--btn__primary btn-next" type="button">
+					<svg width="12" height="16" viewBox="0 0 12 16">
+					  <g fill="none" fill-rule="evenodd">
+					    <rect width="12" height="16"/>
+					    <polygon fill="#ffffff" points="1 8.071 8.071 1 9.485 2.414 3.828 8.071 9.485 13.728 8.071 15.142"/>
+					  </g>
+					</svg>
+				</button>
+
+
+    </div>
+
+  </div>
+</div>
+<?php endwhile; ?>
+
+<?php endif; ?>

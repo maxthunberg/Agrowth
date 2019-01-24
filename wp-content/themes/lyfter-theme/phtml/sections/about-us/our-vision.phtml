@@ -1,0 +1,23 @@
+<?php if( have_rows('our_vision') ):?>
+
+	<div class="grid our-vision section-8rem">
+		<div class="row">
+
+	<?php while( have_rows('our_vision') ): the_row();
+
+				// vars
+				$heading = get_sub_field('heading');
+				$paragraph = get_sub_field('paragraph');
+				?>
+
+		        <div class="ly--col-xs-12 ly--col-md-6 our-vision--col section-2col revealer-0">
+		          <h3 class="heading-four light"><?= $heading ?></h3>
+		          <p class="paragraph light"><?= $paragraph ?></p>
+		        </div>
+
+	<?php endwhile; ?>
+
+			</div>
+		</div>
+
+<?php endif; ?>

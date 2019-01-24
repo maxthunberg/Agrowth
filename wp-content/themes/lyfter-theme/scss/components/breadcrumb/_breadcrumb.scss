@@ -1,0 +1,89 @@
+
+.ly--breadcrumb {
+    @include typescale('p-xs');
+    @include body-text;
+    display: none;
+    padding: $spacing-md;
+    border-bottom: 1px solid $color-white-10;
+    @include breakpoint(bp--xs--major) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .ly--breadcrumb.post {
+    @include typescale('p-xs');
+    @include body-text;
+    display: none;
+    padding: $spacing-md;
+    border-bottom: 1px solid $color-white-10;
+    margin-top:3rem;
+    @include breakpoint(bp--xs--major) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .ly--breadcrumb.page--about-us {
+    @include typescale('p-xs');
+    @include body-text;
+    display: none;
+    padding: $spacing-sm;
+    border-bottom: 1px solid $color-white-10;
+    margin-top:2.75rem;
+    background-color: transparent;
+    @include breakpoint(bp--xs--major) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .ly--breadcrumb-item {
+    margin-right: $spacing-md;
+    display: flex;
+    align-items: center;
+  }
+
+  .ly--breadcrumb-item::after {
+    content: '/';
+    margin-left: $spacing-md;
+    color: $text-03;
+  }
+
+  .ly--breadcrumb--no-trailing-slash .ly--breadcrumb-item:last-child::after {
+    content: '';
+  }
+
+  .ly--breadcrumb-item:last-child {
+    margin-right: 0;
+
+    &::after {
+      margin-right: 0;
+    }
+  }
+  .ly--link_current {
+    white-space: nowrap;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 1px 0;
+    color: $color-dark;
+  }
+
+  .ly--breadcrumb .ly--link {
+    white-space: nowrap;
+    transition: $transition--enter__fast;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      color: $color-primary;
+      transition: $transition--enter__fast;
+    }
+
+    // Applies to Firefox only
+    @-moz-document url-prefix() {
+      & {
+        border-bottom: none;
+      }
+    }
+  }

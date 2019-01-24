@@ -1,0 +1,97 @@
+
+  .ly--accordion {
+    @include reset;
+    @include body-text;
+    list-style: none;
+    width: 100%;
+  }
+
+  .ly--accordion__item {
+    transition: $transition--enter__fast;
+    border-top: 1px solid $color-white-10;
+    overflow: hidden;
+
+    &:focus {
+      outline: none;
+
+      .ly--accordion__arrow {
+        @include focus-outline('border');
+        overflow: visible; // safari fix
+        outline-offset: -.5px; // safari fix
+      }
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $color-white-10;
+    }
+  }
+
+  .ly--accordion__heading {
+    @include button-reset;
+    color: $text-01;
+    display: flex;
+    align-items: center;
+    justify-content: $accordion-justify-content;
+    flex-direction: $accordion-flex-direction;
+    cursor: pointer;
+    padding: $spacing-xs 0;
+
+    // new version of markup uses focus on the heading,
+    // not the list element itself
+    &:focus {
+      outline: none;
+
+      .ly--accordion__arrow {
+        @include focus-outline('border');
+        overflow: visible; // safari fix
+        outline-offset: -.5px; // safari fix
+      }
+    }
+  }
+
+  .ly--accordion__arrow {
+    transition: $transition--enter__fast;
+    height: 1.25rem;
+    width: 1.25rem;
+    padding: $spacing-2xs $spacing-3xs $spacing-2xs $spacing-2xs;
+    margin: $accordion-arrow-margin;
+    fill: $color-white-20;
+  }
+
+  .ly--accordion__title {
+    margin: $accordion-title-margin;
+    @include letter-spacing;
+    text-transform: uppercase;
+    @include typescale('p');
+  }
+
+  .ly--accordion__content {
+    transition: $transition--enter__fast;
+    padding: $accordion-content-padding;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+
+    p {
+      @include typescale('p');
+    }
+  }
+
+
+.ly--accordion__item--active {
+  overflow: visible;
+
+  .ly--accordion__content {
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-lg;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    transition: $transition--enter__fast;
+  }
+
+  .ly--accordion__arrow {
+    transform: rotate(90deg);
+    fill: $color-primary;
+  }
+}

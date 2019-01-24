@@ -1,0 +1,111 @@
+
+  .ly--toolbar {
+    @include body-text;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 1rem 0;
+
+    > div {
+      margin: 0 rem(4px);
+    }
+
+    .ly--search-input {
+      height: rem(32px);
+      background-color: transparent;
+      outline: none;
+    }
+
+    .ly--search-close {
+      display: none;
+    }
+
+    .ly--overflow-menu__icon {
+      fill: $text-02;
+      transition: fill 50ms $easing--enter;
+    }
+
+    .ly--search-magnifier {
+      fill: $text-02;
+      transform: scale(1.3);
+      transition: all 175ms $easing--enter;
+      top: rem(8px);
+      left: rem(6px);
+      cursor: pointer;
+    }
+
+    fieldset {
+      border: 0;
+      padding: 0;
+    }
+
+    .ly--toolbar-search--active {
+      width: rem(250px);
+
+      .ly--search-magnifier {
+        transform: scale(1);
+        top: rem(9px);
+      }
+
+      .ly--search-input {
+        background-color: $field-primary;
+      }
+
+      .ly--search-close {
+        display: block;
+      }
+    }
+
+    .ly--checkbox-label {
+      margin-bottom: 0;
+    }
+
+    .ly--overflow-menu--open > .ly--overflow-menu__icon {
+      fill: $color-primary;
+    }
+  }
+
+  .ly--toolbar-search {
+    width: 1.8rem;
+    transition: all 175ms $easing--enter;
+  }
+
+  .ly--toolbar-search__btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: transparent;
+    border: 0;
+    height: rem(32px);
+    width: rem(32px);
+
+    &:focus {
+      @include focus-outline;
+    }
+  }
+
+  .ly--toolbar-filter-icon {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .ly--toolbar-menu__title {
+    @include typescale('p-sm');
+    @include letter-spacing;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .ly--toolbar-menu__option {
+    padding: 0.5rem 1.25rem;
+  }
+
+  .ly--toolbar-menu__divider {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid $color-white-10;
+  }
+
+  .ly--radio-button-group {
+    border: none;
+  }

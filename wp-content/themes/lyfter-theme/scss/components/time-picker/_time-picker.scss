@@ -1,0 +1,36 @@
+
+  .ly--time-picker {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .ly--time-picker .ly--select-input {
+    padding-right: $spacing-xl;
+  }
+
+  .ly--time-picker .ly--select__arrow {
+    right: 0.875rem;
+  }
+
+  .ly--time-picker__input-field {
+    @include reset;
+    @include body-text;
+    @include typescale('p-sm');
+    display: flex;
+    align-items: center;
+    background-color: $field-primary;
+    border: 1px solid transparent;
+    width: 4.875rem;
+    color: $text-01;
+    height: rem(40px);
+    padding: 0 $spacing-md;
+
+    &:focus {
+      @include focus-outline('border');
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }

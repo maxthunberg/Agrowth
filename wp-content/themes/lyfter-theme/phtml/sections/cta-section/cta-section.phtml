@@ -1,0 +1,40 @@
+<?php if ( have_rows('section_cta') ):
+
+        while( have_rows('section_cta') ): the_row();
+        // vars
+        $heading = get_sub_field('heading');
+        $paragraph = get_sub_field('paragraph');
+        $btnlink = get_sub_field('btn_link');
+        $theme = get_sub_field('theme');
+        $url = $btnlink["url"];
+        $label = $btnlink["title"];
+
+?>
+
+    <div class="grid cta-section <?php if ( $theme == 1 ) { echo 'primary'; } elseif ( $theme == 2 ) { echo 'secondary'; } else { echo 'dark'; } ?>">
+      <div class="row">
+        <div class="ly--col cta-section-container">
+
+          <div class="text-container">
+
+            <h4 class="heading-four light"><?= @$heading ?></h4>
+
+            <?php if ($paragraph):?>
+              <p class="text-container_paragraph paragraph light"><?= @$paragraph ?></p>
+            <?php endif;?>
+
+          </div>
+
+          <a href="<?= $url ?>">
+            <button class="ly--btn <?php if ( $theme == 1 ) { echo 'ly--btn--outline__white'; } elseif ( $theme == 2 ) { echo 'ly--btn--outline__white'; } else { echo 'ly--btn--outline__white'; } ?>" type="button">
+              <?= $label ?>
+            </button>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+<?php endwhile;?>
+<?php endif; ?>

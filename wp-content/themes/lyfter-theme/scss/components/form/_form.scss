@@ -1,0 +1,73 @@
+
+  .ly--fieldset {
+    @include reset;
+    margin-bottom: $spacing-xl;
+  }
+
+  .ly--form-item {
+    @include body-text;
+    flex: 1;
+    margin-right: $spacing-md;
+    margin-bottom: $spacing-lg;
+
+    &:last-of-type {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .ly--form-item__uploader {
+    @include body-text;
+    flex: 1;
+    margin-right: 0;
+    margin-bottom: $spacing-lg;
+
+    &:last-of-type {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .ly--label {
+    @include reset;
+    @include body-text;
+    @include typescale('p-sm');
+    font-weight: $input-label-weight;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: $spacing-xs;
+  }
+
+  .ly--label .ly--tooltip__trigger {
+    @include typescale('p-sm');
+  }
+
+  .ly--label--disabled {
+    opacity: 0.5;
+  }
+
+  input[data-invalid],
+  textarea[data-invalid],
+  select[data-invalid] {
+    box-shadow: 0 2px 0px 0px $support-error;
+
+    ~ .ly--form-requirement {
+      max-height: rem(200px);
+    }
+  }
+
+  .ly--form-requirement {
+    @include reset;
+    @include typescale('p-sm');
+    margin: $spacing-sm 0 0;
+    max-height: 0;
+    overflow: hidden;
+    font-weight: 600;
+    line-height: 1.5;
+
+    &::before {
+      content: '*';
+      display: inline-block;
+      color: $support-error;
+    }
+  }

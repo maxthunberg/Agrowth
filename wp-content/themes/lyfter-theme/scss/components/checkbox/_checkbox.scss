@@ -1,0 +1,152 @@
+.ly--form-item.ly--checkbox-wrapper {
+    margin-bottom: $spacing-md;
+
+    &:first-of-type {
+      margin-top: $spacing-xs;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .ly--checkbox {
+    @include hidden;
+  }
+
+  .ly--checkbox-label {
+    @include reset;
+    @include body-text;
+    @include font-smoothing;
+    @include typescale('p-sm');
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: $spacing-lg;
+    min-height: rem(16px);
+  }
+
+  .ly--checkbox-label::before {
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: calc(50% - 9px);
+    height: rem(18px);
+    width: rem(18px);
+    border: $checkbox-border-width solid $color-white-20;
+    background-color: $color-white;
+  }
+
+  // Checkmark
+  .ly--checkbox-label::after {
+    content: '';
+    width: 10px;
+    height: 5px;
+    background: none;
+    border-left: 2px solid $color-white;
+    border-bottom: 2px solid $color-white;
+    transform: scale(0) rotate(-45deg);
+    position: absolute;
+    left: rem(3px);
+    top: 50%;
+    margin-top: rem(-5px);
+  }
+
+  .ly--checkbox:checked + .ly--checkbox-label::before,
+  .ly--checkbox:indeterminate + .ly--checkbox-label::before,
+  .ly--checkbox-label[data-contained-checkbox-state='true']::before,
+  .ly--checkbox-label[data-contained-checkbox-state='mixed']::before {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  .ly--checkbox:checked + .ly--checkbox-label::after,
+  .ly--checkbox-label[data-contained-checkbox-state='true']::after {
+    opacity: 1;
+    transform: scale(1) rotate(-45deg);
+  }
+
+  .ly--checkbox:not(:checked) + .ly--checkbox-label::after {
+    opacity: 0;
+    transform: scale(0) rotate(-45deg);
+  }
+
+  .ly--checkbox:focus + .ly--checkbox-label::before,
+  .ly--checkbox-label__focus::before {
+    @include focus-outline('blurred');
+  }
+
+  // Indeterminate dash
+  .ly--checkbox:indeterminate + .ly--checkbox-label::after,
+  .ly--checkbox-label[data-contained-checkbox-state='mixed']::after {
+    transform: scale(1) rotate(0deg);
+    border-left: 0 solid $color-white;
+    border-bottom: 2px solid $color-white;
+    opacity: 1;
+    width: rem(12px);
+    margin-top: rem(-6px);
+  }
+
+  //Disabled
+  .ly--checkbox:disabled + .ly--checkbox-label,
+  .ly--checkbox:disabled ~ .ly--checkbox-label-text,
+  .ly--checkbox-label[data-contained-checkbox-disabled='true'] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ly--checkbox-appearance {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 9px);
+    display: inline-block;
+    height: rem(18px);
+    width: rem(18px);
+    margin-right: $spacing-xs;
+    background-color: $color-white;
+    border: $checkbox-border-width solid $color-white-20;
+    min-width: rem(18px);
+  }
+
+  // Backwards compatibilty for old checkbox html using .ly--checkbox-appearance
+  .ly--checkbox:checked + .ly--checkbox-label .ly--checkbox-appearance {
+    top: rem(-1px);
+  }
+
+  .ly--checkbox:checked + .ly--checkbox-appearance,
+  .ly--checkbox:checked + .ly--checkbox-label .ly--checkbox-appearance {
+    display: flex;
+    align-items: baseline;
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  .ly--checkbox:focus + .ly--checkbox-label .ly--checkbox-appearance,
+  .ly--checkbox:focus + .ly--checkbox-appearance {
+    @include focus-outline('blurred');
+  }
+
+  .ly--checkbox:disabled + .ly--checkbox-appearance {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ly--checkbox-checkmark {
+    display: none;
+    fill: $color-white;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ly--checkbox:checked + .ly--checkbox-appearance .ly--checkbox-checkmark,
+  .ly--checkbox:checked + .ly--checkbox-label .ly--checkbox-appearance .ly--checkbox-checkmark {
+    display: block;
+
+    @-moz-document url-prefix() {
+      & {
+        stroke: $color-primary;
+      }
+    }
+  }

@@ -1,0 +1,116 @@
+.section-post-image {
+  width: 100vw;
+  height: 320px;
+  .post-image{
+    width: 100%;
+  }
+}
+
+.post-feed {
+  border-bottom: 1px solid $color-white-10;
+}
+
+.reading-indicator {
+  position: fixed;
+  top: 44px;
+  display: block;
+  border-top: 1px solid $color-white-10;
+  border-bottom: 1px solid $color-white-10;
+  width: 100%;
+  height: rem(6px);
+  background: $color-white-05;
+  z-index: 10000;
+  .reading-indicator__bar {
+    height: rem(4px);
+    @include linear-gradient($color-primary-dark, $color-primary);
+    width: 0%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+
+.resources-footer__outer {
+  border-bottom: 1px solid $color-white-10;
+  .row {
+    @include customflex(column, center, 0, wrap);
+
+    .resources-footer {
+      @include customflex(0, 0, 0, wrap);
+      width: 100%;
+      max-width: 724px;
+
+      .author, form {
+        margin: 2rem 0;
+      }
+
+    }
+    .more-articles {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid $color-white-10;
+    }
+
+    .resources-footer__info {
+    @include customflex(column, 0, center, 0);
+    }
+
+    .resources-footer__cards {
+    @include customflex(0, 0, 0, 0);
+    max-width: none;
+    }
+  }
+}
+
+.resources-footer__outer.services {
+  .row {
+    .resources-footer {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+
+.author {
+  @include customflex(0, center, 0, 0);
+  align-self: flex-start;
+  background-color: $color-white;
+  border-radius: .25rem;
+  padding: 1rem 3rem 1rem 1rem ;
+  @include layer('raised');
+
+
+  .author--img-container {
+    @include customflex(0, center, center, 0);
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid $color-white-10;
+    border-radius: 50%;
+    margin-right: 1rem;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.author__sm {
+  @include customflex(0, center, 0, 0);
+  margin-bottom: 2rem;
+  .author--img-container {
+    @include customflex(0, center, center, 0);
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid $color-white-10;
+    border-radius: 50%;
+    margin-right: 1rem;
+
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+}

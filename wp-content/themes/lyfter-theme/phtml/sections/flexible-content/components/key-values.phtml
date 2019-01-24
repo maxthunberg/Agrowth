@@ -1,0 +1,44 @@
+<?php
+
+  // Vars
+  $bgcolor = get_sub_field('bgcolor');
+
+  if( have_rows('card') ): ?>
+
+  <div class="component key-values" <?php echo ($bgcolor) ? 'style="background-color: ' . $bgcolor . ';"' : '' ?>>
+    <div class="component--outer">
+
+      <div class="component--container">
+
+        <?php while( have_rows('card') ): the_row();
+
+        // Stat + info
+        $icon = get_sub_field('icon');
+        $heading = get_sub_field('heading');
+        $paragraph = get_sub_field('paragraph');
+        $bgcolor = get_sub_field('bgcolor');
+
+          ?>
+
+          <div class="card card--key-values">
+            <div class="icon-box">
+                <?php echo sprintf('<img src="%s" />',
+                    CloudinaryImage::set()
+                        ->set_by_url($icon['url'])
+                        ->set_attr('craft','fill')
+                        ->set_attr("width",64)
+                        ->set_extension('png')
+                ); ?>
+            </div>
+
+            <h5 class="heading heading-five"><?= $heading ?></h5>
+            <p class="paragraph-sm"><?= $paragraph ?></p>
+
+          </div>
+
+        <?php endwhile; ?>
+
+        </div>
+      </div>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,124 @@
+
+  .ly--structured-list--selection .ly--structured-list-td,
+  .ly--structured-list--selection .ly--structured-list-th {
+    @include padding--data-structured-list;
+  }
+
+  // Deprecated
+  [data-structured-list] .ly--structured-list-td,
+  [data-structured-list] .ly--structured-list-th {
+    @include padding--data-structured-list;
+  }
+
+  .ly--structured-list-input {
+    display: none;
+  }
+
+  .ly--structured-list {
+    @include reset;
+    @include body-text;
+    display: table;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 5rem;
+    background-color: transparent;
+
+    &.ly--structured-list--border {
+      border: 1px solid $color-white-10;
+      background-color: $color-white;
+    }
+
+    &.ly--structured-list--condensed .ly--structured-list-td {
+      @include padding-td--condensed;
+    }
+  }
+
+  .ly--structured-list-row {
+    display: table-row;
+    border-bottom: 1px solid $color-white-10;
+    transition: $transition--enter__fast;
+
+    .ly--structured-list--selection &:hover:not(.ly--structured-list-row--header-row) {
+      background-color: rgba($color-secondary, 0.1);
+      cursor: pointer;
+    }
+
+    // Deprecated
+    [data-structured-list] &:hover:not(.ly--structured-list-row--header-row) {
+      background-color: rgba($color-secondary, 0.1);
+      cursor: pointer;
+    }
+
+    &.ly--structured-list-row--selected {
+      background-color: rgba($color-secondary, 0.1);
+    }
+
+    &.ly--structured-list-row--header-row {
+      border-bottom: 2px solid $color-primary;
+      cursor: inherit;
+    }
+
+    &:focus:not(.ly--structured-list-row--header-row) {
+      @include focus-outline('border');
+    }
+  }
+
+  .ly--structured-list-thead {
+    display: table-header-group;
+    vertical-align: middle;
+  }
+
+  .ly--structured-list-th {
+    @include reset;
+    @include padding-th;
+    @include typescale('p-sm');
+    display: table-cell;
+    font-weight: 600;
+    height: rem(40px);
+    text-align: left;
+    text-transform: $structured-list-text-transform;
+    vertical-align: middle;
+  }
+
+  .ly--structured-list-tbody {
+    display: table-row-group;
+    vertical-align: middle;
+  }
+
+  .ly--structured-list-td {
+    @include reset;
+    @include typescale('p-sm');
+    @include line-height('p-sm');
+    @include padding-td;
+    position: relative;
+    display: table-cell;
+  }
+
+  .ly--structured-list-content--nowrap {
+    white-space: nowrap;
+  }
+
+  .ly--structured-list-svg {
+    display: inline-block;
+    fill: transparent;
+    vertical-align: middle;
+    transition: $transition--enter__fast;
+
+    .ly--structured-list-row:hover & {
+      fill: rgba($color-secondary, 0.1);
+    }
+
+    .ly--structured-list-input:checked + .ly--structured-list-row &,
+    .ly--structured-list-input:checked + .ly--structured-list-td & {
+      fill: $color-secondary;
+    }
+  }
+
+  // Deprecated class
+  .ly--structured-list-content {
+    @include typescale('p-sm');
+  }

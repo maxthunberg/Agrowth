@@ -1,0 +1,324 @@
+
+  .ly--date-picker {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .ly--date-picker-container {
+    position: relative;
+  }
+
+  .ly--date-picker.ly--date-picker--simple {
+    .ly--date-picker__input {
+      width: 7.125rem;
+    }
+  }
+
+  .ly--date-picker.ly--date-picker--simple.ly--date-picker--short {
+    .ly--date-picker__input {
+      width: 5.7rem;
+    }
+  }
+
+  .ly--date-picker.ly--date-picker--single {
+    .ly--date-picker__input {
+      width: 9rem;
+    }
+  }
+
+  .ly--date-picker__input {
+    @include reset;
+    @include body-text;
+    @include typescale('p-sm');
+    display: block;
+    position: relative;
+    height: rem(40px);
+    max-width: 9rem;
+    padding: 0 $spacing-md;
+    background-color: $field-primary;
+    color: $text-01;
+    border: 1px solid transparent;
+
+    &:focus,
+    &.ly--focused {
+      @include focus-outline('border');
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:disabled:hover {
+      border: 1px solid transparent;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $text-03;
+    }
+  }
+
+  .ly--date-picker__icon {
+    position: absolute;
+    top: 2.25rem;
+    left: 1rem;
+    fill: $color-primary;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .ly--date-picker__icon + .ly--date-picker__input {
+    padding-left: $spacing-3xl;
+  }
+
+  .ly--date-picker--range {
+    display: flex;
+    position: relative;
+  }
+
+  .ly--date-picker--range > .ly--date-picker-container:first-child {
+    margin-right: $spacing-xs;
+  }
+
+  .ly--date-picker--range .ly--date-picker__icon {
+    right: -1.75rem;
+    left: auto;
+  }
+
+  .ly--date-picker--range .ly--date-picker__input {
+    width: 7.075rem;
+  }
+
+  .ly--date-picker__calendar,
+  .flatpickr-calendar.open {
+    @include layer('pop-out');
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-md $spacing-md $spacing-2xs;
+    width: rem(285px);
+    height: rem(230px);
+    border-radius: 0;
+    border: none;
+    overflow: hidden;
+    margin-top: -1px;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    &:focus {
+      outline: 1px solid $color-primary;
+    }
+  }
+
+  .ly--date-picker__month,
+  .flatpickr-month {
+    width: 100%;
+    margin-bottom: $spacing-2xs;
+  }
+
+  .ly--date-picker__month .flatpickr-prev-month,
+  .ly--date-picker__month .flatpickr-next-month,
+  .flatpickr-month .flatpickr-prev-month,
+  .flatpickr-month .flatpickr-next-month {
+    padding: 0;
+    line-height: rem(20px);
+    fill: $text-01;
+
+    &:hover svg {
+      fill: $color-primary;
+    }
+  }
+
+  .ly--date-picker__month .flatpickr-current-month,
+  .flatpickr-month .flatpickr-current-month {
+    @include typescale('p-sm');
+    text-transform: uppercase;
+    padding: 0;
+  }
+
+  .ly--date-picker__month .flatpickr-current-month svg,
+  .flatpickr-month .flatpickr-current-month svg {
+    fill: $text-01;
+  }
+
+  .ly--date-picker__month .flatpickr-current-month .cur-month,
+  .flatpickr-month .flatpickr-current-month .cur-month {
+    margin-right: 0.25rem;
+    color: $text-01;
+  }
+
+  .numInputWrapper,
+  .flatpickr-current-month .numInputWrapper {
+    min-width: rem(38px);
+    width: rem(38px);
+  }
+
+  .ly--date-picker__month .numInputWrapper .numInput,
+  .flatpickr-month .numInputWrapper .numInput {
+    font-weight: 600;
+    color: $text-01;
+    background-color: $field-primary;
+    border: none;
+    border-radius: 0;
+    min-width: rem(38px);
+    width: rem(38px);
+    padding: $spacing-2xs;
+
+    &:focus {
+      outline: 1px solid $color-primary;
+    }
+  }
+
+  .ly--date-picker__month .numInputWrapper span.arrowUp,
+  .ly--date-picker__month .numInputWrapper span.arrowDown,
+  .flatpickr-month .numInputWrapper span.arrowUp,
+  .flatpickr-month .numInputWrapper span.arrowDown {
+    left: 2.6rem;
+    border: none;
+    width: rem(12px);
+
+    &:hover {
+      background: none;
+
+      &:after {
+        border-bottom-color: $color-secondary;
+        border-top-color: $color-secondary;
+      }
+    }
+
+    &:after {
+      border-bottom-color: $color-primary;
+      border-top-color: $color-primary;
+    }
+  }
+
+  .ly--date-picker__month .numInputWrapper span.arrowUp,
+  .flatpickr-month .numInputWrapper span.arrowUp {
+    top: 1px;
+  }
+
+  .ly--date-picker__month .numInputWrapper span.arrowDown,
+  .flatpickr-month .numInputWrapper span.arrowDown {
+    top: 9px;
+  }
+
+  span.ly--date-picker__weekday,
+  span.flatpickr-weekday {
+    @include typescale('p-sm');
+    font-weight: 600;
+    color: $text-01;
+  }
+
+  .ly--date-picker__day,
+  .flatpickr-day {
+    @include typescale('p-sm');
+    height: rem(25px);
+    width: 1.8rem;
+    line-height: rem(25px);
+    flex-basis: 1.8rem;
+    margin: rem(0.5px) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-01;
+    border-radius: 0;
+
+    &:hover {
+      background: $color-white-10;
+    }
+
+    &:focus {
+      outline: none;
+      background: $color-white-10;
+    }
+  }
+
+  .ly--date-picker__day.today,
+  .flatpickr-day.today {
+    border: 2px solid $color-primary;
+  }
+
+  .ly--date-picker__day.today.no-border,
+  .flatpickr-day.today.no-border {
+    border: none;
+  }
+
+  .ly--date-picker__day.disabled,
+  .flatpickr-day.disabled {
+    cursor: not-allowed;
+    color: $color-white-20;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .ly--date-picker__day.inRange,
+  .flatpickr-day.inRange {
+    background: $color-secondary;
+    box-shadow: -6px 0 0 $color-secondary, 6px 0 0 $color-secondary;
+    border: 2px solid transparent;
+  }
+
+  .ly--date-picker__day.selected,
+  .flatpickr-day.selected {
+    background: $color-primary;
+    color: $color-white;
+    border: 2px solid transparent;
+  }
+
+  .ly--date-picker__day.startRange.selected,
+  .flatpickr-day.startRange.selected {
+    box-shadow: none;
+    z-index: 2;
+  }
+
+  .ly--date-picker__day.endRange.inRange,
+  .flatpickr-day.endRange.inRange {
+    background: $color-white;
+    color: $text-01;
+    border: 2px solid $color-primary;
+    z-index: 3;
+    box-shadow: none;
+  }
+
+  .ly--date-picker__day.endRange.inRange.selected,
+  .flatpickr-day.endRange.inRange.selected {
+    background: $color-primary;
+    border: none;
+    color: $color-white;
+    box-shadow: none;
+  }
+
+  .ly--date-picker__day.startRange.inRange:not(.selected),
+  .flatpickr-day.startRange.inRange:not(.selected) {
+    box-shadow: none;
+    background: $color-white;
+    border: 2px solid $color-primary;
+    z-index: 3;
+  }
+
+  .ly--date-picker__days,
+  .dayContainer {
+    width: rem(225px);
+    min-width: rem(225px);
+    max-width: rem(225px);
+    height: rem(132px);
+  }
+
+  .flatpickr-innerContainer,
+  .flatpickr-rContainer {
+    width: rem(225px);
+    height: rem(168px);
+  }
+
+  .ly--date-picker__weekdays,
+  .flatpickr-weekdays {
+    width: rem(225px);
+    margin-bottom: $spacing-2xs;
+  }

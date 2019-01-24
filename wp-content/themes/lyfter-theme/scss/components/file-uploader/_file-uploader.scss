@@ -1,0 +1,133 @@
+@import '../../globals/scss/vars';
+@import '../../globals/scss/colors';
+@import '../../globals/scss/typography';
+@import '../../globals/scss/spacing';
+@import '../../globals/scss/css--reset';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/import-once';
+@import '../button/button';
+@import '../form/form';
+@import '../loading/loading';
+
+@include exports('file-uploader') {
+  .ly--file {
+    // width: 100%;
+    width: 50%;
+  }
+  .ly--file:nth-child(1) {
+    // width: 100%;
+    padding-right: 1rem;
+    width: 50%;
+  }
+  .ly--file-split {
+    @include customflex(0,0,0,0);
+  }
+
+  .ly--file-input {
+    @include hidden;
+  }
+
+  .ly--file-btn {
+    background-color: transparent;
+    border: 1px solid $color-secondary-dark;
+    color: $color-secondary-dark;
+    display: inline-flex;
+    margin: 0;
+    transition: $duration--fast__enter;
+    &:hover {
+      background-color: $color-secondary-dark;
+      border: 1px solid $color-secondary-dark;
+      color: $color-white;
+      transition: $duration--fast__enter;
+    }
+  }
+
+  .ly--label-description {
+    @include reset;
+    @include typescale('p-sm');
+    @include line-height('p-sm');
+    color: $text-02;
+    margin-bottom: $spacing-lg;
+  }
+
+  .ly--file-container {
+    display: block;
+    width: 100%;
+    margin-top: $spacing-lg;
+  }
+  .ly--file__selected-file {
+    // @include text-overflow(300px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: rem(30px);
+    background-color: rgba($color-primary, .2);
+    padding: 0 $spacing-md;
+    margin-bottom: $spacing-md;
+    opacity: 1;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .ly--file__selected-file:nth-child(1) {
+    background-color: rgba($color-secondary-dark, .1);
+  }
+  .ly--file__selected-file:nth-child(2) {
+      opacity: 1;
+  }
+  .ly--file__selected-file:nth-child(3) {
+      opacity: .2;
+  }
+  .ly--file__selected-file:nth-child(n+4){
+      display: none;
+  }
+
+
+
+  .ly--file-filename {
+    @include typescale('p-sm');
+    @include text-overflow(100%);
+    display: inline-flex;
+    align-items: center;
+    color: $color-dark;
+    margin-right: $spacing-md;
+    height: 1.875rem;
+  }
+
+  .ly--file__state-container {
+    display: flex;
+    align-items: center;
+
+    .ly--loading {
+      width: 1.125rem;
+      height: 1.125rem;
+      margin-right: $spacing-xs;
+    }
+
+    .ly--loading__svg {
+      stroke: $color-white-20;
+    }
+  }
+
+  .ly--file__state-container .ly--file-close,
+  .ly--file__state-container .ly--file-complete {
+    width: 1rem;
+    height: 1rem;
+    fill: $text-01;
+    cursor: pointer;
+
+    &:focus {
+      @include focus-outline('border');
+    }
+  }
+
+  .ly--file__state-container .ly--file-close {
+    fill: $color-white-20;
+  }
+
+  .ly--file__state-container .ly--file-complete {
+    fill: $support-success;
+  }
+}

@@ -1,0 +1,51 @@
+@import '../button/button';
+
+  .ly--btn--copy {
+    position: relative;
+    overflow: visible;
+
+    .ly--btn__icon {
+      margin-left: rem(5px);
+    }
+  }
+
+  .ly--btn--copy__feedback {
+    position: absolute;
+    display: none;
+    top: 1.2rem;
+    left: 50%;
+
+    &:before {
+      @include layer('overlay');
+      @include typescale('p-sm');
+      top: 1.1rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid $color-white-10;
+      color: $text-01;
+      content: attr(data-feedback);
+      transform: translateX(-50%);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    &:after {
+      top: 0.85rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-right: 1px solid $color-white-10;
+      border-bottom: 1px solid $color-white-10;
+      content: '';
+      transform: rotate(-135deg);
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+      background: $color-white;
+    }
+
+    &--displayed {
+      display: inline-flex;
+    }
+  }

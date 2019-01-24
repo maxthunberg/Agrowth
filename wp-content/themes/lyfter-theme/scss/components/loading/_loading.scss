@@ -1,0 +1,51 @@
+$loading__gap: 40;
+$loading__size: 10.5rem;
+
+
+  .ly--loading {
+    @include reset;
+    @include animation__loading--spin;
+    width: $loading__size;
+    height: $loading__size;
+  }
+
+  // Animation (Spin by default)
+  .ly--loading__svg {
+    fill: transparent;
+    stroke: $brand-03;
+    stroke-width: 7;
+    stroke-linecap: butt;
+    stroke-dasharray: 240;
+    stroke-dashoffset: $loading__gap;
+  }
+
+  .ly--loading--stop {
+    @include animation__loading--stop;
+  }
+
+  .ly--loading--small {
+    width: 2rem;
+    height: 2rem;
+
+    .ly--loading__svg {
+      stroke: $color-white-20;
+    }
+  }
+
+  .ly--loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color-white, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 2000ms $easing--enter;
+    z-index: z('overlay');
+  }
+
+  .ly--loading-overlay--stop {
+    display: none;
+  }

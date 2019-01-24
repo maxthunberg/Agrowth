@@ -1,0 +1,42 @@
+<div class="grid component faq">
+  <div class="grid-container component--outer">
+
+    <div class="component--container">
+
+
+      <?php if( have_rows('accordion_field') ): ?>
+
+
+      <div class="component component--accordion ui styled fluid accordion">
+
+          <?php while( have_rows('accordion_field') ): the_row();
+
+            // vars
+            $title = get_sub_field('title');
+            $content = get_sub_field('content');
+
+            ?>
+
+              <div class="title">
+                <i class="dropdown icon heading-five"></i>
+                <?= $title ?>
+              </div>
+
+              <div class="content">
+                <p class="transition hidden paragraph-sm">
+                  <?= $content ?>
+                </p>
+              </div>
+
+
+
+          <?php endwhile; ?>
+
+      </div>
+
+      <?php endif; ?>
+
+
+    </div>
+  </div>
+</div>

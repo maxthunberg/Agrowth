@@ -1,0 +1,97 @@
+.ly--content-switcher {
+    @include body-text;
+    display: flex;
+    height: rem(40px);
+  }
+
+  .ly--content-switcher-btn {
+    @include reset;
+    @include font-smoothing;
+    @include typescale('p-sm');
+    @include body-text;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding: 0 $spacing-xl;
+    margin: 0;
+    text-decoration: none;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+
+    &:focus {
+      outline: 1px solid transparent;
+      box-shadow: 0 2px 0 0 $color-blue, 0 -2px 0 0 $color-blue;
+      background-color: $color-secondary;
+      z-index: 2;
+      border-color: $color-secondary;
+      text-decoration: underline;
+      color: $color-white;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $color-secondary;
+      border-color: $color-secondary;
+      color: $color-white;
+    }
+  }
+
+  .ly--content-switcher__icon {
+    margin-right: $spacing-xs;
+    fill: currentColor;
+    // need to color any child path or g
+    * {
+      fill: currentColor;
+    }
+  }
+
+  .ly--content-switcher-btn:not(:last-of-type) {
+    border-right: none;
+  }
+
+  .ly--content-switcher-btn:not(:first-of-type) {
+    border-left: $content-switcher-option-border;
+  }
+
+  .ly--content-switcher-btn:first-of-type {
+    border-bottom-left-radius: $content-switcher-border-radius;
+    border-top-left-radius: $content-switcher-border-radius;
+
+    &:hover {
+      border-color: $color-secondary;
+    }
+
+    &:focus {
+      box-shadow: -2px 0 0 0 $color-blue, 0 2px 0 0 $color-blue, 0 -2px 0 0 $color-blue;
+      z-index: 0;
+    }
+  }
+
+  .ly--content-switcher-btn:last-of-type {
+    border-top-right-radius: $content-switcher-border-radius;
+    border-bottom-right-radius: $content-switcher-border-radius;
+
+    &:hover {
+      border-color: $color-secondary;
+    }
+
+    &:focus {
+      box-shadow: 2px 0 0 0 $color-blue, 0 2px 0 0 $color-blue, 0 -2px 0 0 $color-blue;
+      z-index: 0;
+    }
+  }
+
+  .ly--content-switcher-btn.ly--content-switcher--selected {
+    background-color: $color-primary;
+    color: $color-white;
+    font-weight: 400;
+    outline: 1px solid transparent;
+
+    &:hover {
+      border-color: $color-primary;
+    }
+  }

@@ -1,0 +1,215 @@
+  .ly--tooltip--simple {
+    display: flex;
+    align-items: center;
+  }
+
+  .ly--tooltip__trigger {
+    @include body-text;
+    @include typescale('p');
+    display: inline-flex;
+    align-items: center;
+    color: $text-01;
+    font-weight: 400;
+
+    svg {
+      fill: $color-primary;
+      margin-left: $spacing-xs;
+      cursor: pointer;
+
+      &:focus {
+        @include focus-outline('border');
+        fill: $color-primary-light;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        fill: $color-primary-light;
+      }
+    }
+  }
+
+  .ly--tooltip {
+    @include layer('overlay');
+    @include reset;
+    position: absolute;
+    display: none;
+    max-width: rem(240px);
+    background: $color-white;
+    padding: .5rem 1rem;
+    border: 1px solid $color-white-10;
+    z-index: z('floating');
+    border-radius: rem(4px);
+
+    p {
+      @include body-text;
+      @include typescale('p-xs');
+      margin: 0;
+    }
+
+    .ly--tooltip__label {
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $color-grey;
+    }
+
+    &:before {
+      position: absolute;
+      background: $color-white;
+      left: 0;
+      top: rem(-6px);
+      right: 0;
+      transform: rotate(-135deg);
+      width: 0.6rem;
+      height: 0.6rem;
+      border-right: 1px solid $color-white-10;
+      border-bottom: 1px solid $color-white-10;
+      margin: 0 auto;
+      content: '';
+    }
+
+    &[data-floating-menu-direction='left'] {
+      margin-left: -$spacing-sm;
+
+      &:before {
+        left: auto;
+        top: 44.7%;
+        right: rem(-6px);
+        transform: rotate(-45deg);
+      }
+    }
+
+    &[data-floating-menu-direction='top'] {
+      &:before {
+        top: auto;
+        bottom: rem(-6px);
+        transform: rotate(45deg);
+      }
+    }
+
+    &[data-floating-menu-direction='right'] {
+      margin-left: $spacing-sm;
+
+      &:before {
+        left: rem(-6px);
+        top: 44.7%;
+        right: auto;
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  .ly--tooltip--shown {
+    display: block;
+  }
+
+  // Simple CSS only tooltip
+  .ly--tooltip--simple__top,
+  .ly--tooltip--simple__bottom {
+    @include body-text;
+    @include reset;
+    @include typescale('p');
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      fill: $color-primary;
+      margin-left: $spacing-xs;
+    }
+
+    // Tooltip - renders as a combo of :before and :after elements
+    &:before,
+    &:after {
+      @include body-text;
+      position: absolute;
+      display: none;
+      background: $color-white;
+    }
+
+    &:before {
+      @include typescale('p-sm');
+      @include layer('overlay');
+      max-width: rem(240px);
+      padding: $spacing-lg;
+      border: 1px solid $color-white-10;
+      margin-left: 50%;
+      color: $text-01;
+      content: attr(data-tooltip-text);
+      transform: translateX(-50%);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    &:after {
+      right: 0;
+      left: 0;
+      width: 0.6rem;
+      height: 0.6rem;
+      border-right: 1px solid $color-white-10;
+      border-bottom: 1px solid $color-white-10;
+      margin: 0 auto;
+      content: '';
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        fill: $color-secondary;
+      }
+
+      &:before,
+      &:after {
+        position: absolute;
+        display: block;
+      }
+    }
+
+    &:focus {
+      outline: 1px solid transparent;
+
+      svg {
+        @include focus-outline('border');
+      }
+    }
+  }
+
+  // Tooltip caret - top position
+  .ly--tooltip--simple__top {
+    &:before {
+      bottom: 1.8rem;
+    }
+
+    &:after {
+      bottom: 1.5rem;
+      transform: rotate(45deg);
+    }
+  }
+
+  // Tooltip caret - bottom position
+  .ly--tooltip--simple__bottom {
+    &:before {
+      top: 1rem;
+    }
+
+    &:after {
+      top: 1.5rem;
+      transform: rotate(-135deg);
+    }
+  }
+
+
+@media (max-width: breakpoint('md')) { // 768px
+  .ly--tooltip {
+    display: none;
+  }
+
+}
+
+@media (max-width: breakpoint('sm')) { // 576px
+  .ly--tooltip {
+    display: none;
+  }
+}

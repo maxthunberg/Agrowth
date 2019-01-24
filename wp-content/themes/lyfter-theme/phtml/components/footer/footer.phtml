@@ -1,0 +1,56 @@
+
+<footer class="grid footer">
+  <div class="row">
+
+  <div class="footer-container__info">
+    <p class="paragraph-xs no-margin"><?= get_field('footer_text','option'); ?></p>
+  </div>
+
+    <?php
+
+    // check if the repeater field has rows of data
+    //if( have_rows('social_media_links','option') ):?>
+
+      <div class="footer-container__social">
+
+     	<?php // loop through the rows of data
+        //while ( have_rows('social_media_links','option') ) : the_row();
+
+        //$url = get_sub_field('link','option');
+        //$icon = get_sub_field('icon','option');
+
+        ?>
+          <p class="paragraph-xs no-margin">
+            Följ oss
+          </p>
+          <a href="https://www.facebook.com/agrowth.se/">
+            <div class="social-media--btn facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="384" height="384" viewBox="0 0 384 384">
+                  <path fill="#000000" d="M362.8,0 L21.2,0 C9.5,0 0,9.5 0,21.2 L0,362.8 C0,374.5 9.5,384 21.2,384 L192,384 L192,232 L146.1,232 L146.1,176 L192,176 L192,134.6 C192,85 226.4,58 270.7,58 C291.9,58 314.7,59.6 320,60.3 L320,112.1 L284.7,112.1 C260.6,112.1 256,123.5 256,140.3 L256,176 L313.4,176 L305.9,232 L256,232 L256,384 L362.8,384 C374.5,384 384,374.5 384,362.8 L384,21.2 C384,9.5 374.5,0 362.8,0 Z"/>
+                </svg>
+
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/company/agrowth/">
+            <div class="social-media--btn linkedin">
+              <svg xmlns="http://www.w3.org/2000/svg" width="384" height="384" viewBox="0 0 384 384">
+                <path fill="#000000" d="M353.2,0 L32.8,0 C15.3,0 0,12.6 0,29.9 L0,351 C0,368.4 15.3,383.9 32.8,383.9 L353.1,383.9 C370.7,383.9 383.9,368.3 383.9,351 L383.9,29.9 C384,12.6 370.7,0 353.2,0 Z M119,320 L64,320 L64,149 L119,149 L119,320 Z M93.4,123 L93,123 C75.4,123 64,109.9 64,93.5 C64,76.8 75.7,64 93.7,64 C111.7,64 122.7,76.7 123.1,93.5 C123.1,109.9 111.7,123 93.4,123 Z M320,320 L265,320 L265,226.5 C265,204.1 257,188.8 237.1,188.8 C221.9,188.8 212.9,199.1 208.9,209.1 C207.4,212.7 207,217.6 207,222.6 L207,320 L152,320 L152,149 L207,149 L207,172.8 C215,161.4 227.5,145 256.6,145 C292.7,145 320,168.8 320,220.1 L320,320 Z"/>
+              </svg>
+            </div>
+          </a>
+
+    <?php //endwhile;?>
+
+    </div>
+
+    <?php //else :
+
+        // no rows found
+
+    //endif;
+
+    ?>
+
+  </div>
+</footer>
