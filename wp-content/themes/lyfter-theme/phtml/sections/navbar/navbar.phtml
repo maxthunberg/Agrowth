@@ -1,0 +1,97 @@
+<?php if ( is_front_page() ):?>
+  <nav class="grid ly--navbar transparent">
+<?php else: ?>
+  <nav class="grid ly--navbar start">
+<?php endif;?>
+
+    <div class="navbar--inner row">
+
+        <!--left section -->
+        <div class="navbar--left">
+          <a class="logo--link" href="/"><img class="logo__white" src="<?= get_stylesheet_directory_uri(); ?>/icons/lyfter-wordmark--white.svg" /></a>
+          <a class="logo--link" href="/"><img class="logo" src="<?= get_stylesheet_directory_uri(); ?>/icons/lyfter-wordmark--color.svg" /></a>
+        </div>
+
+        <!--right section-->
+        <div class="navbar--right">
+
+          <!-- Navbar menu -->
+          <?php if( have_rows('navbar_menu', 'option') ):
+
+                //vars
+                $i = 1;
+                ?>
+
+              <ul class="navbar--menu">
+
+              <?php while( have_rows('navbar_menu', 'option') ): the_row();
+
+                    $submenu = get_sub_field('has_submenu','option');
+                    ?>
+
+                <li class="navbar--menu-item <?php echo ($submenu) ? 'submenu' : '' ?>">
+
+                  <?php
+                  // vars
+                  $link = get_sub_field('menu_link', 'option');
+                  $label = get_sub_field('link_animation', 'option');
+
+                  if( $link ):?>
+
+                    <a class="navbar--link paragraph-sm no-margin" href="<?= $link['url']; ?>" target="<?= $link['target']; ?>">
+                      <?= $link['title']; ?>
+                      <?php if ( $label):?><span class="link--label"></span><?php endif;?>
+                    </a>
+
+                  <?php endif; ?>
+
+                </li>
+
+              <?php endwhile; ?>
+
+              </ul>
+
+          <?php endif; ?>
+
+          <!-- CTA button -->
+          <a class="btn btn-primary no-margin" href="/kontakta-oss">
+              Kontakta oss
+              <svg class="btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+                <polygon fill-rule="evenodd" points="134 14 137.682 21.365 144.667 22.001 137.682 22.635 134 30 150 22.001" transform="translate(-134 -14)"/>
+              </svg>
+          </a>
+
+        </div>
+
+
+        <!-- Right section Mobile -->
+        <div class="navbar--right__mobile">
+
+          <!-- CTA button -->
+          <a class="btn btn-primary no-margin" href="/kontakta-oss">
+              Kontakt
+              <svg class="btn__icon" width="16" height="16" viewBox="0 0 16 16" fill-rule="evenodd">
+                <polygon fill-rule="evenodd" points="134 14 137.682 21.365 144.667 22.001 137.682 22.635 134 30 150 22.001" transform="translate(-134 -14)"/>
+              </svg>
+          </a>
+
+          <!-- Hamburger Icon -->
+            <div class="hamburger-icon btn--menu">
+              <span class="hamburger-line line-1"></span>
+              <span class="hamburger-line line-2"></span>
+            </div>
+
+        </div>
+
+  </div>
+
+</nav>
+
+<!-- Reading indicator for blog single pages -->
+<?php  include( get_template_directory() . '/phtml/components/reading-indicator/reading-indicator.phtml');?>
+
+<!-- Submenu for mobile -->
+<?php  include( get_template_directory() . '/phtml/sections/navbar/submenu--mobile.phtml');?>
+
+<!-- Submenus for navbar -->
+<?php  include( get_template_directory() . '/phtml/sections/navbar/submenus.phtml');?>

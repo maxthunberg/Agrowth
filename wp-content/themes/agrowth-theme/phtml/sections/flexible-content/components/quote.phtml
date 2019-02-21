@@ -1,0 +1,19 @@
+<?php
+
+// vars
+$quote = get_sub_field('quote');
+$quotee = get_sub_field('quotee');
+
+?>
+
+<div class="grid component quote">
+  <div class="grid-container component--outer">
+
+    <div class="component--container">
+
+      <p class="quote__paragraph heading-five"><?= $quote ?></p>
+      <span class="quote__author paragraph-sm"> <?= $quotee ?></span>
+
+    </div>
+  </div>
+</div>

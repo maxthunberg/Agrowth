@@ -1,0 +1,157 @@
+@import 'colors';
+@import 'spacing';
+
+$prefix: 'ly' !default;
+
+// Color Theme Variables
+$nav-01: $color-blue !default;
+$nav-02: $color-blue !default;
+$nav-03: $color-purple !default;
+$nav-04: $color-purple !default;
+$nav-05: $color-teal !default;
+$nav-06: $color-teal !default;
+$nav-07: $color-teal !default;
+$nav-08: $color-teal !default;
+
+// // Brand Colors
+// $color-primary: #ff6665;
+//   $color-primary-darker: #CE312C;
+//   $color-primary-dark: #E84C47;
+//   $color-primary-light: #FF7F7C;
+//   $color-primary-lighter: #FF9896 ;
+//
+// $color-secondary: #58ED9F;
+//   $color-secondary-darker: #14BB69;
+//   $color-secondary-dark: #34D583;
+//   $color-secondary-light: #6BFFB7;
+//   $color-secondary-lighter: #86FFD1;
+
+
+// Brand Colors
+// $color-primary: #58ED9F;
+//   $color-primary-darker: #14BB69;
+//   $color-primary-dark: #34D583;
+//   $color-primary-light: #6BFFB7;
+//   $color-primary-lighter: #86FFD1 ;
+
+
+$color-primary: #58EDCD;
+  $color-primary-darker: #14BB9B;
+  $color-primary-dark: #34D5AC;
+  $color-primary-light: #6BFFE1;
+  $color-primary-lighter: #86FFEC;
+
+// $color-secondary: #ff6665;
+//   $color-secondary-darker: #CE312C;
+//   $color-secondary-dark: #E84C47;
+//   $color-secondary-light: #FF7F7C;
+//   $color-secondary-lighter: #FF9896;
+
+$color-secondary: #5AAAFA;
+  $color-secondary-darker: #2387EB;
+  $color-secondary-dark: #3A94EF;
+  $color-secondary-light: #84C1FD;
+  $color-secondary-lighter: #B0D7FE;
+
+
+
+
+$brand-03: #86FFD1;
+
+// $color-white: #fff;
+//   $color-white-03: #f9f9f9;
+//   $color-white-05: #f2f2f2;
+//   $color-white-10: #e6e6e6;
+//   $color-white-20: #ccc;
+//
+// $color-grey: #757575;
+// $color-dark: #292929;
+// $color-black: #1a1a1a;
+
+$color-white: #fff;
+  $color-white-03: #F8FBFE;
+  $color-white-05: #F4F9FE;
+  $color-white-10: #E4ECF4;
+  $color-white-20: #ccc;
+
+$color-grey: #8091A3;
+$color-dark: #28323C;
+$color-black: #0C1620;
+
+$text-01: $color-dark;
+$text-02: $color-grey;
+$text-03: $color-black;
+
+$color-white : $color-white;
+
+$color-facebook: #3B5998;
+$color-facebook-dark: #344F88;
+
+$color-linkedin: #0077b5;
+$color-linkedin-dark: #006AA2;
+
+$field-primary: rgba($color-primary, 0.05);
+$field-secondary: rgba($color-secondary, 0.05);
+$field-black: rgba($color-black, 0.05);
+
+
+$support-error: $color-pink-dark;
+$support-success: $color-primary-dark;
+$support-warning: $color-yellow-dark;
+$support-info: $color-secondary-dark;
+
+// Global
+$input-border: 1px solid transparent !default;
+$input-label-weight: 600 !default;
+
+// Button Theme Variables
+$button-font-weight: 600 !default;
+$button-font-size: 0.875rem !default;
+$button-border-radius: .25rem !default;
+$button-height: 40px !default;
+$button-padding-lg: 0 $spacing-lg !default;
+$button-padding: 0 $spacing-md !default;
+$button-padding-sm: 0 $spacing-xs !default;
+$button-border-width: 1px !default;
+
+// Accordion (Reverse)
+$accordion-flex-direction: row !default;
+$accordion-justify-content: flex-start !default;
+$accordion-arrow-margin: 0 0 0 $spacing-2xs !default;
+$accordion-title-margin: 0 0 0 $spacing-md !default;
+$accordion-content-padding: 0 $spacing-md 0  $spacing-2xl !default;
+
+// Card
+$card-text-align: center !default;
+$card-flex-align: center !default;
+
+// Checkbox
+$checkbox-border-width: 2px !default;
+
+// Code Snippet
+$snippet-background-color: $field-black !default;
+
+// Content Switcher
+$content-switcher-border-radius: 8px !default;
+$content-switcher-option-border: 1px solid $color-primary !default;
+
+// Data Table
+$data-table-heading-transform: uppercase !default;
+$data-table-heading-border-bottom: 1px solid $color-primary !default;
+$data-table-row-height: 2rem !default;
+
+// Modal
+$modal-border-top: $color-primary 4px solid !default;
+$modal-footer-background-color: $color-white-05 !default;
+
+// Progress Indicator
+$progress-indicator-bar-width: 1px inset transparent !default;
+$progress-indicator-stroke-width: 5 !default;
+$progress-indicator-line-offset: 0.625rem !default;
+
+// Radio Button
+$radio-border-width: 2px !default;
+
+// Structured Theme Variables
+$structured-list-padding: 2rem !default;
+$structured-list-text-transform: none !default;

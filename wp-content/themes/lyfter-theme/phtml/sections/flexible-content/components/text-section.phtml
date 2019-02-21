@@ -1,0 +1,27 @@
+<?php
+
+  // vars
+  $heading = get_sub_field('heading');
+  $paragraph = get_sub_field('paragraph');
+  $tagoverride = get_sub_field('tag_override');
+  $tag = get_sub_field('select_tag');
+  $size = get_sub_field('select_size');
+  $sizeValue = $size['value'];
+  $sizeLabel = $size['label'];
+  $onlyparagraph = get_sub_field('only_paragraph');
+
+?>
+
+<div class="grid component text-section">
+  <div class="grid-container component--outer">
+    <div class="component--container">
+
+      <?php if ($onlyparagraph === false):?>
+        <h<?php echo ($tagoverride) ? $tag : $sizeValue  ?> class="heading-<?php echo ($sizeLabel) ? $sizeLabel : '' ?>"><?= $heading ?></h<?php echo ($tag) ? $tag : $sizeValue  ?>>
+      <?php endif;?>
+
+      <p class="paragraph"><?= $paragraph ?></p>
+
+    </div>
+  </div>
+</div>

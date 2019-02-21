@@ -1,0 +1,87 @@
+<?php
+
+$paywall = get_field('select_paywall');
+$paywallheading = get_sub_field('paywall_heading');
+$paywallparagraph = get_sub_field('paywall_paragraph');
+
+?>
+
+<section class="flexible-content post <?php echo $paywall ? 'paywall' : ''; ?>">
+
+  <?php if ( $paywall == 2 ): ?>
+    <div class="paywall-container">
+      <!-- Paywall Form -->
+      <?php  include( get_template_directory() . '/phtml/sections/contact-form/contact-form--paywall.phtml');?>
+    </div>
+  <?php endif; ?>
+
+    <!-- Sticky Bar-->
+    <?php  include( get_template_directory() . '/phtml/sections/flexible-content/sticky-bar.phtml');?>
+
+      <?php if( have_rows('flexible_content') ): ?>
+
+            <?php while ( have_rows('flexible_content') ) : the_row(); ?>
+
+
+                  <?php if ( get_row_layout() == 'text_section' ): ?>
+
+                        <!-- Text Section Component -->
+                        <?php  include( get_template_directory() . '/phtml/sections/flexible-content/components/text-section.phtml');?>
+
+
+                  <?php elseif ( get_row_layout() == 'image' ): ?>
+
+                        <!-- Image Component -->
+                        <?php  include( get_template_directory() . '/phtml/sections/flexible-content/components/image.phtml');?>
+
+
+                  <?php elseif ( get_row_layout() == 'background_image' ): ?>
+
+
+                        <!-- Background Image Component -->
+                        <?php  include( get_template_directory() . '/phtml/sections/flexible-content/components/background-image.phtml');?>
+
+
+                  <?php elseif ( get_row_layout() == 'social_proof' ): ?>
+
+                        <!-- Social Proof Component -->
+                        <?php  include( get_template_directory() . '/phtml/sections/flexible-content/components/social-proof.phtml');?>
+
+
+                  <?php elseif ( get_row_layout() == 'key_values' ): ?>
+
+                        <!-- Key Values Component -->
+                        <?php  include( get_template_directory() . '/phtml/sections/flexible-content/components/key-values.phtml');?>
+
+
+                  <?php elseif ( get_row_layout() == 'soft_cta' ): ?>
+
+                        <!-- Soft-CTA Component -->
+                        <?php  include( get_template_directory() . '/phtml/sections/flexible-content/components/soft-cta.phtml');?>
+
+
+                  <?php elseif ( get_row_layout() == 'quote' ): ?>
+
+                        <!-- Quote Component -->
+                        <?php  include( get_template_directory() . '/phtml/sections/flexible-content/components/quote.phtml');?>
+
+
+                  <?php elseif ( get_row_layout() == 'faq' ): ?>
+
+                        <!-- Accordion Component -->
+                        <?php  include( get_template_directory() . '/phtml/sections/flexible-content/components/faq.phtml');?>
+
+
+                  <?php elseif ( get_row_layout() == 'contact_form' ): ?>
+
+                        <!-- Contact Form Component -->
+                        <?php  include( get_template_directory() . '/phtml/sections/flexible-content/components/contact-form.phtml');?>
+
+
+                  <?php endif; // End layouts ?>
+
+            <?php endwhile; // End flexible_content ?>
+
+          <?php endif; // End layouts ?>
+
+</section>

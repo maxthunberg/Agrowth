@@ -1,0 +1,19 @@
+.component.faq {
+  width: 100%;
+  background-color: $color-white;
+
+  .component--container {
+    display: block;
+    max-width: $maxwidth-text;
+    width: 100%;
+
+    .component--accordion {
+      display: block;
+      overflow: hidden;
+      .title {
+        max-width: none;
+      }
+    }
+
+  }
+}

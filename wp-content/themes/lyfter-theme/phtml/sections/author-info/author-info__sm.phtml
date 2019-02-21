@@ -1,0 +1,41 @@
+
+<?php
+  $fname = get_the_author_meta('first_name', $author);
+  $lname = get_the_author_meta('last_name', $author);
+  $full_name = '';
+  $author_id = get_the_author_meta('ID', $author);
+  $worktitle = get_field('work_title', 'user_'.$author_id );
+?>
+
+
+<?php
+if( empty($fname)){
+  $full_name = $lname;
+} elseif( empty( $lname )){
+  $full_name = $fname;
+} else {
+  $full_name = "{$fname} {$lname}";
+}?>
+
+<div class="author__sm">
+
+  <div class="author--img-container">
+    <?php echo get_wp_user_avatar($author); ?>
+  </div>
+
+  <div class="author--info">
+
+    <?php if ( $full_name !== ''):?>
+      <h4 class="author--info__name heading-five no-margin"><?=$full_name;?> </h4>
+    <?php else :?>
+      <h4 class="author--info__name heading-five no-margin">Lyfter </h4>
+    <?php endif;?>
+
+    <?php if ( $worktitle !== null ): ?>
+    <p class="ly--type-epsilon__paragraph paragraph-sm"><?= $worktitle . ' @ worktitle';?></p>
+    <?php else :?>
+    <p class="ly--type-epsilon__paragraph paragraph-sm">@Lyfter</p>
+    <?php endif;?>
+  </div>
+
+</div>

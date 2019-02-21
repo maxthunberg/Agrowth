@@ -2,9 +2,9 @@
   background-color: $color-white-05;
   @include linear-gradient($color-white-05, $color-white);
   border-bottom: 1px solid $color-white-10;
-  .bx--row {
+  .row {
     .widget-1, .widget-2, .widget-3, .widget-4 {
-      @include customflex(column, 0, 0, 0);
+      @include flex(column, 0, 0, 0);
       width: 25%;
       flex-direction: column;
       margin-bottom: 2rem;
@@ -12,7 +12,7 @@
         margin-bottom: 1rem;
       }
       .widget--link-container {
-        @include customflex(0, center, 0, 0);
+        @include flex(0, center, 0, 0);
         margin: .5rem 0;
         .widget__icon {
           height: 1.5rem;
@@ -54,7 +54,7 @@
 
 @media (max-width: breakpoint('md')) { // 768px
   .widgets {
-    .bx--row {
+    .row {
       .widget-1 {
         width: 100%;
       }
@@ -70,7 +70,7 @@
 
 @media (max-width: breakpoint('sm')) { // 576px
   .widgets {
-    .bx--row {
+    .row {
       .widget-1, .widget-2, .widget-3, .widget-4 {
         width: 100%;
 

@@ -1,8 +1,0 @@
-footer {
-  @include customflex(0, center, flex-start, 0);
-  background-color: $color-white-03;
-  height: rem(44px);
-  p {
-    color: $color-grey;
-  }
-}

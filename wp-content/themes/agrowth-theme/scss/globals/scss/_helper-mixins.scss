@@ -1,21 +1,3 @@
-//----------------------------------------------
-// Mixins
-// ---------------------------------------------
-//
-//   Category             ||  Description
-//   ===========================================
-//   Misc                 ||  General helper @mixins
-//   Deprecated           ||  Not used anymore
-//   ===========================================
-
-//----------------------------------------------
-// Misc
-// ---------------------------------------------
-
-@import 'vars';
-@import 'css--reset';
-@import 'typography';
-
 @mixin text-overflow($width: false) {
   display: block;
   overflow-x: hidden;
@@ -75,7 +57,7 @@
 
 @mixin button-reset($width: true) {
   @include reset;
-  @include pt-serif;
+  @include body-text;
   @include font-smoothing;
   @include letter-spacing;
   display: inline-block;
@@ -116,7 +98,7 @@ REASON: #{$reason}';
 // ---------------------------------------------
 
 @mixin light-ui {
-  .#{$prefix}--global-light-ui & {
+  .ly--global-light-ui & {
     @content;
   }
 }

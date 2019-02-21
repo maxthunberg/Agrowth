@@ -16,7 +16,7 @@ get_header();
 <?php  include( get_template_directory() . '/phtml/sections/career/why-us.phtml');?>
 
 <!-- Contact form -->
-<?php  include( get_template_directory() . '/phtml/sections/contact-form/contact-form--career.phtml');?>
+<?php  include( get_template_directory() . '/phtml/sections/contact-form/contact-form.phtml');?>
 
 <!-- CTA-section -->
 <?php  include( get_template_directory() . '/phtml/sections/cta-section/cta-section.phtml');?>

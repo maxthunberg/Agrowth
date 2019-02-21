@@ -1,0 +1,14 @@
+<?php
+
+// vars
+$image = get_sub_field('bg_image');
+$height = get_sub_field('height');
+$position = get_sub_field('position');
+
+?>
+
+  <?php if( $image ): ?>
+
+    <div class="component bg-image" style="background-image: url('<?= add_bg_image($image,''); ?>'); height: <?php echo ($height == true) ? $height : '320px'; ?>; background-position: <?php echo ($position == true) ? $position : 'top left'; ?> "></div>
+
+  <?php endif; ?>

@@ -1,0 +1,161 @@
+
+.ly--navbar--submenu {
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    background-color: $color-white;
+    border-top: 1px solid $color-white-10;
+    border-bottom: 1px solid $color-white-10;
+    min-height: 320px;
+    left: 0;
+    position: fixed;
+    top: 64px;
+    width: 100%;
+    z-index: -100;
+    @include layer(base);
+    transition: top $duration--fast__enter $easing--enter,
+                box-shadow $duration--fast__enter $easing--enter,
+                opacity $duration--fast__enter $easing--enter,
+                visibility 0s linear .3s,
+                z-index 0s linear .3s;
+    .snippet {
+      content: "";
+      height: .75rem;
+      width: .75rem;
+      background-color: $color-white;
+      border: 1px solid $color-white-10;
+      top: -.375rem;
+      margin-left: .125rem;
+      position: absolute;
+      transform: rotate(45deg);
+      left: 0;
+      transition: $transition--enter__fast;
+      pointer-events: none;
+
+    }
+    .submenu--container {
+      position: relative;
+      background-color: $color-white;
+      padding: 2rem 5rem 5rem;
+      max-height: 24rem;
+      z-index: 10002;
+      @include flex(column,flex-start,0,0);
+      display: none;
+      .submenu--heading-container {
+        margin: 0 0 .5rem 1rem;
+      }
+      .submenu--card-container {
+        @include flex(column, 0 , 0, wrap);
+        width: 100%;
+        .card-link {
+          width: 33.333%;
+        }
+      }
+      .submenu--card-container__row {
+        @include flex(row, 0 , 0, wrap);
+        width: 100%;
+        height: auto;
+        .submenu--card-part {
+          // width: 33.333%;
+          // padding: 2rem;
+          height: 192px;
+          .card__link {
+            .card.primary{
+              @include flex(column, center , center, wrap);
+              @include linear-gradient($color-primary-dark, $color-primary);
+              height: 100%;
+            }
+            .card.secondary{
+              @include flex(column, center , center, wrap);
+              @include linear-gradient($color-secondary-dark, $color-secondary);
+              height: 100%;
+            }
+            .card.white{
+              @include flex(column, center , center, wrap);
+              @include linear-gradient($color-white-03, $color-white-05);
+              height: 100%;
+            }
+          }
+        }
+      }
+      .submenu--footer {
+        @include flex(0,center, center, 0);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4rem;
+        border-top: 1px solid $color-primary-dark;
+        background-color: $color-white-03;
+        p {
+          width: auto;
+          margin-right: .5rem;
+        }
+        .ly--link{
+          align-self: auto;
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+
+  .ly--navbar--submenu.cookies {
+    margin-top: 6rem;
+    transition: $transition--exit__fast;
+  }
+
+  .ly--navbar--submenu.transparent {
+    top: 80px;
+  }
+  .ly--navbar--submenu.is-visible.transparent {
+    top: 60px;
+  }
+
+  .ly--navbar--submenu.is-visible {
+    visibility: visible;
+    opacity: 1;
+    top: 44px;
+    z-index: 10000;
+    @include layer(temporary-nav);
+    transition: top $duration--fast__enter $easing--enter,
+                box-shadow $duration--fast__enter $easing--enter,
+                opacity 0s linear,
+                visibility 0s linear,
+                z-index 0s linear;
+  }
+
+  .submenu--container.is-visible {
+    display: flex;
+  }
+
+
+
+@media (min-width: breakpoint('xl')) { // 1600px
+
+}
+
+@media (max-width: breakpoint('xl')) { // 1200px
+
+}
+
+@media (max-width: breakpoint('lg')) { // 992px
+
+  .ly--navbar--submenu {
+    .submenu--container {
+      max-height: 29rem;
+    }
+  }
+
+}
+
+@media (max-width: breakpoint('md')) { // 768px
+
+.ly--navbar--submenu {
+  display: none;
+}
+
+}
+
+@media (max-width: breakpoint('sm')) { // 576px
+
+}

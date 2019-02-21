@@ -1,11 +1,10 @@
 .resources-slider {
   @include linear-gradient($color-white-05, $color-white);
   border-bottom: 1px solid $color-white-10;
-  padding: 4rem 0!important;
+  padding: 6rem 0!important;
 
   .section-button_center{
     flex-direction: row;
-    margin: 1rem;
     .btn-prev {
       margin-right: .5rem;
     }

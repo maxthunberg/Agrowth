@@ -1,16 +1,7 @@
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/mixins';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/css--typography';
-@import '../link/link';
 
-@include exports('breadcrumb') {
-  .#{$prefix}--breadcrumb {
-    @include typescale('zeta');
-    @include pt-serif;
+.ly--breadcrumb {
+    @include typescale('p-xs');
+    @include body-text;
     display: none;
     padding: $spacing-md;
     border-bottom: 1px solid $color-white-10;
@@ -20,9 +11,9 @@
     }
   }
 
-  .#{$prefix}--breadcrumb.post {
-    @include typescale('zeta');
-    @include pt-serif;
+  .ly--breadcrumb.post {
+    @include typescale('p-xs');
+    @include body-text;
     display: none;
     padding: $spacing-md;
     border-bottom: 1px solid $color-white-10;
@@ -33,9 +24,9 @@
     }
   }
 
-  .#{$prefix}--breadcrumb.page--about-us {
-    @include typescale('zeta');
-    @include pt-serif;
+  .ly--breadcrumb.page--about-us {
+    @include typescale('p-xs');
+    @include body-text;
     display: none;
     padding: $spacing-sm;
     border-bottom: 1px solid $color-white-10;
@@ -47,30 +38,30 @@
     }
   }
 
-  .#{$prefix}--breadcrumb-item {
+  .ly--breadcrumb-item {
     margin-right: $spacing-md;
     display: flex;
     align-items: center;
   }
 
-  .#{$prefix}--breadcrumb-item::after {
+  .ly--breadcrumb-item::after {
     content: '/';
     margin-left: $spacing-md;
     color: $text-03;
   }
 
-  .#{$prefix}--breadcrumb--no-trailing-slash .#{$prefix}--breadcrumb-item:last-child::after {
+  .ly--breadcrumb--no-trailing-slash .ly--breadcrumb-item:last-child::after {
     content: '';
   }
 
-  .#{$prefix}--breadcrumb-item:last-child {
+  .ly--breadcrumb-item:last-child {
     margin-right: 0;
 
     &::after {
       margin-right: 0;
     }
   }
-  .#{$prefix}--link_current {
+  ._current {
     white-space: nowrap;
     font-weight: 400;
     text-decoration: none;
@@ -78,15 +69,15 @@
     color: $color-dark;
   }
 
-  .#{$prefix}--breadcrumb .#{$prefix}--link {
+  .ly--breadcrumb . {
     white-space: nowrap;
-    transition: $transition--base;
+    transition: $transition--enter__fast;
 
     &:hover,
     &:focus {
       outline: none;
       color: $color-primary;
-      transition: $transition--base;
+      transition: $transition--enter__fast;
     }
 
     // Applies to Firefox only
@@ -96,4 +87,3 @@
       }
     }
   }
-}

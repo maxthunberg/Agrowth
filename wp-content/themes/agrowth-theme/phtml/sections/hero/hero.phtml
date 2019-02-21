@@ -4,29 +4,35 @@
     $heading = get_field('heading', $page_for_posts);
     $paragraph = get_field('paragraph', $page_for_posts);
     $herobgimg = get_field('background-image', $page_for_posts);
+    $curvesimg = get_field('curves_image', $page_for_posts);
+    $overlaycolor = get_field('overlay_color', $page_for_posts);
+    $overlayopacity = get_field('overlay_opacity', $page_for_posts);
   else:
     $subheading = get_field('sub-heading');
     $heading = get_field('heading');
     $paragraph = get_field('paragraph');
     $herobgimg = get_field('background_image');
+    $curvesimg = get_field('curves_image');
+    $overlaycolor = get_field('overlay_color');
+    $overlayopacity = get_field('overlay_opacity');
   endif;
 ?>
 <?php if ( $post->post_type == 'post' && !is_home() ): ?>
 
-            <div class="bx--grid section-content__outer">
-                <div class="bx--row">
+            <div class="grid hero-post">
+                <div class="row">
 
-                    <div class="section-content">
+                    <div class="hero-post--container">
 
                       <!-- Author information card -->
                       <?php include( get_template_directory() . '/phtml/sections/author-info/author-info__sm.phtml'); ?>
 
                       <div class="h2-section">
-                        <h1 class="bx--type-beta"><?= the_title() ?></h1>
+                        <h1 class="heading-two"><?= the_title() ?></h1>
                       </div>
 
                       <div class="ingress">
-                        <p class="bx--type-beta__paragraph"><?= get_field('ingress'); ?></p>
+                        <p class="paragraph"><?= get_field('ingress'); ?></p>
                       </div>
 
                     </div>
@@ -51,14 +57,14 @@
 <?php elseif ( is_page_template('page-templates/about-us.php') ):?>
 
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero about-us hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
+    <div class="grid hero about-us hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
   <?php else:?>
-    <div class="bx--grid hero">
+    <div class="grid hero">
   <?php endif;?>
-      <div class="bx--row">
-        <div class="bx--col-xs-12 bx--col-md-8 hero-container">
-            <h5 class="bx--type-gamma__subheading hero-subheading"><?= $subheading ?></h5>
-            <h1 class="bx--type-mega hero-heading"><?= $heading ?></h1>
+      <div class="row">
+        <div class="ly--col-xs-12 ly--col-md-8 hero-container">
+            <h5 class="sub-heading-one hero-subheading"><?= $subheading ?></h5>
+            <h1 class="heading-one hero-heading"><?= $heading ?></h1>
         </div>
       </div>
     </div>
@@ -67,20 +73,20 @@
 <?php elseif ( is_singular('services') ):?>
 
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
+    <div class="grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
   <?php else:?>
-    <div class="bx--grid hero services">
+    <div class="grid hero services">
   <?php endif;?>
-      <div class="bx--row">
+      <div class="row">
 
-        <div class="bx--col-lg-12 hero-container">
+        <div class="ly--col-lg-12 hero-container">
           <div class="hero--image-container">
             <?php add_thumbnail_image('g_south,q_60,c_fill,w_1280', '');?>
           </div>
 
           <div class="hero--text-container">
-            <h5 class="bx--type-gamma__subheading hero-subheading">TJÄNSTER</h5>
-            <h1 class="bx--type-mega hero-heading"><?= the_title() ?></h1>
+            <h5 class="sub-heading-two hero-subheading">TJÄNSTER</h5>
+            <h1 class="heading-two hero-heading"><?= the_title() ?></h1>
           </div>
 
         </div>
@@ -92,16 +98,16 @@
 <?php elseif ( is_singular('consultants') ):?>
 
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
+    <div class="grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
 
   <?php else:?>
-    <div class="bx--grid hero consultants">
+    <div class="grid hero consultants">
   <?php endif;?>
-      <div class="bx--row">
+      <div class="row">
 
-        <div class="bx--col-lg-12 hero-container">
-            <h5 class="bx--type-gamma__subheading hero-subheading">Konsultroll</h5>
-            <h1 class="bx--type-mega hero-heading"><?= the_title() ?></h1>
+        <div class="ly--col-lg-12 hero-container">
+            <h5 class="sub-heading-two hero-subheading">Konsultroll</h5>
+            <h1 class="heading-two hero-heading"><?= the_title() ?></h1>
         </div>
 
       </div>
@@ -109,15 +115,15 @@
 
 <?php else: ?>
   <?php if ($herobgimg):?>
-    <div class="bx--grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_60,c_fill,w_1280');?>');">
+    <div class="grid hero hero__bg-image" style="background-image: url('<?php add_bg_image($herobgimg, 'g_south,q_80,c_fill,w_1920');?>');">
   <?php else:?>
-    <div class="bx--grid hero">
+    <div class="grid hero">
   <?php endif;?>
-    <div class="bx--row">
-      <div class="bx--col-xs-12 bx--col-md-10 bx--col-lg-6 hero-container">
-          <h5 class="bx--type-gamma__subheading hero-subheading"><?= $subheading ?></h5>
-          <h1 class="bx--type-mega hero-heading"><?= $heading ?></h1>
-          <p class="bx--type-delta__paragraph hero-paragraph"><?= $paragraph ?></p>
+    <div class="row">
+      <div class="ly--col-xs-12 ly--col-md-10 ly--col-lg-6 hero-container">
+          <h5 class="sub-heading-two hero-subheading light"><?= $subheading ?></h5>
+          <h1 class="heading-two hero-heading light"><?= $heading ?></h1>
+          <p class="paragraph hero-paragraph light"><?= $paragraph ?></p>
       </div>
       <?php if( get_field('image') ): ?>
 
@@ -135,6 +141,13 @@
 
       <?php endif; ?>
     </div>
+
+    <div class="hero--overlay" style="background: <?= @$overlaycolor ?>; opacity: <?= @$overlayopacity ?>;"></div>
+
+    <div class="hero--curves">
+      <img src="<?= $curvesimg ?>">
+    </div>
+
   </div>
 
 <?php endif; ?>

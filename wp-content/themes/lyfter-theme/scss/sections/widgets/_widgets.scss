@@ -1,0 +1,77 @@
+.widgets {
+  background-color: $color-white-05;
+  @include linear-gradient($color-white-05, $color-white);
+  border-bottom: 1px solid $color-white-10;
+  .row {
+    .widget-1, .widget-2, .widget-3, .widget-4 {
+      @include flex(column, 0, 0, 0);
+      width: 25%;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      .widget__heading {
+        margin-bottom: 1rem;
+      }
+      .widget--link-container {
+        @include flex(0, center, 0, 0);
+        margin: .5rem 0;
+        .widget__icon {
+          height: 1.5rem;
+          width: 1.5rem;
+          margin-right: 1rem;
+        }
+        .widget__link {
+
+        }
+      }
+
+    }
+    .widget-1 {
+      .widget-logo{
+        height: 128px;
+        width: 128px;
+      }
+
+    }
+  }
+}
+
+@media (min-width: breakpoint('xl')) { // 1600px
+
+}
+
+@media (max-width: breakpoint('xl')) { // 1200px
+
+}
+
+@media (max-width: breakpoint('lg')) { // 992px
+
+
+}
+
+@media (max-width: breakpoint('md')) { // 768px
+  .widgets {
+    .row {
+      .widget-1 {
+        width: 100%;
+      }
+      .widget-2, .widget-3, .widget-4 {
+        width: 50%;
+
+      }
+
+    }
+  }
+
+}
+
+@media (max-width: breakpoint('sm')) { // 576px
+  .widgets {
+    .row {
+      .widget-1, .widget-2, .widget-3, .widget-4 {
+        width: 100%;
+
+      }
+
+    }
+  }
+}

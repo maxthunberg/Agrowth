@@ -1,0 +1,43 @@
+<?php if( have_rows('case_studies_section') ): ?>
+
+	<div class="grid-fullwidth case-studies">
+
+		<div class="row">
+
+	<?php while( have_rows('case_studies_section') ): the_row();
+
+		// vars
+		$heading = get_sub_field('heading');
+		$clientname = get_sub_field('client_name');
+		$logo = get_sub_field('client_logo');
+		$bgimage = get_sub_field('background_image');
+		$btnlink = get_sub_field('link');
+		$url = $btnlink["url"];
+		$label = $btnlink["title"];
+
+		?>
+
+				<a href="<?= $url ?>" class="case-studie__link">
+					<div class="case-studie" style="background-image: url('<?php ($bgimage) ? add_image_src($bgimage) : null; ?>');">
+						<div class="case-studie--container">
+
+							<span class="sub-heading-four center light">Kundcase</span>
+							<h3 class="heading-four center light"><?= $heading ?></h3>
+							<!-- <p class="paragraph-sm light"><?php //$clientname ?></p> -->
+
+							<?php add_image($logo, 'g_south,q_60,c_fill,w_320', 'case-studie__logo'); ?>
+
+						</div>
+
+						<div class="overlay"></div>
+
+					</div>
+				</a>
+
+  <?php endwhile; ?>
+
+		</div>
+
+	</div>
+
+<?php endif; ?>

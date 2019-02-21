@@ -1,0 +1,6 @@
+.error-page {
+  @include flex(0,center,center,0);
+  height: 100vh;
+  @include linear-gradient($color-primary-dark, $color-primary);
+
+}

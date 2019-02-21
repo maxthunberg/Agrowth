@@ -1,0 +1,32 @@
+
+<?php if( have_rows('paywall_form', 'option') ):
+
+			while( have_rows('paywall_form', 'option') ): the_row();
+
+				// vars
+				$contactheading = get_sub_field('heading','option');
+		    $contactsubheading = get_sub_field('subheading', 'option');
+		?>
+
+			<div class="ly--paywall-form">
+
+				<div class="paywall-form--container">
+
+					<div class="card form no-link">
+
+					    	<div class="ly--col-lg-12 ly--col-xs-12 paywall-form--col">
+					      	<h3 class="heading-four"><?= $contactheading ?></h3>
+					      	<p class="paragraph-sm"><?= $contactsubheading ?></p>
+					    	</div>
+
+					    	<div class="ly--col-lg-6 ly--col-md-3 ly--col-xs-12 paywall-form--col">
+									<?php echo do_shortcode('[contact-form-7 id="868" title="Contact form - Paywall" html_class="ly--form-item"]'); ?>
+					      </div>
+						</div>
+				</div>
+
+		  </div>
+
+	<?php endwhile; ?>
+
+<?php endif; ?>

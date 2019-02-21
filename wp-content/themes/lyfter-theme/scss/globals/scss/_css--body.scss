@@ -1,0 +1,13 @@
+body {
+  @include reset;
+  @include body-text;
+  color: $text-01;
+  background-color: $color-white-03;
+  line-height: 1;
+  ::selection {
+    background: $color-primary-lighter;
+  }
+  ::-moz-selection {
+    background: $color-white-10;
+  }
+}

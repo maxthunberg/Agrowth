@@ -1,0 +1,131 @@
+<?php
+
+  // All ACF variables
+  if (is_home()):
+
+    $herostyle = get_field('hero_style',$page_for_posts);
+    $lightordark = get_field('light_or_dark',$page_for_posts);
+
+    $subheading = get_field('subheading', $page_for_posts);
+    $heading = get_field('heading', $page_for_posts);
+    $paragraph = get_field('paragraph', $page_for_posts);
+
+    $selectimage = get_field('select_image', $page_for_posts);
+    $image = get_field('image', $page_for_posts);
+
+    $selectbgimage = get_field('select_background_image', $page_for_posts);
+    $bgimage = get_field('background-image', $page_for_posts);
+    $bgcolor = get_field('background_color', $page_for_posts);
+    $bgposition = get_field('background_position', $page_for_posts);
+
+    $selectoverlay = get_field('select_overlay', $page_for_posts);
+    $overlaycolor = get_field('overlay_color', $page_for_posts);
+    $overlayopacity = get_field('overlay_opacity', $page_for_posts);
+
+  else:
+
+    $herostyle = get_field('hero_style');
+    $lightordark = get_field ('light_or_dark');
+    $subheading = get_field('subheading');
+    $heading = get_field('heading');
+    $paragraph = get_field('paragraph');
+
+    $selectimage = get_field('select_image');
+    $image = get_field('image');
+
+    $selectbgimage = get_field('select_background_image');
+    $bgimage = get_field('background_image');
+    $bgcolor = get_field('background_color');
+    $bgposition = get_field('background_position');
+
+    $selectoverlay = get_field('select_overlay');
+    $overlaycolor = get_field('overlay_color');
+    $overlayopacity = get_field('overlay_opacity');
+
+  endif;
+
+  if ( $lightordark['value'] == '1' ) {
+    $lightordark = 'light';
+  } else {
+    $lightordark = null;
+  }
+
+?>
+
+<?php if ( $post->post_type == 'post' && !is_home() ): // If it's a blog post use this hero section ?>
+
+  <div class="grid hero-post">
+      <div class="row">
+
+          <div class="hero-post--container">
+
+            <!-- Author information card -->
+            <?php include( get_template_directory() . '/phtml/sections/author-info/author-info__sm.phtml'); ?>
+
+
+            <div class="h2-section">
+              <h1 class="heading-two"><?= the_title() ?></h1>
+            </div>
+
+            <div class="ingress">
+              <p class="paragraph"><?= get_field('ingress'); ?></p>
+            </div>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="section-post-image img-container">
+
+                <?php
+                    $img = get_field('fullwidth_image');
+
+                    add_image(
+                      $img,  // ACF-field
+                      'q_70', // Parameters
+                      'post-image featured-image' // Classes
+                    );
+                ?>
+
+  </div>
+
+
+<?php else: // If any other page?>
+
+
+  <div  class="grid hero <?= ($herostyle['value'] == '2') ? 'hero-sm' : false ?>"
+        style=" background-color: <?= ($bgcolor) ? $bgcolor . ';' : '#fff;' ?>
+                background-position: <?= ($bgposition) ? $bgposition . ';' : 'center;' ?>
+                background-image: url('<?php ($selectbgimage == true && $bgimage) ? add_image_src($bgimage, 'g_south,q_80,c_fill,w_1920', 'hero-bg-image') : 'false' ?>')
+        ">
+
+    <div class="row">
+
+      <div class="ly--col-xs-12 ly--col-md-10 ly--col-lg-6 hero-container">
+          <h5 class="sub-heading-two hero-subheading <?= $lightordark ?>"><?= $subheading ?></h5>
+          <h1 class="heading-two hero-heading <?= $lightordark ?>"><?= $heading ?></h1>
+          <p class="paragraph hero-paragraph <?= $lightordark ?>"><?= $paragraph ?></p>
+      </div>
+
+        <!-- Overlay -->
+        <?php if ( $selectimage === true ):
+
+                add_image(
+                    $image,  // ACF-field
+                    'g_south,q_60,c_fill,w_1280', // Parameters
+                    'hero-image' // Classes
+                );
+
+              endif;
+        ?>
+
+    </div>
+
+    <!-- Overlay -->
+    <?php if ( $selectoverlay === true ): ?>
+        <div class="hero--overlay" style=" background: <?= @$overlaycolor; ?>; opacity: <?= @$overlayopacity; ?>;"></div>
+    <?php endif; ?>
+
+  </div>
+
+<?php endif; ?>

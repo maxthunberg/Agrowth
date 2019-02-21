@@ -1,0 +1,36 @@
+.component.key-values {
+  background-color: $support-warning;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  margin-bottom: 4rem;
+
+  .component--container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: $maxwidth-text;
+    width: 100%;
+
+    .card.card--key-values {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: 2rem;
+      .icon-box {
+        margin-bottom: 1rem;
+        img {
+          height: 2rem;
+
+        }
+      }
+      .heading {
+        margin-bottom: .25rem;
+      }
+      .paragraph {
+      }
+    }
+  }
+}

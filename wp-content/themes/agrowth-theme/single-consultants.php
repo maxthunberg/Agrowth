@@ -18,8 +18,8 @@ get_header();
 
 
 <!-- Other services -->
-<div class="bx--grid resources-footer__outer">
-  <div class="bx--row">
+<div class="grid resources-footer__outer">
+  <div class="row">
 
       <div class="bx--col-md-12 resources-footer more-articles">
         <h3>Fler konsultroller</h3>

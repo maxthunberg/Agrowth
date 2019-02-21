@@ -1,0 +1,36 @@
+
+<?php if( have_rows('contact_form', 'option') ):
+
+			while( have_rows('contact_form', 'option') ): the_row();
+
+				// vars
+				$contactheading = get_sub_field('heading','option');
+		    $contactsubheading = get_sub_field('subheading', 'option');
+				$selectcolor = get_sub_field('form_color', 'option');
+
+		?>
+
+		<div class="ly--contact-form" id="kontakta-oss">
+
+				<div class="contact-form--container">
+
+						<div class="card form no-link">
+
+						    	<div class="ly--col-lg-12 ly--col-xs-12 contact-form--col">
+						      	<h3 class="contact-form--col__heading ly--type-beta"><?= $contactheading ?></h3>
+						      	<p class="contact-form--col__paragraph ly--type-delta__paragraph"><?= $contactsubheading ?></p>
+						    	</div>
+
+						    	<div class="ly--col-lg-6 ly--col-md-3 ly--col-xs-12 contact-form--col">
+										<?php echo do_shortcode('[contact-form-7 id="518" title="Contact form - Default" html_class="ly--form-item"]'); ?>
+						      </div>
+							</div>
+					</div>
+
+					<div class="bg-<?php echo $selectcolor ? $selectcolor : 'primary'; ?>"></div>
+
+		  </div>
+
+	<?php endwhile; ?>
+
+<?php endif; ?>

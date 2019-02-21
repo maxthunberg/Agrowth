@@ -1,24 +1,9 @@
-//-----------------------------
-// Notifications
-//-----------------------------
 
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/layer';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/import-once';
-@import '../../globals/scss/mixins';
-@import '../../globals/scss/css--reset';
-@import '../../globals/scss/css--typography';
-@import '../../globals/scss/css--helpers';
-
-@include exports('navbar-notifications') {
-  .#{$prefix}--navbar-notification {
+  .ly--navbar-notification {
     @include reset;
-    @include pt-serif;
+    @include body-text;
     @include font-smoothing;
-    @include typescale('zeta');
+    @include typescale('p-sm');
     background-color: $color-white;
     display: flex;
     align-items: center;
@@ -28,59 +13,59 @@
     color: $color-dark;
     width: 100%;
     left:0;
-    transition: top $transition--base $bx--standard-easing;
+    transition: top $duration--fast__enter $easing--enter;
 
   }
-  .#{$prefix}--navbar-notification.active {
+  .ly--navbar-notification.active {
     top: 0px;
   }
 
-  .#{$prefix}--navbar-notification--error {
+  .ly--navbar-notification--error {
     @include navbar-notification--color($support-error,$support-error);
   }
 
-  .#{$prefix}--navbar-notification--success {
+  .ly--navbar-notification--success {
     @include navbar-notification--color($support-success,$support-success);
   }
 
-  .#{$prefix}--navbar-notification--info {
+  .ly--navbar-notification--info {
     @include navbar-notification--color($support-info,$support-info);
   }
 
-  .#{$prefix}--navbar-notification--warning {
+  .ly--navbar-notification--warning {
     @include navbar-notification--color($support-warning,$support-warning);
   }
 
-  .#{$prefix}--navbar-notification--primary {
+  .ly--navbar-notification--primary {
     @include navbar-notification--color($color-primary,$color-white);
     @include linear-gradient($color-primary, $color-primary-light);
-    .#{$prefix}--navbar-notification__close-icon {
+    .ly--navbar-notification__close-icon {
       fill: $color-white;
     }
     color: $color-white;
   }
 
-  .#{$prefix}--navbar-notification--secondary {
+  .ly--navbar-notification--secondary {
     @include navbar-notification--color($color-secondary-dark, $color-white);
     @include linear-gradient($color-secondary-dark, $color-secondary);
-    .#{$prefix}--navbar-notification__close-icon {
+    .ly--navbar-notification__close-icon {
       fill: $color-white;
     }
     color: $color-white;
   }
 
-  .#{$prefix}--navbar-notification__details {
+  .ly--navbar-notification__details {
     display: flex;
     align-items: center;
   }
 
-  .#{$prefix}--navbar-notification__icon {
+  .ly--navbar-notification__icon {
     height: 16px;
     width: 16px;
     min-width: 22px;
   }
 
-  .#{$prefix}--navbar-notification__text-wrapper {
+  .ly--navbar-notification__text-wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -92,20 +77,20 @@
     }
   }
 
-  .#{$prefix}--navbar-notification__title {
-    @include typescale('zeta');
+  .ly--navbar-notification__title {
+    @include typescale('p-sm');
     font-weight: 700;
     margin: 0 $spacing-xs 0 0;
     line-height: 1.125;
   }
 
-  .#{$prefix}--navbar-notification__subtitle {
-    @include typescale('zeta');
+  .ly--navbar-notification__subtitle {
+    @include typescale('p-sm');
     margin: 0 $spacing-md 0 0;
     line-height: 1.125;
   }
 
-  .#{$prefix}--navbar-notification__close-button {
+  .ly--navbar-notification__close-button {
     background-color: transparent;
     border: none;
     padding: .5rem;
@@ -117,7 +102,7 @@
     }
   }
 
-  .#{$prefix}--navbar-notification__close-icon {
+  .ly--navbar-notification__close-icon {
     height: 10px;
     width: 10px;
     fill: $color-dark;
@@ -125,4 +110,3 @@
     top: 3px;
     right: 3px;
   }
-}

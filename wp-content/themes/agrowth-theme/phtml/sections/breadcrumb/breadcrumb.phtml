@@ -4,16 +4,20 @@ global $post;
 ?>
 
 <?php if ( is_single() && $post->post_type == 'post' ):?>
-<nav class="bx--grid bx--breadcrumb bx--breadcrumb--no-trailing-slash post" aria-label="breadcrumb">
+<nav class="grid ly--breadcrumb ly--breadcrumb--no-trailing-slash post" aria-label="breadcrumb">
 <?php elseif ( is_page_template('page-templates/about-us.php') ):?>
-<nav class="bx--grid bx--breadcrumb bx--breadcrumb--no-trailing-slash page--about-us" aria-label="breadcrumb">
+<nav class="grid ly--breadcrumb ly--breadcrumb--no-trailing-slash page--about-us" aria-label="breadcrumb">
 <?php else: ?>
-<nav class="bx--grid bx--breadcrumb bx--breadcrumb--no-trailing-slash" aria-label="breadcrumb">
+<nav class="grid ly--breadcrumb ly--breadcrumb--no-trailing-slash" aria-label="breadcrumb">
 <?php endif; ?>
 
+    <div class="row flex-start">
+
 <?php if (!is_home()) :?>
-    <div class="bx--breadcrumb-item">
-      <a href="<?php echo get_home_url(); ?>" class="bx--link">
+
+
+    <div class="ly--breadcrumb-item">
+      <a href="<?php echo get_home_url(); ?>" class="">
         <?php
           $frontpage_id = get_option( 'page_on_front' );
           echo get_the_title($frontpage_id);
@@ -27,14 +31,14 @@ global $post;
 
                       if ( $post->post_type == 'consultants' ): ?>
 
-                          <div class="bx--breadcrumb-item">
-                            <a href="<?php echo get_home_url() . '/konsulter' ?>" class="bx--link">
+                          <div class="ly--breadcrumb-item">
+                            <a href="<?php echo get_home_url() . '/konsulter' ?>" class="">
                               Konsulter
                             </a>
                           </div>
 
-                          <div class="bx--breadcrumb-item">
-                            <a class="bx--link_current">
+                          <div class="ly--breadcrumb-item">
+                            <a class="_current">
                               <?php if ( strlen($title) > 40 ):
 
                                       echo substr($title, 0, 40).'...';
@@ -50,14 +54,14 @@ global $post;
                           <?php
                       elseif ( $post->post_type == 'services' ): ?>
 
-                          <div class="bx--breadcrumb-item">
-                            <a href="<?php echo get_home_url() . '/tjanster' ?>" class="bx--link">
+                          <div class="ly--breadcrumb-item">
+                            <a href="<?php echo get_home_url() . '/tjanster' ?>" class="">
                               Tjänster
                             </a>
                           </div>
 
-                          <div class="bx--breadcrumb-item">
-                            <a class="bx--link_current">
+                          <div class="ly--breadcrumb-item">
+                            <a class="_current">
                               <?php if ( strlen($title) > 40 ):
 
                                       echo substr($title, 0, 40).'...';
@@ -74,14 +78,14 @@ global $post;
                           <?php
                       elseif ( $post->post_type == 'post' ): ?>
 
-                              <div class="bx--breadcrumb-item">
-                                <a href="<?php echo get_home_url() . '/resurser' ?>" class="bx--link">
+                              <div class="ly--breadcrumb-item">
+                                <a href="<?php echo get_home_url() . '/resurser' ?>" class="">
                                   Resurser
                                 </a>
                               </div>
 
-                              <div class="bx--breadcrumb-item">
-                                <a class="bx--link_current">
+                              <div class="ly--breadcrumb-item">
+                                <a class="_current">
                                   <?php if ( strlen($title) > 40 ):
 
                                           echo substr($title, 0, 40).'...';
@@ -106,15 +110,15 @@ global $post;
                        $title = get_the_title();
 
                        foreach ( $anc as $ancestor ) {
-                           $output = ' <div class="bx--breadcrumb-item"><a class="bx--link" href="'.get_permalink($ancestor).'">'.get_the_title($ancestor).'</a></div>';
+                           $output = ' <div class="ly--breadcrumb-item"><a class="" href="'.get_permalink($ancestor).'">'.get_the_title($ancestor).'</a></div>';
                        }
 
                        echo $output;
 
                          if ( !is_page($frontpage_id) ):?>
 
-                         <div class="bx--breadcrumb-item">
-                           <a class="bx--link_current"><?= $title?></a>
+                         <div class="ly--breadcrumb-item">
+                           <a class="_current"><?= $title?></a>
                          </div>
 
                      <?php endif;
@@ -123,8 +127,8 @@ global $post;
 
                         if ( !is_page($frontpage_id) ):?>
 
-                        <div class="bx--breadcrumb-item">
-                          <a class="bx--link_current"><?= get_the_title();?></a>
+                        <div class="ly--breadcrumb-item">
+                          <a class="_current"><?= get_the_title();?></a>
                         </div>
                     <?php endif;
 
@@ -134,5 +138,5 @@ global $post;
 
   endif;
 ?>
-
+    </div>
 </nav>

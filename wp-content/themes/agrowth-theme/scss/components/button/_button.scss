@@ -1,25 +1,15 @@
-@import '../../globals/scss/vars';
-@import '../../globals/scss/colors';
-@import '../../globals/scss/typography';
-@import '../../globals/scss/spacing';
-@import '../../globals/scss/import-once';
-@import 'mixins';
-@import '../../globals/scss/css--reset';
-
-@include exports('button') {
-  // <button> elements cannot be used as flex containers
-  button.#{$prefix}--btn {
+  button.ly--btn {
     display: inline-block;
   }
 
   // Reset intrisic padding in Firefox (see #731)
-  button.#{$prefix}--btn::-moz-focus-inner {
+  button.ly--btn::-moz-focus-inner {
     padding: 0;
     border: 0;
   }
 
   // Vertically center icon inside <button>
-  button.#{$prefix}--btn .#{$prefix}--btn__icon {
+  button.ly--btn .ly--btn__icon {
     position: relative;
     vertical-align: middle;
     top: -1px;
@@ -29,42 +19,42 @@
       top: 0;
     }
   }
-  
-  .#{$prefix}--btn {
+
+  .ly--btn {
     @include button-base;
   }
 
-  .#{$prefix}--btn__primary {
+  .ly--btn__primary {
     @include button-theme(
+      $color-primary-dark,
+      transparent,
+      $color-white,
       $color-primary,
-      transparent,
-      $color-white,
-      $color-primary-light,
       $color-white
     );
     &:active {
-      background-color: $color-primary-light;
+      background-color: $color-primary;
       color: $color-white;
     }
 
   }
 
-  .#{$prefix}--btn__secondary {
+  .ly--btn__secondary {
     @include button-theme(
-      $color-secondary-dark,
+      $color-secondary,
       transparent,
       $color-white,
-      $color-secondary,
+      $color-secondary-light,
       $color-white
     );
     &:active {
-      background-color: $color-secondary;
+      background-color: $color-secondary-light;
       color: $color-white;
     }
 
   }
 
-  .#{$prefix}--btn__white {
+  .ly--btn__white {
     @include button-theme(
       $color-white,
       transparent,
@@ -79,7 +69,7 @@
 
   }
 
-  .secondary > .#{$prefix}--btn__white {
+  .secondary > .ly--btn__white {
     @include button-theme(
       $color-white,
       transparent,
@@ -95,7 +85,7 @@
 
   }
 
-  .primary > .#{$prefix}--btn__white {
+  .primary > .ly--btn__white {
     @include button-theme(
       $color-white,
       transparent,
@@ -111,7 +101,7 @@
 
   }
 
-  .#{$prefix}--btn__dark {
+  .ly--btn__dark {
     @include button-theme(
       $color-dark,
       transparent,
@@ -126,7 +116,7 @@
 
   }
 
-  .primary > .#{$prefix}--btn__dark {
+  .primary > .ly--btn__dark {
     @include button-theme(
       $color-dark,
       transparent,
@@ -141,7 +131,7 @@
 
   }
 
-  .secondary > .#{$prefix}--btn__dark {
+  .secondary > .ly--btn__dark {
     @include button-theme(
       $color-dark,
       transparent,
@@ -156,7 +146,7 @@
 
   }
 
-  .#{$prefix}--btn--outline {
+  .ly--btn--outline {
     @include button-theme(
       transparent,
       $color-primary,
@@ -174,8 +164,8 @@
       color: $color-primary;
     }
 
-    &:hover > .#{$prefix}--btn__icon,
-    &:focus > .#{$prefix}--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-white;
     }
 
@@ -185,7 +175,7 @@
     }
   }
 
-  .#{$prefix}--btn--outline__secondary {
+  .ly--btn--outline__secondary {
     @include button-theme(
       transparent,
       $color-secondary-dark,
@@ -203,8 +193,8 @@
       color: $color-secondary-dark;
     }
 
-    &:hover > .#{$prefix}--btn__icon,
-    &:focus > .#{$prefix}--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-white;
     }
 
@@ -214,7 +204,7 @@
     }
   }
 
-  .#{$prefix}--btn--outline__white {
+  .ly--btn--outline__white {
     @include button-theme(
       transparent,
       $color-white,
@@ -232,8 +222,8 @@
       color: $color-white;
     }
 
-    &:hover > .#{$prefix}--btn__icon,
-    &:focus > .#{$prefix}--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-dark;
     }
 
@@ -243,7 +233,7 @@
     }
   }
 
-  .primary .#{$prefix}--btn--outline__white {
+  .primary .ly--btn--outline__white {
     @include button-theme(
       transparent,
       $color-white,
@@ -261,8 +251,8 @@
       color: $color-white;
     }
 
-    &:hover > .#{$prefix}--btn__icon,
-    &:focus > .#{$prefix}--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-primary;
     }
 
@@ -272,7 +262,7 @@
     }
   }
 
-  .secondary .#{$prefix}--btn--outline__white {
+  .secondary .ly--btn--outline__white {
     @include button-theme(
       transparent,
       $color-white,
@@ -290,8 +280,8 @@
       color: $color-white;
     }
 
-    &:hover > .#{$prefix}--btn__icon,
-    &:focus > .#{$prefix}--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-secondary-dark;
     }
 
@@ -302,7 +292,7 @@
   }
 
 
-  .#{$prefix}--btn--outline__dark {
+  .ly--btn--outline__dark {
     @include button-theme(
       transparent,
       $color-dark,
@@ -320,8 +310,8 @@
       color: $color-dark;
     }
 
-    &:hover > .#{$prefix}--btn__icon,
-    &:focus > .#{$prefix}--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-white;
     }
 
@@ -331,7 +321,7 @@
     }
   }
 
-  .primary .#{$prefix}--btn--outline__dark {
+  .primary .ly--btn--outline__dark {
     @include button-theme(
       transparent,
       $color-dark,
@@ -349,8 +339,8 @@
       color: $color-dark;
     }
 
-    &:hover > .#{$prefix}--btn__icon,
-    &:focus > .#{$prefix}--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-primary;
     }
 
@@ -360,7 +350,7 @@
     }
   }
 
-  .secondary .#{$prefix}--btn--outline__dark {
+  .secondary .ly--btn--outline__dark {
     @include button-theme(
       transparent,
       $color-dark,
@@ -378,8 +368,8 @@
       color: $color-dark;
     }
 
-    &:hover > .#{$prefix}--btn__icon,
-    &:focus > .#{$prefix}--btn__icon {
+    &:hover > .ly--btn__icon,
+    &:focus > .ly--btn__icon {
       fill: $color-secondary-dark;
     }
 
@@ -390,7 +380,7 @@
   }
 
 
-  .#{$prefix}--btn--ghost {
+  .ly--btn--ghost {
     @include button-theme(
       transparent,
       transparent,
@@ -403,12 +393,12 @@
     &:focus {
       color: $color-white;
 
-      .#{$prefix}--btn__icon {
+      .ly--btn__icon {
         fill: $color-white;
       }
     }
 
-    .#{$prefix}--btn__icon {
+    .ly--btn__icon {
       margin-left: $spacing-xs;
     }
 
@@ -416,27 +406,26 @@
     &:focus:disabled {
       color: $color-primary;
 
-      .#{$prefix}--btn__icon {
+      .ly--btn__icon {
         fill: $color-primary;
       }
     }
   }
 
 
-  .#{$prefix}--btn--sm {
+  .ly--btn--sm {
     height: 2rem;
     padding: $button-padding-sm;
     letter-spacing: 0;
   }
 
-  .#{$prefix}--btn--lg {
+  .ly--btn--lg {
     height: rem(44px);
     padding: $button-padding-lg;
     letter-spacing: 0;
   }
 
-  .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary,
-  .#{$prefix}--btn--tertiary + .#{$prefix}--btn--danger--primary {
+  .ly--btn--secondary + .ly--btn--primary,
+  .ly--btn--tertiary + .ly--btn--danger--primary {
     margin-left: $spacing-md;
   }
-}

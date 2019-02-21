@@ -1,29 +1,7 @@
 @import 'colors';
 @import 'spacing';
 
-$prefix: 'bx' !default;
-
-$bx--ease-in: cubic-bezier(0.25, 0, 1, 1); // Used primarily for removing elements from the screen.
-$bx--ease-out: cubic-bezier(
-  0,
-  0,
-  0.25,
-  1
-); // Used for adding elements to the screen or changing on-screen states at a users's input.
-
-// $bx--standard-easing: cubic-bezier(.12,.85,.31,1); // Used for the majority of animations.
-// $bx--standard-easing: cubic-bezier(.58,.46,.36,.93); // Used for the majority of animations.
-// $bx--standard-easing: cubic-bezier(.46,0,.28,.97); // Used for the majority of animations.
-$bx--standard-easing: cubic-bezier(.62,.03,.67,.99); // Used for the majority of animations.
-
-$bx--reverse-easing: cubic-bezier(.54,.27,.51,.85); // Used for the majority of animations.
-
-$transition--base: 175ms;
-$transition--expansion: 350ms;
-
-$transition--default: all $transition--base $bx--standard-easing;
-$transition--long: all $transition--expansion $bx--standard-easing;
-$transition--long-reverse: all $transition--expansion $bx--reverse-easing;
+$prefix: 'ly' !default;
 
 // Color Theme Variables
 $nav-01: $color-blue !default;
@@ -35,36 +13,82 @@ $nav-06: $color-teal !default;
 $nav-07: $color-teal !default;
 $nav-08: $color-teal !default;
 
-// Brand Colors
-$color-primary: #ff6665;
-  $color-primary-darker: #CE312C;
-  $color-primary-dark: #E84C47;
-  $color-primary-light: #FF7F7C;
-  $color-primary-lighter: #FF9896 ;
+// // Brand Colors
+// $color-primary: #ff6665;
+//   $color-primary-darker: #CE312C;
+//   $color-primary-dark: #E84C47;
+//   $color-primary-light: #FF7F7C;
+//   $color-primary-lighter: #FF9896 ;
+//
+// $color-secondary: #58ED9F;
+//   $color-secondary-darker: #14BB69;
+//   $color-secondary-dark: #34D583;
+//   $color-secondary-light: #6BFFB7;
+//   $color-secondary-lighter: #86FFD1;
 
-$color-secondary: #58ED9F;
-  $color-secondary-darker: #14BB69;
-  $color-secondary-dark: #34D583;
-  $color-secondary-light: #6BFFB7;
-  $color-secondary-lighter: #86FFD1;
+
+// Brand Colors
+// $color-primary: #58ED9F;
+//   $color-primary-darker: #14BB69;
+//   $color-primary-dark: #34D583;
+//   $color-primary-light: #6BFFB7;
+//   $color-primary-lighter: #86FFD1 ;
+
+
+$color-primary: #58EDCD;
+  $color-primary-darker: #14BB9B;
+  $color-primary-dark: #34D5AC;
+  $color-primary-light: #6BFFE1;
+  $color-primary-lighter: #86FFEC;
+
+// $color-secondary: #ff6665;
+//   $color-secondary-darker: #CE312C;
+//   $color-secondary-dark: #E84C47;
+//   $color-secondary-light: #FF7F7C;
+//   $color-secondary-lighter: #FF9896;
+
+$color-secondary: #5AAAFA;
+  $color-secondary-darker: #2387EB;
+  $color-secondary-dark: #3A94EF;
+  $color-secondary-light: #84C1FD;
+  $color-secondary-lighter: #B0D7FE;
+
+
+
 
 $brand-03: #86FFD1;
 
+// $color-white: #fff;
+//   $color-white-03: #f9f9f9;
+//   $color-white-05: #f2f2f2;
+//   $color-white-10: #e6e6e6;
+//   $color-white-20: #ccc;
+//
+// $color-grey: #757575;
+// $color-dark: #292929;
+// $color-black: #1a1a1a;
+
 $color-white: #fff;
-  $color-white-03: #f9f9f9;
-  $color-white-05: #f2f2f2;
-  $color-white-10: #e6e6e6;
+  $color-white-03: #F8FBFE;
+  $color-white-05: #F4F9FE;
+  $color-white-10: #E4ECF4;
   $color-white-20: #ccc;
 
-$color-grey: #757575;
-$color-dark: #292929;
-$color-black: #1a1a1a;
+$color-grey: #8091A3;
+$color-dark: #28323C;
+$color-black: #0C1620;
 
 $text-01: $color-dark;
 $text-02: $color-grey;
 $text-03: $color-black;
 
 $color-white : $color-white;
+
+$color-facebook: #3B5998;
+$color-facebook-dark: #344F88;
+
+$color-linkedin: #0077b5;
+$color-linkedin-dark: #006AA2;
 
 $field-primary: rgba($color-primary, 0.05);
 $field-secondary: rgba($color-secondary, 0.05);
@@ -83,7 +107,7 @@ $input-label-weight: 600 !default;
 // Button Theme Variables
 $button-font-weight: 600 !default;
 $button-font-size: 0.875rem !default;
-$button-border-radius: 0 !default;
+$button-border-radius: .25rem !default;
 $button-height: 40px !default;
 $button-padding-lg: 0 $spacing-lg !default;
 $button-padding: 0 $spacing-md !default;
