@@ -4,7 +4,7 @@
   border-bottom: 1px solid $color-white-10;
   .row {
     .widget-1, .widget-2, .widget-3, .widget-4 {
-      @include customflex(column, 0, 0, 0);
+      @include flex(column, 0, 0, 0);
       width: 25%;
       flex-direction: column;
       margin-bottom: 2rem;
@@ -12,7 +12,7 @@
         margin-bottom: 1rem;
       }
       .widget--link-container {
-        @include customflex(0, center, 0, 0);
+        @include flex(0, center, 0, 0);
         margin: .5rem 0;
         .widget__icon {
           height: 1.5rem;

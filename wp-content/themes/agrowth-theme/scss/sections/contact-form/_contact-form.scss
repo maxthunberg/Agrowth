@@ -1,17 +1,17 @@
 .ly--contact-form {
-  @include customflex(0, 0, center,0);
+  @include flex(0, 0, center,0);
   position: relative;
   padding: 4rem 2rem 0;
   margin: 6rem 0;
   transition: $transition--enter__fast;
   .contact-form--container {
-     @include customflex(0, 0,center,0);
+     @include flex(0, 0,center,0);
      border-radius: 1rem;
      width: 100%;
      height: 100%;
     .card.form {
       transform: translateY(4rem);
-      @include customflex(column, 0,center,0);
+      @include flex(column, 0,center,0);
       border-radius: .5rem;
       box-shadow: $box-shadow--sticky-nav;
       padding: 3rem;

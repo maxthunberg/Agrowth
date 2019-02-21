@@ -25,32 +25,21 @@ $paywall = get_field('select_paywall');
 
 
 <!-- Other services -->
-<div class="grid resources-footer__outer">
+<div class="grid resources-footer">
   <div class="row">
-    <div class="bx--col-md-12 resources-footer resources-footer__info">
-      <div class="tag-container">
-        <?php foreach ( ( get_the_category() ) as $category ):
-            $catname = $category->name;
-            $catslug = $category->slug;
-          ?>
-          <span class="bx--tag bx--tag--<?= $catslug ?>"><?= $catname ?></span>
-          <?php endforeach;?>
-        </div>
 
-        <!-- Author information card -->
-        <?php include( get_template_directory() . '/phtml/sections/author-info/author-info.phtml'); ?>
+      <div class="section-heading_center">
+        <h3 class="heading-three center">Fler inlägg</h3>
+      </div>
 
-      </div>
-      <div class="bx--col-md-12 more-articles">
-        <h3>Fler inlägg</h3>
-      </div>
-      <div class="bx--col-md-12 section-2rem resources-footer resources-footer__cards">
+      <div class="more-articles">
 
 <?php
                     $args = array(
                         'post_type' => 'post',
                         'orderby' => 'date',
                         'order'   => 'DESC',
+                        'post__not_in' => array(get_the_ID()),
                         'posts_per_page' => 3,
                     );
 
@@ -67,7 +56,10 @@ $paywall = get_field('select_paywall');
 
                     <?php
                     wp_reset_postdata();?>
-    </div>
+
+      </div>
+
+
   </div>
 </div>
 

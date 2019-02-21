@@ -1,5 +1,5 @@
 .sticky-cards {
-  @include customflex(column,center,0,0);
+  @include flex(column,center,0,0);
   opacity: 1;
   position: absolute;
   top: 200px;
@@ -16,7 +16,7 @@
     display: none;
     }
     .sticky-card--contact, .sticky-card--service, .sticky-card--consultant {
-      @include customflex(column,0,center,0);
+      @include flex(column,0,center,0);
       width: rem(320px);
       margin-bottom: 1rem;
     }

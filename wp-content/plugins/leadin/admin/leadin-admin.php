@@ -17,8 +17,9 @@ if ( ! defined( 'LEADIN_ADMIN_PATH' ) ) {
 // =============================================
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-if ( ! class_exists( 'LI_Pointers' ) ) {
-	require_once LEADIN_PLUGIN_DIR . '/inc/class-leadin-pointers.php';
+function action_required_notice(){
+    $leadin_icon = LEADIN_PATH . '/images/leadin-icon-16x16.png';
+    echo '<div class="notice notice-warning is-dismissible"><p><img src="' . $leadin_icon . '" /> The HubSpot plugin isn’t connected right now. To use HubSpot tools on your WordPress site, <a href="admin.php?page=leadin">connect the plugin now</a>.</p></div>';
 }
 
 // =============================================
@@ -51,6 +52,36 @@ class WPLeadInAdmin {
 		add_action( 'admin_print_scripts', array( &$this, 'add_leadin_admin_scripts' ) );
 		add_filter( 'plugin_action_links_' . 'leadin/leadin.php', array( $this, 'leadin_plugin_settings_link' ) );
 
+		if ($affiliate = $this->get_affiliate_code()) {
+		    add_option( 'hubspot_affiliate_code', $affiliate );
+		}
+		$this->hydrate_acquisition_attribution();
+	}
+
+	function get_affiliate_code() {
+	    $affiliate = get_option( 'hubspot_affiliate_code');
+	    if (!$affiliate && file_exists(LEADIN_PLUGIN_DIR . '/hs_affiliate.txt' )) {
+	        $affiliate = trim(preg_replace('/\s\s+/', ' ', file_get_contents(LEADIN_PLUGIN_DIR . '/hs_affiliate.txt')));
+	    }
+	    if ($affiliate) {
+	        return $affiliate;
+	    }
+	    return false;
+	}
+
+	function get_acquisition_attribution_option() {
+		return get_option('hubspot_acquisition_attribution');
+	}
+
+	function hydrate_acquisition_attribution() {
+		if ($this->get_acquisition_attribution_option()) {
+			return;
+		}
+
+		if (file_exists(LEADIN_PLUGIN_DIR . '/hs_attribution.txt' )) {
+			$acquisition_attribution = trim(file_get_contents(LEADIN_PLUGIN_DIR . '/hs_attribution.txt'));
+			add_option('hubspot_acquisition_attribution', $acquisition_attribution);
+		}
 	}
 
 	function leadin_update_check() {
@@ -90,15 +121,19 @@ class WPLeadInAdmin {
 		}
 
 		$leadin_icon = LEADIN_PATH . '/images/leadin-icon-16x16-white.png';
+		$notificationIcon = '';
+	    if ( ! get_option( 'leadin_portalId' ) ) {
+    		$notificationIcon = ' <span class="update-plugins count-1"><span class="plugin-count">!</span></span>';
+    		add_action('admin_notices', 'action_required_notice');
+	    }
 
-		add_menu_page( 'HubSpot', 'HubSpot', $capability, 'leadin', array( $this, 'leadin_build_app' ), $leadin_icon, '25.100713' );
+		add_menu_page( 'HubSpot', 'HubSpot'.$notificationIcon, $capability, 'leadin', array( $this, 'leadin_build_app' ), $leadin_icon, '25.100713' );
 
-		if ( ! isset( $_GET['page'] ) || $_GET['page'] != ( 'leadin' || 'leadin_settings' || 'leadin_contacts' || 'leadin_flows' || 'leadin_collected_forms' ) ) { // WPCS: CSRF ok.
-			if ( ! get_option( 'leadin_portalId' ) ) {
-				$li_pointers = new LI_Pointers( true );
-			}
-			// else if ( ! get_option('leadin_portalId') && $options )
-			// $li_pointers = new LI_Pointers(FALSE);
+		$oAuthMode = get_option('leadin_oauth_mode');
+		if ($oAuthMode && $oAuthMode == '1') {
+			add_submenu_page('leadin', 'Forms', 'Forms', 'activate_plugins', 'leadin_forms', array($this, 'leadin_build_app'));
+			add_submenu_page('leadin', 'Settings', 'Settings', 'activate_plugins', 'leadin_settings', array($this, 'leadin_build_app'));
+			remove_submenu_page('leadin','leadin');
 		}
 	}
 
@@ -112,7 +147,13 @@ class WPLeadInAdmin {
 	 * @return  array
 	 */
 	function leadin_plugin_settings_link( $links ) {
-		$url           = get_admin_url( get_current_blog_id(), 'admin.php?page=leadin' );
+		$oAuthMode = get_option('leadin_oauth_mode');
+		if ($oAuthMode && $oAuthMode == '1') {
+			$page = "leadin_settings";
+		} else {
+			$page = "leadin";
+		}
+		$url           = get_admin_url( get_current_blog_id(), "admin.php?page=$page" );
 		$settings_link = '<a href="' . $url . '">Settings</a>';
 		array_unshift( $links, $settings_link );
 		return $links;
@@ -123,7 +164,7 @@ class WPLeadInAdmin {
 	 */
 
 	function leadin_build_app() {
-		global $wp_version;
+	    global $wp_version;
 
 		echo '<div id="leadin" class="wrap ' . ( $wp_version < 3.8 && ! is_plugin_active( 'mp6/mp6.php' ) ? 'pre-mp6' : '' ) . '"></div>';
 
@@ -150,7 +191,8 @@ class WPLeadInAdmin {
 
 		$leadin_config = array(
 			'portalId'              => get_option( 'leadin_portalId' ),
-			'hapikey'               => get_option( 'leadin_hapikey' ),
+			'affiliateCode'         => get_option( 'hubspot_affiliate_code' ),
+			'acquisitionAttributionParams' => $this->get_acquisition_attribution_option(),
 			'slumberMode'           => get_option( 'leadin_slumber_mode' ),
 			'env'                   => constant( 'LEADIN_ENV' ),
 			'user'                  => $this->leadin_get_user_for_tracking(),
@@ -166,6 +208,11 @@ class WPLeadInAdmin {
 			'locale'                => get_locale(),
 			'timezone'              => get_option( 'gmt_offset' ),
 			'timezoneString'        => get_option( 'timezone_string' ), // If not set by the user manually it will be an empty string
+			'oAuthMode'             => get_option( 'leadin_oauth_mode' ),
+			'accessToken'           => get_option( 'leadin_accessToken' ),
+			'refreshToken'          => get_option( 'leadin_refreshToken' ),
+			'userId'                => get_option( 'leadin_userId' ),
+			'connectionTimeInMs'    => get_option( 'leadin_connectionTimeInMs' ),
 		);
 
 		if ( ( $pagenow == 'admin.php' && isset( $_GET['page'] ) && strstr( $_GET['page'], 'leadin' ) ) ) { // WPCS: CSRF ok.

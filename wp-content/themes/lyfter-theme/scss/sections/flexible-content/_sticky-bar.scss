@@ -1,5 +1,5 @@
 .sticky-bar {
-  @include customflex(column,center,0,0);
+  @include flex(column,center,0,0);
   opacity: 1;
   position: absolute;
   top: 200px;
@@ -18,7 +18,7 @@
         display: none;
       }
       .sticky-btn {
-        @include customflex(0,center,center,0);
+        @include flex(0,center,center,0);
         background-color: transparent;
         height: 3rem;
         width: 3rem;

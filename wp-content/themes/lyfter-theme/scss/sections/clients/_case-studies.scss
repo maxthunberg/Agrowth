@@ -1,0 +1,75 @@
+.case-studies {
+  height: auto;
+  width: 100%;
+  background-color: $color-black;
+  .row {
+    @include flex(0,0,0,wrap);
+    height: 100%;
+    width: 100%;
+    .case-studie__link {
+      flex: 1;
+      min-width: 320px;
+      text-decoration: none;
+      .case-studie {
+        position: relative;
+        @include flex(0,center,center,0);
+        height: 100%;
+        width: 100%;
+        background-color: $color-black;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 8rem 1rem;
+        .case-studie--container {
+          @include flex(column,center,center,0);
+          height: 100%;
+          transform: translateY(0);
+          transition: $duration--normal__enter;
+          z-index: 3;
+          .case-studie__heading {
+
+          }
+          .case-studie__name {
+
+          }
+          .case-studie__date {
+
+          }
+          .case-studie__logo {
+            margin-top: 1rem;
+            max-width: 100%;
+            width: 128px;
+            height: auto;
+          }
+        }
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $color-black;
+          opacity: .3;
+          z-index: 2;
+          transition: $duration--normal__enter;
+        }
+      }
+      &:hover {
+        .case-studie--container {
+          transform: translateY(-.5rem);
+          transition: $duration--normal__exit;
+        }
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $color-black;
+          opacity: 0;
+          transition: $duration--normal__exit;
+        }
+      }
+    }
+  }
+}

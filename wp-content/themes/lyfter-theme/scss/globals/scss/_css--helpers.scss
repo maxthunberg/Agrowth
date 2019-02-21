@@ -73,13 +73,13 @@
     @return map-get($conversion-map, $value);
   }
 
-  @return 90deg - convert-angle($value, 'deg');
+  @return 0deg - convert-angle($value, 'deg');
 }
 
 @mixin linear-gradient($direction, $color-stops...) {
   @if is-direction($direction) == false {
     $color-stops: ($direction, $color-stops);
-    $direction: 90deg;
+    $direction: 0deg;
   }
 
   background: nth(nth($color-stops, 1), 1);

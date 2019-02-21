@@ -1,17 +1,17 @@
 .client-logos {
-  @include customflex(0, center, center, 0);
-  background: $color-white;
+  @include flex(0, center, center, 0);
+  background: $color-white-03;
   width: 100%;
   padding: 2rem 0 0 0;
   height: auto;
   .row {
-    @include customflex(0, center, center, 0);
+    @include flex(0, center, center, 0);
     width: 100%;
     .client-logos--container {
-      @include customflex(0, 0, 0, wrap);
+      @include flex(0, 0, 0, wrap);
       width: 100%;
         .client__img-container {
-          @include customflex(0, center, center, 0);
+          @include flex(0, center, center, 0);
           width: 20%;
           background-color: rgba($color-white, .2);
           padding: 1rem 1.5rem;
@@ -31,7 +31,7 @@
   .client-logos {
     .row {
       .client-logos--container {
-        @include customflex(0, center, center, wrap);
+        @include flex(0, center, center, wrap);
         .client__img-container {
           width: 33%;
           .client__logo {
@@ -52,7 +52,7 @@
   .client-logos {
     .row {
       .client-logos--container {
-        @include customflex(0, center, center, wrap);
+        @include flex(0, center, center, wrap);
         .client__img-container {
           width: 50%;
           .client__logo {

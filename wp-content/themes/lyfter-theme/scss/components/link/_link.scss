@@ -9,7 +9,6 @@
     position: relative;
     @include reset;
     @include body-text;
-    // @include typescale('p-sm');
     @include font-smoothing;
     font-weight: 400;
     text-decoration: none;
@@ -17,15 +16,15 @@
     color: $color-primary-dark;
     align-self: flex-start;
     transition: $transition--enter__fast;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-color: $color-white-20;
-    }
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 1px;
+    //   background-color: $color-white-20;
+    // }
 
     &:visited {
       color: $color-primary-dark;
@@ -35,6 +34,7 @@
     &:hover,
     &:focus {
       position: relative;
+      color: $color-primary;
       transition: $transition--enter__fast;
       &:after {
         content: '';
@@ -43,18 +43,20 @@
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: $color-primary-dark;
+        background-color: $color-primary;
       }
 
     }
 
     &:focus {
-      @include focus-outline('border');
-    }
-
-    &[aria-disabled="true"] {
-      opacity: .5;
-      pointer-events: none;
+      outline: none!important;
+      border-radius: .25rem;
+      box-shadow:0 0 0 2px $color-secondary-dark;
+      transition: $transition--enter__fast;
+      &:active {
+        box-shadow: none;
+        transition: $transition--exit__fast;
+      }
     }
   }
 

@@ -25,10 +25,8 @@
 
           </div>
 
-          <a href="<?= $url ?>">
-            <button class="ly--btn <?php if ( $theme == 1 ) { echo 'ly--btn--outline__white'; } elseif ( $theme == 2 ) { echo 'ly--btn--outline__white'; } else { echo 'ly--btn--outline__white'; } ?>" type="button">
+          <a href="<?= $url ?>" class="btn no-margin <?php if ( $theme == 1 ) { echo 'btn-outline btn-white'; } elseif ( $theme == 2 ) { echo 'btn-white'; } else { echo 'btn-outline btn-white'; } ?>" type="button">
               <?= $label ?>
-            </button>
           </a>
 
         </div>

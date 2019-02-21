@@ -61,7 +61,7 @@
       margin-right: 0;
     }
   }
-  .ly--link_current {
+  ._current {
     white-space: nowrap;
     font-weight: 400;
     text-decoration: none;
@@ -69,7 +69,7 @@
     color: $color-dark;
   }
 
-  .ly--breadcrumb .ly--link {
+  .ly--breadcrumb . {
     white-space: nowrap;
     transition: $transition--enter__fast;
 

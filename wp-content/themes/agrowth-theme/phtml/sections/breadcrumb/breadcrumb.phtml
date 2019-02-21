@@ -17,7 +17,7 @@ global $post;
 
 
     <div class="ly--breadcrumb-item">
-      <a href="<?php echo get_home_url(); ?>" class="ly--link">
+      <a href="<?php echo get_home_url(); ?>" class="">
         <?php
           $frontpage_id = get_option( 'page_on_front' );
           echo get_the_title($frontpage_id);
@@ -32,13 +32,13 @@ global $post;
                       if ( $post->post_type == 'consultants' ): ?>
 
                           <div class="ly--breadcrumb-item">
-                            <a href="<?php echo get_home_url() . '/konsulter' ?>" class="ly--link">
+                            <a href="<?php echo get_home_url() . '/konsulter' ?>" class="">
                               Konsulter
                             </a>
                           </div>
 
                           <div class="ly--breadcrumb-item">
-                            <a class="ly--link_current">
+                            <a class="_current">
                               <?php if ( strlen($title) > 40 ):
 
                                       echo substr($title, 0, 40).'...';
@@ -55,13 +55,13 @@ global $post;
                       elseif ( $post->post_type == 'services' ): ?>
 
                           <div class="ly--breadcrumb-item">
-                            <a href="<?php echo get_home_url() . '/tjanster' ?>" class="ly--link">
+                            <a href="<?php echo get_home_url() . '/tjanster' ?>" class="">
                               Tjänster
                             </a>
                           </div>
 
                           <div class="ly--breadcrumb-item">
-                            <a class="ly--link_current">
+                            <a class="_current">
                               <?php if ( strlen($title) > 40 ):
 
                                       echo substr($title, 0, 40).'...';
@@ -79,13 +79,13 @@ global $post;
                       elseif ( $post->post_type == 'post' ): ?>
 
                               <div class="ly--breadcrumb-item">
-                                <a href="<?php echo get_home_url() . '/resurser' ?>" class="ly--link">
+                                <a href="<?php echo get_home_url() . '/resurser' ?>" class="">
                                   Resurser
                                 </a>
                               </div>
 
                               <div class="ly--breadcrumb-item">
-                                <a class="ly--link_current">
+                                <a class="_current">
                                   <?php if ( strlen($title) > 40 ):
 
                                           echo substr($title, 0, 40).'...';
@@ -110,7 +110,7 @@ global $post;
                        $title = get_the_title();
 
                        foreach ( $anc as $ancestor ) {
-                           $output = ' <div class="ly--breadcrumb-item"><a class="ly--link" href="'.get_permalink($ancestor).'">'.get_the_title($ancestor).'</a></div>';
+                           $output = ' <div class="ly--breadcrumb-item"><a class="" href="'.get_permalink($ancestor).'">'.get_the_title($ancestor).'</a></div>';
                        }
 
                        echo $output;
@@ -118,7 +118,7 @@ global $post;
                          if ( !is_page($frontpage_id) ):?>
 
                          <div class="ly--breadcrumb-item">
-                           <a class="ly--link_current"><?= $title?></a>
+                           <a class="_current"><?= $title?></a>
                          </div>
 
                      <?php endif;
@@ -128,7 +128,7 @@ global $post;
                         if ( !is_page($frontpage_id) ):?>
 
                         <div class="ly--breadcrumb-item">
-                          <a class="ly--link_current"><?= get_the_title();?></a>
+                          <a class="_current"><?= get_the_title();?></a>
                         </div>
                     <?php endif;
 

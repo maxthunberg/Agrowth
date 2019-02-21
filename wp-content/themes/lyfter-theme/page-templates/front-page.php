@@ -15,6 +15,12 @@ get_header();
 <!-- Products Section small-->
 <?php  include( get_template_directory() . '/phtml/sections/services/services-section.phtml');?>
 
+<!-- Case Studies-->
+<?php  include( get_template_directory() . '/phtml/sections/clients/case-studies.phtml');?>
+
+<!-- Social Proof Section -->
+<?php  include( get_template_directory() . '/phtml/sections/social-proof/social-proof-section.phtml');?>
+
 <!-- Consultants Section -->
 <?php  include( get_template_directory() . '/phtml/sections/consultants/consultants-section.phtml');?>
 

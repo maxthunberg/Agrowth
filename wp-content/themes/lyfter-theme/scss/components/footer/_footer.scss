@@ -1,10 +1,10 @@
 footer {
-  @include customflex(0, center, space-between, 0);
+  @include flex(0, center, space-between, 0);
   background-color: $color-white-03;
   height: rem(44px);
   padding: 0;
   .footer-container__info {
-    @include customflex(0,center,center,0);
+    @include flex(0,center,center,0);
     flex: 1;
     p {
       color: $color-grey;
@@ -14,13 +14,13 @@ footer {
     }
   }
   .footer-container__social {
-    @include customflex(0,center,center,0);
+    @include flex(0,center,center,0);
     p {
       color: $color-grey;
       margin-right: 1rem;
     }
     .social-media--btn {
-      @include customflex(0,center,center,0);
+      @include flex(0,center,center,0);
       height: rem(44px);
       width: rem(44px);
       transition: $transition--enter__fast;
@@ -68,7 +68,7 @@ footer {
 @media (max-width: breakpoint('sm')) { // 768px
 
   footer {
-    @include customflex(column, center, space-between, 0);
+    @include flex(column, center, space-between, 0);
     height: auto;
     padding: 1rem 0;
     .footer-container__info {
@@ -79,14 +79,14 @@ footer {
       }
     }
     .footer-container__social {
-      @include customflex(0,center,center,0);
+      @include flex(0,center,center,0);
       margin: 1rem;
       p {
         display: none;
         margin-right: 1rem;
       }
       .social-media--btn {
-        @include customflex(0,center,center,0);
+        @include flex(0,center,center,0);
         height: rem(44px);
         width: rem(44px);
         transition: $transition--enter__fast;

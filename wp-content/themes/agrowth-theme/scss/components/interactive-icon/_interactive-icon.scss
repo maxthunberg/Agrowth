@@ -1,10 +1,10 @@
 .interactive-icon {
-  @include customflex(column,center,center,0);
+  @include flex(column,center,center,0);
   margin-top: 2rem;
   padding: 1rem;
 
   .interactive-icon__icon {
-    @include customflex(0,center,center,0);
+    @include flex(0,center,center,0);
     background-color: $color-dark;
     border: 4px solid rgba($color-primary,0);
     height: 12rem;

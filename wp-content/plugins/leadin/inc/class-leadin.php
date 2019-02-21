@@ -45,11 +45,11 @@ class WPLeadIn {
 		$slumberMode = get_option( 'leadin_slumber_mode' );
 
 		if ( empty( $portalId ) ) {
-			echo '<!-- Leadin embed JS disabled as a portalId has not yet been configured -->';
+			echo '<!-- HubSpot embed JS disabled as a portalId has not yet been configured -->';
 			return;
 		}
 
-		$embedUrl = '//' . $embedDomain . '/' . $portalId . '.js';
+		$embedUrl = '//' . $embedDomain . '/' . $portalId . '.js?integration=wordpress';
 		$embedId  = 'leadin-scriptloader-js';
 
 		if ( is_single() ) {
@@ -75,6 +75,26 @@ class WPLeadIn {
 		wp_register_script( $embedId, $embedUrl, array( 'jquery' ), false, true );
 		wp_localize_script( $embedId, 'leadin_wordpress', $leadin_wordpress_info );
 		wp_enqueue_script( $embedId );
+		$this->add_page_analytics();
+	}
+
+	/* HubSpot page analytics */
+	function add_page_analytics() {
+		echo "\n".'<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin -->'."\n";
+		echo '<script type="text/javascript">'."\n";
+
+		echo 'var _hsq = _hsq || [];'."\n";
+		// Pass along the correct content-type
+		if ( is_single () ) {
+		    echo '_hsq.push(["setContentType", "blog-post"]);' . "\n";
+		}  else if ( is_archive () || is_search() ) {
+		    echo '_hsq.push(["setContentType", "listing-page"]);' . "\n";
+		} else {
+		    echo '_hsq.push(["setContentType", "standard-page"]);' . "\n";
+		}
+
+		echo '</script>'."\n";
+		echo '<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->'."\n";
 	}
 
 	function leadin_add_embed_script_attributes( $tag, $handle ) {

@@ -1,6 +1,6 @@
 .paywall-container {
   .ly--paywall-form {
-    @include customflex(0,center,center,0);
+    @include flex(0,center,center,0);
     display: none;
     position: fixed;
     top: 0;
@@ -15,7 +15,7 @@
       .card.form {
         opacity: 0;
         transform: translateY(4rem);
-        @include customflex(column, 0,center,0);
+        @include flex(column, 0,center,0);
         border-radius: .5rem;
         box-shadow: $box-shadow--sticky-nav;
         padding: 3rem;

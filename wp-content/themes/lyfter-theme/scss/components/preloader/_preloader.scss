@@ -1,0 +1,96 @@
+.preloader {
+  @include flex(column, center, center, 0);
+  position: fixed;
+  top: 0;
+  left:0;
+  background-color: $color-black;
+  height: 100%;
+  width: 100%;
+  z-index: 10000;
+  .row {
+    .preloader--container {
+      position: relative;
+      width: 80%;
+      max-width: rem(256px);
+      @include flex(column, center, center, 0);
+      z-index: 10;
+      .preloader__image {
+        height: 4rem;
+        width: auto;
+      }
+      .bar {
+        position: relative;
+        width: 100%;
+        height: .25rem;
+        border-radius: .125rem;
+        overflow: hidden;
+        background-color: rgba(255,255,255,.1);
+        margin: 2rem 0 .5rem;
+        .progress {
+          position: absolute;
+          left: 0;
+          height: 100%;
+          width: 0%;
+          background-color: $color-primary-dark;
+          transition: width .1s linear;
+          &.completed {
+            width: 100%!important;
+            transition: width .3s ease-in;
+          }
+        }
+      }
+    }
+    .wipe {
+      position: absolute;
+      // top:0;
+      bottom: 0;
+      left:0;
+      height: 100%;
+      width: 100%;
+      transition: $transition--enter__fast;
+    }
+    .wipe.animate {
+      // left: 100%;
+      bottom: 100%;
+      transition: all $duration--slow__exit $easing--exit;
+    }
+    .wipe-1 {
+      background-color: $color-black;
+      z-index: 1;
+      transition-delay: .1s!important;
+    }
+    .wipe-2 {
+      // left: -100%;
+      bottom: -100%;
+      background-color: $color-primary-dark;
+      z-index: 2;
+      transition-delay: .0s!important;
+    }
+    .wipe-3 {
+      // left: -100%;
+      bottom: -100%;
+      background-color: $color-secondary;
+      z-index: 3;
+      transition-delay: .1s!important;
+    }
+    // .wipe-4 {
+    //   // left: -100%;
+    //   bottom: -100%;
+    //   background-color: $color-secondary;
+    //   z-index: 12;
+    //   transition-delay: .2s!important;
+    //   transition-duration: 600ms!important;
+    // }
+    // .wipe-5 {
+    //   // left: -100%;
+    //   bottom: -100%;
+    //   background-color: $color-secondary;
+    //   z-index: 3;
+    //   transition-delay: .3s!important;
+    // }
+  }
+}
+
+.preloader.hide{
+  display: none;
+}

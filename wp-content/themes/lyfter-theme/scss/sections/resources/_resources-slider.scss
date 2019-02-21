@@ -1,6 +1,6 @@
 .resources-slider {
   @include linear-gradient($color-white-05, $color-white);
-  border-bottom: 1px solid $color-white-10;
+  border-top: 1px solid $color-white-10;
   padding: 6rem 0!important;
 
   .section-button_center{

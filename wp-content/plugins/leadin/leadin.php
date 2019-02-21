@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: HubSpot - Free Marketing Plugin for WordPress
-Plugin URI: http://www.hubspot.com/products/marketing/free
-Description: HubSpot Marketing Free is the ultimate marketing plugin for WordPress for building an email list, generating and tracking leads, and tracking user behavior on your website.
-Version: 6.1.5
+Plugin Name: Contact Form Builder for WordPress – Conversion Tools by HubSpot
+Plugin URI: http://www.hubspot.com/products/wordpress/contact-form
+Description: Whether you’re just getting started with HubSpot or already a HubSpot power user, Contact Form Builder for WordPress and Conversion Tools by HubSpot will let you use HubSpot tools on your WordPress website and connect the two platforms without dealing with code.
+Version: 7.0.2
 Author: HubSpot
 Author URI: http://www.hubspot.com
 License: GPL2
@@ -33,7 +33,7 @@ if ( ! defined( 'LEADIN_DB_VERSION' ) ) {
 }
 
 if ( ! defined( 'LEADIN_PLUGIN_VERSION' ) ) {
-	define( 'LEADIN_PLUGIN_VERSION', '6.1.5' );
+	define( 'LEADIN_PLUGIN_VERSION', '7.0.2' );
 }
 
 if ( ! defined( 'LEADIN_SOURCE' ) ) {
@@ -62,6 +62,7 @@ if ( file_exists( LEADIN_PLUGIN_DIR . '/inc/leadin-constants.php' ) ) {
 require_once LEADIN_PLUGIN_DIR . '/inc/leadin-functions.php';
 require_once LEADIN_PLUGIN_DIR . '/inc/leadin-registration.php';
 require_once LEADIN_PLUGIN_DIR . '/inc/leadin-disconnect.php';
+require_once LEADIN_PLUGIN_DIR . '/inc/leadin-oauth-refresh.php';
 require_once LEADIN_PLUGIN_DIR . '/admin/leadin-admin.php';
 
 require_once LEADIN_PLUGIN_DIR . '/inc/class-leadin.php';
@@ -125,6 +126,7 @@ function add_leadin_defaults() {
 			'beta_tester'             => 0,
 			'converted_to_tags'       => 1,
 			'names_added_to_contacts' => 1,
+			'affiliate_code'          => '',
 		);
 
 		// Add the Pro flag if this is a pro installation
@@ -188,11 +190,69 @@ function activate_leadin_on_new_blog( $blog_id, $user_id, $domain, $path, $site_
 	}
 }
 
+
+//=============================================
+// Shortcodes
+//=============================================
+function addHubspotShortcode($attributes) {
+    $parsedAttributes = shortcode_atts(array(
+        'type' => NULL,
+        'portal' => NULL,
+        'id' => NULL,
+    ), $attributes);
+
+    if (
+        !isset($parsedAttributes['type']) ||
+        !isset($parsedAttributes['portal']) ||
+        !isset($parsedAttributes['id'])
+    ) {
+        return;
+    }
+
+    $portalId = $parsedAttributes['portal'];
+    $id = $parsedAttributes['id'];
+
+    switch ($parsedAttributes['type']) {
+        case 'form':
+            return '
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+                <script>
+                  hbspt.forms.create({
+                    portalId: '. $portalId . ',
+                    formId: "' . $id . '",
+                    shortcode: "wp"
+                  });
+                </script>
+            ';
+        case 'cta':
+            return '
+                <!--HubSpot Call-to-Action Code -->
+                <span class="hs-cta-wrapper" id="hs-cta-wrapper-' . $id . '">
+                    <span class="hs-cta-node hs-cta-' . $id . '" id="'. $id . '">
+                        <!--[if lte IE 8]>
+                        <div id="hs-cta-ie-element"></div>
+                        <![endif]-->
+                        <a href="https://cta-redirect.hubspot.com/cta/redirect/' . $portalId . '/'. $id . '" >
+                            <img class="hs-cta-img" id="hs-cta-img-' . $id . '" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/' . $portalId . '/' . $id . '.png"  alt="New call-to-action"/>
+                        </a>
+                    </span>
+                    <script charset="utf-8" src="//js.hubspot.com/cta/current.js"></script>
+                    <script type="text/javascript">
+                        hbspt.cta.load(' . $portalId . ', \''. $id . '\', {});
+                    </script>
+                </span>
+                <!-- end HubSpot Call-to-Action Code -->
+            ';
+    }
+}
+
 /**
  * Checks the stored database version against the current data version + updates if needed
  */
-function leadin_init() {
-	$leadin_wp = new WPLeadIn();
+function leadin_init()
+{
+    $leadin_wp = new WPLeadIn();
+    add_shortcode('hubspot', 'addHubspotShortcode');
 }
 
 

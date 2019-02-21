@@ -33,19 +33,14 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <link id="favicon" rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet"> -->
-  <!-- <link rel="stylesheet" href="https://use.typekit.net/uid3foz.css"> -->
+
   <!-- Lyfter project Typekit -->
   <link rel="stylesheet" href="https://use.typekit.net/wfp2yxv.css">
-
-
 
 </head>
 <?php global $page_for_posts; ?>
 
 <body>
-
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PQDBZ6"
@@ -58,5 +53,11 @@
     </noscript>
     <!-- Linkedin Tracking code -->
 
+    <!-- Preloader -->
+    <?php  include( get_template_directory() . '/phtml/components/preloader/preloader.phtml');?>
 
-  <?php  include( get_template_directory() . '/phtml/sections/navbar/navbar.phtml');?>
+    <!-- Cookie Accept Notification-->
+    <?php  include( get_template_directory() . '/phtml/sections/notifications/cookie-notification.phtml');?>
+
+    <!-- Navbar -->
+    <?php  include( get_template_directory() . '/phtml/sections/navbar/navbar.phtml');?>

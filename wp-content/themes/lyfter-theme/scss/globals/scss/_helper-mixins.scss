@@ -105,7 +105,7 @@ REASON: #{$reason}';
 
 @import 'flexbox';
 
-@mixin customflex($direction, $align, $justify, $wrap) {
+@mixin flex($direction, $align, $justify, $wrap) {
 
   @include flexbox;
 

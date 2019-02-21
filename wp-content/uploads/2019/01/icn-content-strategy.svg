@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#58ED9F" d="M3 12L6 12 6 13 3 13 2 13 2 8 3 8 3 12zM3 14L6 14 6 15 3 15 3 18 2 18 2 14 3 14zM21 12L21 8 22 8 22 12 22 13 18 13 18 12 21 12zM22 15L22 18 21 18 21 15 18 15 18 14 22 14 22 15z"></path>
+    <g transform="translate(5 4)">
+      <path fill="#C7D5E4" d="M10,12 L10,8 L8,8 L8,12 L2,12 L2,7 L7,2 L12,7 L12,12 L10,12 Z M4,8 L4,10 L6,10 L6,8 L4,8 Z"></path>
+      <polygon fill="#040E18" points="0 6.995 2 6.995 7 2 12 6.995 14 6.995 12 5 12 1 10 1 10 3 7 0"></polygon>
+    </g>
+    <g transform="translate(0 20)">
+      <rect width="6" height="4" fill="#C7D5E4"></rect>
+      <polygon fill="#E4ECF4" points="0 0 6 0 3 3"></polygon>
+    </g>
+    <path fill="#040E18" d="M0,2 L1,2 L1,5 L0,5 L0,2 Z M0.5,1 C0.223857625,1 0,0.776142375 0,0.5 C0,0.223857625 0.223857625,0 0.5,0 C0.776142375,0 1,0.223857625 1,0.5 C1,0.776142375 0.776142375,1 0.5,1 Z M3,3.5 L3,5 L2,5 L2,2 L3,2 L3,2.61537135 C3.17603362,2.25400119 3.58401278,2 4,2 C4.55228475,2 5,2.44771525 5,3 L5,5 L4,5 L4,3.5 C4,3.22385763 3.77614237,3 3.5,3 C3.22385763,3 3,3.22385763 3,3.5 Z" transform="translate(19 19)"></path>
+    <g transform="translate(18)">
+      <rect width="6" height="6" fill="#040E18"></rect>
+      <path fill="#E4ECF4" d="M4,4 L5,4 L5,5 L4,5 L4,6 L3,6 L3,5 L2,5 L2,4 L3,4 L3,3 C3,2.44771525 3.44771525,2 4,2 L5,2 L5,3 L4,3 L4,4 Z"></path>
+    </g>
+    <polygon fill="#58ED9F" points="2 0 4 0 6 6 4 6"></polygon>
+    <path fill="#34D5AC" d="M2,0 L4,0 L4,6 L2,0 Z"></path>
+    <polygon fill="#040E18" points="2 0 4 0 2 6 0 6"></polygon>
+  </g>
+</svg>

@@ -1,7 +1,7 @@
 .grid.hero-post {
   background-color: $color-white-03;
   .row {
-    @include customflex(0,0,center,0);
+    @include flex(0,0,center,0);
     .hero-post--container {
       margin: 4rem 0 2rem 0;
       width: 100%;
@@ -188,7 +188,7 @@
 // // .grid.section-content__outer.services {
 // //   background-color: $color-white-03;
 // //   .row {
-// //     @include customflex(0,0,flex-start,0);
+// //     @include flex(0,0,flex-start,0);
 // //
 // //     .section-content.services {
 // //       margin: 4rem 0 0 0;
@@ -203,7 +203,7 @@
 // .grid.section-content__outer {
 //   background-color: $color-white-03;
 //   .row {
-//     @include customflex(0,0,center,0);
+//     @include flex(0,0,center,0);
 //     .section-content {
 //       // margin: 4rem 0 0 0;
 //       // width: 100%;
@@ -287,7 +287,7 @@
 //       }
 //
 //       .component--image {
-//         @include customflex(column,0,center,0);
+//         @include flex(column,0,center,0);
 //         margin:2rem 0;
 //         .image {
 //           width: 100%;
@@ -337,7 +337,7 @@
 //         margin-bottom: 2rem;
 //
 //         .component--bullet-list__item {
-//           @include customflex(column, flex-start, center, 0);
+//           @include flex(column, flex-start, center, 0);
 //           position: relative;
 //           margin: 1rem 0;
 //           border-left: .25rem solid $color-grey;
@@ -385,7 +385,7 @@
 //         margin-bottom: 2rem;
 //
 //         .component--ordered-list__item {
-//           @include customflex(column, flex-start, center, 0);
+//           @include flex(column, flex-start, center, 0);
 //           position: relative;
 //           margin: 1rem 0;
 //           border-left: .25rem solid $color-grey;

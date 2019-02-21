@@ -4,10 +4,10 @@
   }
   .about-us--circle {
     padding-left: 2rem;
-    @include customflex(0,flex-start,center,0);
+    @include flex(0,flex-start,center,0);
 
   .interactive-circle {
-    @include customflex(0,center,center,0);
+    @include flex(0,center,center,0);
     width: 100%;
     height: auto;
     margin: 0 0 0 4rem;
@@ -42,7 +42,7 @@
       border: 1px solid $color-dark;
 
       .circle-sm {
-        @include customflex(0,center,center,0);
+        @include flex(0,center,center,0);
         overflow: hidden;
         position: absolute;
         top: 50%;
@@ -117,7 +117,7 @@
     .about-us--circle {
       padding-left: 0;
     .interactive-circle {
-      @include customflex(0,center,center,0);
+      @include flex(0,center,center,0);
       height: 448px;
       width: 448px;
       margin: 0 0 2rem 0;

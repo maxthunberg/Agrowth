@@ -1,7 +1,7 @@
 .our-offer {
   background-color: $color-white-05;
   .row {
-    @include customflex(0,flex-start,center,0);
+    @include flex(0,flex-start,center,0);
     .interactive-icon {
       flex-basis: 33.333%;
     }
@@ -28,9 +28,9 @@
   background-color: $color-white-05;
   border-bottom: 1px solid $color-white-10;
   .row {
-    @include customflex(column,center,center,0);
+    @include flex(column,center,center,0);
     .about-us-form--col {
-      @include customflex(column,center,center,0);
+      @include flex(column,center,center,0);
       margin-top: 2rem;
       max-width: rem(512px);
       h3 {

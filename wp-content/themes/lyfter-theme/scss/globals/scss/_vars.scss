@@ -95,10 +95,10 @@ $field-secondary: rgba($color-secondary, 0.05);
 $field-black: rgba($color-black, 0.05);
 
 
-$support-error: $color-primary-dark;
-$support-success: $color-secondary-dark;
-$support-warning: #efc100;
-$support-info: #5aaafa;
+$support-error: $color-pink-dark;
+$support-success: $color-primary-dark;
+$support-warning: $color-yellow-dark;
+$support-info: $color-secondary-dark;
 
 // Global
 $input-border: 1px solid transparent !default;

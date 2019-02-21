@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <!-- HERO -->
-<?php  include( get_template_directory() . '/phtml/sections/hero/hero--career.phtml');?>
+<?php  include( get_template_directory() . '/phtml/sections/hero/hero.phtml');?>
 
 <!-- Breadcrumb -->
 <?php  include( get_template_directory() . '/phtml/sections/breadcrumb/breadcrumb.phtml');?>

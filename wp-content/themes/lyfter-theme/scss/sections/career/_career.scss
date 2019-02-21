@@ -5,7 +5,7 @@
   .row {
     .hero--container {
       width: 100%;
-      @include customflex(column,0,0,0);
+      @include flex(column,0,0,0);
       padding: 7rem 0 8rem 0;
       .hero__heading {
         margin-bottom: 2rem;
@@ -22,7 +22,7 @@
 
 .our-values {
   position: relative;
-  @include customflex(0,0,center,0);
+  @include flex(0,0,center,0);
 
   .our-values--textcontainer {
     position: absolute;
@@ -31,7 +31,7 @@
     text-align: center;
   }
   .our-values--col {
-    @include customflex(0,center,center,0);
+    @include flex(0,center,center,0);
     position: relative;
     width: 33.333%;
     background-image: url('https://res.cloudinary.com/agrowth/image/upload/v1527725506/landscape_wkumob.jpg');
@@ -51,7 +51,7 @@
       transition: $transition--enter__fast;
     }
     .our-values--circle {
-      @include customflex(column,center,center,0);
+      @include flex(column,center,center,0);
       position: absolute;
       bottom:-4rem;
       height: rem(192px);
@@ -101,7 +101,7 @@
 .why-us {
   background-color: $color-white-05;
   .row {
-    @include customflex(0,flex-start,center,0);
+    @include flex(0,flex-start,center,0);
     .interactive-icon {
       flex-basis: 20%;
     }
@@ -125,9 +125,9 @@
   .hero--career {
       min-height: rem(448px);
     .row {
-        @include customflex(column,center,0,0);
+        @include flex(column,center,0,0);
       .hero--container {
-        @include customflex(column,0,0,0);
+        @include flex(column,0,0,0);
         .hero__heading {
           font-size: 2.5rem;
           margin-bottom: 2rem;
@@ -145,7 +145,7 @@
     flex-basis: 50%;
   }
   .our-values {
-    @include customflex(column,center,flex-start,0);
+    @include flex(column,center,flex-start,0);
 
     .our-values--textcontainer {
       position: absolute;
@@ -154,7 +154,7 @@
       text-align: center;
     }
     .our-values--col, .our-values--col.hover {
-      @include customflex(0,center,center,0);
+      @include flex(0,center,center,0);
       width: 100%;
       position: relative;
       background-image: url('https://res.cloudinary.com/agrowth/image/upload/v1527725506/landscape_wkumob.jpg');
@@ -163,7 +163,7 @@
       padding: 2rem;
       min-height: rem(512px);
       .our-values--circle {
-        @include customflex(column,center,center,0);
+        @include flex(column,center,center,0);
         position: relative;
         bottom: auto;
         height: rem(288px);

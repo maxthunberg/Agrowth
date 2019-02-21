@@ -1,112 +1,66 @@
+.navbar-notification {
+  position: fixed;
+  @include flex(0,0,0,0);
+  top:-8rem;
+  opacity: 0;
+  background-color: $color-black;
+  padding: .25rem 0;
+  height: 6rem;
+  color: $color-white;
+  width: 100%;
+  z-index: 8000;
+  transition: top $duration--fast__enter $easing--enter;
 
-  .ly--navbar-notification {
-    @include reset;
-    @include body-text;
-    @include font-smoothing;
-    @include typescale('p-sm');
-    background-color: $color-white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: .25rem 3rem;
-    min-height: rem(44px);
-    color: $color-dark;
-    width: 100%;
-    left:0;
-    transition: top $duration--fast__enter $easing--enter;
+  .row {
+    @include flex(0,center,0,0);
+    .image--container {
+      height: 32px;
+      width: 32px;
+      svg {
+        height: 32px;
+        width: 32px;
+      }
+    }
+    .text--container {
+      margin-left: 1rem;
+      max-width: 640px;
+      .paragraph-sm {
+        color: $color-white;
+      }
+    }
+    .button--container {
+      margin-left: 3rem;
+      .accept-cookies {
 
+      }
+      .read-more {
+
+      }
+      .close {
+
+      }
+    }
   }
-  .ly--navbar-notification.active {
+}
+
+  .navbar-notification.is-visible {
     top: 0px;
+    opacity: 1;
+    transition: $transition--exit__fast;
   }
 
-  .ly--navbar-notification--error {
-    @include navbar-notification--color($support-error,$support-error);
+  .navbar-notification.error {
+    background-color: $support-error;
   }
 
-  .ly--navbar-notification--success {
-    @include navbar-notification--color($support-success,$support-success);
+  .navbar-notification.success {
+    background-color: $support-success;
   }
 
-  .ly--navbar-notification--info {
-    @include navbar-notification--color($support-info,$support-info);
+  .navbar-notification.info {
+    background-color: $support-info;
   }
 
-  .ly--navbar-notification--warning {
-    @include navbar-notification--color($support-warning,$support-warning);
-  }
-
-  .ly--navbar-notification--primary {
-    @include navbar-notification--color($color-primary,$color-white);
-    @include linear-gradient($color-primary, $color-primary-light);
-    .ly--navbar-notification__close-icon {
-      fill: $color-white;
-    }
-    color: $color-white;
-  }
-
-  .ly--navbar-notification--secondary {
-    @include navbar-notification--color($color-secondary-dark, $color-white);
-    @include linear-gradient($color-secondary-dark, $color-secondary);
-    .ly--navbar-notification__close-icon {
-      fill: $color-white;
-    }
-    color: $color-white;
-  }
-
-  .ly--navbar-notification__details {
-    display: flex;
-    align-items: center;
-  }
-
-  .ly--navbar-notification__icon {
-    height: 16px;
-    width: 16px;
-    min-width: 22px;
-  }
-
-  .ly--navbar-notification__text-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 0 $spacing-md;
-
-    @media (max-width: 640px) {
-      flex-direction: column;
-      width: 100%;
-    }
-  }
-
-  .ly--navbar-notification__title {
-    @include typescale('p-sm');
-    font-weight: 700;
-    margin: 0 $spacing-xs 0 0;
-    line-height: 1.125;
-  }
-
-  .ly--navbar-notification__subtitle {
-    @include typescale('p-sm');
-    margin: 0 $spacing-md 0 0;
-    line-height: 1.125;
-  }
-
-  .ly--navbar-notification__close-button {
-    background-color: transparent;
-    border: none;
-    padding: .5rem;
-    cursor: pointer;
-    position: relative;
-
-    &:focus {
-      @include focus-outline('border');
-    }
-  }
-
-  .ly--navbar-notification__close-icon {
-    height: 10px;
-    width: 10px;
-    fill: $color-dark;
-    position: absolute;
-    top: 3px;
-    right: 3px;
+  .navbar-notification.warning {
+    background-color: $support-warning;
   }

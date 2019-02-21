@@ -14,7 +14,7 @@
 // Basic Card
 .card {
   position: relative;
-  @include customflex(0, 0, 0, 0);
+  @include flex(0, 0, 0, 0);
   @include layer('raised');
   background: $color-white;
   border-radius: .25rem;
@@ -57,10 +57,10 @@
     }
   }
   .service-text-container {
-    @include customflex(column, 0, 0, 0);
+    @include flex(column, 0, 0, 0);
     .service-heading {
       position: relative;
-      @include customflex(0,0,0,0);
+      @include flex(0,0,0,0);
       .ly--tag {
         margin: 0 0 .25rem .5rem;
       }
@@ -70,7 +70,7 @@
 
 .card-service__sm {
   @include layer('base');
-  @include customflex(0, center, 0, 0);
+  @include flex(0, center, 0, 0);
   background: $color-white;
   // border: 1px solid transparent;
   padding: 1rem 1rem 1rem 1rem;
@@ -85,7 +85,7 @@
     }
   }
   .service-text-container {
-    @include customflex(0, center, 0, 0);
+    @include flex(0, center, 0, 0);
   }
 
   .ly--tag {
@@ -103,7 +103,7 @@
 // Card consultants small
 .card-consultant {
   position: relative;
-  @include customflex(0, center, flex-start, 0);
+  @include flex(0, center, flex-start, 0);
   padding: 2.5rem 2rem;
   border-radius: .25rem;
   max-height: 128px;
@@ -118,7 +118,7 @@
   }
 
   .service-text-container {
-    @include customflex(column, 0, 0, 0);
+    @include flex(column, 0, 0, 0);
   }
 
   &:hover {
@@ -137,7 +137,7 @@
 
 .card-consultant__sm {
   position: relative;
-  @include customflex(0, center, flex-start, 0);
+  @include flex(0, center, flex-start, 0);
   @include layer('base');
   background: $color-white;
   // border: none;
@@ -154,7 +154,7 @@
   }
 
   .service-text-container {
-    @include customflex(column, 0, 0, 0);
+    @include flex(column, 0, 0, 0);
 
   }
   &:hover {
@@ -210,10 +210,10 @@
 
     }
     .info-container {
-      @include customflex(0, center, flex-start, wrap);
+      @include flex(0, center, flex-start, wrap);
       min-height: 2rem;
       .info-container--part {
-        @include customflex(0,0,0,0);
+        @include flex(0,0,0,0);
         margin-bottom: 1rem;
         margin-right: 1.5rem;
         .icon {
@@ -238,12 +238,12 @@
   display:none;
 }
 .card-aboutus.active {
-  @include customflex(column,0,0,0);
+  @include flex(column,0,0,0);
   .card-aboutus--title-container {
-      @include customflex(0,center,0,0);
+      @include flex(0,center,0,0);
       margin-bottom: .5rem;
     .card--icon {
-      @include customflex(0,center,center,0);
+      @include flex(0,center,center,0);
       border-radius: 50%;
       width: 2.5rem;
       height: 2.5rem;
@@ -280,7 +280,7 @@
 
 @media (max-width: breakpoint('md') ) { // 768px
   .card-service {
-    @include customflex(0, 0, 0, 0);
+    @include flex(0, 0, 0, 0);
     .service-img-container {
       margin-right: 1.5rem;
       margin-bottom: 0;
@@ -297,7 +297,7 @@
 }
 @media (max-width: breakpoint('sm') ) { // 992px
   .card-service {
-    @include customflex(column, 0, 0, 0);
+    @include flex(column, 0, 0, 0);
     .service-img-container {
       margin-right: 0rem;
       margin-bottom: 1rem;
@@ -312,7 +312,7 @@
 
 @media (max-width: breakpoint('xs') ) { // 992px
   .card-service {
-    @include customflex(column, 0, 0, 0);
+    @include flex(column, 0, 0, 0);
     .service-img-container {
       margin-right: 0rem;
       margin-bottom: 1rem;

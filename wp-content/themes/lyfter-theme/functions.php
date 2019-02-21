@@ -9,12 +9,14 @@ require get_template_directory().'/post-types/services.php';
 // Register consultants custom post type.
 require get_template_directory().'/post-types/consultants.php';
 
+// Functionality for image handling using Cloudinary
+require get_template_directory().'/image-functionality.php';
+
 // Remove wordpress default text editor
 add_action( 'init', 'init_remove_text_editor' );
 function init_remove_text_editor() {
 	remove_post_type_support( 'page', 'editor' );
 }
-
 
 // Remove all unnecessary markup in head-tag
 
@@ -48,58 +50,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('main');
 
 });
-
-// Cloudinary Images
-function add_image($image, $params, $class) {
-	$base = 'https://res.cloudinary.com/agrowth/image/upload/';
-	$filename = $image['filename'];
-
-	if (	$params === 0 ) {
-		$params = 'g_south,q_60,c_fill,w_1280';
-	}
-
-	$output = $base.$params.'/'.$filename;
-
-	echo '<img src="' . @$output . '" class="' . @$class . '" />';
-}
-
-function add_bg_image($image, $params) {
-	if ( $image ) {
-		$imgname = $image;
-
-		$base = 'https://res.cloudinary.com/agrowth/image/upload/';
-
-		if (	$params === 0 ) {
-			$params = 'g_south,q_60,c_fill,w_1280';
-		}
-		if (strpos($imgname, $base) === 0) {
-			$imgname = substr($imgname, strlen($base));
-		}
-
-		$output = $base.$params.'/'.$imgname;
-
-		echo @$output;
-	}
-
-}
-
-
-function add_thumbnail_image($params, $class) {
-
-	$imgname = get_the_post_thumbnail_url();
-	$base = 'https://res.cloudinary.com/agrowth/image/upload/';
-	if (	$params === 0 ) {
-		$params = 'g_south,q_60,c_fill,w_1280';
-	}
-	if (strpos($imgname, $base) === 0) {
-		$imgname = substr($imgname, strlen($base));
-		}
-
-	$output = $base.$params.'/'.$imgname;
-
-	echo '<img src="' . @$output . '" class="' . @$class . '" />';
-
-}
 
 function wpdocs_after_setup_theme() {
     add_theme_support( 'html5', array( 'search-form' ) );
@@ -390,6 +340,39 @@ function rd_duplicate_post_link( $actions, $post ) {
 }
 
 add_filter( 'post_row_actions', 'rd_duplicate_post_link', 10, 2 );
+
+
+
+function the_url( $url ) {
+    return get_bloginfo( 'url' );
+}
+
+add_filter( 'login_headerurl', 'the_url' );
+
+function wp_login_logo_change() {
+
+	$loginlogo = get_stylesheet_directory_uri() . '/icons/lyfter-wordmark--white.svg';
+
+?>
+
+<style type="text/css">
+body.login div#login h1 a {
+ background-image: url(<?php echo $loginlogo ?>);
+ height: 84px;
+ width: 160px;
+ background-size: contain;
+}
+body.login {
+	/* background: #34D5AC;
+	background: -webkit-linear-gradient(0deg, #34D5AC,#58EDCD);
+	background: linear-gradient(0deg, #34D5AC,#58EDCD); */
+	background: #040E18;
+	background: -webkit-linear-gradient(0deg, #040E18,#28323C);
+	background: linear-gradient(0deg, #040E18,#28323C);
+}
+</style>
+ <?php
+} add_action( 'login_enqueue_scripts', 'wp_login_logo_change' );
 
 
 

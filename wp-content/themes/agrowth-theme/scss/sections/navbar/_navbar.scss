@@ -1,5 +1,5 @@
 .ly--navbar {
-    @include customflex(0, center, space-between, 0);
+    @include flex(0, center, space-between, 0);
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
       justify-content: space-between;
       width: 100%;
         .navbar--left {
-          @include customflex(0, center, flex-start, 0);
+          @include flex(0, center, flex-start, 0);
           height: rem(44px);
 
           .logo {
@@ -30,14 +30,14 @@
           }
         }
         .navbar--right {
-          @include customflex(0, center, flex-end, 0);
+          @include flex(0, center, flex-end, 0);
           .navbar--menu {
-            @include customflex(0, center, flex-start, 0);
+            @include flex(0, center, flex-start, 0);
             margin-right: 2rem;
 
             .navbar--menu-item {
               position: relative;
-              @include customflex(0, center, center, 0);
+              @include flex(0, center, center, 0);
               padding: rem(14px) rem(16px);
               cursor: pointer;
               transition: $transition--enter__fast;
@@ -107,7 +107,7 @@
     transition: top $duration--fast__enter $easing--enter, background $duration--slow__enter $easing--enter;
     .navbar--inner {
         .navbar--left {
-          @include customflex(0, center, flex-start, 0);
+          @include flex(0, center, flex-start, 0);
           height: rem(44px);
 
           .logo {
@@ -120,14 +120,14 @@
           }
         }
         .navbar--right {
-          @include customflex(0, center, flex-end, 0);
+          @include flex(0, center, flex-end, 0);
           .navbar--menu {
-            @include customflex(0, center, flex-start, 0);
+            @include flex(0, center, flex-start, 0);
             margin-right: 2rem;
 
             .navbar--menu-item {
               position: relative;
-              @include customflex(0, center, center, 0);
+              @include flex(0, center, center, 0);
               padding: rem(14px) rem(16px);
               cursor: pointer;
               transition: $transition--enter__fast;
@@ -231,7 +231,7 @@
       .navbar--right__mobile {
         display: flex;
         .hamburger-icon {
-          @include customflex(0, center, center, 0);
+          @include flex(0, center, center, 0);
           position: relative;
           height: 44px;
           width: 44px;

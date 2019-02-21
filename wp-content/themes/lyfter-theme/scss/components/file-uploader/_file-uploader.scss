@@ -20,7 +20,7 @@
     width: 50%;
   }
   .ly--file-split {
-    @include customflex(0,0,0,0);
+    @include flex(0,0,0,0);
   }
 
   .ly--file-input {

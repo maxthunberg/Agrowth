@@ -5,7 +5,7 @@
     }
   }
   .section-content a,
-  .ly--link {
+  . {
     position: relative;
     @include reset;
     @include body-text;
@@ -58,7 +58,7 @@
     }
   }
 
-  .ly--link__secondary {
+  .__secondary {
     position: relative;
     @include reset;
     @include body-text;
@@ -93,7 +93,7 @@
       pointer-events: none;
     }
   }
-  .ly--link__white {
+  .__white {
     position: relative;
     @include reset;
     @include body-text;

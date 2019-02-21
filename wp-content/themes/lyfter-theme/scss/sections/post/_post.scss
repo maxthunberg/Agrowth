@@ -19,44 +19,24 @@
   width: 100%;
   height: rem(6px);
   background: $color-white-05;
-  z-index: 10000;
+  z-index: 9000;
   .reading-indicator__bar {
     height: rem(4px);
-    @include linear-gradient($color-primary-dark, $color-primary);
+    // @include linear-gradient($color-primary-dark, $color-primary);
+    background-color: $color-primary;
     width: 0%;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
   }
 }
 
-.resources-footer__outer {
-  border-bottom: 1px solid $color-white-10;
+.resources-footer {
+  padding: 2rem 0 6rem;
   .row {
-    @include customflex(column, center, 0, wrap);
-
-    .resources-footer {
-      @include customflex(0, 0, 0, wrap);
-      width: 100%;
-      max-width: 724px;
-
-      .author, form {
-        margin: 2rem 0;
-      }
-
-    }
+    @include flex(column, 0, center, 0);
     .more-articles {
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid $color-white-10;
-    }
-
-    .resources-footer__info {
-    @include customflex(column, 0, center, 0);
-    }
-
-    .resources-footer__cards {
-    @include customflex(0, 0, 0, 0);
-    max-width: none;
+      @include flex(0, 0, 0, wrap);
+      width: 100%;
     }
   }
 }
@@ -71,7 +51,7 @@
 }
 
 .author {
-  @include customflex(0, center, 0, 0);
+  @include flex(0, center, 0, 0);
   align-self: flex-start;
   background-color: $color-white;
   border-radius: .25rem;
@@ -80,7 +60,7 @@
 
 
   .author--img-container {
-    @include customflex(0, center, center, 0);
+    @include flex(0, center, center, 0);
     height: 4rem;
     width: 4rem;
     border: 1px solid $color-white-10;
@@ -97,10 +77,10 @@
 }
 
 .author__sm {
-  @include customflex(0, center, 0, 0);
+  @include flex(0, center, 0, 0);
   margin-bottom: 2rem;
   .author--img-container {
-    @include customflex(0, center, center, 0);
+    @include flex(0, center, center, 0);
     height: 4rem;
     width: 4rem;
     border: 1px solid $color-white-10;

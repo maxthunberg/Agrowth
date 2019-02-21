@@ -20,10 +20,10 @@ get_header();
 <div class="grid resources-footer__outer services">
   <div class="row">
 
-      <div class="bx--col-md-12 resources-footer more-articles">
+      <div class="ly--col-md-12 resources-footer more-articles">
         <h3>Fler tjänster</h3>
       </div>
-      <div class="bx--col-md-12 section-2rem resources-footer resources-footer__cards">
+      <div class="ly--col-md-12 section-2rem resources-footer resources-footer__cards">
 
 <?php
                     $args = array(

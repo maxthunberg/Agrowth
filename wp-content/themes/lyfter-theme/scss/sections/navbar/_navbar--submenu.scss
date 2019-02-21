@@ -1,3 +1,4 @@
+
 .ly--navbar--submenu {
     visibility: hidden;
     opacity: 0;
@@ -38,20 +39,20 @@
       padding: 2rem 5rem 5rem;
       max-height: 24rem;
       z-index: 10002;
-      @include customflex(column,flex-start,0,0);
+      @include flex(column,flex-start,0,0);
       display: none;
       .submenu--heading-container {
         margin: 0 0 .5rem 1rem;
       }
       .submenu--card-container {
-        @include customflex(column, 0 , 0, wrap);
+        @include flex(column, 0 , 0, wrap);
         width: 100%;
         .card-link {
           width: 33.333%;
         }
       }
       .submenu--card-container__row {
-        @include customflex(row, 0 , 0, wrap);
+        @include flex(row, 0 , 0, wrap);
         width: 100%;
         height: auto;
         .submenu--card-part {
@@ -60,17 +61,17 @@
           height: 192px;
           .card__link {
             .card.primary{
-              @include customflex(column, center , center, wrap);
+              @include flex(column, center , center, wrap);
               @include linear-gradient($color-primary-dark, $color-primary);
               height: 100%;
             }
             .card.secondary{
-              @include customflex(column, center , center, wrap);
+              @include flex(column, center , center, wrap);
               @include linear-gradient($color-secondary-dark, $color-secondary);
               height: 100%;
             }
             .card.white{
-              @include customflex(column, center , center, wrap);
+              @include flex(column, center , center, wrap);
               @include linear-gradient($color-white-03, $color-white-05);
               height: 100%;
             }
@@ -78,7 +79,7 @@
         }
       }
       .submenu--footer {
-        @include customflex(0,center, center, 0);
+        @include flex(0,center, center, 0);
         position: absolute;
         left: 0;
         bottom: 0;
@@ -96,6 +97,11 @@
         }
       }
     }
+  }
+
+  .ly--navbar--submenu.cookies {
+    margin-top: 6rem;
+    transition: $transition--exit__fast;
   }
 
   .ly--navbar--submenu.transparent {

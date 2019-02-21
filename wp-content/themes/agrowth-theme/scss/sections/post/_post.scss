@@ -32,10 +32,10 @@
 .resources-footer__outer {
   border-bottom: 1px solid $color-white-10;
   .row {
-    @include customflex(column, center, 0, wrap);
+    @include flex(column, center, 0, wrap);
 
     .resources-footer {
-      @include customflex(0, 0, 0, wrap);
+      @include flex(0, 0, 0, wrap);
       width: 100%;
       max-width: 724px;
 
@@ -51,11 +51,11 @@
     }
 
     .resources-footer__info {
-    @include customflex(column, 0, center, 0);
+    @include flex(column, 0, center, 0);
     }
 
     .resources-footer__cards {
-    @include customflex(0, 0, 0, 0);
+    @include flex(0, 0, 0, 0);
     max-width: none;
     }
   }
@@ -71,7 +71,7 @@
 }
 
 .author {
-  @include customflex(0, center, 0, 0);
+  @include flex(0, center, 0, 0);
   align-self: flex-start;
   background-color: $color-white;
   border-radius: .25rem;
@@ -80,7 +80,7 @@
 
 
   .author--img-container {
-    @include customflex(0, center, center, 0);
+    @include flex(0, center, center, 0);
     height: 4rem;
     width: 4rem;
     border: 1px solid $color-white-10;
@@ -97,10 +97,10 @@
 }
 
 .author__sm {
-  @include customflex(0, center, 0, 0);
+  @include flex(0, center, 0, 0);
   margin-bottom: 2rem;
   .author--img-container {
-    @include customflex(0, center, center, 0);
+    @include flex(0, center, center, 0);
     height: 4rem;
     width: 4rem;
     border: 1px solid $color-white-10;
